@@ -93,17 +93,17 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -151,7 +151,7 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
               </h2>
               <p style={{
                 fontSize: '18px',
-                color: '#3d3d3d',
+                color: royalColors.textDark,
                 lineHeight: '1.8',
                 maxWidth: '900px',
               }}>
@@ -180,11 +180,11 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
               color: royalColors.deepNavy,
               marginBottom: '24px',
             }}>
-              Our 2030 <span style={{ color: royalColors.royalGold }}>Goals</span>
+              Our 2030 <span style={{ color: royalColors.warmGold }}>Goals</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: '#3d3d3d',
+              color: royalColors.textDark,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -206,12 +206,12 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
                 border: `1px solid ${royalColors.border}`,
                 boxShadow: '0 2px 8px rgba(10,20,40,0.08)',
                 textAlign: 'center',
-                borderTop: `4px solid ${royalColors.royalGold}`,
+                borderTop: `4px solid ${royalColors.warmGold}`,
               }}>
                 <p style={{
                   fontSize: '44px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontWeight: '600',
                   marginBottom: '12px',
                   margin: 0,
@@ -229,7 +229,7 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>

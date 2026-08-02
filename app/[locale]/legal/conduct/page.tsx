@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
-import { royalColors } from '@/lib/royalDesign';
+import { royalColors, spacing, borderRadius, gradients } from '@/lib/royalDesign';
 
 const conductContent = {
   en: {
@@ -324,9 +324,9 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
     <main style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: gradients.goldToWarm,
         color: 'white',
-        padding: '100px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
@@ -336,23 +336,24 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
-            color: royalColors.royalGold,
-            margin: '0 0 16px 0',
+            color: 'rgba(255, 255, 255, 0.95)',
+            margin: `0 0 ${spacing.md} 0`,
           }}>
             {ar ? '🤝 السلوك والأخلاقيات' : '🤝 ETHICS & CONDUCT'}
           </p>
           <h1 style={{
-            fontSize: '48px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400',
-            margin: '0 0 16px 0',
+            fontSize: '56px',
+            fontFamily: '"Merriweather", Georgia, serif',
+            fontWeight: '700',
+            margin: `0 0 ${spacing.md} 0`,
             maxWidth: '800px',
+            color: 'white',
           }}>
             {content.heroTitle}
           </h1>
           <p style={{
             fontSize: '20px',
-            color: '#ddd',
+            color: 'rgba(255, 255, 255, 0.9)',
             margin: '0',
             maxWidth: '700px',
             lineHeight: '1.6',
@@ -361,9 +362,9 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
           </p>
           <p style={{
             fontSize: '12px',
-            color: royalColors.royalGold,
-            margin: '24px 0 0 0',
-            opacity: 0.8,
+            color: 'rgba(255, 255, 255, 0.85)',
+            margin: `${spacing.lg} 0 0 0`,
+            opacity: 0.9,
           }}>
             {content.lastUpdated}
           </p>
@@ -374,19 +375,25 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '80px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
         textAlign: ar ? 'right' : 'left',
       }}>
         {content.sections.map((section, idx) => (
-          <div key={idx} style={{ marginBottom: '60px' }}>
+          <div key={idx} style={{
+            marginBottom: spacing.xxxl,
+            padding: spacing.xl,
+            background: idx % 2 === 0 ? royalColors.warmBeige : 'white',
+            borderRadius: borderRadius.lg,
+            borderTop: `3px solid ${royalColors.warmGold}`,
+          }}>
             <h2 style={{
               fontSize: '28px',
-              fontFamily: 'Georgia, serif',
+              fontFamily: '"Merriweather", Georgia, serif',
               color: royalColors.deepNavy,
-              margin: '0 0 24px 0',
-              borderBottom: `2px solid ${royalColors.royalGold}`,
-              paddingBottom: '12px',
+              margin: `0 0 ${spacing.lg} 0`,
+              borderBottom: `2px solid ${royalColors.warmGold}`,
+              paddingBottom: spacing.md,
             }}>
               {section.title}
             </h2>
@@ -394,10 +401,10 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
               <p key={pIdx} style={{
                 fontSize: '16px',
                 lineHeight: '1.8',
-                color: '#444',
-                margin: '16px 0',
-                marginLeft: ar ? '0' : (paragraph.startsWith('•') ? '24px' : '0'),
-                marginRight: ar ? (paragraph.startsWith('•') ? '24px' : '0') : '0',
+                color: royalColors.textDark,
+                margin: `${spacing.md} 0`,
+                marginLeft: ar ? '0' : (paragraph.startsWith('•') ? spacing.lg : '0'),
+                marginRight: ar ? (paragraph.startsWith('•') ? spacing.lg : '0') : '0',
               }}>
                 {paragraph}
               </p>
@@ -408,8 +415,9 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
 
       {/* Footer Navigation */}
       <section style={{
-        background: `rgba(${royalColors.royalGold}, 0.05)`,
-        padding: '60px 32px',
+        background: royalColors.warmBeige,
+        padding: `${spacing.xxl} ${spacing.xl}`,
+        borderTop: `3px solid ${royalColors.warmGold}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
@@ -420,18 +428,21 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
             fontSize: '16px',
             fontWeight: '600',
             display: 'inline-block',
-            padding: '12px 24px',
-            border: `2px solid ${royalColors.deepNavy}`,
-            borderRadius: '4px',
+            padding: `${spacing.sm} ${spacing.lg}`,
+            border: `2px solid ${royalColors.warmGold}`,
+            borderRadius: borderRadius.md,
             transition: 'all 0.3s',
+            background: royalColors.warmGold,
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
             (e.currentTarget as HTMLElement).style.color = 'white';
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.deepNavy;
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = 'transparent';
+            (e.currentTarget as HTMLElement).style.background = royalColors.warmGold;
             (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.warmGold;
           }}
           >
             {ar ? 'العودة إلى الرئيسية' : 'Back to Home'}

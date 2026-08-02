@@ -105,17 +105,17 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -187,7 +187,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                     </p>
                   </div>
                   <div style={{
-                    backgroundColor: royalColors.royalGold,
+                    backgroundColor: royalColors.warmGold,
                     color: royalColors.deepNavy,
                     padding: '8px 16px',
                     borderRadius: '4px',
@@ -209,7 +209,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
 
                 <p style={{
                   fontSize: '17px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.7',
                   marginBottom: '28px',
                   margin: '24px 0 28px 0',
@@ -224,12 +224,12 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                 }}>
                   {caseStudy.outcomes.map((outcome, oIdx) => (
                     <div key={oIdx} style={{
-                      backgroundColor: '#f9f7f4',
+                      backgroundColor: royalColors.bgWarm,
                       padding: '16px',
                       borderRadius: '4px',
-                      borderLeft: `3px solid ${royalColors.royalGold}`,
+                      borderLeft: `3px solid ${royalColors.warmGold}`,
                       fontSize: '15px',
-                      color: '#3d3d3d',
+                      color: royalColors.textDark,
                       fontWeight: '600',
                     }}>
                       ✓ {outcome}

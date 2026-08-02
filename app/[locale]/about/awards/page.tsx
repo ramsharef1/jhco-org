@@ -149,17 +149,17 @@ export default function AwardsPage({ params }: { params: { locale: Locale } }) {
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -200,11 +200,11 @@ export default function AwardsPage({ params }: { params: { locale: Locale } }) {
                 borderRadius: '8px',
                 border: `1px solid ${royalColors.border}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
-                borderLeft: `5px solid ${royalColors.royalGold}`,
+                borderLeft: `5px solid ${royalColors.warmGold}`,
                 textAlign: ar ? 'right' : 'left',
               }}>
                 <p style={{
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontSize: '14px',
                   fontWeight: '700',
                   textTransform: 'uppercase',
@@ -234,7 +234,7 @@ export default function AwardsPage({ params }: { params: { locale: Locale } }) {
                 </p>
                 <p style={{
                   fontSize: '16px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -248,7 +248,7 @@ export default function AwardsPage({ params }: { params: { locale: Locale } }) {
 
       {/* Certifications */}
       <section style={{
-        backgroundColor: '#f9f7f4',
+        backgroundColor: royalColors.bgWarm,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -259,11 +259,11 @@ export default function AwardsPage({ params }: { params: { locale: Locale } }) {
               color: royalColors.deepNavy,
               marginBottom: '24px',
             }}>
-              Professional <span style={{ color: royalColors.royalGold }}>Certifications</span>
+              Professional <span style={{ color: royalColors.warmGold }}>Certifications</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: '#3d3d3d',
+              color: royalColors.textDark,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',

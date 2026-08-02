@@ -61,17 +61,17 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -108,7 +108,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             backgroundColor: 'white',
             padding: '60px 48px',
             borderRadius: '8px',
-            border: `2px solid ${royalColors.royalGold}`,
+            border: `2px solid ${royalColors.warmGold}`,
             boxShadow: '0 8px 20px rgba(10,20,40,0.15)',
           }}>
             <p style={{
@@ -125,7 +125,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             <div style={{
               height: '4px',
               width: '80px',
-              backgroundColor: royalColors.royalGold,
+              backgroundColor: royalColors.warmGold,
               margin: '0 auto',
             }} />
           </div>
@@ -134,7 +134,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
 
       {/* Mission Pillars */}
       <section style={{
-        backgroundColor: '#f9f7f4',
+        backgroundColor: royalColors.bgWarm,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -145,11 +145,11 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
               color: royalColors.deepNavy,
               marginBottom: '24px',
             }}>
-              Four <span style={{ color: royalColors.royalGold }}>Pillars</span>
+              Four <span style={{ color: royalColors.warmGold }}>Pillars</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: '#3d3d3d',
+              color: royalColors.textDark,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -167,15 +167,15 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
               <div key={idx} style={{
                 backgroundColor: 'white',
                 padding: '48px 32px',
-                borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
-                boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
+                borderRadius: '12px',
+                border: `1px solid ${royalColors.borderLight}`,
+                boxShadow: '0 4px 12px rgba(232,185,35,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  backgroundColor: royalColors.royalGold,
+                  backgroundColor: royalColors.warmGold,
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
@@ -199,7 +199,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -213,7 +213,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -224,7 +224,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Our <span style={{ color: royalColors.royalGold }}>Commitment</span>
+            Our <span style={{ color: royalColors.warmGold }}>Commitment</span>
           </h2>
           <p style={{
             fontSize: '18px',

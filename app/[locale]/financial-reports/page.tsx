@@ -49,17 +49,17 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -109,7 +109,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
               }}>
                 <p style={{
                   fontSize: '44px',
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontFamily: royalTypography.serif,
                   fontWeight: '600',
                   marginBottom: '12px',
@@ -128,7 +128,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -147,7 +147,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
               marginBottom: '64px',
               textAlign: 'center',
             }}>
-              Budget <span style={{ color: royalColors.royalGold }}>Allocation</span>
+              Budget <span style={{ color: royalColors.warmGold }}>Allocation</span>
             </h2>
 
             <div style={{
@@ -179,7 +179,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                     <span style={{
                       fontSize: '20px',
                       fontWeight: '700',
-                      color: royalColors.royalGold,
+                      color: royalColors.warmGold,
                     }}>
                       {item.percentage}%
                     </span>
@@ -194,7 +194,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                   }}>
                     <div style={{
                       height: '100%',
-                      backgroundColor: royalColors.royalGold,
+                      backgroundColor: royalColors.warmGold,
                       width: `${item.percentage}%`,
                       borderRadius: '4px',
                     }} />
@@ -208,7 +208,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
 
       {/* Accountability Statement */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -219,7 +219,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Our Commitment to <span style={{ color: royalColors.royalGold }}>Accountability</span>
+            Our Commitment to <span style={{ color: royalColors.warmGold }}>Accountability</span>
           </h2>
           <p style={{
             fontSize: '18px',

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
-import { royalColors } from '@/lib/royalDesign';
+import { royalColors, spacing, borderRadius, gradients } from '@/lib/royalDesign';
 
 const newsletterContent = {
   en: {
@@ -134,9 +134,9 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
     <main style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: gradients.goldToWarm,
         color: 'white',
-        padding: '100px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
@@ -146,23 +146,24 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
-            color: royalColors.royalGold,
-            margin: '0 0 16px 0',
+            color: 'rgba(255, 255, 255, 0.95)',
+            margin: `0 0 ${spacing.md} 0`,
           }}>
             {ar ? '📧 النشرة الإخبارية' : '📧 NEWSLETTER'}
           </p>
           <h1 style={{
-            fontSize: '48px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400',
-            margin: '0 0 16px 0',
+            fontSize: '56px',
+            fontFamily: '"Merriweather", Georgia, serif',
+            fontWeight: '700',
+            margin: `0 0 ${spacing.md} 0`,
             maxWidth: '800px',
+            color: 'white',
           }}>
             {content.heroTitle}
           </h1>
           <p style={{
             fontSize: '20px',
-            color: '#ddd',
+            color: 'rgba(255, 255, 255, 0.9)',
             margin: '0',
             maxWidth: '700px',
             lineHeight: '1.6',
@@ -174,24 +175,25 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
       {/* Subscribe Section */}
       <section style={{
-        background: `rgba(${royalColors.royalGold}, 0.08)`,
-        padding: '80px 32px',
+        background: royalColors.warmBeige,
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
         textAlign: ar ? 'right' : 'left',
       }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '36px',
-            fontFamily: 'Georgia, serif',
+            fontFamily: '"Merriweather", Georgia, serif',
             color: royalColors.deepNavy,
-            marginBottom: '16px',
+            marginBottom: spacing.md,
+            fontWeight: '700',
           }}>
             {content.subscribeSection}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: '#666',
-            marginBottom: '40px',
+            color: royalColors.textDark,
+            marginBottom: spacing.xl,
             lineHeight: '1.6',
           }}>
             {content.subscribeDescription}
@@ -199,8 +201,8 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
           <form onSubmit={handleSubscribe} style={{
             display: 'flex',
-            gap: '12px',
-            marginBottom: '24px',
+            gap: spacing.md,
+            marginBottom: spacing.lg,
             flexDirection: ar ? 'row-reverse' : 'row',
           }}>
             <input
@@ -211,23 +213,24 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
               required
               style={{
                 flex: 1,
-                padding: '14px 20px',
-                border: `2px solid ${royalColors.royalGold}`,
-                borderRadius: '4px',
+                padding: `${spacing.sm} ${spacing.md}`,
+                border: `2px solid ${royalColors.warmGold}`,
+                borderRadius: borderRadius.md,
                 fontSize: '16px',
                 fontFamily: 'inherit',
                 direction: ar ? 'rtl' : 'ltr',
                 textAlign: ar ? 'right' : 'left',
+                background: 'white',
               }}
             />
             <button
               type="submit"
               style={{
-                background: royalColors.deepNavy,
-                color: 'white',
+                background: royalColors.warmGold,
+                color: royalColors.deepNavy,
                 border: 'none',
-                padding: '14px 32px',
-                borderRadius: '4px',
+                padding: `${spacing.sm} ${spacing.lg}`,
+                borderRadius: borderRadius.md,
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
@@ -235,12 +238,12 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = royalColors.royalGold;
-                (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
-              }}
-              onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
                 (e.currentTarget as HTMLElement).style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = royalColors.warmGold;
+                (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
               }}
             >
               {content.subscribe}
@@ -249,7 +252,7 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
           {subscribeMessage && (
             <p style={{
-              color: '#28a745',
+              color: royalColors.deepGreen,
               fontWeight: '600',
               textAlign: ar ? 'right' : 'left',
             }}>
@@ -259,7 +262,7 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
           <p style={{
             fontSize: '13px',
-            color: '#999',
+            color: royalColors.textMuted,
             textAlign: ar ? 'right' : 'left',
           }}>
             {ar ? 'نحن نحترم خصوصيتك. الغاء الاشتراك في أي وقت.' : 'We respect your privacy. Unsubscribe anytime.'}
@@ -271,22 +274,23 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '80px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
       }}>
         <h2 style={{
           fontSize: '36px',
-          fontFamily: 'Georgia, serif',
+          fontFamily: '"Merriweather", Georgia, serif',
           color: royalColors.deepNavy,
-          marginBottom: '16px',
+          marginBottom: spacing.md,
           textAlign: ar ? 'right' : 'left',
+          fontWeight: '700',
         }}>
           {content.archiveSection}
         </h2>
         <p style={{
           fontSize: '16px',
-          color: '#666',
-          marginBottom: '48px',
+          color: royalColors.textDark,
+          marginBottom: spacing.xxxl,
           textAlign: ar ? 'right' : 'left',
         }}>
           {content.archiveDescription}
@@ -295,18 +299,19 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '32px',
+          gap: spacing.xl,
         }}>
           {content.archives.map((archive, idx) => (
             <div key={idx} style={{
-              background: 'white',
-              borderRadius: '8px',
+              background: royalColors.warmBeige,
+              borderRadius: borderRadius.lg,
               overflow: 'hidden',
               boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               transition: 'all 0.3s',
+              borderLeft: `4px solid ${royalColors.warmGold}`,
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(${royalColors.deepNavy}, 0.12)`;
+              (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 28px rgba(0,0,0,0.15)`;
               (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
@@ -316,17 +321,17 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
             >
               {/* Newsletter Header */}
               <div style={{
-                background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+                background: gradients.goldToWarm,
                 color: 'white',
-                padding: '24px',
+                padding: spacing.lg,
               }}>
                 <p style={{
                   fontSize: '12px',
                   fontWeight: '700',
                   letterSpacing: '1px',
                   textTransform: 'uppercase',
-                  color: royalColors.royalGold,
-                  margin: '0 0 8px 0',
+                  color: 'rgba(255, 255, 255, 0.95)',
+                  margin: `0 0 ${spacing.sm} 0`,
                 }}>
                   {archive.month}
                 </p>
@@ -342,13 +347,13 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
               {/* Newsletter Content */}
               <div style={{
-                padding: '24px',
+                padding: spacing.lg,
               }}>
                 <p style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
-                  margin: '0 0 20px 0',
+                  margin: `0 0 ${spacing.xl} 0`,
                   textAlign: ar ? 'right' : 'left',
                 }}>
                   {archive.excerpt}
@@ -359,18 +364,21 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
                   textDecoration: 'none',
                   fontWeight: '600',
                   fontSize: '14px',
-                  padding: '8px 16px',
-                  border: `1px solid ${royalColors.deepNavy}`,
-                  borderRadius: '4px',
+                  padding: `${spacing.xs} ${spacing.md}`,
+                  border: `1px solid ${royalColors.warmGold}`,
+                  borderRadius: borderRadius.sm,
                   transition: 'all 0.3s',
+                  background: 'transparent',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
-                  (e.currentTarget as HTMLElement).style.color = 'white';
+                  (e.currentTarget as HTMLElement).style.background = royalColors.warmGold;
+                  (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
+                  (e.currentTarget as HTMLElement).style.borderColor = royalColors.warmGold;
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.background = 'transparent';
                   (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
+                  (e.currentTarget as HTMLElement).style.borderColor = royalColors.warmGold;
                 }}
                 >
                   {ar ? 'اقرأ المزيد' : 'Read More'}
@@ -383,45 +391,46 @@ export default function NewsletterPage({ params }: { params: { locale: Locale } 
 
       {/* Footer CTA */}
       <section style={{
-        background: royalColors.deepNavy,
+        background: gradients.goldToWarm,
         color: 'white',
-        padding: '60px 32px',
+        padding: `${spacing.xxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '32px',
-            fontFamily: 'Georgia, serif',
-            margin: '0 0 16px 0',
+            fontFamily: '"Merriweather", Georgia, serif',
+            margin: `0 0 ${spacing.md} 0`,
+            fontWeight: '700',
           }}>
             {ar ? 'لا تفوت آخر الأخبار' : 'Don\'t Miss Out'}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: '#ddd',
-            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            marginBottom: spacing.xl,
             maxWidth: '600px',
           }}>
             {ar ? 'اشترك اليوم وكن أول من يعرف عن برامجنا والفرص وقصص التأثير.' : 'Subscribe today and be the first to know about our programs, opportunities, and impact stories.'}
           </p>
           <Link href={`/${locale}/newsletter`} style={{
             display: 'inline-block',
-            background: royalColors.royalGold,
+            background: 'rgba(255, 255, 255, 0.95)',
             color: royalColors.deepNavy,
-            padding: '14px 32px',
-            borderRadius: '4px',
+            padding: `${spacing.sm} ${spacing.lg}`,
+            borderRadius: borderRadius.md,
             textDecoration: 'none',
             fontWeight: '600',
             transition: 'all 0.3s',
-            border: `2px solid ${royalColors.royalGold}`,
+            border: `2px solid rgba(255, 255, 255, 0.95)`,
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLElement).style.background = 'transparent';
-            (e.currentTarget as HTMLElement).style.color = royalColors.royalGold;
+            (e.currentTarget as HTMLElement).style.color = 'white';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.royalGold;
+            (e.currentTarget as HTMLElement).style.background = 'rgba(255, 255, 255, 0.95)';
             (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
           }}
           >

@@ -133,17 +133,17 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -205,7 +205,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '28px',
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontWeight: '600',
                   marginBottom: '16px',
                   margin: '8px 0 16px 0',
@@ -228,7 +228,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 }} />
                 <p style={{
                   fontSize: '15px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -242,7 +242,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
 
       {/* Team Stats */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -256,7 +256,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.royalGold,
+                color: royalColors.warmGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,
@@ -270,7 +270,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.royalGold,
+                color: royalColors.warmGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,
@@ -284,7 +284,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.royalGold,
+                color: royalColors.warmGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,

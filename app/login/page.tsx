@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { royalColors, transitions, spacing } from '@/lib/royalDesign';
 
 export default function LoginPage() {
   const [password, setPassword] = useState('');
@@ -36,63 +37,74 @@ export default function LoginPage() {
   };
 
   return (
-    <html lang="en">
-      <head>
-        <title>JHCO - Access</title>
-      </head>
-      <body style={{ margin: 0, padding: 0, fontFamily: 'Arial, sans-serif' }}>
         <div style={{
           minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0a1428 0%, #3d2a52 100%)',
+          background: `linear-gradient(135deg, ${royalColors.deepNavy} 0%, ${royalColors.hopeTeal} 100%)`,
+          padding: spacing.lg,
         }}>
           <div style={{
             width: '100%',
-            maxWidth: '400px',
-            padding: '48px 32px',
-            background: '#f9f7f4',
-            borderRadius: '8px',
-            boxShadow: '0 10px 40px rgba(10, 20, 40, 0.3)',
+            maxWidth: '420px',
+            padding: spacing.xxl + ' ' + spacing.xl,
+            background: royalColors.warmBeige,
+            borderRadius: '12px',
+            boxShadow: `0 10px 40px rgba(10, 20, 40, 0.3), 0 0 60px rgba(26, 188, 156, 0.15)`,
+            border: `2px solid ${royalColors.warmGold}40`,
+            transition: transitions.base,
           }}>
             {/* Header */}
-            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div style={{ textAlign: 'center', marginBottom: spacing.xxxl }}>
               <img
                 src="/jhco-logo.webp"
                 alt="JHCO Logo"
-                style={{ width: '120px', height: '120px', marginBottom: '16px' }}
+                style={{
+                  width: '120px',
+                  height: '120px',
+                  marginBottom: spacing.lg,
+                  filter: 'drop-shadow(0 4px 12px rgba(232, 185, 35, 0.2))',
+                }}
               />
               <h1 style={{
-                fontSize: '28px',
-                color: '#0a1428',
+                fontSize: '32px',
+                color: royalColors.deepNavy,
                 margin: '0 0 8px 0',
-                fontFamily: 'Georgia, serif',
-                fontWeight: '400',
+                fontFamily: '"Merriweather", Georgia, serif',
+                fontWeight: '700',
+                letterSpacing: '2px',
               }}>
                 JHCO
               </h1>
               <p style={{
                 fontSize: '12px',
-                color: '#d4af37',
+                color: royalColors.warmGold,
                 margin: '0',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
-                fontWeight: '600',
+                fontWeight: '700',
               }}>
                 Royal Charity Organization
               </p>
+              <div style={{
+                height: '2px',
+                background: `linear-gradient(90deg, transparent, ${royalColors.warmGold}, transparent)`,
+                margin: spacing.lg + ' 0 0 0',
+              }}></div>
             </div>
 
             {/* Form */}
             <form onSubmit={handleSubmit}>
-              <div style={{ marginBottom: '24px' }}>
+              <div style={{ marginBottom: spacing.xl }}>
                 <label htmlFor="password" style={{
                   display: 'block',
-                  fontSize: '14px',
-                  color: '#0a1428',
-                  fontWeight: '600',
-                  marginBottom: '8px',
+                  fontSize: '13px',
+                  color: royalColors.deepNavy,
+                  fontWeight: '700',
+                  marginBottom: spacing.md,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
                 }}>
                   Access Password
                 </label>
@@ -107,10 +119,22 @@ export default function LoginPage() {
                     width: '100%',
                     padding: '12px 16px',
                     fontSize: '14px',
-                    border: '1px solid #d4af37',
-                    borderRadius: '4px',
+                    border: `2px solid ${royalColors.warmGold}`,
+                    borderRadius: '8px',
                     boxSizing: 'border-box',
-                    fontFamily: 'Arial, sans-serif',
+                    fontFamily: 'inherit',
+                    color: royalColors.deepNavy,
+                    background: '#ffffff',
+                    transition: transitions.base,
+                    outline: 'none',
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = royalColors.hopeTeal;
+                    e.currentTarget.style.boxShadow = `0 0 0 3px rgba(26, 188, 156, 0.1)`;
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = royalColors.warmGold;
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 />
               </div>
@@ -118,15 +142,17 @@ export default function LoginPage() {
               {/* Error Message */}
               {error && (
                 <div style={{
-                  padding: '12px',
-                  marginBottom: '24px',
-                  background: '#ffebee',
-                  border: '1px solid #c41e1e',
-                  borderRadius: '4px',
-                  color: '#8b1a1a',
+                  padding: spacing.md,
+                  marginBottom: spacing.xl,
+                  background: 'rgba(231, 76, 60, 0.1)',
+                  border: `2px solid ${royalColors.compassionRed}`,
+                  borderRadius: '8px',
+                  color: royalColors.redDark,
                   fontSize: '13px',
+                  fontWeight: '500',
+                  transition: transitions.base,
                 }}>
-                  {error}
+                  ⚠️ {error}
                 </div>
               )}
 
@@ -136,43 +162,56 @@ export default function LoginPage() {
                 disabled={loading || !password}
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
-                  background: '#0a1428',
-                  color: '#d4af37',
-                  border: '2px solid #d4af37',
-                  borderRadius: '4px',
+                  padding: '14px 16px',
+                  background: royalColors.compassionRed,
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '8px',
                   fontSize: '14px',
                   fontWeight: '700',
-                  cursor: loading ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.3s',
+                  cursor: loading || !password ? 'not-allowed' : 'pointer',
+                  transition: transitions.base,
                   letterSpacing: '1px',
                   textTransform: 'uppercase',
-                  opacity: loading || !password ? 0.6 : 1,
+                  opacity: loading || !password ? 0.7 : 1,
+                  boxShadow: `0 4px 12px rgba(231, 76, 60, 0.3)`,
+                }}
+                onMouseEnter={(e) => {
+                  if (!loading && password) {
+                    e.currentTarget.style.background = royalColors.redLight;
+                    e.currentTarget.style.boxShadow = `0 8px 20px rgba(231, 76, 60, 0.4)`;
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!loading && password) {
+                    e.currentTarget.style.background = royalColors.compassionRed;
+                    e.currentTarget.style.boxShadow = `0 4px 12px rgba(231, 76, 60, 0.3)`;
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
-                {loading ? 'Verifying...' : 'Access Website'}
+                {loading ? '⏳ Verifying...' : '🔓 Access Website'}
               </button>
             </form>
 
             {/* Footer */}
             <div style={{
-              marginTop: '32px',
-              paddingTop: '24px',
-              borderTop: '1px solid #e8e4db',
+              marginTop: spacing.xxxl,
+              paddingTop: spacing.xl,
+              borderTop: `2px solid ${royalColors.warmGold}40`,
               textAlign: 'center',
               fontSize: '12px',
-              color: '#6b6b6b',
+              color: royalColors.textMuted,
             }}>
-              <p style={{ margin: '0' }}>
-                🛡️ This site is password protected
+              <p style={{ margin: '0', fontWeight: '600' }}>
+                🛡️ Password Protected
               </p>
-              <p style={{ margin: '8px 0 0 0', fontSize: '11px' }}>
+              <p style={{ margin: spacing.sm + ' 0 0 0', fontSize: '11px', color: royalColors.softGray }}>
                 Authorized users only
               </p>
             </div>
           </div>
         </div>
-      </body>
-    </html>
   );
 }

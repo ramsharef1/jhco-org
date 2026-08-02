@@ -125,17 +125,17 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -184,7 +184,7 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
               }}>
                 <p style={{
                   fontSize: '56px',
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontFamily: royalTypography.serif,
                   fontWeight: '600',
                   marginBottom: '12px',
@@ -203,7 +203,7 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
                 </h3>
                 <p style={{
                   fontSize: '15px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -217,7 +217,7 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
 
       {/* Program Sectors */}
       <section style={{
-        backgroundColor: '#f9f7f4',
+        backgroundColor: royalColors.bgWarm,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -228,11 +228,11 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
               color: royalColors.deepNavy,
               marginBottom: '24px',
             }}>
-              Program <span style={{ color: royalColors.royalGold }}>Sectors</span>
+              Program <span style={{ color: royalColors.warmGold }}>Sectors</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: '#3d3d3d',
+              color: royalColors.textDark,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -269,7 +269,7 @@ export default function StatisticsPage({ params }: { params: { locale: Locale } 
                   <div style={{
                     fontSize: '32px',
                     fontWeight: '700',
-                    color: royalColors.royalGold,
+                    color: royalColors.warmGold,
                   }}>
                     {sector.percentage}
                   </div>

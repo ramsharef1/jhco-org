@@ -2,9 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "dev-server",
+      "name": "JHCO Dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/ramialsharef/Desktop/CLoudPros/jhco-org",
       "port": 3000
     }
   ]

@@ -75,17 +75,17 @@ export default function ValuesPage({ params }: { params: { locale: Locale } }) {
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -151,7 +151,7 @@ export default function ValuesPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.8',
                   margin: 0,
                 }}>
@@ -160,7 +160,7 @@ export default function ValuesPage({ params }: { params: { locale: Locale } }) {
                 <div style={{
                   height: '4px',
                   width: '60px',
-                  backgroundColor: royalColors.royalGold,
+                  backgroundColor: royalColors.warmGold,
                   marginTop: '24px',
                   borderRadius: '2px',
                 }} />
@@ -172,7 +172,7 @@ export default function ValuesPage({ params }: { params: { locale: Locale } }) {
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -183,7 +183,7 @@ export default function ValuesPage({ params }: { params: { locale: Locale } }) {
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Living Our <span style={{ color: royalColors.royalGold }}>Values</span>
+            Living Our <span style={{ color: royalColors.warmGold }}>Values</span>
           </h2>
           <p style={{
             fontSize: '18px',

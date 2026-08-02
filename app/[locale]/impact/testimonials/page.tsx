@@ -109,17 +109,17 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -169,7 +169,7 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
                 {/* Quote Mark */}
                 <p style={{
                   fontSize: '64px',
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   opacity: 0.3,
                   marginBottom: '-20px',
                   lineHeight: '1',
@@ -182,7 +182,7 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
                 {/* Testimonial Quote */}
                 <p style={{
                   fontSize: '17px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.8',
                   marginBottom: '28px',
                   fontStyle: 'italic',
@@ -193,7 +193,7 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
 
                 <div style={{
                   height: '2px',
-                  backgroundColor: royalColors.royalGold,
+                  backgroundColor: royalColors.warmGold,
                   marginBottom: '24px',
                   width: '60px',
                   marginLeft: ar ? 'auto' : 0,
@@ -209,7 +209,7 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    backgroundColor: royalColors.royalGold,
+                    backgroundColor: royalColors.warmGold,
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -242,7 +242,7 @@ export default function TestimonialsPage({ params }: { params: { locale: Locale 
                     </p>
                     <p style={{
                       fontSize: '12px',
-                      color: royalColors.royalGold,
+                      color: royalColors.warmGold,
                       fontWeight: '600',
                       margin: 0,
                     }}>

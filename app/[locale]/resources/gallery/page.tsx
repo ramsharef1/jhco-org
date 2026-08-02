@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
-import { royalColors } from '@/lib/royalDesign';
+import { royalColors, spacing, borderRadius, gradients } from '@/lib/royalDesign';
 
 const galleryContent = {
   en: {
@@ -162,9 +162,9 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
     <main style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: gradients.goldToWarm,
         color: 'white',
-        padding: '100px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
@@ -174,23 +174,24 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
-            color: royalColors.royalGold,
-            margin: '0 0 16px 0',
+            color: 'rgba(255, 255, 255, 0.95)',
+            margin: `0 0 ${spacing.md} 0`,
           }}>
             {ar ? '📸 معرض الصور' : '📸 PHOTO GALLERY'}
           </p>
           <h1 style={{
-            fontSize: '48px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400',
-            margin: '0 0 16px 0',
+            fontSize: '56px',
+            fontFamily: '"Merriweather", Georgia, serif',
+            fontWeight: '700',
+            margin: `0 0 ${spacing.md} 0`,
             maxWidth: '800px',
+            color: 'white',
           }}>
             {content.heroTitle}
           </h1>
           <p style={{
             fontSize: '20px',
-            color: '#ddd',
+            color: 'rgba(255, 255, 255, 0.9)',
             margin: '0',
             maxWidth: '700px',
             lineHeight: '1.6',
@@ -204,34 +205,35 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '80px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
       }}>
         {content.categories.map((category, idx) => (
-          <div key={idx} style={{ marginBottom: '80px' }}>
-            <div style={{ marginBottom: '40px', textAlign: ar ? 'right' : 'left' }}>
+          <div key={idx} style={{ marginBottom: spacing.xxxl }}>
+            <div style={{ marginBottom: spacing.xl, textAlign: ar ? 'right' : 'left' }}>
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '16px',
-                marginBottom: '12px',
+                gap: spacing.md,
+                marginBottom: spacing.md,
                 justifyContent: ar ? 'flex-end' : 'flex-start',
               }}>
                 <span style={{ fontSize: '32px' }}>{category.icon}</span>
                 <h2 style={{
                   fontSize: '32px',
-                  fontFamily: 'Georgia, serif',
+                  fontFamily: '"Merriweather", Georgia, serif',
                   color: royalColors.deepNavy,
                   margin: '0',
-                  borderBottom: `2px solid ${royalColors.royalGold}`,
-                  paddingBottom: '8px',
+                  borderBottom: `2px solid ${royalColors.warmGold}`,
+                  paddingBottom: spacing.sm,
+                  fontWeight: '700',
                 }}>
                   {category.title}
                 </h2>
               </div>
               <p style={{
                 fontSize: '16px',
-                color: '#666',
+                color: royalColors.textMuted,
                 margin: '0',
                 marginLeft: ar ? '0' : '48px',
                 marginRight: ar ? '48px' : '0',
@@ -244,20 +246,21 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px',
+              gap: spacing.lg,
             }}>
               {category.photos.map((photo, pIdx) => (
                 <div key={pIdx} style={{
-                  background: `linear-gradient(135deg, ${royalColors.ivory}, ${royalColors.paleIvory})`,
-                  borderRadius: '8px',
+                  background: royalColors.warmBeige,
+                  borderRadius: borderRadius.lg,
                   overflow: 'hidden',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                   transition: 'transform 0.3s, box-shadow 0.3s',
                   cursor: 'pointer',
+                  borderLeft: `4px solid ${royalColors.warmGold}`,
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(${royalColors.deepNavy}, 0.15)`;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 28px rgba(0,0,0,0.15)`;
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
@@ -268,7 +271,7 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
                   <div style={{
                     width: '100%',
                     height: '220px',
-                    background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+                    background: gradients.goldToWarm,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -279,19 +282,19 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
                   </div>
 
                   {/* Photo Info */}
-                  <div style={{ padding: '24px' }}>
+                  <div style={{ padding: spacing.lg }}>
                     <h3 style={{
                       fontSize: '18px',
                       fontWeight: '600',
                       color: royalColors.deepNavy,
-                      margin: '0 0 8px 0',
+                      margin: `0 0 ${spacing.sm} 0`,
                       textAlign: ar ? 'right' : 'left',
                     }}>
                       {photo.title}
                     </h3>
                     <p style={{
                       fontSize: '14px',
-                      color: '#666',
+                      color: royalColors.textMuted,
                       margin: '0',
                       lineHeight: '1.6',
                       textAlign: ar ? 'right' : 'left',
@@ -308,48 +311,50 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
 
       {/* CTA Section */}
       <section style={{
-        background: `rgba(${royalColors.royalGold}, 0.08)`,
-        padding: '60px 32px',
+        background: royalColors.warmBeige,
+        padding: `${spacing.xxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
+        borderTop: `3px solid ${royalColors.warmGold}`,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '32px',
-            fontFamily: 'Georgia, serif',
+            fontFamily: '"Merriweather", Georgia, serif',
             color: royalColors.deepNavy,
-            marginBottom: '24px',
+            marginBottom: spacing.lg,
+            fontWeight: '700',
           }}>
             {ar ? 'شارك في عملنا' : 'Make an Impact'}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: '#666',
-            marginBottom: '32px',
+            color: royalColors.textDark,
+            marginBottom: spacing.xl,
             maxWidth: '600px',
           }}>
             {ar ? 'ساعدنا في الوصول إلى المزيد من الأشخاص والمجتمعات حول العالم.' : 'Help us reach more people and communities around the world.'}
           </p>
           <Link href={`/${locale}/get-involved/donate`} style={{
             display: 'inline-block',
-            background: royalColors.deepNavy,
+            background: royalColors.compassionRed,
             color: 'white',
-            padding: '14px 32px',
-            borderRadius: '4px',
+            padding: `${spacing.sm} ${spacing.lg}`,
+            borderRadius: borderRadius.md,
             textDecoration: 'none',
             fontWeight: '600',
             transition: 'all 0.3s',
-            border: `2px solid ${royalColors.deepNavy}`,
+            border: `2px solid ${royalColors.compassionRed}`,
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.royalGold;
-            (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
-            (e.currentTarget as HTMLElement).style.borderColor = royalColors.royalGold;
-          }}
-          onMouseLeave={(e) => {
             (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
             (e.currentTarget as HTMLElement).style.color = 'white';
             (e.currentTarget as HTMLElement).style.borderColor = royalColors.deepNavy;
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.background = royalColors.compassionRed;
+            (e.currentTarget as HTMLElement).style.color = 'white';
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.compassionRed;
           }}
           >
             {ar ? 'تبرع الآن' : 'Donate Now'}

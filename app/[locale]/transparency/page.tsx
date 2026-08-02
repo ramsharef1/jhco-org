@@ -109,17 +109,17 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -178,7 +178,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.7',
                   margin: 0,
                 }}>
@@ -190,7 +190,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
 
           {/* Standards Frameworks */}
           <div style={{
-            backgroundColor: '#f9f7f4',
+            backgroundColor: royalColors.bgWarm,
             padding: '48px 40px',
             borderRadius: '8px',
             border: `1px solid ${royalColors.border}`,
@@ -203,7 +203,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
               textAlign: 'center',
               marginTop: 0,
             }}>
-              International <span style={{ color: royalColors.royalGold }}>Frameworks</span>
+              International <span style={{ color: royalColors.warmGold }}>Frameworks</span>
             </h2>
 
             <div style={{
@@ -230,7 +230,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                   </h4>
                   <p style={{
                     fontSize: '15px',
-                    color: '#3d3d3d',
+                    color: royalColors.textDark,
                     lineHeight: '1.6',
                     margin: 0,
                   }}>

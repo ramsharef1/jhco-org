@@ -109,17 +109,17 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -172,7 +172,7 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
               }}>
                 {story.featured && (
                   <div style={{
-                    backgroundColor: royalColors.royalGold,
+                    backgroundColor: royalColors.warmGold,
                     color: royalColors.deepNavy,
                     padding: '8px 16px',
                     fontSize: '12px',
@@ -194,7 +194,7 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
                 }}>
                   <p style={{
                     fontSize: '12px',
-                    color: royalColors.royalGold,
+                    color: royalColors.warmGold,
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
@@ -216,7 +216,7 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
 
                   <p style={{
                     fontSize: '16px',
-                    color: '#3d3d3d',
+                    color: royalColors.textDark,
                     lineHeight: '1.7',
                     margin: 0,
                     flex: 1,
@@ -233,7 +233,7 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
 
                   <p style={{
                     fontSize: '13px',
-                    color: royalColors.royalGold,
+                    color: royalColors.warmGold,
                     fontWeight: '700',
                     margin: 0,
                   }}>

@@ -81,17 +81,17 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -136,7 +136,7 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
               top: 0,
               bottom: 0,
               width: '2px',
-              backgroundColor: royalColors.royalGold,
+              backgroundColor: royalColors.warmGold,
             }} />
 
             {/* Timeline items */}
@@ -153,10 +153,10 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
                     top: '12px',
                     width: '16px',
                     height: '16px',
-                    backgroundColor: royalColors.royalGold,
+                    backgroundColor: royalColors.warmGold,
                     borderRadius: '50%',
-                    border: `3px solid ${royalColors.ivory}`,
-                    boxShadow: `0 0 0 3px ${royalColors.royalGold}`,
+                    border: `3px solid ${royalColors.bgLight}`,
+                    boxShadow: `0 0 0 3px ${royalColors.warmGold}`,
                   }} />
 
                   {/* Content */}
@@ -168,7 +168,7 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
                     boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                   }}>
                     <p style={{
-                      color: royalColors.royalGold,
+                      color: royalColors.warmGold,
                       fontSize: '14px',
                       fontWeight: '700',
                       textTransform: 'uppercase',
@@ -249,7 +249,7 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
 
                     <p style={{
                       fontSize: '16px',
-                      color: '#3d3d3d',
+                      color: royalColors.textDark,
                       lineHeight: '1.6',
                       margin: 0,
                       textAlign: ar ? 'right' : 'left',
@@ -266,7 +266,7 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
 
       {/* Legacy Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -277,7 +277,7 @@ export default function LeadershipHistoryPage({ params }: { params: { locale: Lo
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            A Legacy of <span style={{ color: royalColors.royalGold }}>Excellence</span>
+            A Legacy of <span style={{ color: royalColors.warmGold }}>Excellence</span>
           </h2>
           <p style={{
             fontSize: '18px',

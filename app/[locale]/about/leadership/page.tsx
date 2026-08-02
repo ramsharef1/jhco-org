@@ -97,17 +97,17 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -158,7 +158,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 <div style={{
                   width: '80px',
                   height: '80px',
-                  backgroundColor: royalColors.royalGold,
+                  backgroundColor: royalColors.warmGold,
                   borderRadius: '50%',
                   margin: '0 auto 24px',
                   display: 'flex',
@@ -182,7 +182,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.royalGold,
+                  color: royalColors.warmGold,
                   fontWeight: '600',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
@@ -209,7 +209,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 }} />
                 <p style={{
                   fontSize: '15px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -223,7 +223,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -234,7 +234,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Leadership Committed to <span style={{ color: royalColors.royalGold }}>Excellence</span>
+            Leadership Committed to <span style={{ color: royalColors.warmGold }}>Excellence</span>
           </h2>
           <p style={{
             fontSize: '18px',

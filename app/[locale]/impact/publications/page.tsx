@@ -109,17 +109,17 @@ export default function PublicationsPage({ params }: { params: { locale: Locale 
   const content = pageContent[locale] || pageContent.en;
 
   return (
-    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.royalGold,
+            color: royalColors.warmGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -178,7 +178,7 @@ export default function PublicationsPage({ params }: { params: { locale: Locale 
                   <div style={{ flex: 1 }}>
                     <p style={{
                       fontSize: '12px',
-                      color: royalColors.royalGold,
+                      color: royalColors.warmGold,
                       fontWeight: '700',
                       textTransform: 'uppercase',
                       letterSpacing: '1px',
@@ -221,7 +221,7 @@ export default function PublicationsPage({ params }: { params: { locale: Locale 
 
                 <p style={{
                   fontSize: '15px',
-                  color: '#3d3d3d',
+                  color: royalColors.textDark,
                   lineHeight: '1.6',
                   marginBottom: '24px',
                   flex: 1,

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
-import { royalColors, menuStructure } from '@/lib/royalDesign';
+import { royalColors, menuStructure, transitions, spacing } from '@/lib/royalDesign';
 
 export default function Header({ locale = 'en' as Locale }: { locale?: Locale }) {
   const pathname = usePathname();
@@ -17,20 +17,20 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
     : `/${otherLocale}`;
 
   return (
-    <header style={{ position: 'sticky', top: 0, zIndex: 50, backgroundColor: royalColors.ivory, borderBottom: `1px solid ${royalColors.border}`, boxShadow: '0 4px 12px rgba(10,20,40,0.1)' }}>
+    <header style={{ position: 'sticky', top: 0, zIndex: 50, backgroundColor: royalColors.bgLight, borderBottom: `2px solid ${royalColors.warmGold}`, boxShadow: '0 4px 20px rgba(232, 185, 35, 0.1)' }}>
       {/* Heraldic top border */}
-      <div style={{ height: '4px', background: `linear-gradient(90deg, ${royalColors.royalGold}, ${royalColors.crimson}, ${royalColors.royalGold})` }}></div>
+      <div style={{ height: '4px', background: `linear-gradient(90deg, ${royalColors.warmGold}, ${royalColors.compassionRed}, ${royalColors.hopeTeal}, ${royalColors.warmGold})` }}></div>
 
       {/* Main Header */}
-      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: '16px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
+      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl }}>
         {/* Logo & Organization Name */}
-        <Link href={base} style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flex: 1 }}>
+        <Link href={base} style={{ display: 'flex', alignItems: 'center', gap: spacing.md, textDecoration: 'none', flex: 1 }}>
           <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '50px', height: '50px' }} />
           <div>
-            <div style={{ fontSize: '14px', color: royalColors.royalGold, fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: '14px', color: royalColors.warmGold, fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
               {ar ? 'الهيئة الخيرية' : 'JHCO'}
             </div>
-            <div style={{ fontSize: '10px', color: royalColors.lightGray, letterSpacing: '1px', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: '10px', color: royalColors.softGray, letterSpacing: '1px', textTransform: 'uppercase' }}>
               {ar ? 'الأردنية الهاشمية' : 'Royal Charity'}
             </div>
           </div>
@@ -47,8 +47,18 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
                 fontWeight: '600',
                 color: royalColors.deepNavy,
                 textDecoration: 'none',
-                transition: 'all 0.3s',
+                transition: transitions.base,
+                paddingBottom: '4px',
                 borderBottom: '2px solid transparent',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = royalColors.warmGold;
+                e.currentTarget.style.borderBottomColor = royalColors.warmGold;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = royalColors.deepNavy;
+                e.currentTarget.style.borderBottomColor = 'transparent';
               }}
             >
               {ar ? item.label : item.labelEn}
@@ -57,43 +67,68 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
         </div>
 
         {/* Right Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: spacing.md }}>
           {/* Language Switcher */}
           <Link
             href={switchHref}
             style={{
               padding: '10px 16px',
-              border: `1px solid ${royalColors.royalGold}`,
-              color: royalColors.royalGold,
-              borderRadius: '4px',
+              border: `2px solid ${royalColors.warmGold}`,
+              color: royalColors.warmGold,
+              borderRadius: '8px',
               fontSize: '12px',
               fontWeight: '700',
               textDecoration: 'none',
-              transition: 'all 0.3s',
+              transition: transitions.base,
               cursor: 'pointer',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              backgroundColor: 'transparent',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = `${royalColors.warmGold}15`;
+              e.currentTarget.style.boxShadow = `0 4px 12px rgba(232, 185, 35, 0.3)`;
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.boxShadow = 'none';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             {locale === 'ar' ? 'EN' : 'عربي'}
           </Link>
 
-          {/* Donate Button (Royal Crimson) */}
+          {/* Donate Button (Warm Compassion) */}
           <Link
             href={`${base}/get-involved/donate`}
             style={{
               padding: '12px 32px',
-              backgroundColor: royalColors.crimson,
+              backgroundColor: royalColors.compassionRed,
               color: 'white',
               textDecoration: 'none',
-              borderRadius: '2px',
+              borderRadius: '8px',
               fontWeight: '700',
               fontSize: '12px',
               letterSpacing: '1px',
               textTransform: 'uppercase',
               cursor: 'pointer',
-              transition: 'all 0.3s',
-              boxShadow: '0 2px 8px rgba(139, 26, 26, 0.3)',
+              transition: transitions.base,
+              boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              border: 'none',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = royalColors.redLight;
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(231, 76, 60, 0.4)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = royalColors.compassionRed;
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(231, 76, 60, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             💝 {ar ? 'تبرع' : 'Donate'}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
-import { royalColors } from '@/lib/royalDesign';
+import { royalColors, spacing, borderRadius, gradients } from '@/lib/royalDesign';
 
 const eventsContent = {
   en: {
@@ -220,9 +220,9 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
   return (
     <main style={{ minHeight: '100vh' }}>
-      {/* Hero Section */}
+      {/* Warm Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        background: gradients.goldToWarm,
         color: 'white',
         padding: '100px 32px',
         textAlign: ar ? 'right' : 'left',
@@ -234,23 +234,24 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
-            color: royalColors.royalGold,
-            margin: '0 0 16px 0',
+            color: 'rgba(255, 255, 255, 0.95)',
+            margin: `0 0 ${spacing.md} 0`,
           }}>
             {ar ? '🎪 الأحداث' : '🎪 EVENTS'}
           </p>
           <h1 style={{
-            fontSize: '48px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400',
-            margin: '0 0 16px 0',
+            fontSize: '56px',
+            fontFamily: '"Merriweather", Georgia, serif',
+            fontWeight: '700',
+            margin: `0 0 ${spacing.lg} 0`,
             maxWidth: '800px',
+            color: '#ffffff',
           }}>
             {content.heroTitle}
           </h1>
           <p style={{
             fontSize: '20px',
-            color: '#ddd',
+            color: 'rgba(255, 255, 255, 0.95)',
             margin: '0',
             maxWidth: '700px',
             lineHeight: '1.6',
@@ -264,17 +265,18 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '80px 32px',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
       }}>
         <h2 style={{
           fontSize: '36px',
-          fontFamily: 'Georgia, serif',
+          fontFamily: '"Merriweather", Georgia, serif',
+          fontWeight: '700',
           color: royalColors.deepNavy,
-          marginBottom: '48px',
+          marginBottom: `${spacing.xxxl}`,
           textAlign: ar ? 'right' : 'left',
-          borderBottom: `3px solid ${royalColors.royalGold}`,
-          paddingBottom: '16px',
+          borderBottom: `3px solid ${royalColors.warmGold}`,
+          paddingBottom: spacing.lg,
         }}>
           {content.upcomingSection}
         </h2>
@@ -282,30 +284,32 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '32px',
-          marginBottom: '80px',
+          gap: spacing.xl,
+          marginBottom: `${spacing.xxxl}`,
         }}>
           {content.upcomingEvents.map((event, idx) => (
             <div key={idx} style={{
-              background: 'white',
-              borderLeft: `4px solid ${royalColors.royalGold}`,
-              borderRadius: '4px',
-              padding: '32px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              background: royalColors.warmBeige,
+              borderLeft: `4px solid ${royalColors.warmGold}`,
+              borderRadius: borderRadius.card,
+              padding: spacing.xl,
+              boxShadow: '0 4px 12px rgba(232, 185, 35, 0.15)',
               transition: 'all 0.3s',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(${royalColors.deepNavy}, 0.12)`;
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(232, 185, 35, 0.25)';
+              (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(232, 185, 35, 0.15)';
+              (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             }}
             >
               <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'flex-start',
-                marginBottom: '16px',
+                marginBottom: spacing.md,
               }}>
                 <h3 style={{
                   fontSize: '20px',
@@ -318,15 +322,15 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                   {event.title}
                 </h3>
                 <span style={{
-                  background: royalColors.royalGold,
+                  background: royalColors.warmGold,
                   color: royalColors.deepNavy,
-                  padding: '6px 12px',
-                  borderRadius: '20px',
+                  padding: `${spacing.sm} ${spacing.md}`,
+                  borderRadius: borderRadius.full,
                   fontSize: '12px',
                   fontWeight: '600',
                   whiteSpace: 'nowrap',
-                  marginLeft: ar ? '0' : '12px',
-                  marginRight: ar ? '12px' : '0',
+                  marginLeft: ar ? '0' : spacing.md,
+                  marginRight: ar ? spacing.md : '0',
                 }}>
                   {event.type}
                 </span>
@@ -334,24 +338,24 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
               <div style={{
                 fontSize: '14px',
-                color: '#666',
-                marginBottom: '12px',
+                color: royalColors.textDark,
+                marginBottom: spacing.md,
                 textAlign: ar ? 'right' : 'left',
               }}>
-                <div style={{ marginBottom: '8px' }}>
+                <div style={{ marginBottom: spacing.sm }}>
                   <strong>📅 {event.date}</strong>
-                  {event.time && <div> {event.time}</div>}
+                  {event.time && <div>{event.time}</div>}
                 </div>
-                <div style={{ marginBottom: '8px' }}>
+                <div style={{ marginBottom: spacing.sm }}>
                   <strong>📍 {event.location}</strong>
                 </div>
               </div>
 
               <p style={{
                 fontSize: '15px',
-                color: '#555',
+                color: royalColors.textMuted,
                 lineHeight: '1.6',
-                margin: '16px 0 0 0',
+                margin: `${spacing.lg} 0 0 0`,
                 textAlign: ar ? 'right' : 'left',
               }}>
                 {event.description}
@@ -359,23 +363,26 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
               <Link href={`/${locale}/contact`} style={{
                 display: 'inline-block',
-                marginTop: '20px',
-                color: royalColors.deepNavy,
+                marginTop: spacing.xl,
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontWeight: '600',
                 fontSize: '14px',
-                padding: '8px 16px',
-                border: `1px solid ${royalColors.deepNavy}`,
-                borderRadius: '4px',
+                padding: `${spacing.sm} ${spacing.md}`,
+                backgroundColor: royalColors.compassionRed,
+                borderRadius: borderRadius.button,
                 transition: 'all 0.3s',
+                boxShadow: '0 4px 12px rgba(231, 76, 60, 0.2)',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
-                (e.currentTarget as HTMLElement).style.color = 'white';
+                (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.redLight;
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(231, 76, 60, 0.3)';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'transparent';
-                (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
+                (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.compassionRed;
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(231, 76, 60, 0.2)';
               }}
               >
                 {ar ? 'معلومات إضافية' : 'Learn More'}
@@ -387,19 +394,20 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
       {/* Past Events */}
       <section style={{
-        background: `rgba(${royalColors.royalGold}, 0.04)`,
-        padding: '80px 32px',
+        background: 'rgba(232, 185, 35, 0.05)',
+        padding: `${spacing.xxxl} ${spacing.xl}`,
         direction: ar ? 'rtl' : 'ltr',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '36px',
-            fontFamily: 'Georgia, serif',
+            fontFamily: '"Merriweather", Georgia, serif',
+            fontWeight: '700',
             color: royalColors.deepNavy,
-            marginBottom: '48px',
+            marginBottom: `${spacing.xxxl}`,
             textAlign: ar ? 'right' : 'left',
-            borderBottom: `3px solid ${royalColors.royalGold}`,
-            paddingBottom: '16px',
+            borderBottom: `3px solid ${royalColors.warmGold}`,
+            paddingBottom: spacing.lg,
           }}>
             {content.pastSection}
           </h2>
@@ -407,20 +415,20 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '24px',
+            gap: spacing.xl,
           }}>
             {content.pastEvents.map((event, idx) => (
               <div key={idx} style={{
                 background: 'white',
-                borderRadius: '4px',
-                padding: '24px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                borderRadius: borderRadius.card,
+                padding: spacing.lg,
+                boxShadow: '0 4px 12px rgba(232, 185, 35, 0.12)',
               }}>
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'flex-start',
-                  marginBottom: '12px',
+                  marginBottom: spacing.md,
                 }}>
                   <h3 style={{
                     fontSize: '18px',
@@ -433,14 +441,14 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                     {event.title}
                   </h3>
                   <span style={{
-                    background: `rgba(${royalColors.royalGold}, 0.2)`,
+                    background: 'rgba(232, 185, 35, 0.2)',
                     color: royalColors.deepNavy,
-                    padding: '4px 8px',
-                    borderRadius: '4px',
+                    padding: `${spacing.xs} ${spacing.sm}`,
+                    borderRadius: borderRadius.sm,
                     fontSize: '11px',
                     fontWeight: '600',
-                    marginLeft: ar ? '0' : '8px',
-                    marginRight: ar ? '8px' : '0',
+                    marginLeft: ar ? '0' : spacing.sm,
+                    marginRight: ar ? spacing.sm : '0',
                   }}>
                     {event.type}
                   </span>
@@ -448,8 +456,8 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
                 <div style={{
                   fontSize: '13px',
-                  color: '#888',
-                  marginBottom: '8px',
+                  color: royalColors.textMuted,
+                  marginBottom: spacing.sm,
                   textAlign: ar ? 'right' : 'left',
                 }}>
                   {event.date} • {event.location}
@@ -457,7 +465,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
                 <p style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: royalColors.textDark,
                   lineHeight: '1.5',
                   margin: '0',
                   textAlign: ar ? 'right' : 'left',
