@@ -1,154 +1,242 @@
-import { getDictionary, type Locale } from '@/lib/i18n';
-import Link from 'next/link';
+'use client';
+import { type Locale } from '@/lib/i18n';
+import { royalColors, royalTypography } from '@/lib/royalDesign';
 
-export default async function MissionPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+const pageContent = {
+  en: {
+    title: 'Our Mission',
+    heroTitle: 'Our Mission',
+    heroSubtitle: 'Delivering humanitarian excellence with dignity, compassion, and integrity across the globe',
+    missionStatement: 'To provide comprehensive humanitarian assistance and sustainable development support to vulnerable populations affected by poverty, conflict, and natural disasters, guided by the principles of humanity, impartiality, neutrality, and independence.',
+    pillars: [
+      {
+        title: 'Humanitarian Assistance',
+        description: 'Immediate emergency relief and life-saving aid in crisis situations, including food security, shelter, healthcare, and WASH services.',
+      },
+      {
+        title: 'Development Programs',
+        description: 'Long-term sustainable programs addressing root causes of vulnerability through education, livelihood development, and economic empowerment.',
+      },
+      {
+        title: 'Community Engagement',
+        description: 'Working with local communities to understand needs, build capacity, and ensure programs are responsive and culturally appropriate.',
+      },
+      {
+        title: 'Advocacy & Partnerships',
+        description: 'Advocating for humanitarian principles and building strategic partnerships with governments, UN agencies, and international organizations.',
+      },
+    ],
+    commitment: 'JHCO is committed to upholding humanitarian principles in all our work. We operate with transparency, maintain accountability to beneficiaries and donors, and ensure every resource is used effectively to maximize human impact. Our mission drives us to reach those in greatest need, regardless of borders, politics, or beliefs.',
+  },
+  ar: {
+    title: 'مهمتنا',
+    heroTitle: 'مهمتنا',
+    heroSubtitle: 'تقديم التميز الإنساني برحمة والتزام وتكامل عبر العالم',
+    missionStatement: 'تقديم المساعدات الإنسانية الشاملة والدعم التنموي المستدام للسكان الضعفاء المتضررين من الفقر والنزاع والكوارث الطبيعية، موجهاً بمبادئ الإنسانية والحيادية وعدم الانحياز والاستقلال.',
+    pillars: [
+      {
+        title: 'المساعدات الإنسانية',
+        description: 'الإغاثة الطارئة الفورية والمساعدات الإنقاذية في حالات الأزمات، بما في ذلك الأمن الغذائي والمأوى والرعاية الصحية والمياه والصرف الصحي.',
+      },
+      {
+        title: 'برامج التنمية',
+        description: 'برامج طويلة الأجل مستدامة تعالج الأسباب الجذرية للضعف من خلال التعليم وتنمية سبل العيش والتمكين الاقتصادي.',
+      },
+      {
+        title: 'الانخراط المجتمعي',
+        description: 'العمل مع المجتمعات المحلية لفهم الاحتياجات وبناء القدرات وضمان أن تكون البرامج استجابة وثقافية مناسبة.',
+      },
+      {
+        title: 'الدعوة والشراكات',
+        description: 'الدعوة للمبادئ الإنسانية وبناء شراكات استراتيجية مع الحكومات ووكالات الأمم المتحدة والمنظمات الدولية.',
+      },
+    ],
+    commitment: 'تلتزم الهيئة الخيرية الأردنية الهاشمية بالحفاظ على المبادئ الإنسانية في جميع أعمالنا. نعمل بشفافية وندافع عن المسؤولية تجاه المستفيدين والمانحين، ونضمن استخدام كل موارد بكفاءة لتعظيم التأثير الإنساني. تدفعنا مهمتنا للوصول إلى أولئك الأكثر احتياجاً، بغض النظر عن الحدود أو السياسة أو المعتقدات.',
+  },
+};
+
+export default function MissionPage({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
   const ar = locale === 'ar';
-  const base = `/${locale}`;
+  const content = pageContent[locale] || pageContent.en;
 
   return (
-    <>
-      {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #0a1428, #142850)', padding: '80px 32px', color: 'white' }}>
+    <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.ivory }}>
+      {/* Hero Section */}
+      <section style={{
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        padding: '80px 32px',
+        color: 'white',
+        textAlign: 'center',
+      }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '56px', fontWeight: '400', margin: '0', fontFamily: 'Georgia, serif' }}>
-            {ar ? 'من نحن' : 'Who We Are'}
+          <p style={{
+            color: royalColors.royalGold,
+            fontSize: '12px',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            fontWeight: '600',
+            marginBottom: '24px',
+          }}>
+            Our Purpose
+          </p>
+          <h1 style={{
+            fontSize: '64px',
+            fontFamily: royalTypography.serif,
+            fontWeight: '400',
+            lineHeight: '1.2',
+            marginBottom: '24px',
+          }}>
+            {content.heroTitle}
           </h1>
-          <p style={{ fontSize: '18px', color: '#d4af37', marginTop: '16px' }}>
-            {ar ? 'الهيئة الخيرية الأردنية الهاشمية' : 'Jordan Hashemite Charity Organization'}
+          <p style={{
+            fontSize: '18px',
+            maxWidth: '700px',
+            margin: '0 auto',
+            lineHeight: '1.6',
+            opacity: 0.95,
+          }}>
+            {content.heroSubtitle}
           </p>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section style={{ padding: '80px 32px', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginBottom: '80px' }}>
-            {/* Mission */}
-            <div>
-              <h2 style={{ fontSize: '36px', fontWeight: '400', color: '#0a1428', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
-                {ar ? 'مهمتنا' : 'Our Mission'}
-              </h2>
-              <p style={{ fontSize: '18px', lineHeight: '1.8', color: '#3d3d3d', marginBottom: '16px' }}>
-                {ar
-                  ? 'تقديم المساعدات الإنسانية والدعم التنموي عبر أكثر من 30 دولة برحمة وحيادية وتميّز، مع السعي لاستعادة الكرامة الإنسانية وتحقيق المساواة في الفرص للجميع.'
-                  : 'To deliver humanitarian aid and development support across 30+ countries with compassion, impartiality, and excellence, striving to restore human dignity and achieve equal opportunity for all.'
-                }
-              </p>
-            </div>
+      {/* Mission Statement */}
+      <section style={{ padding: '96px 32px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{
+            backgroundColor: 'white',
+            padding: '60px 48px',
+            borderRadius: '8px',
+            border: `2px solid ${royalColors.royalGold}`,
+            boxShadow: '0 8px 20px rgba(10,20,40,0.15)',
+          }}>
+            <p style={{
+              fontSize: '24px',
+              fontFamily: royalTypography.serif,
+              color: royalColors.deepNavy,
+              lineHeight: '1.8',
+              fontWeight: '400',
+              marginTop: 0,
+              marginBottom: '24px',
+            }}>
+              {content.missionStatement}
+            </p>
+            <div style={{
+              height: '4px',
+              width: '80px',
+              backgroundColor: royalColors.royalGold,
+              margin: '0 auto',
+            }} />
+          </div>
+        </div>
+      </section>
 
-            {/* Vision */}
-            <div>
-              <h2 style={{ fontSize: '36px', fontWeight: '400', color: '#0a1428', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
-                {ar ? 'رؤيتنا' : 'Our Vision'}
-              </h2>
-              <p style={{ fontSize: '18px', lineHeight: '1.8', color: '#3d3d3d', marginBottom: '16px' }}>
-                {ar
-                  ? 'عالم خالٍ من الفقر والمعاناة، حيث يتمتع كل فرد بحقه في الحياة الكريمة والفرص المتساوية، وتسود العدالة والمساواة والسلام.'
-                  : 'A world free from poverty and suffering, where every individual enjoys their right to a dignified life and equal opportunities, with justice, equality, and peace prevailing.'
-                }
-              </p>
-            </div>
+      {/* Mission Pillars */}
+      <section style={{
+        backgroundColor: '#f9f7f4',
+        padding: '96px 32px',
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{
+              fontSize: '48px',
+              fontFamily: royalTypography.serif,
+              color: royalColors.deepNavy,
+              marginBottom: '24px',
+            }}>
+              Four <span style={{ color: royalColors.royalGold }}>Pillars</span>
+            </h2>
+            <p style={{
+              fontSize: '18px',
+              color: '#3d3d3d',
+              maxWidth: '600px',
+              margin: '0 auto',
+              lineHeight: '1.6',
+            }}>
+              The core areas of our humanitarian work
+            </p>
           </div>
 
-          {/* History */}
-          <div style={{ borderTop: '2px solid #d4af37', paddingTop: '80px', marginTop: '80px' }}>
-            <h2 style={{ fontSize: '36px', fontWeight: '400', color: '#0a1428', marginBottom: '48px', fontFamily: 'Georgia, serif' }}>
-              {ar ? 'تاريخنا' : 'Our History'}
-            </h2>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '32px' }}>
-              {/* 1990 */}
-              <div style={{ backgroundColor: '#f9f7f4', padding: '32px', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: '600', color: '#d4af37', marginBottom: '16px' }}>
-                  1990
-                </h3>
-                <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#3d3d3d', margin: 0 }}>
-                  {ar
-                    ? 'تأسست الهيئة الخيرية الأردنية الهاشمية برعاية ملكية سامية لتقديم الخدمات الإنسانية.'
-                    : 'JHCO was established under royal patronage to provide humanitarian services.'
-                  }
-                </p>
-              </div>
-
-              {/* 2000s */}
-              <div style={{ backgroundColor: '#f9f7f4', padding: '32px', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: '600', color: '#d4af37', marginBottom: '16px' }}>
-                  2000s
-                </h3>
-                <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#3d3d3d', margin: 0 }}>
-                  {ar
-                    ? 'توسّع العمل لتغطية برامج التعليم والصحة والتنمية الاقتصادية في أكثر من 30 دولة.'
-                    : 'Expanded operations to cover education, healthcare, and economic development programs in 30+ countries.'
-                  }
-                </p>
-              </div>
-
-              {/* Today */}
-              <div style={{ backgroundColor: '#f9f7f4', padding: '32px', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: '600', color: '#d4af37', marginBottom: '16px' }}>
-                  {ar ? 'اليوم' : 'Today'}
-                </h3>
-                <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#3d3d3d', margin: 0 }}>
-                  {ar
-                    ? 'نخدم أكثر من 75,000 أسرة سنوياً مع 2,500+ متطوع وشراكات عالمية قوية.'
-                    : 'Serving 75,000+ families annually with 2,500+ volunteers and strong global partnerships.'
-                  }
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Core Values */}
-          <div style={{ borderTop: '2px solid #d4af37', paddingTop: '80px', marginTop: '80px' }}>
-            <h2 style={{ fontSize: '36px', fontWeight: '400', color: '#0a1428', marginBottom: '48px', fontFamily: 'Georgia, serif' }}>
-              {ar ? 'قيمنا الأساسية' : 'Core Values'}
-            </h2>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
-              {[
-                { title: ar ? 'الإنسانية' : 'Humanity', desc: ar ? 'احترام الكرامة الإنسانية' : 'Respect for human dignity' },
-                { title: ar ? 'الحياد' : 'Impartiality', desc: ar ? 'عدم التمييز بسبب المعتقد' : 'No discrimination based on beliefs' },
-                { title: ar ? 'الشفافية' : 'Transparency', desc: ar ? 'المساءلة والنزاهة' : 'Accountability & integrity' },
-                { title: ar ? 'التميّز' : 'Excellence', desc: ar ? 'جودة عالية في كل عمل' : 'Quality in everything we do' },
-              ].map((value, idx) => (
-                <div key={idx} style={{ backgroundColor: '#0a1428', color: 'white', padding: '32px', borderRadius: '8px', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#d4af37', marginBottom: '12px' }}>
-                    {value.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                    {value.desc}
-                  </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '40px',
+          }}>
+            {content.pillars.map((pillar, idx) => (
+              <div key={idx} style={{
+                backgroundColor: 'white',
+                padding: '48px 32px',
+                borderRadius: '8px',
+                border: `1px solid ${royalColors.border}`,
+                boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
+                textAlign: ar ? 'right' : 'left',
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: royalColors.royalGold,
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '28px',
+                  fontWeight: 'bold',
+                  color: royalColors.deepNavy,
+                  marginBottom: '20px',
+                  marginLeft: ar ? 'auto' : 0,
+                }}>
+                  {idx + 1}
                 </div>
-              ))}
-            </div>
+                <h3 style={{
+                  fontSize: '24px',
+                  fontFamily: royalTypography.serif,
+                  color: royalColors.deepNavy,
+                  marginBottom: '16px',
+                  marginTop: 0,
+                }}>
+                  {pillar.title}
+                </h3>
+                <p style={{
+                  fontSize: '16px',
+                  color: '#3d3d3d',
+                  lineHeight: '1.6',
+                  margin: 0,
+                }}>
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ backgroundColor: '#0a1428', padding: '64px 32px', textAlign: 'center', color: 'white' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: '400', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
-            {ar ? 'انضم إلى مهمتنا' : 'Join Our Mission'}
+      {/* Commitment Section */}
+      <section style={{
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
+        padding: '64px 32px',
+        color: 'white',
+      }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{
+            fontSize: '48px',
+            fontFamily: royalTypography.serif,
+            fontWeight: '400',
+            marginBottom: '32px',
+          }}>
+            Our <span style={{ color: royalColors.royalGold }}>Commitment</span>
           </h2>
-          <p style={{ fontSize: '18px', marginBottom: '32px', color: '#d4af37' }}>
-            {ar ? 'ساهم في صنع الفرق في حياة الملايين' : 'Help make a difference in millions of lives'}
+          <p style={{
+            fontSize: '18px',
+            lineHeight: '1.8',
+            opacity: 0.95,
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}>
+            {content.commitment}
           </p>
-          <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href={`${base}/get-involved/donate`} style={{ display: 'inline-block', padding: '16px 48px', backgroundColor: '#d4af37', color: '#0a1428', textDecoration: 'none', borderRadius: '4px', fontWeight: '700', fontSize: '16px' }}>
-              {ar ? 'تبرع الآن' : 'Donate Now'}
-            </Link>
-            <Link href={`${base}/get-involved/volunteer`} style={{ display: 'inline-block', padding: '16px 48px', border: '2px solid #d4af37', color: '#d4af37', textDecoration: 'none', borderRadius: '4px', fontWeight: '700', fontSize: '16px' }}>
-              {ar ? 'تطوع معنا' : 'Volunteer'}
-            </Link>
-          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -58,7 +58,11 @@ export default function LoginPage() {
           }}>
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>👑</div>
+              <img
+                src="/jhco-logo.webp"
+                alt="JHCO Logo"
+                style={{ width: '120px', height: '120px', marginBottom: '16px' }}
+              />
               <h1 style={{
                 fontSize: '28px',
                 color: '#0a1428',

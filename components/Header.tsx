@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, menuStructure } from '@/lib/royalDesign';
@@ -24,7 +25,7 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
       <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: '16px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
         {/* Logo & Organization Name */}
         <Link href={base} style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flex: 1 }}>
-          <div style={{ fontSize: '28px' }}>👑</div>
+          <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '50px', height: '50px' }} />
           <div>
             <div style={{ fontSize: '14px', color: royalColors.royalGold, fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
               {ar ? 'الهيئة الخيرية' : 'JHCO'}

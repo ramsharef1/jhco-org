@@ -149,12 +149,12 @@ export const footerStructure = {
     title: 'التأثير',
     titleEn: 'Impact',
     links: [
+      { label: 'حيث نعمل', labelEn: 'Where We Work', href: '/where-we-work' },
       { label: 'إحصائيات التأثير', labelEn: 'Impact Stats', href: '/impact/statistics' },
       { label: 'قصص النجاح', labelEn: 'Success Stories', href: '/impact/stories' },
       { label: 'شهادات المستفيدين', labelEn: 'Testimonials', href: '/impact/testimonials' },
       { label: 'التقارير السنوية', labelEn: 'Annual Reports', href: '/impact/reports' },
       { label: 'حالات الدراسة', labelEn: 'Case Studies', href: '/impact/case-studies' },
-      { label: 'المنشورات', labelEn: 'Publications', href: '/impact/publications' },
     ],
   },
   government: {
