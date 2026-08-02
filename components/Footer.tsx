@@ -2,83 +2,85 @@
 
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
+import { royalColors, footerStructure } from '@/lib/royalDesign';
 
 export default function Footer({ locale = 'en' as Locale }: { locale?: Locale }) {
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  const sections = {
-    programs: {
-      title: ar ? 'البرامج' : 'Programs',
-      links: [
-        { label: ar ? 'الأزمات والطوارئ' : 'Crisis Response', href: `${base}/programs/gaza-aid` },
-        { label: ar ? 'التعليم' : 'Education', href: `${base}/programs/education` },
-        { label: ar ? 'الصحة' : 'Healthcare', href: `${base}/programs/healthcare` },
-        { label: ar ? 'سبل العيش' : 'Livelihoods', href: `${base}/programs/livelihoods` },
-      ],
+  // Map footer structure to links with base URL
+  const sections = [
+    {
+      key: 'aboutUs',
+      title: footerStructure.aboutUs.title,
+      titleEn: footerStructure.aboutUs.titleEn,
+      links: footerStructure.aboutUs.links.map(l => ({ ...l, href: base + l.href })),
     },
-    government: {
-      title: ar ? 'الحكومة والشفافية' : 'Government & Transparency',
-      links: [
-        { label: ar ? 'مركز الإعلام' : 'Media Center', href: `${base}/media-center` },
-        { label: ar ? 'التقارير' : 'Reports', href: `${base}/reports` },
-        { label: ar ? 'الامتثال' : 'Compliance', href: `${base}/compliance` },
-        { label: ar ? 'الإعلانات' : 'Announcements', href: `${base}/announcements` },
-      ],
+    {
+      key: 'programs',
+      title: footerStructure.programs.title,
+      titleEn: footerStructure.programs.titleEn,
+      links: footerStructure.programs.links.map(l => ({ ...l, href: base + l.href })),
     },
-    about: {
-      title: ar ? 'عن الهيئة' : 'About',
-      links: [
-        { label: ar ? 'مهمتنا' : 'Our Mission', href: `${base}/about/mission` },
-        { label: ar ? 'العمليات' : 'Operations', href: `${base}/operations` },
-        { label: ar ? 'الشراكات' : 'Partnerships', href: `${base}/partnerships` },
-        { label: ar ? 'الحوكمة' : 'Governance', href: `${base}/support/governance` },
-      ],
+    {
+      key: 'impact',
+      title: footerStructure.impact.title,
+      titleEn: footerStructure.impact.titleEn,
+      links: footerStructure.impact.links.map(l => ({ ...l, href: base + l.href })),
     },
-    resources: {
-      title: ar ? 'الموارد' : 'Resources',
-      links: [
-        { label: ar ? 'الأخبار' : 'News', href: `${base}/news` },
-        { label: ar ? 'تطوع' : 'Get Involved', href: `${base}/get-involved/volunteer` },
-        { label: ar ? 'تبرع' : 'Donate', href: `${base}/get-involved/donate` },
-        { label: ar ? 'الأسئلة الشائعة' : 'FAQ', href: `${base}/faq` },
-      ],
+    {
+      key: 'government',
+      title: footerStructure.government.title,
+      titleEn: footerStructure.government.titleEn,
+      links: footerStructure.government.links.map(l => ({ ...l, href: base + l.href })),
     },
-    legal: {
-      title: ar ? 'القانونية' : 'Legal',
-      links: [
-        { label: ar ? 'سياسة الخصوصية' : 'Privacy Policy', href: `${base}/privacy` },
-        { label: ar ? 'الشروط' : 'Terms', href: `${base}/terms` },
-        { label: ar ? 'اتصل بنا' : 'Contact', href: `${base}/contact` },
-        { label: ar ? 'الموقع' : 'Locations', href: `${base}/locations` },
-      ],
+    {
+      key: 'getInvolved',
+      title: footerStructure.getInvolved.title,
+      titleEn: footerStructure.getInvolved.titleEn,
+      links: footerStructure.getInvolved.links.map(l => ({ ...l, href: base + l.href })),
     },
-  };
+    {
+      key: 'resources',
+      title: footerStructure.resources.title,
+      titleEn: footerStructure.resources.titleEn,
+      links: footerStructure.resources.links.map(l => ({ ...l, href: base + l.href })),
+    },
+    {
+      key: 'legal',
+      title: footerStructure.legal.title,
+      titleEn: footerStructure.legal.titleEn,
+      links: footerStructure.legal.links.map(l => ({ ...l, href: base + l.href })),
+    },
+  ];
 
   return (
-    <footer style={{ backgroundColor: '#0a1428', color: 'white' }}>
-      <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '64px 32px', borderBottom: '1px solid rgba(212, 175, 55, 0.3)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#d4af37', margin: 0 }}>JHCO</h3>
-            <p style={{ fontSize: '14px', color: '#ccc', lineHeight: '1.6', margin: 0 }}>
-              {ar
-                ? 'الهيئة الخيرية الأردنية الهاشمية - تغيير الحياة من خلال العمل الإنساني'
-                : 'Jordan Hashemite Charity Organization - Changing lives through humanitarian action'}
-            </p>
-          </div>
+    <footer style={{ backgroundColor: royalColors.deepNavy, color: 'white' }}>
+      {/* Heraldic top border */}
+      <div style={{ height: '4px', background: `linear-gradient(90deg, ${royalColors.royalGold}, ${royalColors.crimson}, ${royalColors.royalGold})` }}></div>
 
-          {Object.entries(sections).map(([key, section]) => (
-            <div key={key} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <h4 style={{ fontSize: '15px', fontWeight: 'bold', color: '#d4af37', margin: 0 }}>{section.title}</h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      {/* Main Footer Content */}
+      <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '80px 32px 0', borderBottom: `1px solid rgba(212, 175, 55, 0.2)` }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '48px', marginBottom: '64px' }}>
+          {sections.map((section) => (
+            <div key={section.key} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.royalGold, margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                {ar ? section.title : section.titleEn}
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {section.links.map((link, i) => (
                   <li key={i}>
-                    <Link href={link.href} style={{ fontSize: '13px', color: '#ccc', textDecoration: 'none', transition: 'color 0.2s', cursor: 'pointer' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#d4af37'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#ccc'}
+                    <Link
+                      href={link.href}
+                      style={{
+                        fontSize: '12px',
+                        color: '#ccc',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s',
+                        cursor: 'pointer',
+                      }}
                     >
-                      {link.label}
+                      {ar ? link.label : link.labelEn}
                     </Link>
                   </li>
                 ))}
@@ -88,8 +90,44 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
         </div>
       </div>
 
-      <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '32px', textAlign: 'center', fontSize: '13px', color: '#999' }}>
-        <p>© 2026 JHCO. {ar ? 'جميع الحقوق محفوظة' : 'All rights reserved'}</p>
+      {/* Organization Info Section */}
+      <div style={{ backgroundColor: `rgba(212, 175, 55, 0.05)`, padding: '48px 32px' }}>
+        <div style={{ maxWidth: '1500px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
+          <div>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.royalGold, textTransform: 'uppercase', marginBottom: '12px' }}>
+              👑 {ar ? 'الرعاية الملكية' : 'Royal Patronage'}
+            </h5>
+            <p style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.6', margin: 0 }}>
+              {ar ? 'الهيئة الخيرية الأردنية الهاشمية تعمل تحت الرعاية السامية لنشر العمل الإنساني' : 'Operating under royal patronage to serve humanity'}
+            </p>
+          </div>
+
+          <div>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.royalGold, textTransform: 'uppercase', marginBottom: '12px' }}>
+              🛡️ {ar ? 'الشفافية' : 'Transparency'}
+            </h5>
+            <p style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.6', margin: 0 }}>
+              {ar ? 'التزام كامل بالشفافية والمساءلة في جميع العمليات' : '100% commitment to transparency and accountability'}
+            </p>
+          </div>
+
+          <div>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.royalGold, textTransform: 'uppercase', marginBottom: '12px' }}>
+              ⚜️ {ar ? 'التميز' : 'Excellence'}
+            </h5>
+            <p style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.6', margin: 0 }}>
+              {ar ? 'السعي الدائم للتميز في جودة الخدمات الإنسانية' : 'Pursuing excellence in humanitarian service'}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright & Legal */}
+      <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '32px', textAlign: 'center', fontSize: '12px', color: '#999', borderTop: `1px solid rgba(212, 175, 55, 0.1)` }}>
+        <p style={{ margin: '0 0 8px 0' }}>© 2026 JHCO - {ar ? 'الهيئة الخيرية الأردنية الهاشمية' : 'Jordan Hashemite Charity Organization'}</p>
+        <p style={{ margin: 0 }}>
+          {ar ? 'جميع الحقوق محفوظة | مسجلة بموجب القانون الأردني' : 'All rights reserved | Registered under Jordanian Law'}
+        </p>
       </div>
     </footer>
   );
