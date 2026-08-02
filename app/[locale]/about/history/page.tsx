@@ -108,14 +108,14 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: ar ? '80px 32px' : '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -156,7 +156,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
               top: 0,
               bottom: 0,
               width: '2px',
-              backgroundColor: royalColors.warmGold,
+              backgroundColor: royalColors.hashemiteGold,
             }} />
 
             {/* Timeline items */}
@@ -181,10 +181,10 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
                       top: '14px',
                       width: '12px',
                       height: '12px',
-                      backgroundColor: royalColors.warmGold,
+                      backgroundColor: royalColors.hashemiteGold,
                       borderRadius: '50%',
                       border: `3px solid ${royalColors.bgLight}`,
-                      boxShadow: `0 0 0 3px ${royalColors.warmGold}`,
+                      boxShadow: `0 0 0 3px ${royalColors.hashemiteGold}`,
                     }} />
                   </div>
 
@@ -198,11 +198,11 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
                       backgroundColor: 'white',
                       padding: '32px',
                       borderRadius: '8px',
-                      border: `1px solid ${royalColors.border}`,
+                      border: `1px solid ${royalColors.borderFormal}`,
                       boxShadow: '0 2px 8px rgba(10,20,40,0.08)',
                     }}>
                       <p style={{
-                        color: royalColors.warmGold,
+                        color: royalColors.hashemiteGold,
                         fontSize: '20px',
                         fontFamily: royalTypography.serif,
                         fontWeight: '600',
@@ -214,7 +214,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
                       <h3 style={{
                         fontSize: '24px',
                         fontFamily: royalTypography.serif,
-                        color: royalColors.deepNavy,
+                        color: royalColors.darkNavy,
                         marginBottom: '12px',
                         marginTop: '8px',
                       }}>
@@ -222,7 +222,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
                       </h3>
                       <p style={{
                         fontSize: '16px',
-                        color: royalColors.textDark,
+                        color: royalColors.textOfficial,
                         lineHeight: '1.6',
                         margin: 0,
                       }}>
@@ -239,7 +239,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
 
       {/* Impact Summary */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '64px 32px',
         color: 'white',
         textAlign: 'center',
@@ -251,7 +251,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Three Decades of <span style={{ color: royalColors.warmGold }}>Impact</span>
+            Three Decades of <span style={{ color: royalColors.hashemiteGold }}>Impact</span>
           </h2>
           <p style={{
             fontSize: '18px',
@@ -271,7 +271,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
             <div style={{ padding: '24px' }}>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
               }}>30+</p>
@@ -280,7 +280,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
             <div style={{ padding: '24px' }}>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
               }}>2.5K+</p>
@@ -289,7 +289,7 @@ export default function HistoryPage({ params }: { params: { locale: Locale } }) 
             <div style={{ padding: '24px' }}>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
               }}>75K+</p>

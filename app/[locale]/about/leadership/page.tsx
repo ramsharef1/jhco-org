@@ -100,14 +100,14 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -150,7 +150,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 transition: 'all 0.3s ease',
                 textAlign: ar ? 'right' : 'left',
@@ -158,14 +158,14 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 <div style={{
                   width: '80px',
                   height: '80px',
-                  backgroundColor: royalColors.warmGold,
+                  backgroundColor: royalColors.hashemiteGold,
                   borderRadius: '50%',
                   margin: '0 auto 24px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '36px',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   fontWeight: 'bold',
                 }}>
                   {leader.name.charAt(0)}
@@ -173,7 +173,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 <h3 style={{
                   fontSize: '22px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '8px',
                   textAlign: 'center',
                   marginTop: 0,
@@ -182,7 +182,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: '600',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
@@ -204,12 +204,12 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
                 </p>
                 <div style={{
                   height: '1px',
-                  backgroundColor: royalColors.border,
+                  backgroundColor: royalColors.borderFormal,
                   marginBottom: '20px',
                 }} />
                 <p style={{
                   fontSize: '15px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -223,7 +223,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -234,7 +234,7 @@ export default function LeadershipPage({ params }: { params: { locale: Locale } 
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Leadership Committed to <span style={{ color: royalColors.warmGold }}>Excellence</span>
+            Leadership Committed to <span style={{ color: royalColors.hashemiteGold }}>Excellence</span>
           </h2>
           <p style={{
             fontSize: '18px',

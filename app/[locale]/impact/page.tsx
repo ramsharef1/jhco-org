@@ -14,10 +14,10 @@ const pageContent = {
       title: 'Impact by the Numbers',
       description: 'Measurable outcomes demonstrating JHCO\'s reach and effectiveness',
       stats: [
-        { number: '30+', label: 'Countries Served', icon: '🌍', color: royalColors.coral },
-        { number: '75K+', label: 'Families Supported', icon: '👨‍👩‍👧‍👦', color: royalColors.hopeTeal },
-        { number: '2.5K+', label: 'Volunteers Active', icon: '🤝', color: royalColors.deepGreen },
-        { number: '$50M+', label: 'Delivered Annually', icon: '💚', color: royalColors.warmGold },
+        { number: '30+', label: 'Countries Served', icon: '🌍', color: royalColors.charityRed },
+        { number: '75K+', label: 'Families Supported', icon: '👨‍👩‍👧‍👦', color: royalColors.compassionTeal },
+        { number: '2.5K+', label: 'Volunteers Active', icon: '🤝', color: royalColors.impactGreen },
+        { number: '$50M+', label: 'Delivered Annually', icon: '💚', color: royalColors.hashemiteGold },
       ],
     },
     featuredStory: {
@@ -38,28 +38,28 @@ const pageContent = {
           percentage: '25%',
           icon: '🚨',
           beneficiaries: '15,000+ families',
-          color: royalColors.coral,
+          color: royalColors.charityRed,
         },
         {
           name: 'Healthcare',
           percentage: '20%',
           icon: '🏥',
           beneficiaries: '100,000+ consultations',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           name: 'Education',
           percentage: '18%',
           icon: '📚',
           beneficiaries: '25,000+ students',
-          color: royalColors.deepGreen,
+          color: royalColors.impactGreen,
         },
         {
           name: 'Food Security',
           percentage: '15%',
           icon: '🍽️',
           beneficiaries: '50,000+ people',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           name: 'Shelter & WASH',
@@ -73,7 +73,7 @@ const pageContent = {
           percentage: '10%',
           icon: '💼',
           beneficiaries: '5,000+ people',
-          color: royalColors.coral,
+          color: royalColors.charityRed,
         },
       ],
     },
@@ -144,10 +144,10 @@ const pageContent = {
       title: 'التأثير بالأرقام',
       description: 'النتائج القابلة للقياس التي تدل على وصول وفعالية الهيئة',
       stats: [
-        { number: '30+', label: 'دول مخدومة', icon: '🌍', color: royalColors.coral },
-        { number: '75K+', label: 'أسر مدعومة', icon: '👨‍👩‍👧‍👦', color: royalColors.hopeTeal },
-        { number: '2.5K+', label: 'متطوعون نشطون', icon: '🤝', color: royalColors.deepGreen },
-        { number: '$50M+', label: 'موارد مستخدمة', icon: '💚', color: royalColors.warmGold },
+        { number: '30+', label: 'دول مخدومة', icon: '🌍', color: royalColors.charityRed },
+        { number: '75K+', label: 'أسر مدعومة', icon: '👨‍👩‍👧‍👦', color: royalColors.compassionTeal },
+        { number: '2.5K+', label: 'متطوعون نشطون', icon: '🤝', color: royalColors.impactGreen },
+        { number: '$50M+', label: 'موارد مستخدمة', icon: '💚', color: royalColors.hashemiteGold },
       ],
     },
     featuredStory: {
@@ -168,28 +168,28 @@ const pageContent = {
           percentage: '25%',
           icon: '🚨',
           beneficiaries: '15000+ أسرة',
-          color: royalColors.coral,
+          color: royalColors.charityRed,
         },
         {
           name: 'الصحة',
           percentage: '20%',
           icon: '🏥',
           beneficiaries: '100000+ استشارة',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           name: 'التعليم',
           percentage: '18%',
           icon: '📚',
           beneficiaries: '25000+ طالب',
-          color: royalColors.deepGreen,
+          color: royalColors.impactGreen,
         },
         {
           name: 'الأمن الغذائي',
           percentage: '15%',
           icon: '🍽️',
           beneficiaries: '50000+ شخص',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           name: 'المأوى والمياه',
@@ -203,7 +203,7 @@ const pageContent = {
           percentage: '10%',
           icon: '💼',
           beneficiaries: '5000+ شخص',
-          color: royalColors.coral,
+          color: royalColors.charityRed,
         },
       ],
     },
@@ -322,12 +322,12 @@ const TestimonialCarousel = ({ testimonials, ar }: { testimonials: any[]; ar: bo
         <blockquote style={{
           fontSize: '20px',
           fontStyle: 'italic',
-          color: royalColors.textDark,
+          color: royalColors.textOfficial,
           margin: '0 0 32px 0',
           lineHeight: '1.8',
           textAlign: ar ? 'right' : 'left',
-          borderRight: ar ? `4px solid ${royalColors.warmGold}` : 'none',
-          borderLeft: ar ? 'none' : `4px solid ${royalColors.warmGold}`,
+          borderRight: ar ? `4px solid ${royalColors.hashemiteGold}` : 'none',
+          borderLeft: ar ? 'none' : `4px solid ${royalColors.hashemiteGold}`,
           paddingRight: ar ? '24px' : '0',
           paddingLeft: ar ? '0' : '24px',
         }}>
@@ -339,14 +339,14 @@ const TestimonialCarousel = ({ testimonials, ar }: { testimonials: any[]; ar: bo
           <p style={{
             fontSize: '18px',
             fontWeight: '600',
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             margin: '0 0 4px 0',
           }}>
             {testimonials[current].name}
           </p>
           <p style={{
             fontSize: '14px',
-            color: royalColors.softGray,
+            color: royalColors.darkGrayText,
             margin: '0',
           }}>
             {testimonials[current].role} - {testimonials[current].location}
@@ -370,7 +370,7 @@ const TestimonialCarousel = ({ testimonials, ar }: { testimonials: any[]; ar: bo
               height: '12px',
               borderRadius: '6px',
               border: 'none',
-              backgroundColor: current === i ? royalColors.warmGold : royalColors.border,
+              backgroundColor: current === i ? royalColors.hashemiteGold : royalColors.borderFormal,
               cursor: 'pointer',
               transition: 'all 300ms ease',
             }}
@@ -409,7 +409,7 @@ const ImpactCalculator = ({ impacts, ar, placeholder }: { impacts: any[]; ar: bo
           display: 'block',
           fontSize: '18px',
           fontWeight: '600',
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           marginBottom: '12px',
         }}>
           ${amount}
@@ -425,7 +425,7 @@ const ImpactCalculator = ({ impacts, ar, placeholder }: { impacts: any[]; ar: bo
             width: '100%',
             height: '8px',
             borderRadius: '4px',
-            backgroundColor: royalColors.border,
+            backgroundColor: royalColors.borderFormal,
             outline: 'none',
             WebkitAppearance: 'none',
           }}
@@ -434,7 +434,7 @@ const ImpactCalculator = ({ impacts, ar, placeholder }: { impacts: any[]; ar: bo
           display: 'flex',
           justifyContent: 'space-between',
           fontSize: '12px',
-          color: royalColors.softGray,
+          color: royalColors.darkGrayText,
           marginTop: '8px',
         }}>
           <span>$5</span>
@@ -443,15 +443,15 @@ const ImpactCalculator = ({ impacts, ar, placeholder }: { impacts: any[]; ar: bo
       </div>
 
       <div style={{
-        backgroundColor: royalColors.warmBeige,
+        backgroundColor: royalColors.ivoryBg,
         padding: '24px',
         borderRadius: '12px',
         textAlign: 'center',
-        borderLeft: `4px solid ${royalColors.warmGold}`,
+        borderLeft: `4px solid ${royalColors.hashemiteGold}`,
       }}>
         <p style={{
           fontSize: '16px',
-          color: royalColors.softGray,
+          color: royalColors.darkGrayText,
           margin: '0 0 8px 0',
         }}>
           Your contribution will provide:
@@ -459,7 +459,7 @@ const ImpactCalculator = ({ impacts, ar, placeholder }: { impacts: any[]; ar: bo
         <p style={{
           fontSize: '20px',
           fontWeight: '600',
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           margin: '0',
         }}>
           {getImpact()}
@@ -478,7 +478,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.richCream }}>
       {/* HERO SECTION */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.hopeTeal} 0%, ${royalColors.warmGold} 100%)`,
+        background: `linear-gradient(135deg, ${royalColors.compassionTeal} 0%, ${royalColors.hashemiteGold} 100%)`,
         padding: '120px 32px',
         color: 'white',
         textAlign: 'center',
@@ -536,7 +536,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -544,7 +544,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -607,21 +607,21 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
       {/* WORLD MAP PLACEHOLDER */}
       <section style={{
         padding: '96px 32px',
-        backgroundColor: royalColors.warmBeige,
+        backgroundColor: royalColors.ivoryBg,
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               margin: '0 0 16px 0',
             }}>
               Where We Work
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               margin: '0',
             }}>
               Active programs in 30+ countries across three continents
@@ -643,7 +643,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             <div style={{ fontSize: '80px', marginBottom: '24px' }}>🌍</div>
             <p style={{
               fontSize: '24px',
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -651,7 +651,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </p>
             <p style={{
               fontSize: '16px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '500px',
               lineHeight: '1.6',
               margin: '0',
@@ -673,7 +673,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
           }}>
             {/* Photo Placeholder */}
             <div style={{
-              backgroundColor: royalColors.warmBeige,
+              backgroundColor: royalColors.ivoryBg,
               borderRadius: '16px',
               minHeight: '400px',
               display: 'flex',
@@ -688,7 +688,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 left: '0',
                 right: '0',
                 bottom: '0',
-                background: `linear-gradient(135deg, ${royalColors.hopeTeal}40, ${royalColors.warmGold}40)`,
+                background: `linear-gradient(135deg, ${royalColors.compassionTeal}40, ${royalColors.hashemiteGold}40)`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -700,7 +700,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             {/* Story Content */}
             <div>
               <p style={{
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontSize: '12px',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
@@ -713,7 +713,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
               <h2 style={{
                 fontSize: '42px',
                 fontFamily: royalTypography.serif,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '12px',
                 margin: '0 0 12px 0',
               }}>
@@ -721,7 +721,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
               </h2>
               <p style={{
                 fontSize: '16px',
-                color: royalColors.softGray,
+                color: royalColors.darkGrayText,
                 marginBottom: '24px',
                 margin: '0 0 24px 0',
               }}>
@@ -731,8 +731,8 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
               <blockquote style={{
                 fontSize: '18px',
                 fontStyle: 'italic',
-                color: royalColors.textDark,
-                borderLeft: `4px solid ${royalColors.warmGold}`,
+                color: royalColors.textOfficial,
+                borderLeft: `4px solid ${royalColors.hashemiteGold}`,
                 paddingLeft: '24px',
                 marginBottom: '24px',
                 margin: '0 0 24px 0',
@@ -742,15 +742,15 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
               </blockquote>
 
               <div style={{
-                backgroundColor: royalColors.warmBeige,
+                backgroundColor: royalColors.ivoryBg,
                 padding: '24px',
                 borderRadius: '12px',
                 marginBottom: '32px',
-                borderLeft: `4px solid ${royalColors.deepGreen}`,
+                borderLeft: `4px solid ${royalColors.impactGreen}`,
               }}>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.softGray,
+                  color: royalColors.darkGrayText,
                   marginBottom: '8px',
                   margin: '0 0 8px 0',
                 }}>
@@ -759,7 +759,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 <p style={{
                   fontSize: '18px',
                   fontWeight: '600',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: '0',
                 }}>
                   {content.featuredStory.impact}
@@ -767,7 +767,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
               </div>
 
               <button style={{
-                backgroundColor: royalColors.deepGreen,
+                backgroundColor: royalColors.impactGreen,
                 color: 'white',
                 padding: '14px 32px',
                 borderRadius: '8px',
@@ -782,7 +782,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 e.currentTarget.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = royalColors.deepGreen;
+                e.currentTarget.style.backgroundColor = royalColors.impactGreen;
                 e.currentTarget.style.transform = 'scale(1)';
               }}
               >
@@ -796,14 +796,14 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
       {/* PROGRAM IMPACT BREAKDOWN */}
       <section style={{
         padding: '96px 32px',
-        backgroundColor: royalColors.warmBeige,
+        backgroundColor: royalColors.ivoryBg,
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -811,7 +811,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -856,7 +856,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 <h3 style={{
                   fontSize: '22px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '12px',
                   margin: '0 0 12px 0',
                 }}>
@@ -870,7 +870,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 }} />
                 <p style={{
                   fontSize: '16px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   fontWeight: '600',
                   margin: '0',
                 }}>
@@ -892,7 +892,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -900,7 +900,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -916,14 +916,14 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
       {/* ANNUAL STATISTICS */}
       <section style={{
         padding: '96px 32px',
-        backgroundColor: royalColors.warmBeige,
+        backgroundColor: royalColors.ivoryBg,
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -931,7 +931,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -956,7 +956,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                 <p style={{
                   fontSize: '32px',
                   fontWeight: '700',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   marginBottom: '24px',
                   margin: '0 0 24px 0',
                 }}>
@@ -969,7 +969,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                   <div>
                     <p style={{
                       fontSize: '12px',
-                      color: royalColors.softGray,
+                      color: royalColors.darkGrayText,
                       marginBottom: '4px',
                       margin: '0 0 4px 0',
                       textTransform: 'uppercase',
@@ -980,7 +980,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                     <p style={{
                       fontSize: '24px',
                       fontWeight: '700',
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       margin: '0',
                     }}>
                       {metric.families}
@@ -989,7 +989,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                   <div>
                     <p style={{
                       fontSize: '12px',
-                      color: royalColors.softGray,
+                      color: royalColors.darkGrayText,
                       marginBottom: '4px',
                       margin: '0 0 4px 0',
                       textTransform: 'uppercase',
@@ -1000,7 +1000,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                     <p style={{
                       fontSize: '24px',
                       fontWeight: '700',
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       margin: '0',
                     }}>
                       {metric.countries}
@@ -1009,7 +1009,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                   <div>
                     <p style={{
                       fontSize: '12px',
-                      color: royalColors.softGray,
+                      color: royalColors.darkGrayText,
                       marginBottom: '4px',
                       margin: '0 0 4px 0',
                       textTransform: 'uppercase',
@@ -1020,7 +1020,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
                     <p style={{
                       fontSize: '24px',
                       fontWeight: '700',
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       margin: '0',
                     }}>
                       {metric.staff}
@@ -1043,7 +1043,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '16px',
               margin: '0 0 16px 0',
             }}>
@@ -1051,7 +1051,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.softGray,
+              color: royalColors.darkGrayText,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -1067,7 +1067,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
       {/* DOWNLOAD REPORT */}
       <section style={{
         padding: '96px 32px',
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         color: 'white',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
@@ -1090,8 +1090,8 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
           </p>
 
           <button style={{
-            backgroundColor: royalColors.warmGold,
-            color: royalColors.deepNavy,
+            backgroundColor: royalColors.hashemiteGold,
+            color: royalColors.darkNavy,
             padding: '16px 48px',
             borderRadius: '8px',
             border: 'none',
@@ -1102,7 +1102,7 @@ export default function ImpactPage({ params }: { params: Promise<{ locale: Local
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.boxShadow = `0 8px 24px ${royalColors.warmGold}40`;
+            e.currentTarget.style.boxShadow = `0 8px 24px ${royalColors.hashemiteGold}40`;
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'scale(1)';

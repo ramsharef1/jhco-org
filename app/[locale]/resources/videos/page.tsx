@@ -222,9 +222,9 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
                 <h2 style={{
                   fontSize: '32px',
                   fontFamily: '"Merriweather", Georgia, serif',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: '0',
-                  borderBottom: `2px solid ${royalColors.warmGold}`,
+                  borderBottom: `2px solid ${royalColors.hashemiteGold}`,
                   paddingBottom: spacing.sm,
                   fontWeight: '700',
                 }}>
@@ -233,7 +233,7 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
               </div>
               <p style={{
                 fontSize: '16px',
-                color: royalColors.textMuted,
+                color: royalColors.textSecondary,
                 margin: '0',
                 marginLeft: ar ? '0' : '48px',
                 marginRight: ar ? '48px' : '0',
@@ -250,13 +250,13 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
             }}>
               {category.videos.map((video, vIdx) => (
                 <div key={vIdx} style={{
-                  background: royalColors.warmBeige,
+                  background: royalColors.ivoryBg,
                   borderRadius: borderRadius.lg,
                   overflow: 'hidden',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                   transition: 'transform 0.3s, box-shadow 0.3s',
                   cursor: 'pointer',
-                  borderLeft: `4px solid ${royalColors.warmGold}`,
+                  borderLeft: `4px solid ${royalColors.hashemiteGold}`,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
@@ -301,7 +301,7 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
                     <h3 style={{
                       fontSize: '18px',
                       fontWeight: '600',
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       margin: `0 0 ${spacing.sm} 0`,
                       textAlign: ar ? 'right' : 'left',
                     }}>
@@ -309,7 +309,7 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
                     </h3>
                     <p style={{
                       fontSize: '14px',
-                      color: royalColors.textMuted,
+                      color: royalColors.textSecondary,
                       margin: '0',
                       lineHeight: '1.6',
                       textAlign: ar ? 'right' : 'left',
@@ -326,17 +326,17 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
 
       {/* CTA Section */}
       <section style={{
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         padding: `${spacing.xxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
-        borderTop: `3px solid ${royalColors.warmGold}`,
+        borderTop: `3px solid ${royalColors.hashemiteGold}`,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '32px',
             fontFamily: '"Merriweather", Georgia, serif',
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: spacing.lg,
             fontWeight: '700',
           }}>
@@ -344,7 +344,7 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textDark,
+            color: royalColors.textOfficial,
             marginBottom: spacing.xl,
             maxWidth: '600px',
           }}>
@@ -352,24 +352,24 @@ export default function VideosPage({ params }: { params: { locale: Locale } }) {
           </p>
           <Link href={`/${locale}/newsletter`} style={{
             display: 'inline-block',
-            background: royalColors.warmGold,
-            color: royalColors.deepNavy,
+            background: royalColors.hashemiteGold,
+            color: royalColors.darkNavy,
             padding: `${spacing.sm} ${spacing.lg}`,
             borderRadius: borderRadius.md,
             textDecoration: 'none',
             fontWeight: '600',
             transition: 'all 0.3s',
-            border: `2px solid ${royalColors.warmGold}`,
+            border: `2px solid ${royalColors.hashemiteGold}`,
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
+            (e.currentTarget as HTMLElement).style.background = royalColors.darkNavy;
             (e.currentTarget as HTMLElement).style.color = 'white';
-            (e.currentTarget as HTMLElement).style.borderColor = royalColors.deepNavy;
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.darkNavy;
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.warmGold;
-            (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
-            (e.currentTarget as HTMLElement).style.borderColor = royalColors.warmGold;
+            (e.currentTarget as HTMLElement).style.background = royalColors.hashemiteGold;
+            (e.currentTarget as HTMLElement).style.color = royalColors.darkNavy;
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.hashemiteGold;
           }}
           >
             {ar ? 'اشترك في النشرة' : 'Subscribe Now'}

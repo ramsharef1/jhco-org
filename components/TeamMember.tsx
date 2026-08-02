@@ -27,10 +27,10 @@ export default function TeamMember({
   accentColor = 'gold',
 }: TeamMemberProps) {
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
   };
 
   const accent = colorMap[accentColor];
@@ -38,11 +38,12 @@ export default function TeamMember({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgLight,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#ffffff',
+        borderRadius: '0px',
         overflow: 'hidden',
         boxShadow: shadows.md,
         transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+        border: `2px solid ${accent}`,
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow = shadows.xl;
@@ -59,7 +60,7 @@ export default function TeamMember({
           style={{
             width: '100%',
             height: '280px',
-            backgroundColor: royalColors.border,
+            backgroundColor: royalColors.borderFormal,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -81,7 +82,7 @@ export default function TeamMember({
           style={{
             fontSize: '20px',
             fontWeight: 700,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             margin: `0 0 ${spacing.xs} 0`,
             lineHeight: 1.2,
           }}
@@ -108,7 +109,7 @@ export default function TeamMember({
           <p
             style={{
               fontSize: '14px',
-              color: royalColors.textMuted,
+              color: royalColors.textSecondary,
               lineHeight: 1.5,
               margin: `0 0 ${spacing.md} 0`,
             }}
@@ -124,7 +125,7 @@ export default function TeamMember({
               display: 'flex',
               gap: spacing.sm,
               paddingTop: spacing.md,
-              borderTop: `1px solid ${royalColors.border}`,
+              borderTop: `1px solid ${royalColors.borderFormal}`,
             }}
           >
             {socialLinks.map((link, idx) => (

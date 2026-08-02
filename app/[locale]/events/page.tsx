@@ -272,10 +272,10 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
           fontSize: '36px',
           fontFamily: '"Merriweather", Georgia, serif',
           fontWeight: '700',
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           marginBottom: `${spacing.xxxl}`,
           textAlign: ar ? 'right' : 'left',
-          borderBottom: `3px solid ${royalColors.warmGold}`,
+          borderBottom: `3px solid ${royalColors.hashemiteGold}`,
           paddingBottom: spacing.lg,
         }}>
           {content.upcomingSection}
@@ -289,8 +289,8 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
         }}>
           {content.upcomingEvents.map((event, idx) => (
             <div key={idx} style={{
-              background: royalColors.warmBeige,
-              borderLeft: `4px solid ${royalColors.warmGold}`,
+              background: royalColors.ivoryBg,
+              borderLeft: `4px solid ${royalColors.hashemiteGold}`,
               borderRadius: borderRadius.card,
               padding: spacing.xl,
               boxShadow: '0 4px 12px rgba(232, 185, 35, 0.15)',
@@ -314,7 +314,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                 <h3 style={{
                   fontSize: '20px',
                   fontWeight: '600',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: '0',
                   flex: 1,
                   textAlign: ar ? 'right' : 'left',
@@ -322,8 +322,8 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                   {event.title}
                 </h3>
                 <span style={{
-                  background: royalColors.warmGold,
-                  color: royalColors.deepNavy,
+                  background: royalColors.hashemiteGold,
+                  color: royalColors.darkNavy,
                   padding: `${spacing.sm} ${spacing.md}`,
                   borderRadius: borderRadius.full,
                   fontSize: '12px',
@@ -338,7 +338,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
               <div style={{
                 fontSize: '14px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 marginBottom: spacing.md,
                 textAlign: ar ? 'right' : 'left',
               }}>
@@ -353,7 +353,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
               <p style={{
                 fontSize: '15px',
-                color: royalColors.textMuted,
+                color: royalColors.textSecondary,
                 lineHeight: '1.6',
                 margin: `${spacing.lg} 0 0 0`,
                 textAlign: ar ? 'right' : 'left',
@@ -369,7 +369,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                 fontWeight: '600',
                 fontSize: '14px',
                 padding: `${spacing.sm} ${spacing.md}`,
-                backgroundColor: royalColors.compassionRed,
+                backgroundColor: royalColors.charityRed,
                 borderRadius: borderRadius.button,
                 transition: 'all 0.3s',
                 boxShadow: '0 4px 12px rgba(231, 76, 60, 0.2)',
@@ -380,7 +380,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                 (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(231, 76, 60, 0.3)';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.compassionRed;
+                (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.charityRed;
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
                 (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(231, 76, 60, 0.2)';
               }}
@@ -403,10 +403,10 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
             fontSize: '36px',
             fontFamily: '"Merriweather", Georgia, serif',
             fontWeight: '700',
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: `${spacing.xxxl}`,
             textAlign: ar ? 'right' : 'left',
-            borderBottom: `3px solid ${royalColors.warmGold}`,
+            borderBottom: `3px solid ${royalColors.hashemiteGold}`,
             paddingBottom: spacing.lg,
           }}>
             {content.pastSection}
@@ -433,7 +433,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                   <h3 style={{
                     fontSize: '18px',
                     fontWeight: '600',
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     margin: '0',
                     flex: 1,
                     textAlign: ar ? 'right' : 'left',
@@ -442,7 +442,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
                   </h3>
                   <span style={{
                     background: 'rgba(232, 185, 35, 0.2)',
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     padding: `${spacing.xs} ${spacing.sm}`,
                     borderRadius: borderRadius.sm,
                     fontSize: '11px',
@@ -456,7 +456,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
                 <div style={{
                   fontSize: '13px',
-                  color: royalColors.textMuted,
+                  color: royalColors.textSecondary,
                   marginBottom: spacing.sm,
                   textAlign: ar ? 'right' : 'left',
                 }}>
@@ -465,7 +465,7 @@ export default function EventsPage({ params }: { params: { locale: Locale } }) {
 
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.5',
                   margin: '0',
                   textAlign: ar ? 'right' : 'left',

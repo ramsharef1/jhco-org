@@ -42,17 +42,17 @@ export default function LoginPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: `linear-gradient(135deg, ${royalColors.deepNavy} 0%, ${royalColors.hopeTeal} 100%)`,
+          background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.compassionTeal} 100%)`,
           padding: spacing.lg,
         }}>
           <div style={{
             width: '100%',
             maxWidth: '420px',
             padding: spacing.xxl + ' ' + spacing.xl,
-            background: royalColors.warmBeige,
+            background: royalColors.ivoryBg,
             borderRadius: '12px',
             boxShadow: `0 10px 40px rgba(10, 20, 40, 0.3), 0 0 60px rgba(26, 188, 156, 0.15)`,
-            border: `2px solid ${royalColors.warmGold}40`,
+            border: `2px solid ${royalColors.hashemiteGold}40`,
             transition: transitions.base,
           }}>
             {/* Header */}
@@ -69,7 +69,7 @@ export default function LoginPage() {
               />
               <h1 style={{
                 fontSize: '32px',
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 margin: '0 0 8px 0',
                 fontFamily: '"Merriweather", Georgia, serif',
                 fontWeight: '700',
@@ -79,7 +79,7 @@ export default function LoginPage() {
               </h1>
               <p style={{
                 fontSize: '12px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 margin: '0',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
@@ -89,7 +89,7 @@ export default function LoginPage() {
               </p>
               <div style={{
                 height: '2px',
-                background: `linear-gradient(90deg, transparent, ${royalColors.warmGold}, transparent)`,
+                background: `linear-gradient(90deg, transparent, ${royalColors.hashemiteGold}, transparent)`,
                 margin: spacing.lg + ' 0 0 0',
               }}></div>
             </div>
@@ -100,7 +100,7 @@ export default function LoginPage() {
                 <label htmlFor="password" style={{
                   display: 'block',
                   fontSize: '13px',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   fontWeight: '700',
                   marginBottom: spacing.md,
                   textTransform: 'uppercase',
@@ -119,21 +119,21 @@ export default function LoginPage() {
                     width: '100%',
                     padding: '12px 16px',
                     fontSize: '14px',
-                    border: `2px solid ${royalColors.warmGold}`,
+                    border: `2px solid ${royalColors.hashemiteGold}`,
                     borderRadius: '8px',
                     boxSizing: 'border-box',
                     fontFamily: 'inherit',
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     background: '#ffffff',
                     transition: transitions.base,
                     outline: 'none',
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.borderColor = royalColors.hopeTeal;
+                    e.currentTarget.style.borderColor = royalColors.compassionTeal;
                     e.currentTarget.style.boxShadow = `0 0 0 3px rgba(26, 188, 156, 0.1)`;
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = royalColors.warmGold;
+                    e.currentTarget.style.borderColor = royalColors.hashemiteGold;
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 />
@@ -145,7 +145,7 @@ export default function LoginPage() {
                   padding: spacing.md,
                   marginBottom: spacing.xl,
                   background: 'rgba(231, 76, 60, 0.1)',
-                  border: `2px solid ${royalColors.compassionRed}`,
+                  border: `2px solid ${royalColors.charityRed}`,
                   borderRadius: '8px',
                   color: royalColors.redDark,
                   fontSize: '13px',
@@ -163,7 +163,7 @@ export default function LoginPage() {
                 style={{
                   width: '100%',
                   padding: '14px 16px',
-                  background: royalColors.compassionRed,
+                  background: royalColors.charityRed,
                   color: '#ffffff',
                   border: 'none',
                   borderRadius: '8px',
@@ -185,7 +185,7 @@ export default function LoginPage() {
                 }}
                 onMouseLeave={(e) => {
                   if (!loading && password) {
-                    e.currentTarget.style.background = royalColors.compassionRed;
+                    e.currentTarget.style.background = royalColors.charityRed;
                     e.currentTarget.style.boxShadow = `0 4px 12px rgba(231, 76, 60, 0.3)`;
                     e.currentTarget.style.transform = 'translateY(0)';
                   }
@@ -199,15 +199,15 @@ export default function LoginPage() {
             <div style={{
               marginTop: spacing.xxxl,
               paddingTop: spacing.xl,
-              borderTop: `2px solid ${royalColors.warmGold}40`,
+              borderTop: `2px solid ${royalColors.hashemiteGold}40`,
               textAlign: 'center',
               fontSize: '12px',
-              color: royalColors.textMuted,
+              color: royalColors.textSecondary,
             }}>
               <p style={{ margin: '0', fontWeight: '600' }}>
                 🛡️ Password Protected
               </p>
-              <p style={{ margin: spacing.sm + ' 0 0 0', fontSize: '11px', color: royalColors.softGray }}>
+              <p style={{ margin: spacing.sm + ' 0 0 0', fontSize: '11px', color: royalColors.darkGrayText }}>
                 Authorized users only
               </p>
             </div>

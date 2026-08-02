@@ -90,14 +90,14 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -133,11 +133,11 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
             textAlign: 'center',
           }}>
-            Latest <span style={{ color: royalColors.warmGold }}>News</span>
+            Latest <span style={{ color: royalColors.hashemiteGold }}>News</span>
           </h2>
 
           <div style={{
@@ -150,7 +150,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
               <div key={idx} style={{
                 backgroundColor: 'white',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 overflow: 'hidden',
                 textAlign: ar ? 'right' : 'left',
@@ -159,9 +159,9 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                 height: '100%',
               }}>
                 <div style={{
-                  backgroundColor: royalColors.bgWarm,
+                  backgroundColor: royalColors.bgRefined,
                   padding: '24px 32px',
-                  borderBottom: `1px solid ${royalColors.border}`,
+                  borderBottom: `1px solid ${royalColors.borderFormal}`,
                 }}>
                   <div style={{
                     display: 'flex',
@@ -178,8 +178,8 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                       {new Date(news.date).toLocaleDateString(ar ? 'ar-JO' : 'en-US')}
                     </p>
                     <span style={{
-                      backgroundColor: royalColors.warmGold,
-                      color: royalColors.deepNavy,
+                      backgroundColor: royalColors.hashemiteGold,
+                      color: royalColors.darkNavy,
                       padding: '4px 12px',
                       borderRadius: '4px',
                       fontSize: '11px',
@@ -196,7 +196,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                   <h3 style={{
                     fontSize: '20px',
                     fontFamily: royalTypography.serif,
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     marginBottom: '16px',
                     marginTop: 0,
                   }}>
@@ -205,7 +205,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
 
                   <p style={{
                     fontSize: '15px',
-                    color: royalColors.textDark,
+                    color: royalColors.textOfficial,
                     lineHeight: '1.6',
                     flex: 1,
                     margin: 0,
@@ -215,7 +215,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                   </p>
 
                   <a href="#" style={{
-                    color: royalColors.warmGold,
+                    color: royalColors.hashemiteGold,
                     fontWeight: '700',
                     textDecoration: 'none',
                     fontSize: '14px',
@@ -234,13 +234,13 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
             backgroundColor: 'white',
             padding: '48px 40px',
             borderRadius: '8px',
-            border: `1px solid ${royalColors.border}`,
+            border: `1px solid ${royalColors.borderFormal}`,
             textAlign: ar ? 'right' : 'left',
           }}>
             <h2 style={{
               fontSize: '32px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '32px',
               marginTop: 0,
             }}>
@@ -267,7 +267,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                 <p style={{
                   fontSize: '18px',
                   fontWeight: '600',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: 0,
                   marginTop: '8px',
                 }}>
@@ -289,7 +289,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                 </p>
                 <a href={`mailto:${content.contact.email}`} style={{
                   fontSize: '16px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   textDecoration: 'none',
                   fontWeight: '600',
                   margin: 0,
@@ -313,7 +313,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                 </p>
                 <a href={`tel:${content.contact.phone}`} style={{
                   fontSize: '16px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   textDecoration: 'none',
                   fontWeight: '600',
                   margin: 0,
@@ -337,7 +337,7 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
                 </p>
                 <p style={{
                   fontSize: '16px',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   fontWeight: '500',
                   margin: 0,
                   marginTop: '8px',

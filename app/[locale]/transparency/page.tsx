@@ -112,14 +112,14 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.darkNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -163,14 +163,14 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
                 <h3 style={{
                   fontSize: '24px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '16px',
                   marginTop: 0,
                 }}>
@@ -178,7 +178,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.7',
                   margin: 0,
                 }}>
@@ -190,20 +190,20 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
 
           {/* Standards Frameworks */}
           <div style={{
-            backgroundColor: royalColors.bgWarm,
+            backgroundColor: royalColors.bgRefined,
             padding: '48px 40px',
             borderRadius: '8px',
-            border: `1px solid ${royalColors.border}`,
+            border: `1px solid ${royalColors.borderFormal}`,
           }}>
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '48px',
               textAlign: 'center',
               marginTop: 0,
             }}>
-              International <span style={{ color: royalColors.warmGold }}>Frameworks</span>
+              International <span style={{ color: royalColors.hashemiteGold }}>Frameworks</span>
             </h2>
 
             <div style={{
@@ -216,13 +216,13 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                   backgroundColor: 'white',
                   padding: '32px',
                   borderRadius: '6px',
-                  border: `1px solid ${royalColors.border}`,
+                  border: `1px solid ${royalColors.borderFormal}`,
                   textAlign: ar ? 'right' : 'left',
                 }}>
                   <h4 style={{
                     fontSize: '18px',
                     fontWeight: '700',
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     marginBottom: '12px',
                     marginTop: 0,
                   }}>
@@ -230,7 +230,7 @@ export default function TransparencyPage({ params }: { params: { locale: Locale 
                   </h4>
                   <p style={{
                     fontSize: '15px',
-                    color: royalColors.textDark,
+                    color: royalColors.textOfficial,
                     lineHeight: '1.6',
                     margin: 0,
                   }}>

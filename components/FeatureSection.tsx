@@ -35,15 +35,15 @@ export default function FeatureSection({
 }: FeatureSectionProps) {
   const bgColorMap = {
     white: royalColors.bgLight,
-    warm: royalColors.bgWarm,
+    warm: royalColors.bgRefined,
     light: '#f9f9f9',
   };
 
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
   };
 
   const primaryColorValue = colorMap[primaryColor];
@@ -56,7 +56,7 @@ export default function FeatureSection({
       style={{
         backgroundColor: bgColorMap[backgroundColor],
         padding: `${spacing.xxxl} ${spacing.xl}`,
-        borderBottom: `1px solid ${royalColors.border}`,
+        borderBottom: `1px solid ${royalColors.borderFormal}`,
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -71,12 +71,14 @@ export default function FeatureSection({
         >
           <h2
             style={{
-              fontSize: '42px',
-              fontWeight: 700,
-              color: royalColors.deepNavy,
+              fontSize: '56px',
+              fontWeight: 800,
+              color: '#4a148c',
               margin: `0 0 ${spacing.lg} 0`,
-              lineHeight: 1.2,
-              fontFamily: '"Merriweather", Georgia, serif',
+              lineHeight: 1.1,
+              fontFamily: '"Garamond", Georgia, serif',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
             }}
           >
             {title}
@@ -87,7 +89,7 @@ export default function FeatureSection({
               style={{
                 fontSize: '16px',
                 lineHeight: 1.6,
-                color: royalColors.textMuted,
+                color: royalColors.textSecondary,
                 margin: 0,
               }}
             >
@@ -112,8 +114,8 @@ export default function FeatureSection({
               style={{
                 width: '100%',
                 height: '400px',
-                backgroundColor: royalColors.border,
-                borderRadius: borderRadius.card,
+                backgroundColor: royalColors.borderFormal,
+                borderRadius: '0px',
                 overflow: 'hidden',
                 boxShadow: shadows.lg,
               }}
@@ -166,7 +168,7 @@ export default function FeatureSection({
                         style={{
                           fontSize: '16px',
                           fontWeight: 700,
-                          color: royalColors.deepNavy,
+                          color: royalColors.darkNavy,
                           margin: `0 0 ${spacing.xs} 0`,
                         }}
                       >
@@ -176,7 +178,7 @@ export default function FeatureSection({
                         <p
                           style={{
                             fontSize: '14px',
-                            color: royalColors.textMuted,
+                            color: royalColors.textSecondary,
                             lineHeight: 1.5,
                             margin: 0,
                           }}
@@ -201,9 +203,11 @@ export default function FeatureSection({
                   backgroundColor: primaryColorValue,
                   color: '#ffffff',
                   textDecoration: 'none',
-                  borderRadius: borderRadius.button,
+                  borderRadius: '0px',
                   fontWeight: 700,
                   fontSize: '14px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
                   transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
                   boxShadow: shadows.md,
                 }}
@@ -216,7 +220,7 @@ export default function FeatureSection({
                   e.currentTarget.style.boxShadow = shadows.md;
                 }}
               >
-                {callToActionLabel} →
+                {callToActionLabel}
               </Link>
             )}
           </div>
@@ -227,8 +231,8 @@ export default function FeatureSection({
               style={{
                 width: '100%',
                 height: '400px',
-                backgroundColor: royalColors.border,
-                borderRadius: borderRadius.card,
+                backgroundColor: royalColors.borderFormal,
+                borderRadius: '0px',
                 overflow: 'hidden',
                 boxShadow: shadows.lg,
               }}

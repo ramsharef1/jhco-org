@@ -13,22 +13,22 @@ export default function Home() {
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  // Color palette for program cards
+  // Color palette for program cards - Royal Design System
   const programColors = [
-    '#FF6B6B', // Coral Red
-    '#1abc9c', // Teal
-    '#27AE60', // Green
-    '#F39C12', // Gold/Orange
-    '#E74C3C', // Red
-    '#9B59B6', // Purple
+    '#4a148c', // Deep Purple
+    '#001a4d', // Dark Navy
+    '#4a148c', // Deep Purple
+    '#d4af37', // Hashemite Gold
+    '#001a4d', // Dark Navy
+    '#4a148c', // Deep Purple
   ];
 
-  // Color palette for stat cards
+  // Color palette for stat cards - Royal Design System
   const statColors = [
-    { bg: '#FF6B6B', icon: '👨‍👩‍👧‍👦' }, // Coral
-    { bg: '#1abc9c', icon: '🌍' }, // Teal
-    { bg: '#27AE60', icon: '❤️' }, // Green
-    { bg: '#F39C12', icon: '⭐' }, // Gold
+    { bg: '#001a4d', icon: '👨‍👩‍👧‍👦' }, // Dark Navy
+    { bg: '#4a148c', icon: '🌍' }, // Deep Purple
+    { bg: '#001a4d', icon: '❤️' }, // Dark Navy
+    { bg: '#4a148c', icon: '⭐' }, // Deep Purple
   ];
 
   const statData = [
@@ -87,8 +87,8 @@ export default function Home() {
 
   return (
     <>
-      {/* 1. HERO SECTION - Warm, Emotional */}
-      <section style={{ background: 'linear-gradient(135deg, #0a1428 0%, #1abc9c 100%)', padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
+      {/* 1. HERO SECTION - Royal Elegance */}
+      <section style={{ background: 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)', padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
         {/* Royal seal accent in corner */}
         <div style={{ position: 'absolute', top: '40px', right: '40px', fontSize: '48px', opacity: 0.15 }}>
           👑
@@ -98,7 +98,7 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
             {/* Left: Emotional Headline & CTAs */}
             <div>
-              <h1 style={{ fontSize: '56px', fontWeight: '300', lineHeight: '1.2', color: 'white', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
+              <h1 style={{ fontSize: '56px', fontWeight: '700', lineHeight: '1.1', color: 'white', marginBottom: '24px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
                 Serving Humanity with Dignity
               </h1>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.95)', marginBottom: '32px', lineHeight: '1.8', maxWidth: '500px' }}>
@@ -110,25 +110,27 @@ export default function Home() {
                   href={`${base}/get-involved/donate`}
                   style={{
                     padding: '16px 40px',
-                    backgroundColor: '#e74c3c',
+                    backgroundColor: '#c41e3a',
                     color: 'white',
                     textDecoration: 'none',
                     fontSize: '14px',
                     fontWeight: '700',
-                    borderRadius: '8px',
+                    borderRadius: '0px',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)',
+                    boxShadow: '0 4px 12px rgba(196, 30, 58, 0.3)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = '#c0392b';
+                    e.currentTarget.style.backgroundColor = '#a01830';
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(231, 76, 60, 0.4)';
+                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(196, 30, 58, 0.4)';
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = '#e74c3c';
+                    e.currentTarget.style.backgroundColor = '#c41e3a';
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(231, 76, 60, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(196, 30, 58, 0.3)';
                   }}
                 >
                   Donate Now
@@ -142,10 +144,12 @@ export default function Home() {
                     textDecoration: 'none',
                     fontSize: '14px',
                     fontWeight: '700',
-                    borderRadius: '8px',
+                    borderRadius: '0px',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    border: '2px solid white',
+                    border: '2px solid #d4af37',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.3)';
@@ -189,11 +193,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. IMPACT STATS SECTION - Visual, Colorful, Animated */}
-      <section style={{ backgroundColor: '#f5f1e6', padding: '96px 32px' }}>
+      {/* 2. IMPACT STATS SECTION - Royal Excellence */}
+      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '16px', fontFamily: 'Georgia, serif' }}>
+            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
               Our Global Impact
             </h2>
             <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
@@ -208,12 +212,13 @@ export default function Home() {
                 style={{
                   backgroundColor: statColors[idx].bg,
                   padding: '48px 32px',
-                  borderRadius: '16px',
+                  borderRadius: '0px',
                   textAlign: 'center',
                   color: 'white',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  border: '2px solid #d4af37',
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -225,7 +230,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ fontSize: '48px', marginBottom: '16px' }}>{stat.icon}</div>
-                <p style={{ fontSize: '48px', fontWeight: '700', margin: '0 0 12px 0', fontFamily: 'Georgia, serif' }}>
+                <p style={{ fontSize: '48px', fontWeight: '700', margin: '0 0 12px 0', fontFamily: 'Garamond, serif' }}>
                   {stat.value}
                 </p>
                 <p style={{ fontSize: '16px', fontWeight: '600', margin: 0, opacity: 0.95 }}>
@@ -237,7 +242,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. FEATURED STORY SECTION - Emotional Connection */}
+      {/* 3. FEATURED STORY SECTION - Royal Impact */}
       <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
@@ -247,13 +252,13 @@ export default function Home() {
                 style={{
                   width: '100%',
                   aspectRatio: '1',
-                  backgroundColor: '#f5e6d3',
-                  borderRadius: '16px',
+                  backgroundColor: '#f5f1e8',
+                  borderRadius: '0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '120px',
-                  border: '4px solid #e8e4db',
+                  border: '2px solid #d4af37',
                   overflow: 'hidden',
                 }}
               >
@@ -267,10 +272,10 @@ export default function Home() {
             {/* Right: Story Quote & Details */}
             <div>
               <div style={{ marginBottom: '32px' }}>
-                <p style={{ fontSize: '14px', color: '#e74c3c', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px' }}>
+                <p style={{ fontSize: '14px', color: '#4a148c', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px' }}>
                   Their Story
                 </p>
-                <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '24px', fontFamily: 'Georgia, serif', lineHeight: '1.3' }}>
+                <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#001a4d', marginBottom: '24px', fontFamily: 'Garamond, serif', lineHeight: '1.1', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   "JHCO gave me hope when I had lost it all."
                 </h2>
               </div>
@@ -279,7 +284,7 @@ export default function Home() {
                 Amira's family faced severe hardship when her father became ill. Through JHCO's healthcare program, not only did her father receive treatment, but Amira was enrolled in our education initiative. Today, she's in secondary school and dreams of becoming a teacher to help others in her community.
               </p>
 
-              <div style={{ backgroundColor: '#f5f1e6', padding: '32px', borderRadius: '12px', borderLeft: '4px solid #e74c3c', marginBottom: '32px' }}>
+              <div style={{ backgroundColor: '#f5f1e8', padding: '32px', borderRadius: '0px', borderLeft: '2px solid #d4af37', marginBottom: '32px' }}>
                 <p style={{ fontSize: '15px', fontStyle: 'italic', color: '#333', margin: 0, lineHeight: '1.8' }}>
                   "I remember the day the JHCO team came to our village. They didn't just bring medicine—they brought belief in us. My family felt valued for the first time in years."
                 </p>
@@ -295,23 +300,25 @@ export default function Home() {
                 style={{
                   padding: '14px 32px',
                   backgroundColor: 'white',
-                  color: '#e74c3c',
+                  color: '#4a148c',
                   textDecoration: 'none',
                   fontSize: '14px',
                   fontWeight: '700',
-                  border: '2px solid #e74c3c',
-                  borderRadius: '8px',
+                  border: '2px solid #4a148c',
+                  borderRadius: '0px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   display: 'inline-block',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#e74c3c';
+                  e.currentTarget.style.backgroundColor = '#4a148c';
                   e.currentTarget.style.color = 'white';
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.backgroundColor = 'white';
-                  e.currentTarget.style.color = '#e74c3c';
+                  e.currentTarget.style.color = '#4a148c';
                 }}
               >
                 Read More Stories →
@@ -321,11 +328,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. PROGRAMS GRID - Color-Coded, Visual */}
-      <section style={{ backgroundColor: '#f5f1e6', padding: '96px 32px' }}>
+      {/* 4. PROGRAMS GRID - Royal Programs */}
+      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '16px', fontFamily: 'Georgia, serif' }}>
+            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
               Our Programs
             </h2>
             <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
@@ -339,7 +346,7 @@ export default function Home() {
                 <div
                   style={{
                     backgroundColor: 'white',
-                    borderRadius: '16px',
+                    borderRadius: '0px',
                     overflow: 'hidden',
                     cursor: 'pointer',
                     transition: 'all 0.4s ease',
@@ -347,7 +354,7 @@ export default function Home() {
                     display: 'flex',
                     flexDirection: 'column',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                    borderTop: `6px solid ${programColors[idx]}`,
+                    border: `2px solid ${programColors[idx]}`,
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.transform = 'translateY(-12px)';
@@ -406,22 +413,24 @@ export default function Home() {
               href={`${base}/programs`}
               style={{
                 padding: '14px 40px',
-                backgroundColor: '#e74c3c',
+                backgroundColor: '#4a148c',
                 color: 'white',
                 textDecoration: 'none',
-                borderRadius: '8px',
+                borderRadius: '0px',
                 fontWeight: '700',
                 fontSize: '14px',
                 display: 'inline-block',
                 transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)',
+                boxShadow: '0 4px 12px rgba(74, 20, 140, 0.3)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#c0392b';
+                e.currentTarget.style.backgroundColor = '#2a0d52';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#e74c3c';
+                e.currentTarget.style.backgroundColor = '#4a148c';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -431,11 +440,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. WHY JHCO SECTION - Trust & Authority */}
+      {/* 5. WHY JHCO SECTION - Royal Authority */}
       <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '16px', fontFamily: 'Georgia, serif' }}>
+            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
               Why Choose JHCO?
             </h2>
             <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
@@ -448,23 +457,24 @@ export default function Home() {
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f5f1e6',
+                  backgroundColor: '#f5f1e8',
                   padding: '40px 32px',
-                  borderRadius: '12px',
+                  borderRadius: '0px',
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
+                  border: '1px solid #d4af37',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#e8e4db';
+                  e.currentTarget.style.backgroundColor = '#f0ebe0';
                   e.currentTarget.style.transform = 'translateY(-4px)';
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f5f1e6';
+                  e.currentTarget.style.backgroundColor = '#f5f1e8';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 <div style={{ fontSize: '48px', marginBottom: '16px' }}>{reason.icon}</div>
-                <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#0a1428', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#001a4d', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   {reason.title}
                 </h3>
                 <p style={{ fontSize: '13px', color: '#666', lineHeight: '1.6', margin: 0 }}>
@@ -476,10 +486,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CALL-TO-ACTION SECTION - Prominent & Warm */}
-      <section style={{ background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)', padding: '96px 32px', position: 'relative', overflow: 'hidden' }}>
+      {/* 6. CALL-TO-ACTION SECTION - Royal Service */}
+      <section style={{ background: 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)', padding: '96px 32px', position: 'relative', overflow: 'hidden', borderTop: '4px solid #d4af37' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '48px', fontWeight: '300', color: 'white', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: '700', color: 'white', marginBottom: '24px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
             Make a Difference Today
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.95)', maxWidth: '600px', margin: '0 auto 48px', lineHeight: '1.8' }}>
@@ -541,11 +551,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS CAROUSEL - Social Proof */}
-      <section style={{ backgroundColor: '#f5f1e6', padding: '96px 32px' }}>
+      {/* 7. TESTIMONIALS CAROUSEL - Royal Voices */}
+      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '16px', fontFamily: 'Georgia, serif' }}>
+            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
               Voices of Impact
             </h2>
             <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
@@ -560,9 +570,9 @@ export default function Home() {
                 style={{
                   backgroundColor: 'white',
                   padding: '48px 40px',
-                  borderRadius: '12px',
+                  borderRadius: '0px',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                  border: '2px solid #e8e4db',
+                  border: '2px solid #d4af37',
                   transition: 'all 0.3s ease',
                 }}
                 onMouseOver={(e) => {
@@ -575,7 +585,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ marginBottom: '24px' }}>
-                  <div style={{ fontSize: '24px', color: '#e74c3c', marginBottom: '16px' }}>
+                  <div style={{ fontSize: '24px', color: '#4a148c', marginBottom: '16px' }}>
                     "
                   </div>
                   <p style={{ fontSize: '15px', color: '#333', lineHeight: '1.8', fontStyle: 'italic', margin: 0 }}>
@@ -583,13 +593,13 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '24px', borderTop: '2px solid #e8e4db' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '24px', borderTop: '2px solid #d4af37' }}>
                   <div
                     style={{
                       width: '48px',
                       height: '48px',
-                      borderRadius: '50%',
-                      backgroundColor: '#e74c3c',
+                      borderRadius: '0px',
+                      backgroundColor: '#4a148c',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -615,10 +625,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. NEWSLETTER SECTION - Engagement */}
+      {/* 8. NEWSLETTER SECTION - Royal Engagement */}
       <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: '300', color: '#0a1428', marginBottom: '16px', fontFamily: 'Georgia, serif' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
             Stay Updated
           </h2>
           <p style={{ fontSize: '16px', color: '#555', marginBottom: '48px', lineHeight: '1.8' }}>
@@ -633,39 +643,41 @@ export default function Home() {
                 flex: 1,
                 padding: '14px 20px',
                 fontSize: '14px',
-                border: '2px solid #e8e4db',
-                borderRadius: '8px',
+                border: '2px solid #d4af37',
+                borderRadius: '0px',
                 fontFamily: 'inherit',
                 transition: 'all 0.3s ease',
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = '#e74c3c';
-                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,76,60,0.1)';
+                e.currentTarget.style.borderColor = '#4a148c';
+                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(74,20,140,0.1)';
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = '#e8e4db';
+                e.currentTarget.style.borderColor = '#d4af37';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             />
             <button
               style={{
                 padding: '14px 40px',
-                backgroundColor: '#e74c3c',
+                backgroundColor: '#4a148c',
                 color: 'white',
                 border: 'none',
-                borderRadius: '8px',
+                borderRadius: '0px',
                 fontWeight: '700',
                 fontSize: '14px',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)',
+                boxShadow: '0 4px 12px rgba(74, 20, 140, 0.3)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#c0392b';
+                e.currentTarget.style.backgroundColor = '#2a0d52';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#e74c3c';
+                e.currentTarget.style.backgroundColor = '#4a148c';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -678,8 +690,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. FOOTER - Warm & Professional */}
-      <footer style={{ backgroundColor: '#0a1428', color: 'white', padding: '80px 32px 40px' }}>
+      {/* 9. FOOTER - Royal & Formal */}
+      <footer style={{ backgroundColor: '#001a4d', color: 'white', padding: '80px 32px 40px', borderTop: '4px solid #d4af37' }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '48px', marginBottom: '60px' }}>
             {/* Brand Column */}
@@ -710,10 +722,12 @@ export default function Home() {
                       fontWeight: '700',
                     }}
                     onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#e74c3c';
+                      e.currentTarget.style.backgroundColor = '#d4af37';
+                      e.currentTarget.style.color = '#001a4d';
                     }}
                     onMouseOut={(e) => {
                       e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                      e.currentTarget.style.color = 'white';
                     }}
                   >
                     {social}
@@ -814,7 +828,7 @@ export default function Home() {
           </div>
 
           {/* Footer Bottom */}
-          <div style={{ borderTop: '1px solid rgba(212,175,55,0.2)', paddingTop: '40px', textAlign: 'center' }}>
+          <div style={{ borderTop: '1px solid #d4af37', paddingTop: '40px', textAlign: 'center' }}>
             <p style={{ fontSize: '12px', color: '#aaa', margin: 0 }}>
               Copyright 2026 JHCO. Serving Humanity with Dignity.
             </p>

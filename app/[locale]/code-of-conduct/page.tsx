@@ -106,14 +106,14 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.darkNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -149,11 +149,11 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
             textAlign: 'center',
           }}>
-            Core <span style={{ color: royalColors.warmGold }}>Principles</span>
+            Core <span style={{ color: royalColors.hashemiteGold }}>Principles</span>
           </h2>
 
           <div style={{
@@ -167,7 +167,7 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
@@ -177,7 +177,7 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
                 <h3 style={{
                   fontSize: '24px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '16px',
                   marginTop: 0,
                 }}>
@@ -185,7 +185,7 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.7',
                   margin: 0,
                 }}>
@@ -197,20 +197,20 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
 
           {/* Conduct Violations */}
           <div style={{
-            backgroundColor: royalColors.bgWarm,
+            backgroundColor: royalColors.bgRefined,
             padding: '48px 40px',
             borderRadius: '8px',
-            border: `1px solid ${royalColors.border}`,
+            border: `1px solid ${royalColors.borderFormal}`,
           }}>
             <h2 style={{
               fontSize: '32px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '32px',
               textAlign: ar ? 'right' : 'left',
               marginTop: 0,
             }}>
-              Prohibited <span style={{ color: royalColors.warmGold }}>Conduct</span>
+              Prohibited <span style={{ color: royalColors.hashemiteGold }}>Conduct</span>
             </h2>
 
             <div style={{
@@ -226,7 +226,7 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
                   flexDirection: ar ? 'row-reverse' : 'row',
                 }}>
                   <span style={{
-                    color: royalColors.compassionRed,
+                    color: royalColors.charityRed,
                     fontSize: '20px',
                     fontWeight: 'bold',
                     flexShrink: 0,
@@ -235,7 +235,7 @@ export default function CodeOfConductPage({ params }: { params: { locale: Locale
                   </span>
                   <p style={{
                     fontSize: '15px',
-                    color: royalColors.textDark,
+                    color: royalColors.textOfficial,
                     lineHeight: '1.6',
                     margin: 0,
                   }}>

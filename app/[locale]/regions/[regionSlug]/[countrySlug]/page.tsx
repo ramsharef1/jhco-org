@@ -31,10 +31,10 @@ export default function CountryPage({
     return (
       <div style={{ padding: `${spacing.xxxl} ${spacing.xl}`, textAlign: 'center', minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div>
-          <h1 style={{ fontSize: '32px', color: royalColors.deepNavy, marginBottom: spacing.lg }}>
+          <h1 style={{ fontSize: '32px', color: royalColors.darkNavy, marginBottom: spacing.lg }}>
             {ar ? 'لم يتم العثور على الدولة' : 'Country Not Found'}
           </h1>
-          <Link href={`${base}/where-we-work`} style={{ color: regionConfig?.primary || royalColors.warmGold, textDecoration: 'none', fontSize: '16px', fontWeight: '700' }}>
+          <Link href={`${base}/where-we-work`} style={{ color: regionConfig?.primary || royalColors.hashemiteGold, textDecoration: 'none', fontSize: '16px', fontWeight: '700' }}>
             {ar ? 'العودة إلى خريطة العالم' : 'Back to Global Map'}
           </Link>
         </div>
@@ -66,7 +66,7 @@ export default function CountryPage({
       />
 
       {/* Quick Statistics with Animated Counters */}
-      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgWarm }}>
+      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgRefined }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: spacing.lg }}>
             <ImpactStat
@@ -99,19 +99,19 @@ export default function CountryPage({
       {/* Overview Section */}
       <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgLight }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xl, fontFamily: '"Merriweather", Georgia, serif' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xl, fontFamily: '"Merriweather", Georgia, serif' }}>
             {ar ? 'نظرة عامة' : 'Overview'}
           </h2>
-          <p style={{ fontSize: '16px', lineHeight: 1.8, color: royalColors.textMuted, maxWidth: '900px' }}>
+          <p style={{ fontSize: '16px', lineHeight: 1.8, color: royalColors.textSecondary, maxWidth: '900px' }}>
             {ar ? country.descriptionAr : country.description}
           </p>
         </div>
       </section>
 
       {/* Programs Section: Converted to Warm Cards */}
-      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgWarm }}>
+      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgRefined }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
             {ar ? 'برامجنا الفعّالة' : 'Our Active Programs'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: spacing.lg }}>
@@ -136,7 +136,7 @@ export default function CountryPage({
       {/* Success Stories Section */}
       <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgLight }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
             {ar ? 'قصص النجاح' : 'Success Stories'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: spacing.lg }}>
@@ -170,9 +170,9 @@ export default function CountryPage({
 
       {/* Related Countries Section */}
       {regionCountries.length > 1 && (
-        <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgWarm }}>
+        <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgRefined }}>
           <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
               {ar ? 'دول أخرى في المنطقة' : 'Other Countries in Region'}
             </h2>
 

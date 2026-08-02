@@ -100,14 +100,14 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -150,23 +150,23 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 transition: 'all 0.3s ease',
                 textAlign: ar ? 'right' : 'left',
-                borderTop: `4px solid ${royalColors.warmGold}`,
+                borderTop: `4px solid ${royalColors.hashemiteGold}`,
               }}>
                 <div style={{
                   width: '80px',
                   height: '80px',
-                  backgroundColor: royalColors.deepNavy,
+                  backgroundColor: royalColors.darkNavy,
                   borderRadius: '50%',
                   marginBottom: '24px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '32px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: 'bold',
                   marginLeft: ar ? 'auto' : 0,
                 }}>
@@ -175,7 +175,7 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
                 <h3 style={{
                   fontSize: '22px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '8px',
                   marginTop: 0,
                 }}>
@@ -183,7 +183,7 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: '700',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
@@ -204,12 +204,12 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
                 </p>
                 <div style={{
                   height: '1px',
-                  backgroundColor: royalColors.border,
+                  backgroundColor: royalColors.borderFormal,
                   marginBottom: '16px',
                 }} />
                 <p style={{
                   fontSize: '15px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -223,18 +223,18 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
 
       {/* Governance Info */}
       <section style={{
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
             textAlign: 'center',
           }}>
-            Governance <span style={{ color: royalColors.warmGold }}>Framework</span>
+            Governance <span style={{ color: royalColors.hashemiteGold }}>Framework</span>
           </h2>
 
           <div style={{
@@ -246,14 +246,14 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
               <h3 style={{
                 fontSize: '24px',
                 fontFamily: royalTypography.serif,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '20px',
               }}>
                 Board Responsibilities
               </h3>
               <ul style={{
                 fontSize: '16px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.8',
                 paddingLeft: ar ? 0 : '24px',
                 paddingRight: ar ? '24px' : 0,
@@ -271,14 +271,14 @@ export default function BoardPage({ params }: { params: { locale: Locale } }) {
               <h3 style={{
                 fontSize: '24px',
                 fontFamily: royalTypography.serif,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '20px',
               }}>
                 Board Operations
               </h3>
               <ul style={{
                 fontSize: '16px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.8',
                 paddingLeft: ar ? 0 : '24px',
                 paddingRight: ar ? '24px' : 0,

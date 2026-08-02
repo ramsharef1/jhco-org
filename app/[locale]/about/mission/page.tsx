@@ -64,14 +64,14 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -108,13 +108,13 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             backgroundColor: 'white',
             padding: '60px 48px',
             borderRadius: '8px',
-            border: `2px solid ${royalColors.warmGold}`,
+            border: `2px solid ${royalColors.hashemiteGold}`,
             boxShadow: '0 8px 20px rgba(10,20,40,0.15)',
           }}>
             <p style={{
               fontSize: '24px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               lineHeight: '1.8',
               fontWeight: '400',
               marginTop: 0,
@@ -125,7 +125,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             <div style={{
               height: '4px',
               width: '80px',
-              backgroundColor: royalColors.warmGold,
+              backgroundColor: royalColors.hashemiteGold,
               margin: '0 auto',
             }} />
           </div>
@@ -134,7 +134,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
 
       {/* Mission Pillars */}
       <section style={{
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -142,14 +142,14 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '24px',
             }}>
-              Four <span style={{ color: royalColors.warmGold }}>Pillars</span>
+              Four <span style={{ color: royalColors.hashemiteGold }}>Pillars</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.textDark,
+              color: royalColors.textOfficial,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -168,21 +168,21 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '12px',
-                border: `1px solid ${royalColors.borderLight}`,
+                border: `1px solid ${royalColors.borderFormalLight}`,
                 boxShadow: '0 4px 12px rgba(232,185,35,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  backgroundColor: royalColors.warmGold,
+                  backgroundColor: royalColors.hashemiteGold,
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '28px',
                   fontWeight: 'bold',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '20px',
                   marginLeft: ar ? 'auto' : 0,
                 }}>
@@ -191,7 +191,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
                 <h3 style={{
                   fontSize: '24px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '16px',
                   marginTop: 0,
                 }}>
@@ -199,7 +199,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
                 </h3>
                 <p style={{
                   fontSize: '16px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -213,7 +213,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -224,7 +224,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Our <span style={{ color: royalColors.warmGold }}>Commitment</span>
+            Our <span style={{ color: royalColors.hashemiteGold }}>Commitment</span>
           </h2>
           <p style={{
             fontSize: '18px',

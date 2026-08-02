@@ -46,9 +46,9 @@ export default function WhereWeWorkPage({
       />
 
       {/* Impact Stats with Animated Counters */}
-      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgWarm }}>
+      <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgRefined }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
             {ar ? 'تأثيرنا العالمي' : 'Our Global Impact'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: spacing.lg }}>
@@ -75,7 +75,7 @@ export default function WhereWeWorkPage({
       {/* Regions Grid with Warm Cards */}
       <section style={{ padding: `${spacing.xxxl} ${spacing.xl}`, backgroundColor: royalColors.bgLight }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.deepNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '42px', fontWeight: 600, color: royalColors.darkNavy, marginBottom: spacing.xxxl, fontFamily: '"Merriweather", Georgia, serif', textAlign: 'center' }}>
             {ar ? 'مناطقنا الجغرافية' : 'Our Geographic Regions'}
           </h2>
 

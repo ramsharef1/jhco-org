@@ -27,11 +27,11 @@ export default function ImpactStat({
   const ref = useRef<HTMLDivElement>(null);
 
   const colorMap = {
-    gold: { bg: 'rgba(232, 185, 35, 0.1)', text: royalColors.warmGold, border: royalColors.warmGold },
-    teal: { bg: 'rgba(26, 188, 156, 0.1)', text: royalColors.hopeTeal, border: royalColors.hopeTeal },
-    coral: { bg: 'rgba(255, 107, 107, 0.1)', text: royalColors.coral, border: royalColors.coral },
-    green: { bg: 'rgba(39, 174, 96, 0.1)', text: royalColors.deepGreen, border: royalColors.deepGreen },
-    red: { bg: 'rgba(231, 76, 60, 0.1)', text: royalColors.compassionRed, border: royalColors.compassionRed },
+    gold: { bg: '#f5f1e8', text: '#d4af37', border: '#d4af37' },
+    teal: { bg: '#f5f1e8', text: '#0d7377', border: '#0d7377' },
+    coral: { bg: '#f5f1e8', text: '#ff6b6b', border: '#ff6b6b' },
+    green: { bg: '#f5f1e8', text: '#1b4332', border: '#1b4332' },
+    red: { bg: '#f5f1e8', text: '#c41e3a', border: '#c41e3a' },
   };
 
   const current = colorMap[color];
@@ -85,9 +85,9 @@ export default function ImpactStat({
   }, [isVisible, number]);
 
   const trendMap = {
-    up: { icon: '📈', color: royalColors.deepGreen },
-    down: { icon: '📉', color: royalColors.compassionRed },
-    stable: { icon: '➡️', color: royalColors.softGray },
+    up: { icon: '📈', color: royalColors.impactGreen },
+    down: { icon: '📉', color: royalColors.charityRed },
+    stable: { icon: '➡️', color: royalColors.darkGrayText },
   };
 
   return (
@@ -95,7 +95,7 @@ export default function ImpactStat({
       ref={ref}
       style={{
         backgroundColor: current.bg,
-        borderRadius: borderRadius.card,
+        borderRadius: '0px',
         padding: spacing.lg,
         border: `2px solid ${current.border}`,
         textAlign: 'center',
@@ -148,7 +148,7 @@ export default function ImpactStat({
         style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: royalColors.textDark,
+          color: royalColors.textOfficial,
           marginTop: spacing.md,
           marginBottom: 0,
           textTransform: 'uppercase',

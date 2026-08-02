@@ -31,7 +31,7 @@ export default function ImpactCalculator({
     { icon: '🏠', label: 'Days of shelter', amount: 100 },
   ],
   onDonationChange,
-  primaryColor = royalColors.warmGold,
+  primaryColor = royalColors.hashemiteGold,
 }: ImpactCalculatorProps) {
   const [amount, setAmount] = useState(defaultAmount);
 
@@ -55,7 +55,7 @@ export default function ImpactCalculator({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
         borderRadius: borderRadius.card,
         padding: spacing.xl,
         boxShadow: shadows.md,
@@ -65,7 +65,7 @@ export default function ImpactCalculator({
         style={{
           fontSize: '24px',
           fontWeight: 700,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           margin: `0 0 ${spacing.md} 0`,
           textAlign: 'center',
         }}
@@ -87,7 +87,7 @@ export default function ImpactCalculator({
         <p
           style={{
             fontSize: '12px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: `0 0 ${spacing.sm} 0`,
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -122,7 +122,7 @@ export default function ImpactCalculator({
             width: '100%',
             height: '8px',
             borderRadius: '4px',
-            backgroundColor: royalColors.border,
+            backgroundColor: royalColors.borderFormal,
             outline: 'none',
             WebkitAppearance: 'none',
             cursor: 'pointer',
@@ -168,9 +168,9 @@ export default function ImpactCalculator({
             style={{
               padding: spacing.md,
               borderRadius: borderRadius.sm,
-              border: `2px solid ${amount === value ? primaryColor : royalColors.border}`,
+              border: `2px solid ${amount === value ? primaryColor : royalColors.borderFormal}`,
               backgroundColor: amount === value ? `${primaryColor}20` : royalColors.bgLight,
-              color: amount === value ? primaryColor : royalColors.textDark,
+              color: amount === value ? primaryColor : royalColors.textOfficial,
               fontWeight: 600,
               fontSize: '14px',
               cursor: 'pointer',
@@ -192,14 +192,14 @@ export default function ImpactCalculator({
       {/* Impact Display */}
       <div
         style={{
-          borderTop: `1px solid ${royalColors.border}`,
+          borderTop: `1px solid ${royalColors.borderFormal}`,
           paddingTop: spacing.lg,
         }}
       >
         <p
           style={{
             fontSize: '12px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: `0 0 ${spacing.md} 0`,
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -224,7 +224,7 @@ export default function ImpactCalculator({
                 borderRadius: borderRadius.md,
                 padding: spacing.md,
                 textAlign: 'center',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
               }}
             >
               <div
@@ -249,7 +249,7 @@ export default function ImpactCalculator({
               <p
                 style={{
                   fontSize: '11px',
-                  color: royalColors.textMuted,
+                  color: royalColors.textSecondary,
                   margin: 0,
                   lineHeight: 1.3,
                 }}

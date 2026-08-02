@@ -55,16 +55,16 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
   ];
 
   return (
-    <footer style={{ backgroundColor: royalColors.deepNavy, color: 'white' }}>
+    <footer style={{ backgroundColor: royalColors.darkNavy, color: 'white' }}>
       {/* Heraldic top border - Warm gradient */}
-      <div style={{ height: '6px', background: `linear-gradient(90deg, ${royalColors.warmGold}, ${royalColors.compassionRed}, ${royalColors.hopeTeal}, ${royalColors.warmGold})` }}></div>
+      <div style={{ height: '6px', background: `linear-gradient(90deg, ${royalColors.hashemiteGold}, ${royalColors.charityRed}, ${royalColors.compassionTeal}, ${royalColors.hashemiteGold})` }}></div>
 
       {/* Main Footer Content */}
       <div style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.xxxl + ' ' + spacing.xl + ' 0', borderBottom: `1px solid rgba(232, 185, 35, 0.15)` }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: spacing.xxl, marginBottom: spacing.xxxl }}>
           {sections.map((section) => (
             <div key={section.key} style={{ display: 'flex', flexDirection: 'column', gap: spacing.md }}>
-              <h4 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.warmGold, margin: '0 0 12px 0', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.hashemiteGold, margin: '0 0 12px 0', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
                 {ar ? section.title : section.titleEn}
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: spacing.sm }}>
@@ -81,7 +81,7 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
                         display: 'inline-block',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = royalColors.hopeTeal;
+                        e.currentTarget.style.color = royalColors.compassionTeal;
                         e.currentTarget.style.transform = 'translateX(4px)';
                       }}
                       onMouseLeave={(e) => {
@@ -112,7 +112,7 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
                  e.currentTarget.style.boxShadow = 'none';
                }}
           >
-            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.warmGold, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.hashemiteGold, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
               👑 {ar ? 'الرعاية الملكية' : 'Royal Patronage'}
             </h5>
             <p style={{ fontSize: '13px', color: '#d0d0d0', lineHeight: '1.6', margin: 0 }}>
@@ -130,7 +130,7 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
                  e.currentTarget.style.boxShadow = 'none';
                }}
           >
-            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.hopeTeal, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.compassionTeal, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
               🛡️ {ar ? 'الشفافية' : 'Transparency'}
             </h5>
             <p style={{ fontSize: '13px', color: '#d0d0d0', lineHeight: '1.6', margin: 0 }}>
@@ -148,7 +148,7 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
                  e.currentTarget.style.boxShadow = 'none';
                }}
           >
-            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.compassionRed, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
+            <h5 style={{ fontSize: '12px', fontWeight: '700', color: royalColors.charityRed, textTransform: 'uppercase', marginBottom: spacing.md, letterSpacing: '1px' }}>
               ⚜️ {ar ? 'التميز' : 'Excellence'}
             </h5>
             <p style={{ fontSize: '13px', color: '#d0d0d0', lineHeight: '1.6', margin: 0 }}>

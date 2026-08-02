@@ -112,14 +112,14 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -162,7 +162,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: ar ? 'right' : 'left',
                 display: 'flex',
@@ -178,7 +178,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
                 }}>
                   <div>
                     <p style={{
-                      color: royalColors.warmGold,
+                      color: royalColors.hashemiteGold,
                       fontSize: '12px',
                       fontWeight: '700',
                       textTransform: 'uppercase',
@@ -198,7 +198,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
                     </p>
                   </div>
                   <div style={{
-                    backgroundColor: royalColors.bgWarm,
+                    backgroundColor: royalColors.bgRefined,
                     padding: '8px 12px',
                     borderRadius: '4px',
                     fontSize: '12px',
@@ -213,7 +213,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
                 <h3 style={{
                   fontSize: '20px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '16px',
                   marginTop: 0,
                 }}>
@@ -222,7 +222,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
 
                 <p style={{
                   fontSize: '15px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   marginBottom: '24px',
                   flex: 1,
@@ -232,7 +232,7 @@ export default function ReportsPage({ params }: { params: { locale: Locale } }) 
                 </p>
 
                 <button style={{
-                  backgroundColor: royalColors.deepNavy,
+                  backgroundColor: royalColors.darkNavy,
                   color: 'white',
                   border: 'none',
                   padding: '12px 24px',

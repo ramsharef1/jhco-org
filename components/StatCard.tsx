@@ -21,11 +21,11 @@ export default function StatCard({
   suffix,
 }: StatCardProps) {
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
-    red: royalColors.compassionRed,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
+    red: royalColors.charityRed,
   };
 
   const bgColorMap = {
@@ -42,19 +42,17 @@ export default function StatCard({
   return (
     <div
       style={{
-        backgroundColor: bgColor,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#f5f1e8',
+        borderRadius: '0px',
         padding: spacing.lg,
-        border: `2px solid ${accentColor}40`,
+        border: `2px solid ${accentColor}`,
         transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = `${accentColor}15`;
         e.currentTarget.style.boxShadow = shadows.md;
         e.currentTarget.style.transform = 'translateY(-4px)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = bgColor;
         e.currentTarget.style.boxShadow = 'none';
         e.currentTarget.style.transform = 'translateY(0)';
       }}
@@ -99,7 +97,7 @@ export default function StatCard({
         style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: royalColors.textDark,
+          color: royalColors.textOfficial,
           margin: `0 0 ${spacing.sm} 0`,
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
@@ -113,7 +111,7 @@ export default function StatCard({
         <p
           style={{
             fontSize: '13px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             lineHeight: 1.5,
             margin: 0,
           }}

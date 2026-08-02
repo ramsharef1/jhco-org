@@ -118,14 +118,14 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -164,9 +164,9 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
-                borderLeft: `5px solid ${royalColors.warmGold}`,
+                borderLeft: `5px solid ${royalColors.hashemiteGold}`,
               }}>
                 <div style={{
                   display: 'flex',
@@ -184,7 +184,7 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
                     <h3 style={{
                       fontSize: '28px',
                       fontFamily: royalTypography.serif,
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       marginBottom: '8px',
                       marginTop: 0,
                     }}>
@@ -203,7 +203,7 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
 
                 <div style={{
                   height: '1px',
-                  backgroundColor: royalColors.border,
+                  backgroundColor: royalColors.borderFormal,
                   marginBottom: '24px',
                 }} />
 
@@ -214,11 +214,11 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
                 }}>
                   {level.departments.map((dept, dIdx) => (
                     <div key={dIdx} style={{
-                      backgroundColor: royalColors.bgWarm,
+                      backgroundColor: royalColors.bgRefined,
                       padding: '16px',
                       borderRadius: '4px',
                       fontSize: '15px',
-                      color: royalColors.textDark,
+                      color: royalColors.textOfficial,
                       textAlign: ar ? 'right' : 'left',
                     }}>
                       • {dept}
@@ -233,17 +233,17 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
 
       {/* Reporting Lines */}
       <section style={{
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
           }}>
-            Coordination & <span style={{ color: royalColors.warmGold }}>Communication</span>
+            Coordination & <span style={{ color: royalColors.hashemiteGold }}>Communication</span>
           </h2>
 
           <div style={{
@@ -255,20 +255,20 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
               backgroundColor: 'white',
               padding: '40px 32px',
               borderRadius: '8px',
-              border: `1px solid ${royalColors.border}`,
+              border: `1px solid ${royalColors.borderFormal}`,
             }}>
               <div style={{ fontSize: '44px', marginBottom: '12px' }}>📋</div>
               <h3 style={{
                 fontSize: '20px',
                 fontWeight: '700',
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '12px',
               }}>
                 Clear Lines of Reporting
               </h3>
               <p style={{
                 fontSize: '15px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.6',
                 margin: 0,
               }}>
@@ -280,20 +280,20 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
               backgroundColor: 'white',
               padding: '40px 32px',
               borderRadius: '8px',
-              border: `1px solid ${royalColors.border}`,
+              border: `1px solid ${royalColors.borderFormal}`,
             }}>
               <div style={{ fontSize: '44px', marginBottom: '12px' }}>🤝</div>
               <h3 style={{
                 fontSize: '20px',
                 fontWeight: '700',
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '12px',
               }}>
                 Cross-Functional Teams
               </h3>
               <p style={{
                 fontSize: '15px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.6',
                 margin: 0,
               }}>
@@ -305,20 +305,20 @@ export default function StructurePage({ params }: { params: { locale: Locale } }
               backgroundColor: 'white',
               padding: '40px 32px',
               borderRadius: '8px',
-              border: `1px solid ${royalColors.border}`,
+              border: `1px solid ${royalColors.borderFormal}`,
             }}>
               <div style={{ fontSize: '44px', marginBottom: '12px' }}>📊</div>
               <h3 style={{
                 fontSize: '20px',
                 fontWeight: '700',
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '12px',
               }}>
                 Regular Reviews
               </h3>
               <p style={{
                 fontSize: '15px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.6',
                 margin: 0,
               }}>

@@ -1,18 +1,41 @@
 @import "tailwindcss";
+@import "./royal-design.css";
 
+/* ROYAL FIRST DESIGN SYSTEM - JHCO */
 :root {
-  /* Warm Design System Colors */
-  --color-deep-navy: #0a1428;
-  --color-warm-gold: #e8b923;
-  --color-compassion-red: #e74c3c;
-  --color-hope-teal: #1abc9c;
-  --color-warm-beige: #f5e6d3;
-  --color-bg-light: #ffffff;
-  --color-text-dark: #2c3e50;
+  /* PRIMARY ROYAL PALETTE - Authority & Prestige */
+  --color-deep-royal: #4a148c;        /* Deep Royal Purple (most formal, regal, prestigious) */
+  --color-dark-navy: #001a4d;         /* Dark Navy (formal authority, official) */
+  --color-hashemite-gold: #d4af37;    /* Hashemite Gold (precious metal, royal privilege) */
+  --color-royal-burgundy: #5d1049;    /* Royal Burgundy (heritage, nobility) */
+  --color-deep-crimson: #8b0000;      /* Deep Crimson (formal, stately, official) */
+
+  /* SECONDARY FORMAL PALETTE - Elegant Support */
+  --color-formal-charcoal: #2b2d42;   /* Formal Charcoal (sophisticated, reserved) */
+  --color-ivory-bg: #f5f1e8;          /* Ivory/Cream (refined, elegant) */
+  --color-pale-gold: #e8dcc8;         /* Pale Gold (subtle, formal accent) */
+  --color-dark-gray-text: #2c2c2c;    /* Dark Gray for text (readable, formal) */
+
+  /* TERTIARY CHARITY PALETTE - Support Role */
+  --color-charity-red: #c41e3a;       /* Charity Red (formal, not bright - used sparingly) */
+  --color-compassion-teal: #0d7377;   /* Compassion Teal (muted, formal - secondary) */
+  --color-impact-green: #1b4332;      /* Impact Green (dark, formal - supporting) */
+
+  /* NEUTRAL PALETTE - Text & Backgrounds */
+  --color-text-official: #1a1a2e;     /* Official text (very dark, authoritative) */
+  --color-text-secondary: #5a5a6a;    /* Secondary text (muted, formal) */
+  --color-bg-light: #ffffff;          /* Light background */
+  --color-bg-refined: #faf8f5;        /* Refined background (ivory-leaning) */
+  --color-border-formal: #d4c5a9;     /* Formal border (gold-tinted, elegant) */
+  --color-border-subtle: #e8dcc8;     /* Subtle border (pale) */
+
+  /* GOLD ACCENTS - Royal Precious Metal */
+  --color-gold-bright: #f4c430;       /* Bright Gold (hover, emphasis) */
+  --color-gold-dark: #b8860b;         /* Dark Gold (active, depth) */
 
   /* Standard CSS Variables */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a2e;
 }
 
 @theme inline {
@@ -24,46 +47,93 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a2e;
+    --foreground: #f5f1e8;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Garamond", "Georgia", "Bodoni MT", serif;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
 }
 
-/* Warm Design System Global Styles */
+/* ROYAL DESIGN SYSTEM GLOBAL STYLES */
 
-/* Links with warm hover effects */
+/* Links with formal styling */
 a {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-deep-royal);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 a:hover {
-  color: var(--color-warm-gold);
+  color: var(--color-hashemite-gold);
+  text-decoration: underline;
 }
 
-/* Buttons base styling */
+/* Buttons base styling - FORMAL, AUTHORITATIVE */
 button {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: inherit;
+  font-family: "Garamond", "Georgia", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 button:not(:disabled):hover {
-  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -2px rgba(74, 20, 140, 0.2);
 }
 
-/* Form elements with warm styling */
+/* Form elements with formal styling */
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-hope-teal);
-  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+  border-color: var(--color-hashemite-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Headings - FORMAL, SERIF, UPPERCASE */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Garamond", "Georgia", "Bodoni MT", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--color-deep-royal);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
 }
 
 /* Smooth scrolling */
@@ -71,8 +141,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection color - warm brand color */
+/* Selection color - royal gold */
 ::selection {
-  background-color: var(--color-warm-gold);
-  color: var(--color-deep-navy);
+  background-color: var(--color-hashemite-gold);
+  color: var(--color-deep-royal);
 }

@@ -59,14 +59,14 @@ export const ProgramsSectionExample = () => {
   ];
 
   return (
-    <section style={{ padding: `${spacing.xxxl} ${spacing.lg}`, backgroundColor: royalColors.bgWarm }}>
+    <section style={{ padding: `${spacing.xxxl} ${spacing.lg}`, backgroundColor: royalColors.bgRefined }}>
       <h2
         style={{
           fontSize: '42px',
           fontWeight: 700,
           textAlign: 'center',
           marginBottom: spacing.xxl,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           fontFamily: '"Merriweather", Georgia, serif',
         }}
       >
@@ -134,7 +134,7 @@ export const ImpactSectionExample = () => {
           fontWeight: 700,
           textAlign: 'center',
           marginBottom: spacing.xl,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           fontFamily: '"Merriweather", Georgia, serif',
         }}
       >
@@ -145,7 +145,7 @@ export const ImpactSectionExample = () => {
         style={{
           textAlign: 'center',
           fontSize: '18px',
-          color: royalColors.textMuted,
+          color: royalColors.textSecondary,
           marginBottom: spacing.xxl,
           maxWidth: '600px',
           margin: `0 auto ${spacing.xxl}`,
@@ -168,7 +168,7 @@ export const ButtonsShowcaseExample = () => {
     <section
       style={{
         padding: `${spacing.xxxl} ${spacing.lg}`,
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
       }}
     >
       <h2
@@ -177,7 +177,7 @@ export const ButtonsShowcaseExample = () => {
           fontWeight: 700,
           textAlign: 'center',
           marginBottom: spacing.xl,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           fontFamily: '"Merriweather", Georgia, serif',
         }}
       >
@@ -195,7 +195,7 @@ export const ButtonsShowcaseExample = () => {
         }}
       >
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: royalColors.softGray, marginBottom: spacing.sm }}>
+          <p style={{ fontSize: '12px', color: royalColors.darkGrayText, marginBottom: spacing.sm }}>
             Primary (Gold)
           </p>
           <EmotionalButton
@@ -206,7 +206,7 @@ export const ButtonsShowcaseExample = () => {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: royalColors.softGray, marginBottom: spacing.sm }}>
+          <p style={{ fontSize: '12px', color: royalColors.darkGrayText, marginBottom: spacing.sm }}>
             Compassion (Red)
           </p>
           <EmotionalButton
@@ -218,7 +218,7 @@ export const ButtonsShowcaseExample = () => {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: royalColors.softGray, marginBottom: spacing.sm }}>
+          <p style={{ fontSize: '12px', color: royalColors.darkGrayText, marginBottom: spacing.sm }}>
             Hopeful (Teal)
           </p>
           <EmotionalButton
@@ -230,7 +230,7 @@ export const ButtonsShowcaseExample = () => {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: royalColors.softGray, marginBottom: spacing.sm }}>
+          <p style={{ fontSize: '12px', color: royalColors.darkGrayText, marginBottom: spacing.sm }}>
             Royal (Navy)
           </p>
           <EmotionalButton
@@ -241,7 +241,7 @@ export const ButtonsShowcaseExample = () => {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: royalColors.softGray, marginBottom: spacing.sm }}>
+          <p style={{ fontSize: '12px', color: royalColors.darkGrayText, marginBottom: spacing.sm }}>
             Secondary
           </p>
           <EmotionalButton
@@ -288,7 +288,7 @@ export const StoriesSectionExample = () => {
     <section
       style={{
         padding: `${spacing.xxxl} ${spacing.lg}`,
-        background: `linear-gradient(135deg, ${royalColors.deepNavy} 0%, #1a2540 100%)`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, #1a2540 100%)`,
         color: '#ffffff',
       }}
     >
@@ -309,7 +309,7 @@ export const StoriesSectionExample = () => {
         style={{
           textAlign: 'center',
           fontSize: '18px',
-          color: royalColors.warmBeige,
+          color: royalColors.ivoryBg,
           marginBottom: spacing.xxl,
           maxWidth: '600px',
           margin: `0 auto ${spacing.xxl}`,

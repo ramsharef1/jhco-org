@@ -23,10 +23,10 @@ export default function WarmCard({
   actionHref,
 }: WarmCardProps) {
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
   };
 
   const accentColor = colorMap[color];
@@ -41,12 +41,12 @@ export default function WarmCard({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgWarm,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#f5f1e8',
+        borderRadius: '0px',
         padding: spacing.lg,
-        boxShadow: shadows.sm,
+        boxShadow: shadows.md,
         transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-        borderLeft: `4px solid ${accentColor}`,
+        border: `2px solid ${accentColor}`,
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
@@ -57,7 +57,7 @@ export default function WarmCard({
         e.currentTarget.style.transform = 'translateY(-4px)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = shadows.sm;
+        e.currentTarget.style.boxShadow = shadows.md;
         e.currentTarget.style.transform = 'translateY(0)';
       }}
     >
@@ -95,7 +95,7 @@ export default function WarmCard({
           style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             margin: 0,
             lineHeight: 1.3,
             flex: 1,
@@ -110,7 +110,7 @@ export default function WarmCard({
         <p
           style={{
             fontSize: '14px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             lineHeight: 1.5,
             margin: `${spacing.sm} 0 ${spacing.md} 0`,
             flex: 1,

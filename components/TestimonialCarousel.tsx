@@ -41,7 +41,7 @@ export default function TestimonialCarousel({
         style={{
           padding: spacing.xl,
           textAlign: 'center',
-          color: royalColors.textMuted,
+          color: royalColors.textSecondary,
         }}
       >
         No testimonials available
@@ -66,10 +66,11 @@ export default function TestimonialCarousel({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgLight,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#ffffff',
+        borderRadius: '0px',
         padding: spacing.xl,
         boxShadow: shadows.md,
+        border: `2px solid #d4af37`,
       }}
     >
       {/* Testimonial Container */}
@@ -88,8 +89,8 @@ export default function TestimonialCarousel({
             style={{
               width: '100%',
               height: '300px',
-              backgroundColor: royalColors.border,
-              borderRadius: borderRadius.card,
+              backgroundColor: royalColors.borderFormal,
+              borderRadius: '0px',
               overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',
@@ -113,9 +114,9 @@ export default function TestimonialCarousel({
               fontSize: '20px',
               fontStyle: 'italic',
               lineHeight: 1.6,
-              color: royalColors.deepNavy,
+              color: '#4a148c',
               margin: `0 0 ${spacing.lg} 0`,
-              borderLeft: `4px solid ${royalColors.warmGold}`,
+              borderLeft: `3px solid #d4af37`,
               paddingLeft: spacing.lg,
             }}
           >
@@ -128,7 +129,7 @@ export default function TestimonialCarousel({
               style={{
                 fontSize: '16px',
                 fontWeight: 700,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 margin: `0 0 ${spacing.xs} 0`,
               }}
             >
@@ -138,7 +139,7 @@ export default function TestimonialCarousel({
               <p
                 style={{
                   fontSize: '13px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: 600,
                   margin: 0,
                   textTransform: 'uppercase',
@@ -160,7 +161,7 @@ export default function TestimonialCarousel({
           justifyContent: 'space-between',
           marginTop: spacing.xl,
           paddingTop: spacing.lg,
-          borderTop: `1px solid ${royalColors.border}`,
+          borderTop: `1px solid ${royalColors.borderFormal}`,
         }}
       >
         {/* Previous Button */}
@@ -169,22 +170,22 @@ export default function TestimonialCarousel({
           style={{
             width: '40px',
             height: '40px',
-            borderRadius: borderRadius.full,
-            border: `2px solid ${royalColors.warmGold}`,
+            borderRadius: '0px',
+            border: `2px solid ${royalColors.hashemiteGold}`,
             backgroundColor: 'transparent',
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontWeight: 700,
             fontSize: '18px',
             cursor: 'pointer',
             transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = royalColors.warmGold;
-            e.currentTarget.style.color = royalColors.deepNavy;
+            e.currentTarget.style.backgroundColor = royalColors.hashemiteGold;
+            e.currentTarget.style.color = royalColors.darkNavy;
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = royalColors.warmGold;
+            e.currentTarget.style.color = royalColors.hashemiteGold;
           }}
         >
           ←
@@ -206,19 +207,19 @@ export default function TestimonialCarousel({
                 width: idx === currentIndex ? '32px' : '10px',
                 height: '10px',
                 borderRadius: borderRadius.full,
-                backgroundColor: idx === currentIndex ? royalColors.warmGold : royalColors.border,
+                backgroundColor: idx === currentIndex ? royalColors.hashemiteGold : royalColors.borderFormal,
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               }}
               onMouseEnter={(e) => {
                 if (idx !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = royalColors.goldLight;
+                  e.currentTarget.style.backgroundColor = royalColors.paleGold;
                 }
               }}
               onMouseLeave={(e) => {
                 if (idx !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = royalColors.border;
+                  e.currentTarget.style.backgroundColor = royalColors.borderFormal;
                 }
               }}
             />
@@ -231,22 +232,22 @@ export default function TestimonialCarousel({
           style={{
             width: '40px',
             height: '40px',
-            borderRadius: borderRadius.full,
-            border: `2px solid ${royalColors.warmGold}`,
+            borderRadius: '0px',
+            border: `2px solid ${royalColors.hashemiteGold}`,
             backgroundColor: 'transparent',
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontWeight: 700,
             fontSize: '18px',
             cursor: 'pointer',
             transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = royalColors.warmGold;
-            e.currentTarget.style.color = royalColors.deepNavy;
+            e.currentTarget.style.backgroundColor = royalColors.hashemiteGold;
+            e.currentTarget.style.color = royalColors.darkNavy;
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = royalColors.warmGold;
+            e.currentTarget.style.color = royalColors.hashemiteGold;
           }}
         >
           →

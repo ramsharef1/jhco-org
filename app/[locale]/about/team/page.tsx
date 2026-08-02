@@ -136,14 +136,14 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -186,7 +186,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 transition: 'all 0.3s ease',
                 textAlign: 'center',
@@ -197,7 +197,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 <h3 style={{
                   fontSize: '22px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '8px',
                   marginTop: 0,
                 }}>
@@ -205,7 +205,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '28px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: '600',
                   marginBottom: '16px',
                   margin: '8px 0 16px 0',
@@ -223,12 +223,12 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
                 </p>
                 <div style={{
                   height: '1px',
-                  backgroundColor: royalColors.border,
+                  backgroundColor: royalColors.borderFormal,
                   marginBottom: '20px',
                 }} />
                 <p style={{
                   fontSize: '15px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -242,7 +242,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
 
       {/* Team Stats */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -256,7 +256,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,
@@ -270,7 +270,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,
@@ -284,7 +284,7 @@ export default function TeamPage({ params }: { params: { locale: Locale } }) {
             <div>
               <p style={{
                 fontSize: '48px',
-                color: royalColors.warmGold,
+                color: royalColors.hashemiteGold,
                 fontFamily: royalTypography.serif,
                 marginBottom: '8px',
                 margin: 0,

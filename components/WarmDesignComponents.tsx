@@ -40,10 +40,10 @@ export const WarmCard: React.FC<WarmCardProps> = ({
   children,
 }) => {
   const colorMap = {
-    gold: royalColors.warmGold,
-    red: royalColors.compassionRed,
-    teal: royalColors.hopeTeal,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    red: royalColors.charityRed,
+    teal: royalColors.compassionTeal,
+    green: royalColors.impactGreen,
   };
 
   const accentColor = colorMap[color];
@@ -95,7 +95,7 @@ export const WarmCard: React.FC<WarmCardProps> = ({
         style={{
           fontSize: '20px',
           fontWeight: 600,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           marginBottom: spacing.md,
           marginTop: 0,
           fontFamily: '"Merriweather", Georgia, serif',
@@ -109,7 +109,7 @@ export const WarmCard: React.FC<WarmCardProps> = ({
           style={{
             fontSize: '14px',
             lineHeight: 1.6,
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             marginBottom: spacing.lg,
             flexGrow: 1,
           }}
@@ -243,10 +243,10 @@ export const ImpactStat: React.FC<ImpactStatProps> = ({
   trend,
 }) => {
   const colorMap = {
-    gold: royalColors.warmGold,
-    red: royalColors.compassionRed,
-    teal: royalColors.hopeTeal,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    red: royalColors.charityRed,
+    teal: royalColors.compassionTeal,
+    green: royalColors.impactGreen,
   };
 
   const accentColor = colorMap[color];
@@ -297,7 +297,7 @@ export const ImpactStat: React.FC<ImpactStatProps> = ({
             style={{
               fontSize: '24px',
               marginLeft: spacing.sm,
-              color: royalColors.textMuted,
+              color: royalColors.textSecondary,
             }}
           >
             {suffix}
@@ -309,7 +309,7 @@ export const ImpactStat: React.FC<ImpactStatProps> = ({
         style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: royalColors.textDark,
+          color: royalColors.textOfficial,
           marginBottom: 0,
           marginTop: 0,
         }}
@@ -322,7 +322,7 @@ export const ImpactStat: React.FC<ImpactStatProps> = ({
           style={{
             fontSize: '16px',
             marginTop: spacing.md,
-            color: trend === 'up' ? '#27ae60' : trend === 'down' ? '#e74c3c' : royalColors.softGray,
+            color: trend === 'up' ? '#27ae60' : trend === 'down' ? '#e74c3c' : royalColors.darkGrayText,
           }}
         >
           {trendIcon[trend]}
@@ -412,7 +412,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
       <div
         style={{
           padding: spacing.xl,
-          backgroundColor: royalColors.bgWarm,
+          backgroundColor: royalColors.bgRefined,
         }}
       >
         <p
@@ -420,7 +420,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             fontSize: '18px',
             fontStyle: 'italic',
             lineHeight: 1.6,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             margin: 0,
             marginBottom: spacing.lg,
             fontFamily: '"Merriweather", Georgia, serif',
@@ -433,14 +433,14 @@ export const StoryCard: React.FC<StoryCardProps> = ({
         <div
           style={{
             paddingTop: spacing.lg,
-            borderTop: `2px solid ${royalColors.warmGold}`,
+            borderTop: `2px solid ${royalColors.hashemiteGold}`,
           }}
         >
           <p
             style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               margin: 0,
               marginBottom: space.xs,
             }}
@@ -451,7 +451,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             <p
               style={{
                 fontSize: '12px',
-                color: royalColors.textMuted,
+                color: royalColors.textSecondary,
                 margin: 0,
                 marginBottom: space.xs,
               }}
@@ -463,7 +463,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             <p
               style={{
                 fontSize: '12px',
-                color: royalColors.softGray,
+                color: royalColors.darkGrayText,
                 margin: 0,
               }}
             >
@@ -518,7 +518,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
     backgroundStyle.backgroundSize = 'cover';
     backgroundStyle.backgroundPosition = 'center';
   } else if (background === 'color') {
-    backgroundStyle.backgroundColor = backgroundValue || royalColors.warmGold;
+    backgroundStyle.backgroundColor = backgroundValue || royalColors.hashemiteGold;
   }
 
   const alignmentMap = {
@@ -582,8 +582,8 @@ export const CtaSection: React.FC<CtaSectionProps> = ({
           href={primaryCta.href}
           style={{
             display: 'inline-block',
-            backgroundColor: royalColors.warmGold,
-            color: royalColors.deepNavy,
+            backgroundColor: royalColors.hashemiteGold,
+            color: royalColors.darkNavy,
             padding: '12px 32px',
             fontSize: '16px',
             fontWeight: 600,

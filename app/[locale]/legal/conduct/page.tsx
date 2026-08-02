@@ -383,16 +383,16 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
           <div key={idx} style={{
             marginBottom: spacing.xxxl,
             padding: spacing.xl,
-            background: idx % 2 === 0 ? royalColors.warmBeige : 'white',
+            background: idx % 2 === 0 ? royalColors.ivoryBg : 'white',
             borderRadius: borderRadius.lg,
-            borderTop: `3px solid ${royalColors.warmGold}`,
+            borderTop: `3px solid ${royalColors.hashemiteGold}`,
           }}>
             <h2 style={{
               fontSize: '28px',
               fontFamily: '"Merriweather", Georgia, serif',
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               margin: `0 0 ${spacing.lg} 0`,
-              borderBottom: `2px solid ${royalColors.warmGold}`,
+              borderBottom: `2px solid ${royalColors.hashemiteGold}`,
               paddingBottom: spacing.md,
             }}>
               {section.title}
@@ -401,7 +401,7 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
               <p key={pIdx} style={{
                 fontSize: '16px',
                 lineHeight: '1.8',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 margin: `${spacing.md} 0`,
                 marginLeft: ar ? '0' : (paragraph.startsWith('•') ? spacing.lg : '0'),
                 marginRight: ar ? (paragraph.startsWith('•') ? spacing.lg : '0') : '0',
@@ -415,34 +415,34 @@ export default function ConductPage({ params }: { params: { locale: Locale } }) 
 
       {/* Footer Navigation */}
       <section style={{
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         padding: `${spacing.xxl} ${spacing.xl}`,
-        borderTop: `3px solid ${royalColors.warmGold}`,
+        borderTop: `3px solid ${royalColors.hashemiteGold}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href={`/${locale}`} style={{
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             textDecoration: 'none',
             fontSize: '16px',
             fontWeight: '600',
             display: 'inline-block',
             padding: `${spacing.sm} ${spacing.lg}`,
-            border: `2px solid ${royalColors.warmGold}`,
+            border: `2px solid ${royalColors.hashemiteGold}`,
             borderRadius: borderRadius.md,
             transition: 'all 0.3s',
-            background: royalColors.warmGold,
+            background: royalColors.hashemiteGold,
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.deepNavy;
+            (e.currentTarget as HTMLElement).style.background = royalColors.darkNavy;
             (e.currentTarget as HTMLElement).style.color = 'white';
-            (e.currentTarget as HTMLElement).style.borderColor = royalColors.deepNavy;
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.darkNavy;
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = royalColors.warmGold;
-            (e.currentTarget as HTMLElement).style.color = royalColors.deepNavy;
-            (e.currentTarget as HTMLElement).style.borderColor = royalColors.warmGold;
+            (e.currentTarget as HTMLElement).style.background = royalColors.hashemiteGold;
+            (e.currentTarget as HTMLElement).style.color = royalColors.darkNavy;
+            (e.currentTarget as HTMLElement).style.borderColor = royalColors.hashemiteGold;
           }}
           >
             {ar ? 'العودة إلى الرئيسية' : 'Back to Home'}

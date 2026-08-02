@@ -260,7 +260,7 @@ export default function TermsPage({ params }: { params: { locale: Locale } }) {
         {content.sections.map((section, idx) => (
           <div key={idx} style={{
             marginBottom: `${spacing.xxxl}`,
-            backgroundColor: idx % 2 === 0 ? royalColors.warmBeige : 'transparent',
+            backgroundColor: idx % 2 === 0 ? royalColors.ivoryBg : 'transparent',
             padding: idx % 2 === 0 ? spacing.xl : '0',
             borderRadius: idx % 2 === 0 ? borderRadius.card : '0',
           }}>
@@ -275,9 +275,9 @@ export default function TermsPage({ params }: { params: { locale: Locale } }) {
               <h2 style={{
                 fontSize: '28px',
                 fontFamily: '"Merriweather", Georgia, serif',
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 margin: '0',
-                borderBottom: `3px solid ${royalColors.warmGold}`,
+                borderBottom: `3px solid ${royalColors.hashemiteGold}`,
                 paddingBottom: spacing.md,
                 flex: 1,
               }}>
@@ -290,7 +290,7 @@ export default function TermsPage({ params }: { params: { locale: Locale } }) {
               <p key={pIdx} style={{
                 fontSize: '16px',
                 lineHeight: '1.8',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 margin: `${spacing.md} 0`,
                 marginLeft: ar ? '0' : (paragraph.startsWith('•') ? spacing.xl : '0'),
                 marginRight: ar ? (paragraph.startsWith('•') ? spacing.xl : '0') : '0',
@@ -304,32 +304,32 @@ export default function TermsPage({ params }: { params: { locale: Locale } }) {
 
       {/* Warm CTA Section */}
       <section style={{
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         padding: `${spacing.xxxl} ${spacing.xl}`,
         textAlign: ar ? 'right' : 'left',
         direction: ar ? 'rtl' : 'ltr',
-        borderTop: `3px solid ${royalColors.warmGold}`,
+        borderTop: `3px solid ${royalColors.hashemiteGold}`,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href={`/${locale}`} style={{
             display: 'inline-block',
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             textDecoration: 'none',
             fontSize: '16px',
             fontWeight: '600',
             padding: `${spacing.md} ${spacing.xl}`,
-            backgroundColor: royalColors.warmGold,
+            backgroundColor: royalColors.hashemiteGold,
             borderRadius: borderRadius.button,
             transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
             boxShadow: '0 4px 12px rgba(232, 185, 35, 0.2)',
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.goldLight;
+            (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.paleGold;
             (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
             (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(232, 185, 35, 0.3)';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.warmGold;
+            (e.currentTarget as HTMLElement).style.backgroundColor = royalColors.hashemiteGold;
             (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(232, 185, 35, 0.2)';
           }}

@@ -22,11 +22,11 @@ export default function ValueCard({
   linkHref,
 }: ValueCardProps) {
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
-    red: royalColors.compassionRed,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
+    red: royalColors.charityRed,
   };
 
   const bgColorMap = {
@@ -43,22 +43,20 @@ export default function ValueCard({
   return (
     <div
       style={{
-        backgroundColor: bgColor,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#ffffff',
+        borderRadius: '0px',
         padding: spacing.lg,
-        border: `2px solid ${accentColor}40`,
+        border: `2px solid ${accentColor}`,
         transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = `${accentColor}15`;
-        e.currentTarget.style.boxShadow = shadows.md;
+        e.currentTarget.style.boxShadow = shadows.lg;
         e.currentTarget.style.transform = 'translateY(-4px)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = bgColor;
         e.currentTarget.style.boxShadow = 'none';
         e.currentTarget.style.transform = 'translateY(0)';
       }}
@@ -85,7 +83,7 @@ export default function ValueCard({
         style={{
           fontSize: '18px',
           fontWeight: 700,
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
           margin: `0 0 ${spacing.sm} 0`,
           lineHeight: 1.3,
         }}
@@ -97,7 +95,7 @@ export default function ValueCard({
       <p
         style={{
           fontSize: '14px',
-          color: royalColors.textMuted,
+          color: royalColors.textSecondary,
           lineHeight: 1.5,
           margin: `0 0 ${spacing.md} 0`,
           flex: 1,

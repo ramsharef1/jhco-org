@@ -90,14 +90,14 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -142,7 +142,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   backgroundColor: 'white',
                   padding: '48px 32px',
                   borderRadius: '8px',
-                  border: `1px solid ${royalColors.border}`,
+                  border: `1px solid ${royalColors.borderFormal}`,
                   boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
@@ -161,7 +161,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   <h3 style={{
                     fontSize: '28px',
                     fontFamily: royalTypography.serif,
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     marginBottom: '16px',
                     marginTop: 0,
                   }}>
@@ -169,7 +169,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   </h3>
                   <p style={{
                     fontSize: '16px',
-                    color: royalColors.textDark,
+                    color: royalColors.textOfficial,
                     lineHeight: '1.7',
                     flex: 1,
                     margin: 0,
@@ -179,11 +179,11 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   </p>
                   <div style={{
                     height: '1px',
-                    backgroundColor: royalColors.border,
+                    backgroundColor: royalColors.borderFormal,
                     marginBottom: '16px',
                   }} />
                   <p style={{
-                    color: royalColors.warmGold,
+                    color: royalColors.hashemiteGold,
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
@@ -202,14 +202,14 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
             backgroundColor: 'white',
             padding: '64px 48px',
             borderRadius: '8px',
-            border: `1px solid ${royalColors.border}`,
+            border: `1px solid ${royalColors.borderFormal}`,
             boxShadow: '0 8px 24px rgba(10,20,40,0.12)',
             textAlign: ar ? 'right' : 'left',
           }}>
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '32px',
               marginTop: 0,
             }}>
@@ -218,7 +218,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
 
             <p style={{
               fontSize: '18px',
-              color: royalColors.textDark,
+              color: royalColors.textOfficial,
               lineHeight: '1.8',
               marginBottom: '40px',
               maxWidth: '900px',
@@ -240,7 +240,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   flexDirection: ar ? 'row-reverse' : 'row',
                 }}>
                   <span style={{
-                    color: royalColors.warmGold,
+                    color: royalColors.hashemiteGold,
                     fontSize: '24px',
                     fontWeight: 'bold',
                     flexShrink: 0,
@@ -249,7 +249,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                   </span>
                   <p style={{
                     fontSize: '16px',
-                    color: royalColors.deepNavy,
+                    color: royalColors.darkNavy,
                     fontWeight: '600',
                     margin: 0,
                   }}>
@@ -264,17 +264,17 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
 
       {/* Related Pages */}
       <section style={{
-        backgroundColor: royalColors.bgWarm,
+        backgroundColor: royalColors.bgRefined,
         padding: '96px 32px',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
           }}>
-            Explore More <span style={{ color: royalColors.warmGold }}>Information</span>
+            Explore More <span style={{ color: royalColors.hashemiteGold }}>Information</span>
           </h2>
 
           <div style={{
@@ -287,7 +287,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}>
@@ -295,14 +295,14 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 <h3 style={{
                   fontSize: '20px',
                   fontWeight: '700',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '12px',
                 }}>
                   {ar ? 'الامتثال' : 'Compliance'}
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: 0,
                 }}>
                   {ar ? 'التسجيلات والشهادات والسياسات' : 'Registrations, certifications & policies'}
@@ -315,7 +315,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}>
@@ -323,14 +323,14 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 <h3 style={{
                   fontSize: '20px',
                   fontWeight: '700',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '12px',
                 }}>
                   {ar ? 'مدونة السلوك' : 'Code of Conduct'}
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: 0,
                 }}>
                   {ar ? 'المبادئ والمعايير الأخلاقية' : 'Ethical standards & principles'}
@@ -343,7 +343,7 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}>
@@ -351,14 +351,14 @@ export default function GovernancePage({ params }: { params: { locale: Locale } 
                 <h3 style={{
                   fontSize: '20px',
                   fontWeight: '700',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '12px',
                 }}>
                   {ar ? 'الشفافية' : 'Transparency'}
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: 0,
                 }}>
                   {ar ? 'الشفافية والمسؤولية' : 'Accountability & openness'}

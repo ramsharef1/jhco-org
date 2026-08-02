@@ -52,14 +52,14 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.darkNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -103,13 +103,13 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: 'center',
               }}>
                 <p style={{
                   fontSize: '44px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontFamily: royalTypography.serif,
                   fontWeight: '600',
                   marginBottom: '12px',
@@ -120,7 +120,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                 <h3 style={{
                   fontSize: '18px',
                   fontWeight: '700',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '8px',
                   marginTop: '12px',
                 }}>
@@ -128,7 +128,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -143,11 +143,11 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '64px',
               textAlign: 'center',
             }}>
-              Budget <span style={{ color: royalColors.warmGold }}>Allocation</span>
+              Budget <span style={{ color: royalColors.hashemiteGold }}>Allocation</span>
             </h2>
 
             <div style={{
@@ -160,7 +160,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                   backgroundColor: 'white',
                   padding: '32px',
                   borderRadius: '8px',
-                  border: `1px solid ${royalColors.border}`,
+                  border: `1px solid ${royalColors.borderFormal}`,
                 }}>
                   <div style={{
                     display: 'flex',
@@ -171,7 +171,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                     <p style={{
                       fontSize: '16px',
                       fontWeight: '600',
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       margin: 0,
                     }}>
                       {item.category}
@@ -179,7 +179,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                     <span style={{
                       fontSize: '20px',
                       fontWeight: '700',
-                      color: royalColors.warmGold,
+                      color: royalColors.hashemiteGold,
                     }}>
                       {item.percentage}%
                     </span>
@@ -194,7 +194,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
                   }}>
                     <div style={{
                       height: '100%',
-                      backgroundColor: royalColors.warmGold,
+                      backgroundColor: royalColors.hashemiteGold,
                       width: `${item.percentage}%`,
                       borderRadius: '4px',
                     }} />
@@ -208,7 +208,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
 
       {/* Accountability Statement */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.darkNavy})`,
         padding: '64px 32px',
         color: 'white',
       }}>
@@ -219,7 +219,7 @@ export default function FinancialReportsPage({ params }: { params: { locale: Loc
             fontWeight: '400',
             marginBottom: '32px',
           }}>
-            Our Commitment to <span style={{ color: royalColors.warmGold }}>Accountability</span>
+            Our Commitment to <span style={{ color: royalColors.hashemiteGold }}>Accountability</span>
           </h2>
           <p style={{
             fontSize: '18px',

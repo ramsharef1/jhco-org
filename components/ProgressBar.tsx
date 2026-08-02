@@ -30,10 +30,10 @@ export default function ProgressBar({
   const percentage = Math.round((currentAmount / targetAmount) * 100);
 
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
   };
 
   const accentColor = colorMap[color];
@@ -61,10 +61,11 @@ export default function ProgressBar({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgWarm,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#f5f1e8',
+        borderRadius: '0px',
         padding: spacing.lg,
         boxShadow: shadows.md,
+        border: `2px solid ${accentColor}`,
       }}
     >
       {/* Title & Description */}
@@ -73,7 +74,7 @@ export default function ProgressBar({
           style={{
             fontSize: '20px',
             fontWeight: 700,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             margin: `0 0 ${spacing.sm} 0`,
           }}
         >
@@ -85,7 +86,7 @@ export default function ProgressBar({
         <p
           style={{
             fontSize: '14px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: `0 0 ${spacing.md} 0`,
             lineHeight: 1.5,
           }}
@@ -119,7 +120,7 @@ export default function ProgressBar({
           <p
             style={{
               fontSize: '12px',
-              color: royalColors.textMuted,
+              color: royalColors.textSecondary,
               margin: `${spacing.xs} 0 0 0`,
             }}
           >
@@ -147,8 +148,8 @@ export default function ProgressBar({
         style={{
           width: '100%',
           height: '12px',
-          backgroundColor: royalColors.border,
-          borderRadius: borderRadius.full,
+          backgroundColor: '#e8dcc8',
+          borderRadius: '0px',
           overflow: 'hidden',
           marginBottom: spacing.md,
           boxShadow: `inset 0 2px 4px rgba(0, 0, 0, 0.1)`,
@@ -160,7 +161,7 @@ export default function ProgressBar({
             height: '100%',
             backgroundColor: accentColor,
             transition: 'width 2s cubic-bezier(0.4, 0, 0.2, 1)',
-            borderRadius: borderRadius.full,
+            borderRadius: '0px',
             boxShadow: `0 0 8px ${accentColor}`,
           }}
         />
@@ -171,7 +172,7 @@ export default function ProgressBar({
         <p
           style={{
             fontSize: '12px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: 0,
             marginBottom: spacing.md,
             textAlign: 'right',
@@ -186,11 +187,11 @@ export default function ProgressBar({
         <div
           style={{
             padding: spacing.md,
-            backgroundColor: `${accentColor}15`,
-            borderRadius: borderRadius.md,
-            borderLeft: `3px solid ${accentColor}`,
+            backgroundColor: `${accentColor}10`,
+            borderRadius: '0px',
+            borderLeft: `2px solid ${accentColor}`,
             fontSize: '14px',
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             lineHeight: 1.5,
             fontWeight: 500,
           }}

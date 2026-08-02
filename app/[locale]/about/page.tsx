@@ -38,10 +38,10 @@ const aboutContent = {
     impact: {
       title: 'Our Impact at a Glance',
       stats: [
-        { number: 30, suffix: '+', label: 'Countries Served', color: royalColors.compassionRed },
-        { number: 75000, suffix: '+', label: 'Families Impacted', color: royalColors.hopeTeal },
-        { number: 2500, suffix: '+', label: 'Dedicated Volunteers', color: royalColors.warmGold },
-        { number: 50, suffix: 'M+', label: 'Aid Delivered', color: royalColors.deepGreen },
+        { number: 30, suffix: '+', label: 'Countries Served', color: royalColors.charityRed },
+        { number: 75000, suffix: '+', label: 'Families Impacted', color: royalColors.compassionTeal },
+        { number: 2500, suffix: '+', label: 'Dedicated Volunteers', color: royalColors.hashemiteGold },
+        { number: 50, suffix: 'M+', label: 'Aid Delivered', color: royalColors.impactGreen },
       ],
     },
 
@@ -54,25 +54,25 @@ const aboutContent = {
           icon: '❤️',
           title: 'Compassion',
           description: 'We approach every situation with empathy and genuine care for human dignity',
-          color: royalColors.compassionRed,
+          color: royalColors.charityRed,
         },
         {
           icon: '⭐',
           title: 'Excellence',
           description: 'We strive for the highest standards in all our humanitarian work',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           icon: '🤝',
           title: 'Integrity',
           description: 'We operate with transparency and honesty in all our endeavors',
-          color: royalColors.deepGreen,
+          color: royalColors.impactGreen,
         },
         {
           icon: '🌍',
           title: 'Inclusivity',
           description: 'We serve all people regardless of nationality, ethnicity, or belief',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           icon: '🛡️',
@@ -120,12 +120,12 @@ const aboutContent = {
       title: 'Our Programs',
       description: 'Comprehensive humanitarian support across multiple areas',
       items: [
-        { icon: '🚨', name: 'Crisis Response', color: royalColors.compassionRed, desc: 'Emergency humanitarian aid' },
-        { icon: '🏥', name: 'Healthcare', color: royalColors.hopeTeal, desc: 'Medical services & health initiatives' },
-        { icon: '📚', name: 'Education', color: royalColors.warmGold, desc: 'Learning opportunities for all' },
-        { icon: '🍽️', name: 'Food Security', color: royalColors.deepGreen, desc: 'Nutrition & livelihoods support' },
+        { icon: '🚨', name: 'Crisis Response', color: royalColors.charityRed, desc: 'Emergency humanitarian aid' },
+        { icon: '🏥', name: 'Healthcare', color: royalColors.compassionTeal, desc: 'Medical services & health initiatives' },
+        { icon: '📚', name: 'Education', color: royalColors.hashemiteGold, desc: 'Learning opportunities for all' },
+        { icon: '🍽️', name: 'Food Security', color: royalColors.impactGreen, desc: 'Nutrition & livelihoods support' },
         { icon: '🏠', name: 'Shelter & Housing', color: royalColors.skyBlue, desc: 'Safe housing solutions' },
-        { icon: '👩‍💼', name: 'Women Empowerment', color: royalColors.coral, desc: 'Economic & social empowerment' },
+        { icon: '👩‍💼', name: 'Women Empowerment', color: royalColors.charityRed, desc: 'Economic & social empowerment' },
       ],
     },
 
@@ -145,25 +145,25 @@ const aboutContent = {
           icon: '👁️',
           title: 'Transparent',
           description: 'Clear, honest reporting on how we work and where resources go',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           icon: '🎯',
           title: 'Professional',
           description: 'Established expertise, certified staff, and proven methodologies',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           icon: '👑',
           title: 'Royal Heritage',
           description: 'Operating under prestigious royal patronage since 1990',
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
         },
         {
           icon: '❤️',
           title: 'People-First',
           description: 'Human dignity and community voice at the center of all decisions',
-          color: royalColors.compassionRed,
+          color: royalColors.charityRed,
         },
       ],
     },
@@ -212,10 +212,10 @@ const aboutContent = {
     impact: {
       title: 'تأثيرنا في لمحة سريعة',
       stats: [
-        { number: 30, suffix: '+', label: 'الدول المخدومة', color: royalColors.compassionRed },
-        { number: 75000, suffix: '+', label: 'العائلات المستفيدة', color: royalColors.hopeTeal },
-        { number: 2500, suffix: '+', label: 'المتطوعون المكرسون', color: royalColors.warmGold },
-        { number: 50, suffix: 'M+', label: 'المساعدات المقدمة', color: royalColors.deepGreen },
+        { number: 30, suffix: '+', label: 'الدول المخدومة', color: royalColors.charityRed },
+        { number: 75000, suffix: '+', label: 'العائلات المستفيدة', color: royalColors.compassionTeal },
+        { number: 2500, suffix: '+', label: 'المتطوعون المكرسون', color: royalColors.hashemiteGold },
+        { number: 50, suffix: 'M+', label: 'المساعدات المقدمة', color: royalColors.impactGreen },
       ],
     },
 
@@ -228,25 +228,25 @@ const aboutContent = {
           icon: '❤️',
           title: 'الرحمة',
           description: 'نتعامل مع كل موقف برحمة وعناية حقيقية لكرامة الإنسان',
-          color: royalColors.compassionRed,
+          color: royalColors.charityRed,
         },
         {
           icon: '⭐',
           title: 'التميز',
           description: 'نسعى لأعلى معايير الجودة في كل عملنا الإنساني',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           icon: '🤝',
           title: 'النزاهة',
           description: 'نعمل بشفافية وصدق في كل جهودنا',
-          color: royalColors.deepGreen,
+          color: royalColors.impactGreen,
         },
         {
           icon: '🌍',
           title: 'الشمولية',
           description: 'نخدم جميع الناس بغض النظر عن الجنسية أو العرق أو المعتقد',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           icon: '🛡️',
@@ -294,12 +294,12 @@ const aboutContent = {
       title: 'برامجنا',
       description: 'دعم إنساني شامل في عدة مجالات',
       items: [
-        { icon: '🚨', name: 'الاستجابة للأزمات', color: royalColors.compassionRed, desc: 'المساعدات الإنسانية الطارئة' },
-        { icon: '🏥', name: 'الصحة', color: royalColors.hopeTeal, desc: 'الخدمات الطبية والمبادرات الصحية' },
-        { icon: '📚', name: 'التعليم', color: royalColors.warmGold, desc: 'فرص التعليم للجميع' },
-        { icon: '🍽️', name: 'الأمن الغذائي', color: royalColors.deepGreen, desc: 'دعم التغذية وسبل العيش' },
+        { icon: '🚨', name: 'الاستجابة للأزمات', color: royalColors.charityRed, desc: 'المساعدات الإنسانية الطارئة' },
+        { icon: '🏥', name: 'الصحة', color: royalColors.compassionTeal, desc: 'الخدمات الطبية والمبادرات الصحية' },
+        { icon: '📚', name: 'التعليم', color: royalColors.hashemiteGold, desc: 'فرص التعليم للجميع' },
+        { icon: '🍽️', name: 'الأمن الغذائي', color: royalColors.impactGreen, desc: 'دعم التغذية وسبل العيش' },
         { icon: '🏠', name: 'المأوى والإسكان', color: royalColors.skyBlue, desc: 'حلول السكن الآمن' },
-        { icon: '👩‍💼', name: 'تمكين النساء', color: royalColors.coral, desc: 'التمكين الاقتصادي والاجتماعي' },
+        { icon: '👩‍💼', name: 'تمكين النساء', color: royalColors.charityRed, desc: 'التمكين الاقتصادي والاجتماعي' },
       ],
     },
 
@@ -319,25 +319,25 @@ const aboutContent = {
           icon: '👁️',
           title: 'الشفافية',
           description: 'تقارير واضحة وصادقة عن كيفية عملنا والموارد',
-          color: royalColors.hopeTeal,
+          color: royalColors.compassionTeal,
         },
         {
           icon: '🎯',
           title: 'المهنية',
           description: 'خبرة راسخة وفريق معتمد وممارسات مثبتة',
-          color: royalColors.warmGold,
+          color: royalColors.hashemiteGold,
         },
         {
           icon: '👑',
           title: 'الإرث الملكي',
           description: 'العمل تحت الرعاية الملكية المرموقة منذ 1990',
-          color: royalColors.deepNavy,
+          color: royalColors.darkNavy,
         },
         {
           icon: '❤️',
           title: 'التركيز على الإنسان',
           description: 'كرامة الإنسان وصوت المجتمع في قلب كل القرارات',
-          color: royalColors.compassionRed,
+          color: royalColors.charityRed,
         },
       ],
     },
@@ -390,10 +390,10 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
   const direction = ar ? 'rtl' : 'ltr';
 
   return (
-    <main style={{ minHeight: '100vh', background: royalColors.bgWarm }}>
+    <main style={{ minHeight: '100vh', background: royalColors.bgRefined }}>
       {/* 1. HERO SECTION */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy} 0%, ${royalColors.hopeTeal} 50%, ${royalColors.warmGold} 100%)`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.compassionTeal} 50%, ${royalColors.hashemiteGold} 100%)`,
         backgroundSize: '400% 400%',
         color: 'white',
         padding: '120px 32px',
@@ -422,18 +422,20 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             margin: '0 0 16px 0',
           }}>
             👑 {ar ? 'الرعاية الملكية' : 'ROYAL PATRONAGE'}
           </p>
           <h1 style={{
             fontSize: '52px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400',
+            fontFamily: 'Garamond, serif',
+            fontWeight: '700',
             margin: '0 0 16px 0',
             maxWidth: '800px',
-            lineHeight: '1.3',
+            lineHeight: '1.1',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.hero.title}
           </h1>
@@ -448,7 +450,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
           </p>
           <p style={{
             fontSize: '16px',
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontStyle: 'italic',
             margin: '0',
           }}>
@@ -459,7 +461,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
 
       {/* 2. OUR MISSION */}
       <section style={{
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         padding: '100px 32px',
         textAlign: textAlign as any,
         direction,
@@ -467,26 +469,30 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 16px 0',
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.mission.title}
           </h2>
           <h3 style={{
             fontSize: '32px',
-            color: royalColors.compassionRed,
+            color: royalColors.charityRed,
             margin: '0 0 24px 0',
-            fontWeight: '400',
-            fontFamily: 'Georgia, serif',
+            fontWeight: '700',
+            fontFamily: 'Garamond, serif',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.mission.statement}
           </h3>
           <p style={{
             fontSize: '18px',
             lineHeight: '1.8',
-            color: royalColors.textDark,
+            color: royalColors.textOfficial,
             maxWidth: '800px',
             margin: '0',
           }}>
@@ -505,11 +511,13 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 60px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.story.title}
           </h2>
@@ -521,24 +529,24 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
             {content.story.timeline.map((item, idx) => (
               <div key={idx} style={{
                 padding: '28px',
-                background: royalColors.bgWarm,
-                borderRadius: borderRadius.card,
-                borderLeft: ar ? 'none' : `4px solid ${royalColors.warmGold}`,
-                borderRight: ar ? `4px solid ${royalColors.warmGold}` : 'none',
+                background: royalColors.bgRefined,
+                borderRadius: '0px',
+                borderLeft: ar ? 'none' : `2px solid ${royalColors.hashemiteGold}`,
+                borderRight: ar ? `2px solid ${royalColors.hashemiteGold}` : 'none',
                 textAlign: textAlign as any,
               }}>
                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>{item.icon}</div>
                 <div style={{
                   fontSize: '28px',
                   fontWeight: '700',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   marginBottom: '8px',
                 }}>
                   {item.year}
                 </div>
                 <h4 style={{
                   fontSize: '18px',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: '0 0 8px 0',
                   fontWeight: '600',
                 }}>
@@ -546,7 +554,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </h4>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textMuted,
+                  color: royalColors.textSecondary,
                   margin: '0',
                   lineHeight: '1.6',
                 }}>
@@ -561,7 +569,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
       {/* 4. OUR IMPACT AT A GLANCE */}
       <section style={{
         padding: '100px 32px',
-        background: `linear-gradient(135deg, ${royalColors.deepNavy} 0%, ${royalColors.hopeTeal} 100%)`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.compassionTeal} 100%)`,
         color: 'white',
         textAlign: textAlign as any,
         direction,
@@ -569,10 +577,13 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
+            fontFamily: 'Garamond, serif',
             margin: '0 0 60px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            color: 'white',
           }}>
             {content.impact.title}
           </h2>
@@ -585,7 +596,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '32px',
                 background: `rgba(255, 255, 255, 0.1)`,
-                borderRadius: borderRadius.card,
+                borderRadius: '0px',
                 backdropFilter: 'blur(10px)',
                 border: `2px solid ${stat.color}`,
                 textAlign: 'center',
@@ -621,17 +632,19 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 12px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.values.title}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: '0 0 48px 0',
             maxWidth: '600px',
           }}>
@@ -646,8 +659,8 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '28px',
                 background: `${value.color}08`,
-                borderRadius: borderRadius.card,
-                borderTop: `4px solid ${value.color}`,
+                borderRadius: '0px',
+                border: `2px solid ${royalColors.hashemiteGold}`,
                 textAlign: textAlign as any,
               }}>
                 <div style={{
@@ -666,7 +679,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </h4>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: '0',
                   lineHeight: '1.6',
                 }}>
@@ -681,24 +694,26 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
       {/* 6. OUR TEAM */}
       <section style={{
         padding: '100px 32px',
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         textAlign: textAlign as any,
         direction,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 12px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.team.title}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: '0 0 48px 0',
             maxWidth: '600px',
           }}>
@@ -713,7 +728,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '28px',
                 background: 'white',
-                borderRadius: borderRadius.card,
+                borderRadius: '0px',
                 boxShadow: shadows.md,
                 textAlign: textAlign as any,
               }}>
@@ -726,7 +741,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </div>
                 <h4 style={{
                   fontSize: '18px',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   margin: '0 0 4px 0',
                   fontWeight: '600',
                 }}>
@@ -734,7 +749,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </h4>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   margin: '0 0 12px 0',
                   fontWeight: '600',
                 }}>
@@ -742,7 +757,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </p>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: '0',
                   lineHeight: '1.6',
                 }}>
@@ -764,17 +779,19 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 12px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.programs.title}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: '0 0 48px 0',
             maxWidth: '600px',
           }}>
@@ -789,9 +806,9 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '24px',
                 background: `${program.color}08`,
-                borderRadius: borderRadius.card,
-                borderLeft: ar ? 'none' : `4px solid ${program.color}`,
-                borderRight: ar ? `4px solid ${program.color}` : 'none',
+                borderRadius: '0px',
+                borderLeft: ar ? 'none' : `2px solid ${royalColors.hashemiteGold}`,
+                borderRight: ar ? `2px solid ${royalColors.hashemiteGold}` : 'none',
                 textAlign: textAlign as any,
               }}>
                 <div style={{
@@ -810,7 +827,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </h4>
                 <p style={{
                   fontSize: '13px',
-                  color: royalColors.textMuted,
+                  color: royalColors.textSecondary,
                   margin: '0',
                 }}>
                   {program.desc}
@@ -824,24 +841,26 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
       {/* 8. OUR PARTNERS */}
       <section style={{
         padding: '100px 32px',
-        background: royalColors.warmBeige,
+        background: royalColors.ivoryBg,
         textAlign: textAlign as any,
         direction,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 12px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.partners.title}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: '0 0 12px 0',
             maxWidth: '600px',
           }}>
@@ -849,7 +868,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
           </p>
           <p style={{
             fontSize: '14px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             fontStyle: 'italic',
             margin: '0 0 48px 0',
           }}>
@@ -865,8 +884,8 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '20px',
                 background: 'white',
-                borderRadius: borderRadius.card,
-                border: `1px solid ${royalColors.border}`,
+                borderRadius: '0px',
+                border: `1px solid ${royalColors.borderFormal}`,
                 textAlign: 'center',
                 fontSize: '32px',
               }}>
@@ -887,17 +906,19 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '42px',
-            fontFamily: 'Georgia, serif',
-            color: royalColors.deepNavy,
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
             margin: '0 0 12px 0',
             textAlign: textAlign as any,
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
           }}>
             {content.commitment.title}
           </h2>
           <p style={{
             fontSize: '16px',
-            color: royalColors.textMuted,
+            color: royalColors.textSecondary,
             margin: '0 0 48px 0',
             maxWidth: '600px',
           }}>
@@ -912,7 +933,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
               <div key={idx} style={{
                 padding: '28px',
                 background: 'white',
-                borderRadius: borderRadius.card,
+                borderRadius: '0px',
                 border: `2px solid ${item.color}`,
                 textAlign: textAlign as any,
               }}>
@@ -932,7 +953,7 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 </h4>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   margin: '0',
                   lineHeight: '1.6',
                 }}>
@@ -947,17 +968,21 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
       {/* 10. CALL-TO-ACTION */}
       <section style={{
         padding: '100px 32px',
-        background: `linear-gradient(135deg, ${royalColors.compassionRed} 0%, ${royalColors.warmGold} 100%)`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.deepPurple} 100%)`,
         color: 'white',
         textAlign: 'center',
         direction,
+        borderTop: `4px solid ${royalColors.hashemiteGold}`,
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '48px',
-            fontFamily: 'Georgia, serif',
+            fontFamily: 'Garamond, serif',
             margin: '0 0 12px 0',
-            fontWeight: '400',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            color: 'white',
           }}>
             {content.cta.title}
           </h2>
@@ -985,13 +1010,15 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
                 style={{
                   padding: '16px 32px',
                   background: 'white',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   textDecoration: 'none',
-                  borderRadius: borderRadius.button,
-                  fontWeight: '600',
+                  borderRadius: '0px',
+                  fontWeight: '700',
                   transition: 'all 0.3s',
                   display: 'inline-block',
                   fontSize: '16px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';

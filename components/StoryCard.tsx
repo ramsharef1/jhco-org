@@ -23,10 +23,10 @@ export default function StoryCard({
   borderColor = 'gold',
 }: StoryCardProps) {
   const colorMap = {
-    gold: royalColors.warmGold,
-    teal: royalColors.hopeTeal,
-    coral: royalColors.coral,
-    green: royalColors.deepGreen,
+    gold: royalColors.hashemiteGold,
+    teal: royalColors.compassionTeal,
+    coral: royalColors.charityRed,
+    green: royalColors.impactGreen,
   };
 
   const borderAccent = colorMap[borderColor];
@@ -34,16 +34,16 @@ export default function StoryCard({
   return (
     <div
       style={{
-        backgroundColor: royalColors.bgLight,
-        borderRadius: borderRadius.card,
+        backgroundColor: '#ffffff',
+        borderRadius: '0px',
         overflow: 'hidden',
         boxShadow: shadows.md,
         transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-        borderTop: `4px solid ${borderAccent}`,
+        border: `2px solid ${borderAccent}`,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = shadows.xl;
-        e.currentTarget.style.transform = 'translateY(-8px)';
+        e.currentTarget.style.boxShadow = shadows.lg;
+        e.currentTarget.style.transform = 'translateY(-6px)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow = shadows.md;
@@ -56,7 +56,7 @@ export default function StoryCard({
           style={{
             width: '100%',
             height: '280px',
-            backgroundColor: royalColors.border,
+            backgroundColor: royalColors.borderFormal,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -83,7 +83,7 @@ export default function StoryCard({
             marginBottom: spacing.md,
             borderLeft: `3px solid ${borderAccent}`,
             paddingLeft: spacing.md,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
           }}
         >
           "{quote}"
@@ -93,7 +93,7 @@ export default function StoryCard({
         <div
           style={{
             paddingTop: spacing.md,
-            borderTop: `1px solid ${royalColors.border}`,
+            borderTop: `1px solid ${royalColors.borderFormal}`,
           }}
         >
           {/* Author & Role */}
@@ -102,7 +102,7 @@ export default function StoryCard({
               style={{
                 fontSize: '16px',
                 fontWeight: 700,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 margin: 0,
                 marginBottom: '4px',
               }}
@@ -130,7 +130,7 @@ export default function StoryCard({
             <p
               style={{
                 fontSize: '12px',
-                color: royalColors.textMuted,
+                color: royalColors.textSecondary,
                 margin: '4px 0',
                 display: 'flex',
                 alignItems: 'center',

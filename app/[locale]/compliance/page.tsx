@@ -120,14 +120,14 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepNavy})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.darkNavy})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -163,11 +163,11 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
           <h2 style={{
             fontSize: '48px',
             fontFamily: royalTypography.serif,
-            color: royalColors.deepNavy,
+            color: royalColors.darkNavy,
             marginBottom: '64px',
             textAlign: 'center',
           }}>
-            Certifications & <span style={{ color: royalColors.warmGold }}>Registrations</span>
+            Certifications & <span style={{ color: royalColors.hashemiteGold }}>Registrations</span>
           </h2>
 
           <div style={{
@@ -181,7 +181,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
@@ -196,7 +196,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
                     <h3 style={{
                       fontSize: '20px',
                       fontFamily: royalTypography.serif,
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       marginBottom: '8px',
                       marginTop: 0,
                     }}>
@@ -204,8 +204,8 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
                     </h3>
                   </div>
                   <span style={{
-                    backgroundColor: royalColors.warmGold,
-                    color: royalColors.deepNavy,
+                    backgroundColor: royalColors.hashemiteGold,
+                    color: royalColors.darkNavy,
                     padding: '6px 12px',
                     borderRadius: '4px',
                     fontSize: '11px',
@@ -230,7 +230,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
 
                 <p style={{
                   fontSize: '15px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
@@ -245,11 +245,11 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '64px',
               textAlign: 'center',
             }}>
-              Organizational <span style={{ color: royalColors.warmGold }}>Policies</span>
+              Organizational <span style={{ color: royalColors.hashemiteGold }}>Policies</span>
             </h2>
 
             <div style={{
@@ -259,7 +259,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
               backgroundColor: 'white',
               padding: '48px 40px',
               borderRadius: '8px',
-              border: `1px solid ${royalColors.border}`,
+              border: `1px solid ${royalColors.borderFormal}`,
             }}>
               {content.policies.map((policy, idx) => (
                 <div key={idx} style={{
@@ -270,7 +270,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
                   flexDirection: ar ? 'row-reverse' : 'row',
                 }}>
                   <span style={{
-                    color: royalColors.warmGold,
+                    color: royalColors.hashemiteGold,
                     fontSize: '20px',
                     fontWeight: 'bold',
                     flexShrink: 0,
@@ -279,7 +279,7 @@ export default function CompliancePage({ params }: { params: { locale: Locale } 
                   </span>
                   <p style={{
                     fontSize: '15px',
-                    color: royalColors.textDark,
+                    color: royalColors.textOfficial,
                     fontWeight: '600',
                     margin: 0,
                   }}>

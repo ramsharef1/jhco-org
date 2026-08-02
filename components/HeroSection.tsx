@@ -28,7 +28,7 @@ export default function HeroSection({
   subheadline,
   backgroundImage,
   backgroundColor,
-  backgroundGradient = 'linear-gradient(135deg, rgba(232, 185, 35, 0.95) 0%, rgba(26, 188, 156, 0.95) 100%)',
+  backgroundGradient = 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)',
   buttons = [],
   overlayOpacity = 0.7,
   alignment = 'center',
@@ -97,12 +97,14 @@ export default function HeroSection({
         {/* Headline */}
         <h1
           style={{
-            fontSize: '56px',
-            fontWeight: 700,
-            lineHeight: 1.2,
+            fontSize: '64px',
+            fontWeight: 800,
+            lineHeight: 1.1,
             color: '#ffffff',
             margin: `0 0 ${spacing.lg} 0`,
-            fontFamily: '"Merriweather", Georgia, serif',
+            fontFamily: '"Garamond", Georgia, serif',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
           }}
         >
           {headline}
@@ -147,32 +149,34 @@ export default function HeroSection({
                     alignItems: 'center',
                     gap: spacing.sm,
                     padding: `${spacing.md} ${spacing.xl}`,
-                    borderRadius: borderRadius.button,
-                    backgroundColor: isPrimary ? royalColors.warmGold : 'rgba(255, 255, 255, 0.2)',
-                    color: isPrimary ? royalColors.deepNavy : '#ffffff',
+                    borderRadius: '0px',
+                    backgroundColor: isPrimary ? '#d4af37' : 'rgba(255, 255, 255, 0.15)',
+                    color: isPrimary ? '#4a148c' : '#ffffff',
                     textDecoration: 'none',
                     fontWeight: 700,
-                    fontSize: '16px',
+                    fontSize: '14px',
+                    letterSpacing: '1.5px',
+                    textTransform: 'uppercase',
                     transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
                     border: isPrimary ? 'none' : '2px solid rgba(255, 255, 255, 0.4)',
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
                     if (isPrimary) {
-                      e.currentTarget.style.backgroundColor = royalColors.goldLight;
-                      e.currentTarget.style.boxShadow = '0 10px 25px rgba(232, 185, 35, 0.3)';
+                      e.currentTarget.style.backgroundColor = '#e8dcc8';
+                      e.currentTarget.style.boxShadow = '0 12px 28px rgba(212, 175, 55, 0.2)';
                     } else {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
                       e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.6)';
                     }
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     if (isPrimary) {
-                      e.currentTarget.style.backgroundColor = royalColors.warmGold;
+                      e.currentTarget.style.backgroundColor = '#d4af37';
                       e.currentTarget.style.boxShadow = 'none';
                     } else {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
                       e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
                     }
                     e.currentTarget.style.transform = 'translateY(0)';

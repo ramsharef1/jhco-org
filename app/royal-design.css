@@ -1,0 +1,414 @@
+/* ROYAL DESIGN SYSTEM - UTILITY CLASSES */
+/* Apply consistent royal styling across all pages */
+
+/* ============================================================================ */
+/* ROYAL COLOR UTILITIES */
+/* ============================================================================ */
+
+.color-royal-primary {
+  color: var(--color-deep-royal);
+}
+
+.color-royal-secondary {
+  color: var(--color-dark-navy);
+}
+
+.color-gold {
+  color: var(--color-hashemite-gold);
+}
+
+.color-charity-red {
+  color: var(--color-charity-red);
+}
+
+.color-text-formal {
+  color: var(--color-text-official);
+}
+
+.bg-royal-primary {
+  background-color: var(--color-deep-royal);
+}
+
+.bg-royal-secondary {
+  background-color: var(--color-dark-navy);
+}
+
+.bg-formal-ivory {
+  background-color: var(--color-ivory-bg);
+}
+
+.bg-refined {
+  background-color: var(--color-bg-refined);
+}
+
+.border-gold {
+  border-color: var(--color-hashemite-gold);
+}
+
+.border-formal {
+  border-color: var(--color-border-formal);
+}
+
+/* ============================================================================ */
+/* TYPOGRAPHY UTILITIES */
+/* ============================================================================ */
+
+.serif {
+  font-family: "Garamond", "Georgia", "Bodoni MT", serif;
+}
+
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.font-formal-heading {
+  font-family: "Garamond", "Georgia", "Bodoni MT", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.font-formal-body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-wide {
+  letter-spacing: 0.5px;
+}
+
+.tracking-wider {
+  letter-spacing: 1px;
+}
+
+.tracking-widest {
+  letter-spacing: 2px;
+}
+
+.leading-tight {
+  line-height: 1.1;
+}
+
+.leading-formal {
+  line-height: 1.4;
+}
+
+/* ============================================================================ */
+/* BUTTON UTILITIES - ROYAL FIRST */
+/* ============================================================================ */
+
+.btn-royal-primary {
+  background-color: var(--color-deep-royal);
+  color: var(--color-hashemite-gold);
+  font-family: "Garamond", serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 2px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0 8px 20px -2px rgba(74, 20, 140, 0.2);
+}
+
+.btn-royal-primary:hover {
+  background-color: #5e35b1;
+}
+
+.btn-royal-primary:active {
+  background-color: #3d0f66;
+}
+
+.btn-royal-secondary {
+  background-color: transparent;
+  color: var(--color-dark-navy);
+  font-family: "Garamond", serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 2px;
+  border: 2px solid var(--color-hashemite-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-royal-secondary:hover {
+  background-color: var(--color-ivory-bg);
+}
+
+.btn-charity-action {
+  background-color: var(--color-charity-red);
+  color: #ffffff;
+  font-family: "Garamond", serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 2px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0 8px 16px -2px rgba(196, 30, 58, 0.2);
+}
+
+.btn-charity-action:hover {
+  background-color: #a21830;
+}
+
+/* ============================================================================ */
+/* CARD UTILITIES - ROYAL FORMAL */
+/* ============================================================================ */
+
+.card-royal {
+  background-color: #ffffff;
+  border: 2px solid var(--color-hashemite-gold);
+  border-radius: 0px;
+  padding: 28px;
+  box-shadow: 0 12px 28px -4px rgba(74, 20, 140, 0.15);
+  transition: all 200ms ease-in-out;
+}
+
+.card-formal {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-formal);
+  border-radius: 0px;
+  padding: 28px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease-in-out;
+}
+
+.card-refined {
+  background-color: var(--color-ivory-bg);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0px;
+  padding: 28px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+  transition: all 200ms ease-in-out;
+}
+
+.card-dark-formal {
+  background-color: var(--color-dark-navy);
+  border: 1px solid var(--color-hashemite-gold);
+  border-radius: 0px;
+  padding: 28px;
+  color: #ffffff;
+  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+}
+
+/* ============================================================================ */
+/* SECTION UTILITIES - ROYAL FORMAL */
+/* ============================================================================ */
+
+.section-royal {
+  background: linear-gradient(135deg, var(--color-deep-royal) 0%, var(--color-dark-navy) 100%);
+  color: #ffffff;
+  padding: 80px 24px;
+  border-left: 4px solid var(--color-hashemite-gold);
+}
+
+.section-royal-dark {
+  background: linear-gradient(135deg, var(--color-dark-navy) 0%, var(--color-formal-charcoal) 100%);
+  color: #ffffff;
+  padding: 80px 24px;
+  border-left: 4px solid var(--color-hashemite-gold);
+}
+
+.section-government {
+  background-color: var(--color-text-official);
+  color: var(--color-hashemite-gold);
+  padding: 80px 24px;
+  border-left: 4px solid var(--color-hashemite-gold);
+}
+
+.section-refined {
+  background-color: var(--color-ivory-bg);
+  padding: 80px 24px;
+  border-bottom: 1px solid var(--color-border-formal);
+}
+
+.section-light {
+  background-color: #ffffff;
+  padding: 80px 24px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* ============================================================================ */
+/* DIVIDER UTILITIES - FORMAL GOLD ACCENTS */
+/* ============================================================================ */
+
+.divider-gold {
+  height: 1px;
+  background-color: var(--color-hashemite-gold);
+  margin: 32px 0;
+}
+
+.divider-gold-double {
+  background: linear-gradient(to right, var(--color-hashemite-gold) 0%, var(--color-hashemite-gold) 48%, transparent 48%, transparent 52%, var(--color-hashemite-gold) 52%, var(--color-hashemite-gold) 100%);
+  height: 3px;
+  margin: 32px 0;
+}
+
+.divider-formal-accent {
+  height: 2px;
+  background: linear-gradient(to right, var(--color-deep-royal) 0%, var(--color-hashemite-gold) 50%, var(--color-deep-royal) 100%);
+  margin: 32px 0;
+}
+
+/* ============================================================================ */
+/* GRADIENT UTILITIES */
+/* ============================================================================ */
+
+.gradient-royal {
+  background: linear-gradient(135deg, var(--color-deep-royal) 0%, var(--color-dark-navy) 100%);
+}
+
+.gradient-royal-gold {
+  background: linear-gradient(135deg, var(--color-deep-royal) 0%, var(--color-hashemite-gold) 100%);
+}
+
+.gradient-dark-formal {
+  background: linear-gradient(135deg, var(--color-dark-navy) 0%, var(--color-formal-charcoal) 100%);
+}
+
+.gradient-formal-bg {
+  background: linear-gradient(135deg, var(--color-bg-refined) 0%, var(--color-ivory-bg) 100%);
+}
+
+/* ============================================================================ */
+/* SHADOW UTILITIES - FORMAL & REGAL */
+/* ============================================================================ */
+
+.shadow-royal {
+  box-shadow: 0 12px 28px -4px rgba(74, 20, 140, 0.2);
+}
+
+.shadow-formal {
+  box-shadow: 0 8px 20px -2px rgba(0, 26, 77, 0.2);
+}
+
+.shadow-gold {
+  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.15);
+}
+
+/* ============================================================================ */
+/* SPACING UTILITIES - FORMAL & DIGNIFIED */
+/* ============================================================================ */
+
+.gap-formal {
+  gap: 24px;
+}
+
+.gap-formal-lg {
+  gap: 32px;
+}
+
+.gap-formal-xl {
+  gap: 48px;
+}
+
+.p-formal {
+  padding: 28px;
+}
+
+.p-formal-lg {
+  padding: 48px;
+}
+
+.py-formal {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.px-formal {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ============================================================================ */
+/* BORDER RADIUS UTILITIES - SHARP FORMAL */
+/* ============================================================================ */
+
+.rounded-none {
+  border-radius: 0px;
+}
+
+.rounded-minimal {
+  border-radius: 2px;
+}
+
+/* ============================================================================ */
+/* RESPONSIVE HERO UTILITIES */
+/* ============================================================================ */
+
+.hero-royal {
+  background: linear-gradient(135deg, var(--color-deep-royal) 0%, var(--color-dark-navy) 100%);
+  color: #ffffff;
+  padding: 120px 24px;
+  text-align: center;
+}
+
+.hero-royal h1 {
+  color: var(--color-hashemite-gold);
+  font-family: "Garamond", serif;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-royal p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================================ */
+/* ALIGNMENT UTILITIES - FORMAL SYMMETRICAL */
+/* ============================================================================ */
+
+.text-center-formal {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================================================ */
+/* CONTAINER UTILITIES */
+/* ============================================================================ */
+
+.container-formal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

@@ -108,14 +108,14 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -154,7 +154,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                 backgroundColor: 'white',
                 padding: '48px 40px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
                 textAlign: ar ? 'right' : 'left',
               }}>
@@ -170,7 +170,7 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                     <h3 style={{
                       fontSize: '28px',
                       fontFamily: royalTypography.serif,
-                      color: royalColors.deepNavy,
+                      color: royalColors.darkNavy,
                       marginBottom: '8px',
                       marginTop: 0,
                     }}>
@@ -187,8 +187,8 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                     </p>
                   </div>
                   <div style={{
-                    backgroundColor: royalColors.warmGold,
-                    color: royalColors.deepNavy,
+                    backgroundColor: royalColors.hashemiteGold,
+                    color: royalColors.darkNavy,
                     padding: '8px 16px',
                     borderRadius: '4px',
                     fontSize: '12px',
@@ -203,13 +203,13 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
 
                 <div style={{
                   height: '1px',
-                  backgroundColor: royalColors.border,
+                  backgroundColor: royalColors.borderFormal,
                   marginBottom: '24px',
                 }} />
 
                 <p style={{
                   fontSize: '17px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.7',
                   marginBottom: '28px',
                   margin: '24px 0 28px 0',
@@ -224,12 +224,12 @@ export default function CaseStudiesPage({ params }: { params: { locale: Locale }
                 }}>
                   {caseStudy.outcomes.map((outcome, oIdx) => (
                     <div key={oIdx} style={{
-                      backgroundColor: royalColors.bgWarm,
+                      backgroundColor: royalColors.bgRefined,
                       padding: '16px',
                       borderRadius: '4px',
-                      borderLeft: `3px solid ${royalColors.warmGold}`,
+                      borderLeft: `3px solid ${royalColors.hashemiteGold}`,
                       fontSize: '15px',
-                      color: royalColors.textDark,
+                      color: royalColors.textOfficial,
                       fontWeight: '600',
                     }}>
                       ✓ {outcome}

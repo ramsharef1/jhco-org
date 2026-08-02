@@ -96,14 +96,14 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
     <div style={{ direction: ar ? 'rtl' : 'ltr', minHeight: '100vh', backgroundColor: royalColors.bgLight }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.hopeTeal})`,
+        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
         padding: '80px 32px',
         color: 'white',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{
-            color: royalColors.warmGold,
+            color: royalColors.hashemiteGold,
             fontSize: '12px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
@@ -144,14 +144,14 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
               <h2 style={{
                 fontSize: '32px',
                 fontFamily: royalTypography.serif,
-                color: royalColors.deepNavy,
+                color: royalColors.darkNavy,
                 marginBottom: '24px',
               }}>
                 {section.title}
               </h2>
               <p style={{
                 fontSize: '18px',
-                color: royalColors.textDark,
+                color: royalColors.textOfficial,
                 lineHeight: '1.8',
                 maxWidth: '900px',
               }}>
@@ -159,7 +159,7 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
               </p>
               <div style={{
                 height: '1px',
-                backgroundColor: royalColors.border,
+                backgroundColor: royalColors.borderFormal,
                 margin: '40px 0',
               }} />
             </div>
@@ -177,14 +177,14 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
             <h2 style={{
               fontSize: '48px',
               fontFamily: royalTypography.serif,
-              color: royalColors.deepNavy,
+              color: royalColors.darkNavy,
               marginBottom: '24px',
             }}>
-              Our 2030 <span style={{ color: royalColors.warmGold }}>Goals</span>
+              Our 2030 <span style={{ color: royalColors.hashemiteGold }}>Goals</span>
             </h2>
             <p style={{
               fontSize: '18px',
-              color: royalColors.textDark,
+              color: royalColors.textOfficial,
               maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
@@ -203,15 +203,15 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
                 backgroundColor: 'white',
                 padding: '40px 32px',
                 borderRadius: '8px',
-                border: `1px solid ${royalColors.border}`,
+                border: `1px solid ${royalColors.borderFormal}`,
                 boxShadow: '0 2px 8px rgba(10,20,40,0.08)',
                 textAlign: 'center',
-                borderTop: `4px solid ${royalColors.warmGold}`,
+                borderTop: `4px solid ${royalColors.hashemiteGold}`,
               }}>
                 <p style={{
                   fontSize: '44px',
                   fontFamily: royalTypography.serif,
-                  color: royalColors.warmGold,
+                  color: royalColors.hashemiteGold,
                   fontWeight: '600',
                   marginBottom: '12px',
                   margin: 0,
@@ -221,7 +221,7 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
                 <h3 style={{
                   fontSize: '18px',
                   fontWeight: '600',
-                  color: royalColors.deepNavy,
+                  color: royalColors.darkNavy,
                   marginBottom: '12px',
                   marginTop: '12px',
                 }}>
@@ -229,7 +229,7 @@ export default function VisionPage({ params }: { params: { locale: Locale } }) {
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: royalColors.textDark,
+                  color: royalColors.textOfficial,
                   lineHeight: '1.6',
                   margin: 0,
                 }}>
