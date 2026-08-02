@@ -37,7 +37,7 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
         </Link>
 
         {/* Navigation Links (Desktop) */}
-        <div style={{ display: 'none', alignItems: 'center', gap: '32px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
           {menuStructure.main.map((item, idx) => (
             <Link
               key={idx}
