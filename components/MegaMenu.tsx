@@ -77,7 +77,7 @@ export default function MegaMenu({ locale = 'en' as Locale }: { locale?: Locale 
   };
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#0a1428', color: 'white', borderTop: '2px solid #d4af37', borderBottom: '2px solid #d4af37' }}>
+    <div style={{ width: '100%', backgroundColor: '#0a1428', color: 'white', borderTop: '2px solid #d4af37', borderBottom: '2px solid #d4af37', display: 'none' }}>
       <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '48px 32px' }}>
         {/* Main grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '48px', marginBottom: '48px' }}>
