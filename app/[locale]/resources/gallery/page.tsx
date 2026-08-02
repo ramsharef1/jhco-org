@@ -162,7 +162,7 @@ export default function GalleryPage({ params }: { params: { locale: Locale } }) 
     <main style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.deepPurple})`,
+        background: `linear-gradient(135deg, ${royalColors.deepNavy}, ${royalColors.crimson})`,
         color: 'white',
         padding: '100px 32px',
         textAlign: ar ? 'right' : 'left',

@@ -57,7 +57,7 @@ export default function WhereWeWorkPage({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
             {regions.map((region) => (
               <Link key={region.id} href={`${base}/regions/${region.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <div style={{ backgroundColor: 'white', border: '1px solid #e8e4db', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', transition: 'all 0.4s', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 2px 8px rgba(10,20,40,0.08)', ':hover': { boxShadow: '0 8px 24px rgba(212,175,55,0.15)' } }}>
+                <div style={{ backgroundColor: 'white', border: '1px solid #e8e4db', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', transition: 'all 0.4s', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 2px 8px rgba(10,20,40,0.08)' }}>
                   {/* Header */}
                   <div style={{ backgroundColor: '#0a1428', padding: '32px', color: 'white' }}>
                     <h3 style={{ fontSize: '28px', fontWeight: '600', margin: '0 0 8px 0', fontFamily: 'Georgia, serif' }}>
