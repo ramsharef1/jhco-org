@@ -756,9 +756,9 @@ export default function Home() {
       {/* 9. FOOTER - Royal Professional Footer */}
       <footer dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.primaryNavy, color: 'white', padding: '100px 32px 50px', borderTop: `1px solid rgba(255,255,255,0.1)`, direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '60px', marginBottom: '80px' }}>
+          <div style={{ display: 'flex', flexDirection: ar ? 'row-reverse' : 'row', gap: '60px', marginBottom: '80px', justifyContent: 'space-between' }}>
             {/* Brand Column */}
-            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+            <div style={{ flex: '1', textAlign: ar ? 'right' : 'left' }}>
               <h4 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '24px', color: 'white', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
                 JHCO
               </h4>
@@ -801,7 +801,7 @@ export default function Home() {
             </div>
 
             {/* Programs Column */}
-            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+            <div style={{ flex: '1', textAlign: ar ? 'right' : 'left' }}>
               <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 Programs
               </h4>
@@ -832,7 +832,7 @@ export default function Home() {
             </div>
 
             {/* Get Involved Column */}
-            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+            <div style={{ flex: '1', textAlign: ar ? 'right' : 'left' }}>
               <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 Get Involved
               </h4>
@@ -863,7 +863,7 @@ export default function Home() {
             </div>
 
             {/* About Column */}
-            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+            <div style={{ flex: '1', textAlign: ar ? 'right' : 'left' }}>
               <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 About
               </h4>
@@ -895,9 +895,9 @@ export default function Home() {
           </div>
 
           {/* Footer Bottom */}
-          <div style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, paddingTop: '48px', textAlign: 'center' }}>
+          <div style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, paddingTop: '48px', textAlign: ar ? 'right' : 'left' }}>
             <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
-              Copyright 2026 JHCO. Professional Humanitarian Work.
+              {ar ? 'جميع الحقوق محفوظة 2026 JHCO. العمل الإنساني المهني.' : 'Copyright 2026 JHCO. Professional Humanitarian Work.'}
             </p>
           </div>
         </div>
