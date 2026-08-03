@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, transitions, spacing } from '@/lib/royalDesign';
-import { sitemap } from '@/lib/sitemap';
+import MegaMenu from './MegaMenu';
 
 export default function Header({ locale = 'en' as Locale }: { locale?: Locale }) {
   const pathname = usePathname();
@@ -29,35 +29,8 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
           <img src="/jhco-logo.webp" alt="JHCO" style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '80px' }} />
         </Link>
 
-        {/* Navigation Links (Desktop) */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-          {sitemap.main.map((item, idx) => (
-            <Link
-              key={idx}
-              href={`${base}${item.href}`}
-              style={{
-                fontSize: '13px',
-                fontWeight: '600',
-                color: royalColors.darkNavy,
-                textDecoration: 'none',
-                transition: transitions.base,
-                paddingBottom: '4px',
-                borderBottom: '2px solid transparent',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = royalColors.hashemiteGold;
-                e.currentTarget.style.borderBottomColor = royalColors.hashemiteGold;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = royalColors.darkNavy;
-                e.currentTarget.style.borderBottomColor = 'transparent';
-              }}
-            >
-              {ar ? item.label : item.labelEn}
-            </Link>
-          ))}
-        </div>
+        {/* Navigation Links - Mega Menu */}
+        <MegaMenu locale={locale} base={base} />
 
         {/* Right Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: spacing.md }}>

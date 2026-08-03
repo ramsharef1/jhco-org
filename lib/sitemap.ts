@@ -6,6 +6,8 @@ export interface NavItem {
   labelEn: string;
   href: string;
   icon?: string;
+  description?: string;
+  descriptionAr?: string;
   children?: NavItem[];
 }
 
@@ -17,43 +19,133 @@ export interface SitemapSection {
 }
 
 export const sitemap = {
-  // Main header navigation
+  // Main header navigation with mega menu support
   main: [
     {
       label: 'الرعاية الملكية',
       labelEn: 'Royal Patronage',
       href: '/royal-patronage',
       icon: '👑',
+      description: 'Royal heritage and governance',
+      descriptionAr: 'الإرث الملكي والحوكمة',
+      children: [
+        { label: 'البيان التاريخي', labelEn: 'Royal Message', href: '/royal-patronage/message' },
+        { label: 'الدعم الملكي', labelEn: 'Royal Support', href: '/royal-patronage/support' },
+        { label: 'الشركاء الملكيون', labelEn: 'Royal Partners', href: '/royal-patronage/partners' },
+        { label: 'المبادرات الملكية', labelEn: 'Royal Initiatives', href: '/royal-patronage/initiatives' },
+      ],
     },
     {
       label: 'برامجنا',
       labelEn: 'Our Programs',
       href: '/programs',
       icon: '🌍',
+      description: 'Transformative humanitarian programs',
+      descriptionAr: 'برامج إنسانية تحويلية',
+      children: [
+        {
+          label: 'الاستجابة للأزمات',
+          labelEn: 'Crisis Response',
+          href: '/programs/crisis',
+        },
+        {
+          label: 'الصحة والرعاية',
+          labelEn: 'Healthcare',
+          href: '/programs/healthcare',
+        },
+        {
+          label: 'التعليم والتطوير',
+          labelEn: 'Education',
+          href: '/programs/education',
+        },
+        {
+          label: 'الأمن الغذائي',
+          labelEn: 'Food Security',
+          href: '/programs/food-aid',
+        },
+        {
+          label: 'سبل العيش',
+          labelEn: 'Livelihood',
+          href: '/programs/livelihoods',
+        },
+        {
+          label: 'الملبس والإغاثة',
+          labelEn: 'Clothing Bank',
+          href: '/programs/clothing-bank',
+        },
+        {
+          label: 'جميع البرامج',
+          labelEn: 'View All Programs',
+          href: '/programs',
+        },
+      ],
     },
     {
       label: 'من نحن',
       labelEn: 'About Us',
       href: '/about',
       icon: 'ℹ️',
+      description: 'Learn about our organization',
+      descriptionAr: 'تعرف على منظمتنا',
+      children: [
+        { label: 'المهمة والرؤية', labelEn: 'Mission & Vision', href: '/about/mission' },
+        { label: 'القيم والمبادئ', labelEn: 'Values', href: '/about/values' },
+        { label: 'تاريخنا', labelEn: 'History', href: '/about/history' },
+        { label: 'القيادة', labelEn: 'Leadership', href: '/about/leadership' },
+        { label: 'الفريق', labelEn: 'Team', href: '/about/team' },
+        { label: 'الجوائز والاعترافات', labelEn: 'Awards', href: '/about/awards' },
+        { label: 'الشهادات', labelEn: 'Testimonials', href: '/impact/testimonials' },
+      ],
     },
     {
       label: 'الحكومة والشفافية',
       labelEn: 'Government',
       href: '/government',
       icon: '🏛️',
+      description: 'Governance and accountability',
+      descriptionAr: 'الحوكمة والمساءلة',
+      children: [
+        { label: 'مركز الإعلام', labelEn: 'Media Center', href: '/media-center' },
+        { label: 'التقارير المالية', labelEn: 'Financial Reports', href: '/financial-reports' },
+        { label: 'الامتثال والسياسات', labelEn: 'Compliance', href: '/compliance' },
+        { label: 'هيكل الحوكمة', labelEn: 'Governance Structure', href: '/governance/structure' },
+        { label: 'مجلس الإدارة', labelEn: 'Board', href: '/governance/board' },
+        { label: 'الشفافية والمساءلة', labelEn: 'Transparency', href: '/transparency' },
+        { label: 'الإفصاحات', labelEn: 'Disclosures', href: '/governance/disclosures' },
+      ],
     },
     {
       label: 'التأثير',
       labelEn: 'Impact',
       href: '/impact',
       icon: '📈',
+      description: 'See our results and stories',
+      descriptionAr: 'شاهد نتائجنا وقصصنا',
+      children: [
+        { label: 'إحصائيات التأثير', labelEn: 'Impact Statistics', href: '/impact/statistics' },
+        { label: 'قصص النجاح', labelEn: 'Success Stories', href: '/impact/stories' },
+        { label: 'دراسات الحالة', labelEn: 'Case Studies', href: '/impact/case-studies' },
+        { label: 'التقارير السنوية', labelEn: 'Annual Reports', href: '/impact/reports' },
+        { label: 'المنشورات والأبحاث', labelEn: 'Publications', href: '/impact/publications' },
+        { label: 'أين نعمل', labelEn: 'Where We Work', href: '/where-we-work' },
+        { label: 'الخريطة التفاعلية', labelEn: 'Interactive Map', href: '/impact/map' },
+      ],
     },
     {
       label: 'شارك معنا',
       labelEn: 'Get Involved',
       href: '/get-involved',
       icon: '🤝',
+      description: 'Make a difference today',
+      descriptionAr: 'احدث فرقاً اليوم',
+      children: [
+        { label: 'تبرع الآن', labelEn: 'Donate', href: '/get-involved/donate', icon: '💝' },
+        { label: 'التطوع معنا', labelEn: 'Volunteer', href: '/get-involved/volunteer', icon: '👥' },
+        { label: 'الشراكات', labelEn: 'Partnerships', href: '/get-involved/partner', icon: '🤲' },
+        { label: 'الفعاليات', labelEn: 'Events', href: '/events', icon: '🎪' },
+        { label: 'CSR الشركات', labelEn: 'Corporate CSR', href: '/get-involved/corporate', icon: '🏢' },
+        { label: 'اتصل بنا', labelEn: 'Contact Us', href: '/contact', icon: '📞' },
+      ],
     },
   ],
 

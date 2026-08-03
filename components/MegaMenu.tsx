@@ -1,161 +1,171 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
+import { sitemap, type NavItem } from '@/lib/sitemap';
+import { royalColors, transitions, spacing } from '@/lib/royalDesign';
 
-export default function MegaMenu({ locale = 'en' as Locale }: { locale?: Locale }) {
+interface MegaMenuProps {
+  locale: Locale;
+  base: string;
+}
+
+export default function MegaMenu({ locale, base }: MegaMenuProps) {
   const ar = locale === 'ar';
-  const base = `/${locale}`;
-
-  const sections = {
-    government: {
-      icon: '👑',
-      title: ar ? 'الحكومة' : 'Government',
-      subtitle: ar ? 'الشفافية والمساءلة' : 'Transparency & Accountability',
-      links: [
-        { icon: '📰', label: ar ? 'مركز الإعلام' : 'Media Center', href: `${base}/media-center` },
-        { icon: '📊', label: ar ? 'التقارير' : 'Reports', href: `${base}/reports` },
-        { icon: '⚖️', label: ar ? 'الامتثال' : 'Compliance', href: `${base}/compliance` },
-        { icon: '👑', label: ar ? 'الإعلانات' : 'Announcements', href: `${base}/announcements` },
-      ],
-    },
-    care: {
-      icon: '🏥',
-      title: ar ? 'الرعاية' : 'Care',
-      subtitle: ar ? 'البرامج الإنسانية' : 'Humanitarian Programs',
-      links: [
-        { icon: '🚨', label: ar ? 'الأزمات' : 'Crisis Response', href: `${base}/programs/gaza-aid` },
-        { icon: '💊', label: ar ? 'الصحة' : 'Healthcare', href: `${base}/programs/healthcare` },
-        { icon: '🍽️', label: ar ? 'الغذاء' : 'Food Aid', href: `${base}/programs/food-aid` },
-        { icon: '🏠', label: ar ? 'المأوى' : 'Shelter', href: `${base}/programs/shelter` },
-      ],
-    },
-    education: {
-      icon: '📚',
-      title: ar ? 'التعليم' : 'Education',
-      subtitle: ar ? 'فرص التعلم' : 'Learning Opportunities',
-      links: [
-        { icon: '🎓', label: ar ? 'منح دراسية' : 'Scholarships', href: `${base}/programs/education` },
-        { icon: '👶', label: ar ? 'التعليم المبكر' : 'Early Learning', href: `${base}/programs/early-learning` },
-        { icon: '💻', label: ar ? 'تدريب مهني' : 'Vocational Training', href: `${base}/programs/vocational-training` },
-        { icon: '📖', label: ar ? 'محو الأمية' : 'Literacy', href: `${base}/programs/literacy` },
-      ],
-    },
-    partnerships: {
-      icon: '🤝',
-      title: ar ? 'الشراكات' : 'Partnerships',
-      subtitle: ar ? 'التعاون العالمي' : 'Global Cooperation',
-      links: [
-        { icon: '🌍', label: ar ? 'الشركاء' : 'Our Partners', href: `${base}/partnerships` },
-        { icon: '🏢', label: ar ? 'العمليات' : 'Operations', href: `${base}/operations` },
-        { icon: '📈', label: ar ? 'التأثير' : 'Impact', href: `${base}/news` },
-        { icon: '💬', label: ar ? 'الشهادات' : 'Testimonials', href: `${base}/contact` },
-      ],
-    },
-    about: {
-      icon: 'ℹ️',
-      title: ar ? 'عن الهيئة' : 'About',
-      subtitle: ar ? 'من نحن' : 'Who We Are',
-      links: [
-        { icon: '🎯', label: ar ? 'مهمتنا' : 'Our Mission', href: `${base}/about/mission` },
-        { icon: '📋', label: ar ? 'رؤيتنا' : 'Our Vision', href: `${base}/about/mission` },
-        { icon: '👥', label: ar ? 'الفريق' : 'Our Team', href: `${base}/about/mission` },
-        { icon: '⭐', label: ar ? 'القيم' : 'Our Values', href: `${base}/about/mission` },
-      ],
-    },
-    getInvolved: {
-      icon: '❤️',
-      title: ar ? 'شارك معنا' : 'Get Involved',
-      subtitle: ar ? 'انضم إلى المهمة' : 'Join Our Mission',
-      links: [
-        { icon: '💝', label: ar ? 'تبرع' : 'Donate', href: `${base}/get-involved/donate` },
-        { icon: '🤝', label: ar ? 'تطوع' : 'Volunteer', href: `${base}/get-involved/volunteer` },
-        { icon: '📢', label: ar ? 'انشر الخبر' : 'Spread the Word', href: `${base}/contact` },
-        { icon: '📞', label: ar ? 'اتصل بنا' : 'Contact Us', href: `${base}/contact` },
-      ],
-    },
-  };
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#0a1428', color: 'white', borderTop: '2px solid #d4af37', borderBottom: '2px solid #d4af37', display: 'none' }}>
-      <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '48px 32px' }}>
-        {/* Main grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '48px', marginBottom: '48px' }}>
-          {Object.entries(sections).map(([key, section]) => (
-            <div key={key} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '32px' }}>{section.icon}</span>
-                <div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: '#d4af37', margin: '0 0 4px 0' }}>
-                    {section.title}
-                  </h3>
-                  <p style={{ fontSize: '11px', color: '#aaa', margin: 0 }}>
-                    {section.subtitle}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', position: 'relative' }}>
+      {sitemap.main.map((item, idx) => (
+        <div
+          key={idx}
+          style={{ position: 'relative' }}
+          onMouseEnter={() => setActiveMenu(item.labelEn)}
+          onMouseLeave={() => setActiveMenu(null)}
+        >
+          {/* Main Menu Item */}
+          <Link
+            href={`${base}${item.href}`}
+            style={{
+              padding: '8px 14px',
+              fontSize: '13px',
+              fontWeight: '600',
+              color: royalColors.darkNavy,
+              textDecoration: 'none',
+              transition: transitions.base,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              borderRadius: '4px',
+              whiteSpace: 'nowrap',
+              position: 'relative',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = `${royalColors.hashemiteGold}15`;
+              e.currentTarget.style.color = royalColors.hashemiteGold;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = royalColors.darkNavy;
+            }}
+          >
+            {item.icon && <span style={{ fontSize: '14px' }}>{item.icon}</span>}
+            {ar ? item.label : item.labelEn}
+            {item.children && item.children.length > 0 && (
+              <span style={{ fontSize: '10px', marginLeft: '4px' }}>▼</span>
+            )}
+          </Link>
+
+          {/* Mega Menu Dropdown */}
+          {item.children && item.children.length > 0 && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                [ar ? 'right' : 'left']: '0',
+                backgroundColor: 'white',
+                borderRadius: '8px',
+                boxShadow: '0 12px 32px rgba(0, 0, 0, 0.15)',
+                border: `1px solid ${royalColors.bgRefined}`,
+                padding: '20px 24px',
+                marginTop: '8px',
+                minWidth: '320px',
+                maxWidth: '500px',
+                zIndex: 1000,
+                opacity: activeMenu === item.labelEn ? 1 : 0,
+                visibility: activeMenu === item.labelEn ? 'visible' : 'hidden',
+                transform: activeMenu === item.labelEn ? 'translateY(0)' : 'translateY(-10px)',
+                transition: 'all 0.3s ease',
+                pointerEvents: activeMenu === item.labelEn ? 'auto' : 'none',
+              }}
+            >
+              {/* Menu Header */}
+              <div style={{ marginBottom: '16px' }}>
+                <h4
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    color: royalColors.darkNavy,
+                    margin: '0 0 8px 0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  {item.icon && <span>{item.icon}</span>}
+                  {ar ? item.label : item.labelEn}
+                </h4>
+                {item.description && (
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      color: royalColors.textOfficial,
+                      margin: '0',
+                      lineHeight: '1.4',
+                    }}
+                  >
+                    {ar ? item.descriptionAr : item.description}
                   </p>
-                </div>
+                )}
+                <div
+                  style={{
+                    height: '2px',
+                    background: royalColors.hashemiteGold,
+                    marginTop: '12px',
+                  }}
+                />
               </div>
 
-              <div style={{ height: '1px', backgroundColor: 'rgba(212, 175, 55, 0.2)', marginBottom: '8px' }}></div>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {section.links.map((link, idx) => (
-                  <li key={idx}>
-                    <Link href={link.href} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', borderRadius: '4px', textDecoration: 'none', color: '#ccc', fontSize: '13px', transition: 'all 0.2s', cursor: 'pointer' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
-                        e.currentTarget.style.color = '#d4af37';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = '#ccc';
-                      }}
-                    >
-                      <span style={{ fontSize: '14px' }}>{link.icon}</span>
-                      {link.label}
-                    </Link>
-                  </li>
+              {/* Menu Items Grid */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns:
+                    item.children.length > 6
+                      ? 'repeat(auto-fit, minmax(200px, 1fr))'
+                      : 'repeat(auto-fit, minmax(180px, 1fr))',
+                  gap: '12px',
+                }}
+              >
+                {item.children.map((child, childIdx) => (
+                  <Link
+                    key={childIdx}
+                    href={`${base}${child.href}`}
+                    style={{
+                      padding: '12px 12px',
+                      fontSize: '13px',
+                      fontWeight: '500',
+                      color: royalColors.darkNavy,
+                      textDecoration: 'none',
+                      borderRadius: '6px',
+                      transition: transitions.base,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = `${royalColors.hashemiteGold}15`;
+                      e.currentTarget.style.color = royalColors.hashemiteGold;
+                      e.currentTarget.style.transform = 'translateX(' + (ar ? '-2px' : '2px') + ')';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = royalColors.darkNavy;
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
+                    {child.icon && <span style={{ fontSize: '14px' }}>{child.icon}</span>}
+                    <span>{ar ? child.label : child.labelEn}</span>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
+          )}
         </div>
-
-        {/* Bottom CTA */}
-        <div style={{ borderTop: '1px solid rgba(212, 175, 55, 0.3)', paddingTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
-          <Link href={`${base}/get-involved/donate`} style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '20px 24px', background: 'linear-gradient(135deg, #a8312f, #8b2f2d)', borderRadius: '8px', textDecoration: 'none', color: 'white', transition: 'all 0.3s', cursor: 'pointer' }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <span style={{ fontSize: '28px' }}>💝</span>
-            <div>
-              <div style={{ fontWeight: 'bold', fontSize: '15px', marginBottom: '2px' }}>{ar ? 'تبرع الآن' : 'Donate Now'}</div>
-              <p style={{ fontSize: '12px', color: '#ddd', margin: 0 }}>{ar ? 'ساعد أولئك المحتاجين' : 'Help those in need'}</p>
-            </div>
-          </Link>
-
-          <Link href={`${base}/get-involved/volunteer`} style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '20px 24px', background: 'linear-gradient(135deg, #1a2f50, #142850)', border: '2px solid #d4af37', borderRadius: '8px', textDecoration: 'none', color: 'white', transition: 'all 0.3s', cursor: 'pointer' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#d4af37'; e.currentTarget.style.color = '#0a1428'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = 'white'; }}
-          >
-            <span style={{ fontSize: '28px' }}>🤝</span>
-            <div>
-              <div style={{ fontWeight: 'bold', fontSize: '15px', marginBottom: '2px' }}>{ar ? 'تطوع معنا' : 'Volunteer With Us'}</div>
-              <p style={{ fontSize: '12px', opacity: 0.9, margin: 0 }}>{ar ? 'شارك في مهمتنا' : 'Join our mission'}</p>
-            </div>
-          </Link>
-
-          <Link href={`${base}/contact`} style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '20px 24px', background: 'linear-gradient(135deg, #1a2f50, #142850)', border: '2px solid #d4af37', borderRadius: '8px', textDecoration: 'none', color: 'white', transition: 'all 0.3s', cursor: 'pointer' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#d4af37'; e.currentTarget.style.color = '#0a1428'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = 'white'; }}
-          >
-            <span style={{ fontSize: '28px' }}>📞</span>
-            <div>
-              <div style={{ fontWeight: 'bold', fontSize: '15px', marginBottom: '2px' }}>{ar ? 'اتصل بنا' : 'Contact Us'}</div>
-              <p style={{ fontSize: '12px', opacity: 0.9, margin: 0 }}>{ar ? 'نحن هنا للمساعدة' : 'We\'re here to help'}</p>
-            </div>
-          </Link>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
