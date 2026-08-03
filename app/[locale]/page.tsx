@@ -6,6 +6,70 @@ import { getDictionary, type Locale } from '@/lib/i18n';
 import { programs, impactStats, news } from '@/lib/mockData';
 import Link from 'next/link';
 
+// Helper function to create placeholder images with text overlays
+const createPlaceholder = (width: number, height: number, title: string, description: string): string => {
+  const bgColor = '#f5f5f5';
+  const textColor = '#1a3a52';
+
+  // Escape special characters for SVG
+  const escapeSvg = (str: string) => str.replace(/[&<>"]/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;'
+  }[char] || char));
+
+  // Calculate text size based on image dimensions
+  const titleSize = Math.max(16, width / 20);
+  const descSize = Math.max(12, width / 28);
+  const lineHeight = descSize * 1.5;
+
+  // Split description into lines for better readability
+  const maxCharsPerLine = Math.floor(width / (descSize * 0.6));
+  const descLines = description.split('\n').flatMap(line => {
+    const words = line.split(' ');
+    const lines = [];
+    let currentLine = '';
+
+    words.forEach(word => {
+      if ((currentLine + word).length > maxCharsPerLine) {
+        if (currentLine) lines.push(currentLine.trim());
+        currentLine = word;
+      } else {
+        currentLine += (currentLine ? ' ' : '') + word;
+      }
+    });
+    if (currentLine) lines.push(currentLine.trim());
+
+    return lines;
+  });
+
+  // Calculate total content height
+  const titleY = height * 0.15;
+  const descStartY = titleY + titleSize + 30;
+  const totalTextHeight = titleSize + 30 + (descLines.length * lineHeight) + 20;
+  const startY = Math.max(height * 0.1, (height - totalTextHeight) / 2);
+
+  const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="${width}" height="${height}" fill="${bgColor}"/>
+      <text x="${width / 2}" y="${startY + titleSize}" font-family="Arial, sans-serif" font-size="${titleSize}" font-weight="bold" fill="${textColor}" text-anchor="middle">
+        ${escapeSvg(title)}
+      </text>
+      ${descLines.map((line, idx) => `
+        <text x="${width / 2}" y="${startY + titleSize + 30 + (idx * lineHeight)}" font-family="Arial, sans-serif" font-size="${descSize}" fill="${textColor}" text-anchor="middle">
+          ${escapeSvg(line)}
+        </text>
+      `).join('')}
+      <text x="${width / 2}" y="${height - 20}" font-family="Arial, sans-serif" font-size="${Math.max(11, width / 40)}" fill="#999" text-anchor="middle">
+        ${width}x${height}
+      </text>
+    </svg>
+  `;
+
+  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
+};
+
 export default function Home() {
   const params = useParams();
   const locale = (params.locale as string) || 'en';
@@ -176,8 +240,8 @@ export default function Home() {
             {/* Right: Hero Image */}
             <div style={{ position: 'relative' }}>
               <img
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=1000&fit=crop"
-                alt="Community members coming together to help others"
+                src={createPlaceholder(600, 400, 'Hero Image: Community Unity', 'Should show: Diverse group of people coming together, humanitarian action, hope')}
+                alt="Hero Image placeholder: Community Unity"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -249,8 +313,8 @@ export default function Home() {
             {/* Left: Story Image */}
             <div style={{ position: 'relative' }}>
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=720&fit=crop"
-                alt="Portrait of a young woman with hope and determination"
+                src={createPlaceholder(400, 450, 'Featured Story Image: Beneficiary Portrait', 'Should show: Dignified portrait of a person/family member, conveying hope and resilience')}
+                alt="Featured Story Image placeholder: Beneficiary Portrait"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -366,16 +430,16 @@ export default function Home() {
                   <img
                     src={
                       program.id === 1
-                        ? 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&h=300&fit=crop'
+                        ? createPlaceholder(600, 300, 'Gaza Aid Program Image', 'Should show: Humanitarian assistance, medical aid, or community care')
                         : program.id === 2
-                        ? 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop'
+                        ? createPlaceholder(600, 300, 'Healthcare Program: Amputees', 'Should show: Prosthetic limbs, rehabilitation, medical care')
                         : program.id === 3
-                        ? 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=300&fit=crop'
+                        ? createPlaceholder(600, 300, 'Clothing Bank Program', 'Should show: Clothing distribution, community care, dignity')
                         : program.id === 4
-                        ? 'https://images.unsplash.com/photo-1427504494785-cdad92f95b56?w=500&h=300&fit=crop'
+                        ? createPlaceholder(600, 300, 'Education Program', 'Should show: Students, learning, classroom, education services')
                         : program.id === 5
-                        ? 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop'
-                        : 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop'
+                        ? createPlaceholder(600, 300, 'Medical Clinics Network', 'Should show: Doctor, patient consultation, medical services')
+                        : createPlaceholder(600, 300, 'Livelihood & Skills Training', 'Should show: Vocational training, skills development, economic empowerment')
                     }
                     alt={ar ? program.nameAr : program.name}
                     style={{
