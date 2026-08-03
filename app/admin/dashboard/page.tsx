@@ -8,6 +8,29 @@ export default function AdminDashboard() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [seeding, setSeeding] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSeedDatabase = async () => {
+    setSeeding(true);
+    setMessage('');
+
+    try {
+      const token = localStorage.getItem('admin_token');
+      const response = await fetch('/api/admin/seed', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!response.ok) throw new Error('Failed to seed');
+      await response.json();
+      setMessage('✅ Database seeded! Reloading...');
+      setTimeout(() => location.reload(), 1500);
+    } catch (err: any) {
+      setMessage(`❌ Error: ${err.message}`);
+      setSeeding(false);
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem('admin_token');
@@ -103,6 +126,32 @@ export default function AdminDashboard() {
           </Link>
         </div>
 
+        {/* Seed Database Section */}
+        {message && (
+          <div
+            className={`mt-8 p-4 rounded ${
+              message.includes('✅')
+                ? 'bg-green-50 border border-green-200 text-green-700'
+                : 'bg-red-50 border border-red-200 text-red-700'
+            }`}
+          >
+            {message}
+          </div>
+        )}
+
+        <div className="mt-8">
+          <button
+            onClick={handleSeedDatabase}
+            disabled={seeding}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          >
+            {seeding ? 'Seeding Database...' : '🌱 Seed Sample Data'}
+          </button>
+          <p className="text-sm text-gray-600 mt-2">
+            Populate database with sample homepage, statistics, and story for testing
+          </p>
+        </div>
+
         {/* Status Section */}
         <div className="mt-12 bg-white rounded-lg shadow p-6">
           <h3 className="text-lg font-bold text-[#0a1428] mb-4">Admin Panel Status</h3>
@@ -115,7 +164,7 @@ export default function AdminDashboard() {
             <div>
               <p className="text-gray-600 mb-2">✅ Image Storage: Vercel Blob</p>
               <p className="text-gray-600 mb-2">✅ Watermarking: Enabled</p>
-              <p className="text-gray-600 mb-2">⏳ Coming Soon: Real-time updates</p>
+              <p className="text-gray-600 mb-2">✅ 4 Admin Modules: Ready</p>
             </div>
           </div>
         </div>
