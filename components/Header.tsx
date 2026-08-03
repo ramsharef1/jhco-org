@@ -23,17 +23,9 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
 
       {/* Main Header */}
       <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl }}>
-        {/* Logo & Organization Name */}
-        <Link href={base} style={{ display: 'flex', alignItems: 'center', gap: spacing.md, textDecoration: 'none', flex: 1 }}>
+        {/* Logo */}
+        <Link href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flex: 1 }}>
           <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '75px', height: 'auto', maxWidth: '100%' }} />
-          <div>
-            <div style={{ fontSize: '14px', color: royalColors.hashemiteGold, fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
-              {ar ? 'الهيئة الخيرية' : 'JHCO'}
-            </div>
-            <div style={{ fontSize: '10px', color: royalColors.darkGrayText, letterSpacing: '1px', textTransform: 'uppercase' }}>
-              {ar ? 'الأردنية الهاشمية' : 'Royal Charity'}
-            </div>
-          </div>
         </Link>
 
         {/* Navigation Links (Desktop) */}
