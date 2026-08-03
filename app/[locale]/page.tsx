@@ -110,23 +110,23 @@ export default function Home() {
   const whyReasons = [
     {
       icon: null,
+      title: 'Royal Patronage',
+      description: 'Operating under Jordanian royal patronage, ensuring governance excellence and international credibility.',
+    },
+    {
+      icon: null,
       title: 'Transparent Operations',
-      description: 'Every donation tracked, every impact verified. Full accountability to our donors.',
+      description: 'Full financial accountability with verified program delivery metrics and independent audits.',
     },
     {
       icon: null,
-      title: 'Royal Heritage, Human Heart',
-      description: 'Guided by principles of dignity and respect for every person we serve.',
+      title: 'Established Presence',
+      description: '30+ years of sustained humanitarian work across 30 countries with local institutional partnerships.',
     },
     {
       icon: null,
-      title: 'Community-Led Change',
-      description: 'Working alongside local partners who know their communities best.',
-    },
-    {
-      icon: null,
-      title: 'Proven Track Record',
-      description: 'Decades of sustainable impact across healthcare, education, and livelihood.',
+      title: 'Professional Impact',
+      description: 'Measurable outcomes in healthcare, education, and livelihood initiatives backed by data and evaluation.',
     },
   ];
 
@@ -135,21 +135,21 @@ export default function Home() {
       name: 'Sarah Ahmed',
       location: 'Cairo, Egypt',
       role: 'Donor',
-      quote: 'JHCO gave my family a way to give back meaningfully. The transparency and heart behind their work is unmatched.',
+      quote: 'JHCO demonstrates professional governance and transparent impact reporting. Supporting their programs is straightforward and credible.',
       avatar: 'SA',
     },
     {
       name: 'James Martin',
       location: 'London, UK',
       role: 'Volunteer',
-      quote: 'Volunteering with JHCO transformed how I see the world. The relationships we build last a lifetime.',
+      quote: 'The volunteer experience with JHCO is well-structured with clear professional objectives. The organization is effectively managed.',
       avatar: 'JM',
     },
     {
       name: 'Fatima Hassan',
       location: 'Amman, Jordan',
-      role: 'Program Beneficiary',
-      quote: 'JHCO believed in me when I needed it most. Now I\'m helping others in my community.',
+      role: 'Program Participant',
+      quote: 'The education program provided quality instruction and real opportunity. The outcomes have been measurable and meaningful for our community.',
       avatar: 'FH',
     },
   ];
@@ -171,7 +171,7 @@ export default function Home() {
                 </h1>
               </div>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '56px', lineHeight: '1.8', maxWidth: '540px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-                Across 30+ countries, serving 75,000+ families. One mission, countless lives transformed.
+                Operating humanitarian programs across 30+ countries, delivering sustained impact to 75,000+ families through healthcare, education, and livelihood development.
               </p>
 
               <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
@@ -335,17 +335,17 @@ export default function Home() {
                   REAL IMPACT
                 </p>
                 <h2 style={{ fontSize: '44px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", lineHeight: '1.2' }}>
-                  "JHCO gave me hope when I had lost it all."
+                  "Education transformed my future and my family's prospects."
                 </h2>
               </div>
 
               <p style={{ fontSize: '16px', color: colors.textGrey, lineHeight: '1.8', marginBottom: '44px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-                Amira's family faced severe hardship when her father became ill. Through JHCO's healthcare program, not only did her father receive treatment, but Amira was enrolled in our education initiative. Today, she's in secondary school and dreams of becoming a teacher to help others in her community.
+                Through JHCO's integrated healthcare and education programs, Amira received academic support and her family accessed essential medical services. She now progresses through secondary school with ambitions to become an educator, demonstrating the sustained impact of comprehensive program delivery in her community.
               </p>
 
               <div style={{ backgroundColor: colors.lightGrey, padding: '36px 36px', borderRadius: '0px', borderLeft: `3px solid ${colors.primaryNavy}`, marginBottom: '44px' }}>
                 <p style={{ fontSize: '15px', fontStyle: 'italic', color: colors.textNavy, margin: 0, lineHeight: '1.8', fontFamily: "'Georgia', 'Garamond', serif" }}>
-                  "I remember the day the JHCO team came to our village. They didn't just bring medicine—they brought belief in us. My family felt valued for the first time in years."
+                  "The JHCO programs provided real opportunities. Quality education and healthcare access made a meaningful difference in what my family could achieve. I'm grateful for the professional support."
                 </p>
               </div>
 
@@ -398,7 +398,7 @@ export default function Home() {
               Our Programs
             </h2>
             <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-              Six transformative initiatives changing lives across healthcare, education, and livelihood
+              Comprehensive programs delivering measurable impact across healthcare, education, livelihood development, and emergency response
             </p>
           </div>
 
@@ -499,10 +499,10 @@ export default function Home() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
-              Why Choose JHCO?
+              Why JHCO?
             </h2>
             <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-              Trusted by donors and communities for our integrity, expertise, and genuine commitment
+              Professional humanitarian governance with international credibility and documented impact
             </p>
           </div>
 
@@ -545,14 +545,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CALL-TO-ACTION SECTION - Royal Make Difference */}
+      {/* 6. CALL-TO-ACTION SECTION - Royal Get Involved */}
       <section style={{ background: colors.primaryNavy, padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '52px', fontWeight: '400', color: 'white', marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
-            Make a Difference Today
+            Get Involved
           </h2>
           <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.85)', maxWidth: '650px', margin: '0 auto 60px', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-            Choose how you want to contribute to our mission of serving humanity with dignity
+            Support our humanitarian work through donation, volunteer service, or organizational partnership
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px' }}>
@@ -560,19 +560,19 @@ export default function Home() {
               {
                 icon: null,
                 title: 'Donate',
-                description: 'One gift. Many lives transformed.',
+                description: 'Financial contributions to program delivery.',
                 link: `${base}/get-involved/donate`,
               },
               {
                 icon: null,
                 title: 'Volunteer',
-                description: 'Give your time. Make lasting impact.',
+                description: 'Professional skills and service engagement.',
                 link: `${base}/get-involved/volunteer`,
               },
               {
                 icon: null,
                 title: 'Partner',
-                description: 'Collaborate for greater good.',
+                description: 'Organizational collaboration and alliance.',
                 link: `${base}/get-involved/partner`,
               },
             ].map((cta, idx) => (
@@ -608,15 +608,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS CAROUSEL - Royal Voices of Impact */}
+      {/* 7. TESTIMONIALS CAROUSEL - Professional Engagement Stories */}
       <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
-              Voices of Impact
+              Engagement Stories
             </h2>
             <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-              Hear from donors, volunteers, and beneficiaries whose lives have been touched
+              Perspectives from program participants, partners, and supporters of JHCO's work
             </p>
           </div>
 
@@ -683,14 +683,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. NEWSLETTER SECTION - Royal Stay Updated */}
+      {/* 8. NEWSLETTER SECTION - Professional Updates */}
       <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
-            Stay Updated
+            Stay Informed
           </h2>
           <p style={{ fontSize: '16px', color: colors.textGrey, marginBottom: '56px', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-            Get stories of impact, program updates, and ways to help delivered to your inbox
+            Receive program updates, impact reports, and organizational news delivered to your inbox
           </p>
 
           <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
@@ -760,7 +760,7 @@ export default function Home() {
                 JHCO
               </h4>
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', marginBottom: '32px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-                Serving humanity with dignity across 30+ countries
+                Operating humanitarian programs across 30+ countries under royal patronage
               </p>
               <div style={{ display: 'flex', gap: '12px' }}>
                 {['f', 't', 'i', 'l'].map((social) => (
@@ -894,7 +894,7 @@ export default function Home() {
           {/* Footer Bottom */}
           <div style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, paddingTop: '48px', textAlign: 'center' }}>
             <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
-              Copyright 2026 JHCO. Serving Humanity with Dignity.
+              Copyright 2026 JHCO. Professional Humanitarian Work.
             </p>
           </div>
         </div>
