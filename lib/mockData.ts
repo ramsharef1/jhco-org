@@ -206,6 +206,41 @@ export const programs = [
     objectives: ['Skills training', 'Job placement', 'Microfinance support', 'Business development'],
     objectivesAr: ['تدريب المهارات', 'التوظيف', 'دعم التمويل الأصغر', 'تطوير الأعمال'],
   },
+  {
+    id: 7,
+    slug: 'crisis-response-program',
+    name: 'Crisis Response Program',
+    nameAr: 'برنامج الاستجابة للأزمات',
+    description: 'Comprehensive rapid-response initiatives providing humanitarian aid during emergencies and crises worldwide',
+    descriptionAr: 'مبادرات استجابة سريعة شاملة توفر المساعدة الإنسانية أثناء الطوارئ والأزمات حول العالم',
+    longDescription: 'JHCO\'s Crisis Response Program is a comprehensive, rapid-response initiative designed to provide immediate humanitarian assistance during emergencies and crises worldwide. We maintain constant readiness to deploy teams, resources, and expertise to affected regions within hours of a crisis occurrence. Our program integrates emergency relief distribution, medical support, shelter provision, and psychosocial assistance to address the multifaceted needs of affected populations. We work collaboratively with local partners and international organizations to maximize impact and ensure dignity in our response.',
+    longDescriptionAr: 'برنامج الاستجابة للأزمات بالهيئة هو مبادرة استجابة سريعة شاملة مصممة لتوفير المساعدة الإنسانية الفورية أثناء الطوارئ والأزمات حول العالم. نحافظ على جاهزية مستمرة لنشر الفرق والموارد والخبرات للمناطق المتضررة في غضون ساعات من حدوث الأزمة. يدمج برنامجنا توزيع الإغاثة الطارئة والدعم الطبي وتوفير المأوى والمساعدة النفسية الاجتماعية لمعالجة الاحتياجات المتعددة الأوجه للسكان المتضررين. نعمل بشكل تعاوني مع الشركاء المحليين والمنظمات الدولية لتعظيم التأثير وضمان الكرامة في استجابتنا.',
+    category: 'Crisis Response',
+    categoryAr: 'الاستجابة للأزمات',
+    impact: '150,000+ lives assisted',
+    impactAr: '150,000+ حياة تم تقديم المساعدة لها',
+    status: 'Active',
+    objectives: [
+      'Immediate emergency response deployment',
+      'Food security and essential supplies distribution',
+      'Medical assistance and healthcare services',
+      'Shelter and temporary housing provision',
+      'Psychosocial support and counseling',
+      'Search and rescue operations',
+      'Coordination with international humanitarian partners',
+      'Post-crisis recovery and rehabilitation support'
+    ],
+    objectivesAr: [
+      'نشر الاستجابة للطوارئ الفورية',
+      'توزيع الأمن الغذائي والإمدادات الأساسية',
+      'المساعدة الطبية وخدمات الرعاية الصحية',
+      'توفير المأوى والإسكان المؤقت',
+      'الدعم النفسي الاجتماعي والاستشارات',
+      'عمليات البحث والإنقاذ',
+      'التنسيق مع الشركاء الإنسانيين الدوليين',
+      'دعم التعافي وإعادة التأهيل بعد الأزمة'
+    ],
+  },
 ];
 
 export const news = [

@@ -71,7 +71,7 @@ export default function AccountPage({ params }: { params: { locale: Locale } }) 
             }}>
               <div style={{ fontSize: '40px', marginBottom: '16px' }}>{item.icon}</div>
               <h3 style={{ fontSize: '18px', color: royalColors.darkNavy, marginBottom: '8px' }}>{item.label}</h3>
-              <p style={{ fontSize: '14px', color: royalColors.textOfficial', margin: 0 }}>{item.desc}</p>
+              <p style={{ fontSize: '14px', color: royalColors.textOfficial, margin: 0 }}>{item.desc}</p>
             </Link>
           ))}
         </div>
