@@ -1,9 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
-import { createJWT } from '@/lib/auth';
+import { SignJWT } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
+const JWT_SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+);
+
+async function generateToken(userId: string, email: string, role: string) {
+  return await new SignJWT({
+    userId,
+    email,
+    role,
+  })
+    .setProtocol('HS256')
+    .setExpirationTime('24h')
+    .sign(JWT_SECRET);
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,7 +24,6 @@ export async function POST(request: NextRequest) {
     const { email, password, action } = body;
 
     if (action === 'login') {
-      // Find user
       const user = await prisma.user.findUnique({
         where: { email },
       });
@@ -23,7 +35,6 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // Verify password
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (!passwordMatch) {
@@ -33,8 +44,7 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // Create JWT token
-      const token = await createJWT(user.id, user.email, user.role);
+      const token = await generateToken(user.id, user.email, user.role);
 
       return NextResponse.json({
         success: true,
@@ -49,7 +59,6 @@ export async function POST(request: NextRequest) {
     }
 
     if (action === 'register') {
-      // Check if user exists
       const existingUser = await prisma.user.findUnique({
         where: { email },
       });
@@ -61,10 +70,8 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // Hash password
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Create user
       const newUser = await prisma.user.create({
         data: {
           email,
@@ -74,8 +81,7 @@ export async function POST(request: NextRequest) {
         },
       });
 
-      // Create JWT token
-      const token = await createJWT(newUser.id, newUser.email, newUser.role);
+      const token = await generateToken(newUser.id, newUser.email, newUser.role);
 
       return NextResponse.json({
         success: true,
@@ -93,10 +99,10 @@ export async function POST(request: NextRequest) {
       { error: 'Invalid action' },
       { status: 400 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Auth error:', error);
     return NextResponse.json(
-      { error: 'Authentication failed' },
+      { error: error.message || 'Authentication failed' },
       { status: 500 }
     );
   }
