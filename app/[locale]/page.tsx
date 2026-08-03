@@ -1,5 +1,6 @@
 'use client';
 
+// Royal Jordanian JHCO Homepage with Placeholder Images
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { getDictionary, type Locale } from '@/lib/i18n';
