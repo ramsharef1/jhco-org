@@ -32,7 +32,7 @@ export async function createJWT(userId: string, email: string, role: string) {
     email,
     role,
   })
-    .setProtocol('HS256')
+    .setProtectedHeader({ alg: 'HS256' })
     .setExpirationTime('24h')
     .sign(JWT_SECRET);
 }
