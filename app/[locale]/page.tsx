@@ -78,15 +78,17 @@ export default function Home() {
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  // Royal Jordanian color palette - Navy, White, Grey
+  // Royal Jordanian color palette - Navy, White, Dark Navy Background
   const colors = {
     primaryNavy: '#1a3a52',
     textNavy: '#2c4563',
     lightGrey: '#f5f5f5',
     white: '#ffffff',
+    darkBg: '#0a1428',           // Dark Navy Background (from password page)
     textGrey: '#555555',
     accentGold: '#d4af37',
     border: '#e0e0e0',
+    darkBgText: '#ffffff',       // White text on dark backgrounds
   };
 
   // Program accents - subtle navy/grey
@@ -265,7 +267,7 @@ export default function Home() {
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
               Our Global Impact
             </h2>
-            <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <p style={{ fontSize: '16px', color: "rgba(255,255,255,0.8)", maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
               Measurable change across communities and lives worldwide
             </p>
           </div>
@@ -334,7 +336,7 @@ export default function Home() {
                 <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                   REAL IMPACT
                 </p>
-                <h2 style={{ fontSize: '44px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", lineHeight: '1.2' }}>
+                <h2 style={{ fontSize: '44px', fontWeight: '400', color: colors.darkBgText, marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", lineHeight: '1.2' }}>
                   "Education transformed my future and my family's prospects."
                 </h2>
               </div>

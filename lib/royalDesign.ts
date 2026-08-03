@@ -34,11 +34,13 @@ export const royalColors = {
   // NEUTRAL PALETTE: Text & Backgrounds
   textOfficial: '#1a1a2e',     // Official text (very dark, authoritative)
   textSecondary: '#5a5a6a',    // Secondary text (muted, formal)
-  bgLight: '#ffffff',          // Light background
+  bgLight: '#ffffff',          // Light background (primary white)
+  bgDark: '#0a1428',           // Dark Navy Background (from password page - secondary bg alongside white)
   bgRefined: '#faf8f5',        // Refined background (ivory-leaning)
   richCream: '#f5f1e8',        // Rich Cream (elegant background)
   borderFormal: '#d4c5a9',     // Formal border (gold-tinted, elegant)
   borderSubtle: '#e8dcc8',     // Subtle border (pale)
+  bgDarkText: '#ffffff',       // Text color on dark backgrounds (white text)
 
   // ACCENTS: GOLD (Royal Precious Metal)
   goldBright: '#f4c430',       // Bright Gold (hover, emphasis)
