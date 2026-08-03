@@ -23,7 +23,7 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
       <div style={{ height: '4px', background: `linear-gradient(90deg, ${royalColors.hashemiteGold}, ${royalColors.deepRoyal}, ${royalColors.darkNavy}, ${royalColors.hashemiteGold})` }}></div>
 
       {/* Main Header */}
-      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl }}>
+      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl, direction: ar ? 'rtl' : 'ltr' }}>
         {/* Logo */}
         <Link href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flex: 1 }}>
           <img src="/jhco-logo.webp" alt="JHCO" style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '80px' }} />
