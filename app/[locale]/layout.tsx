@@ -1,5 +1,4 @@
 import Header from '@/components/Header';
-import MegaMenu from '@/components/MegaMenu';
 import Footer from '@/components/Footer';
 import { type Locale } from '@/lib/i18n';
 
@@ -21,7 +20,6 @@ export default async function LocaleLayout({
   return (
     <>
       <Header locale={locale as Locale} />
-      <MegaMenu locale={locale as Locale} />
       <main dir={dir} style={{ minHeight: '100vh' }}>
         {children}
       </main>

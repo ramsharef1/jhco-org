@@ -157,7 +157,6 @@ export default function MegaMenu({ locale, base }: MegaMenuProps) {
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
-                    {child.icon && <span style={{ fontSize: '14px' }}>{child.icon}</span>}
                     <span>{ar ? child.label : child.labelEn}</span>
                   </Link>
                 ))}
