@@ -168,8 +168,8 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
                 backgroundColor: 'white',
                 padding: '48px 32px',
                 borderRadius: '12px',
-                border: `1px solid ${royalColors.borderFormalLight}`,
-                boxShadow: '0 4px 12px rgba(232,185,35,0.1)',
+                border: '1px solid #e0e0e0',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
                 textAlign: ar ? 'right' : 'left',
               }}>
                 <div style={{
@@ -213,7 +213,7 @@ export default function MissionPage({ params }: { params: { locale: Locale } }) 
 
       {/* Commitment Section */}
       <section style={{
-        background: `linear-gradient(135deg, ${royalColors.darkNavy}, ${royalColors.compassionTeal})`,
+        background: royalColors.darkNavy,
         padding: '64px 32px',
         color: 'white',
       }}>

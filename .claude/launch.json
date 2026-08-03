@@ -4,9 +4,8 @@
     {
       "name": "JHCO Dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "cwd": "/Users/ramialsharef/Desktop/CLoudPros/jhco-org",
-      "port": 3000
+      "runtimeArgs": ["run", "dev", "--", "-p", "3001"],
+      "port": 3001
     }
   ]
 }

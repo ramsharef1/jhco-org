@@ -7,6 +7,7 @@ export const royalColors = {
   // PRIMARY PALETTE: ROYAL AUTHORITY (Inspired by Jordanian Royal Heritage)
   // These colors establish AUTHORITY, PRESTIGE, and OFFICIAL STATUS first
   deepRoyal: '#4a148c',        // Deep Royal Purple (most formal, regal, prestigious)
+  deepPurple: '#4a148c',       // Deep Purple (most formal, regal, prestigious)
   darkNavy: '#001a4d',         // Dark Navy (formal authority, official)
   hashemiteGold: '#d4af37',    // Hashemite Gold (precious metal, royal privilege, power)
   royalBurgundy: '#5d1049',    // Royal Burgundy (heritage, nobility, formality)
@@ -21,14 +22,21 @@ export const royalColors = {
   // TERTIARY PALETTE: CHARITY COLORS (Charity as Support, Not Primary)
   // These appear only in specific contexts to support the royal mission
   charityRed: '#c41e3a',       // Charity Red (formal, not bright - used sparingly)
+  redLight: '#e8716c',         // Light Red (charity accent)
+  redDark: '#8b0000',          // Dark Red (supporting)
   compassionTeal: '#0d7377',   // Compassion Teal (muted, formal - secondary)
   impactGreen: '#1b4332',      // Impact Green (dark, formal - supporting)
+  greenDark: '#0b5e3b',        // Dark Green (supporting)
+  greenLight: '#4a7c7e',       // Light Green (accent)
+  skyBlue: '#2c5282',          // Sky Blue (muted blue, formal - supporting)
+  blueLight: '#64b5f6',        // Light Blue (accent)
 
   // NEUTRAL PALETTE: Text & Backgrounds
   textOfficial: '#1a1a2e',     // Official text (very dark, authoritative)
   textSecondary: '#5a5a6a',    // Secondary text (muted, formal)
   bgLight: '#ffffff',          // Light background
   bgRefined: '#faf8f5',        // Refined background (ivory-leaning)
+  richCream: '#f5f1e8',        // Rich Cream (elegant background)
   borderFormal: '#d4c5a9',     // Formal border (gold-tinted, elegant)
   borderSubtle: '#e8dcc8',     // Subtle border (pale)
 
@@ -87,11 +95,13 @@ export const gradients = {
   // Royal Primary Gradients (Deep, Formal, Prestigious)
   royalPrimary: 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)',     // Purple to Navy (most formal)
   royalGold: 'linear-gradient(135deg, #4a148c 0%, #d4af37 100%)',        // Purple to Gold (royal prestige)
+  royalToWarm: 'linear-gradient(135deg, #4a148c 0%, #d4a95d 100%)',      // Purple to warm gold
   darkFormal: 'linear-gradient(135deg, #001a4d 0%, #2b2d42 100%)',      // Navy to Charcoal (authority)
 
   // Formal Heraldic Gradients (Official, stately)
   burgandy: 'linear-gradient(135deg, #5d1049 0%, #8b0000 100%)',         // Burgundy to Crimson (heritage)
   goldRegal: 'linear-gradient(135deg, #d4af37 0%, #b8860b 100%)',        // Gold shades (precious, formal)
+  goldToWarm: 'linear-gradient(135deg, #d4af37 0%, #d4a95d 100%)',       // Gold to warm gold (subtle)
 
   // Background Gradients (Refined, not inviting)
   refinedBg: 'linear-gradient(135deg, #faf8f5 0%, #f5f1e8 100%)',        // Ivory gradients (elegant)
@@ -99,6 +109,7 @@ export const gradients = {
 
   // Charity Support Gradients (Subtle, secondary)
   charityAccent: 'linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%)',  // Red+Gold muted
+  hopeful: 'linear-gradient(135deg, #4a7c7e 0%, #64b5f6 100%)',          // Green to Blue (hopeful)
 };
 
 // SPACING SYSTEM: Consistent, warm layouts
@@ -293,6 +304,16 @@ export const componentStyles = {
       borderRadius: '0px',
       padding: '28px',
       boxShadow: 'none',
+      transition: 'all 200ms ease-in-out',
+    },
+
+    // WARM: Warm accent card (legacy support)
+    warm: {
+      bg: '#f5f1e8',                    // Ivory (warm-leaning)
+      border: '1px solid #e8dcc8',
+      borderRadius: '0px',
+      padding: '28px',
+      boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.08)',
       transition: 'all 200ms ease-in-out',
     },
   },
