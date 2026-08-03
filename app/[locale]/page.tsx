@@ -173,26 +173,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Hero Image Placeholder */}
+            {/* Right: Hero Image */}
             <div style={{ position: 'relative' }}>
-              <div
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=1000&fit=crop"
+                alt="Community members coming together to help others"
                 style={{
                   width: '100%',
+                  height: 'auto',
                   aspectRatio: '4/5',
-                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  objectFit: 'cover',
                   borderRadius: '0px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                   border: `1px solid rgba(255,255,255,0.2)`,
-                  overflow: 'hidden',
+                  display: 'block',
                 }}
-              >
-                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.4)' }}>
-                  <div style={{ fontSize: '14px', fontWeight: '500', color: 'rgba(255,255,255,0.4)', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Professional</div>
-                  <p style={{ margin: '8px 0 0 0', fontSize: '13px', opacity: 0.3, fontFamily: "'Inter', '-apple-system', sans-serif" }}>Photography Placeholder</p>
-                </div>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -253,23 +248,19 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '100px', alignItems: 'center' }}>
             {/* Left: Story Image */}
             <div style={{ position: 'relative' }}>
-              <div
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=720&fit=crop"
+                alt="Portrait of a young woman with hope and determination"
                 style={{
                   width: '100%',
+                  height: 'auto',
                   aspectRatio: '0.9',
-                  backgroundColor: 'rgba(42, 58, 82, 0.05)',
+                  objectFit: 'cover',
                   borderRadius: '0px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                   border: `1px solid ${colors.border}`,
-                  overflow: 'hidden',
+                  display: 'block',
                 }}
-              >
-                <div style={{ textAlign: 'center', color: 'rgba(44, 69, 99, 0.3)' }}>
-                  <p style={{ margin: '0', fontSize: '13px', color: 'rgba(44, 69, 99, 0.3)', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '500' }}>Story Photography</p>
-                </div>
-              </div>
+              />
             </div>
 
             {/* Right: Story Quote & Details */}
@@ -371,29 +362,31 @@ export default function Home() {
                     e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                   }}
                 >
-                  {/* Program Image Placeholder */}
-                  <div
+                  {/* Program Image */}
+                  <img
+                    src={
+                      program.id === 1
+                        ? 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&h=300&fit=crop'
+                        : program.id === 2
+                        ? 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop'
+                        : program.id === 3
+                        ? 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=300&fit=crop'
+                        : program.id === 4
+                        ? 'https://images.unsplash.com/photo-1427504494785-cdad92f95b56?w=500&h=300&fit=crop'
+                        : program.id === 5
+                        ? 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop'
+                        : 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop'
+                    }
+                    alt={ar ? program.nameAr : program.name}
                     style={{
                       position: 'relative',
                       height: '240px',
-                      backgroundColor: 'rgba(42, 58, 82, 0.05)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: colors.textGrey,
-                      fontSize: '13px',
-                      transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+                      width: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
                       borderBottom: `1px solid ${colors.border}`,
-                      textTransform: 'uppercase',
-                      letterSpacing: '1px',
-                      fontWeight: '500',
-                      fontFamily: "'Inter', '-apple-system', sans-serif",
                     }}
-                  >
-                    <div style={{ textAlign: 'center', color: 'rgba(42, 58, 82, 0.3)' }}>
-                      Program Photography
-                    </div>
-                  </div>
+                  />
 
                   {/* Program Content */}
                   <div style={{ flex: 1, padding: '40px 36px', display: 'flex', flexDirection: 'column' }}>
