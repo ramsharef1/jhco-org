@@ -25,9 +25,9 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
       {/* Main Header */}
       <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl, flexDirection: ar ? 'row-reverse' : 'row' }}>
         {/* Logo */}
-        <Link href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, minWidth: '80px', width: '80px' }}>
-          <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '100%', height: 'auto', maxHeight: '80px', objectFit: 'contain' }} />
-        </Link>
+        <a href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, minWidth: '90px', width: '90px', height: '90px', justifyContent: 'center' }}>
+          <img src="/jhco-logo.webp" alt="JHCO" style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
+        </a>
 
         {/* Navigation Links - Mega Menu */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', position: 'relative', flex: 1 }}>
