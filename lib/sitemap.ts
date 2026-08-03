@@ -29,7 +29,7 @@ export const sitemap = {
       description: 'Royal heritage and governance',
       descriptionAr: 'الإرث الملكي والحوكمة',
       children: [
-        { label: 'البيان التاريخي', labelEn: 'Royal Message', href: '/royal-patronage/message' },
+        { label: 'البيان التاريخي', labelEn: 'Royal Message', href: '/royal-message' },
         { label: 'الدعم الملكي', labelEn: 'Royal Support', href: '/royal-patronage/support' },
         { label: 'الشركاء الملكيون', labelEn: 'Royal Partners', href: '/royal-patronage/partners' },
         { label: 'المبادرات الملكية', labelEn: 'Royal Initiatives', href: '/royal-patronage/initiatives' },
