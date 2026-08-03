@@ -23,14 +23,16 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
       <div style={{ height: '4px', background: `linear-gradient(90deg, ${royalColors.hashemiteGold}, ${royalColors.deepRoyal}, ${royalColors.darkNavy}, ${royalColors.hashemiteGold})` }}></div>
 
       {/* Main Header */}
-      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl, direction: ar ? 'rtl' : 'ltr' }}>
+      <nav style={{ maxWidth: '1500px', margin: '0 auto', padding: spacing.md + ' ' + spacing.xl, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: spacing.xl, flexDirection: ar ? 'row-reverse' : 'row' }}>
         {/* Logo */}
-        <Link href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, minWidth: '100px', maxWidth: '150px' }}>
-          <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '100%', height: 'auto', maxHeight: '80px' }} />
+        <Link href={base} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+          <img src="/jhco-logo.webp" alt="JHCO" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
         </Link>
 
         {/* Navigation Links - Mega Menu */}
-        <MegaMenu locale={locale} base={base} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', position: 'relative', flex: 1 }}>
+          <MegaMenu locale={locale} base={base} />
+        </div>
 
         {/* Right Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: spacing.md }}>
