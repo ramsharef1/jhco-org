@@ -13,49 +13,53 @@ export default function Home() {
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  // Color palette for program cards - Royal Design System
-  const programColors = [
-    '#4a148c', // Deep Purple
-    '#001a4d', // Dark Navy
-    '#4a148c', // Deep Purple
-    '#d4af37', // Hashemite Gold
-    '#001a4d', // Dark Navy
-    '#4a148c', // Deep Purple
+  // Royal Jordanian color palette - Navy, White, Grey
+  const colors = {
+    primaryNavy: '#1a3a52',
+    textNavy: '#2c4563',
+    lightGrey: '#f5f5f5',
+    white: '#ffffff',
+    textGrey: '#555555',
+    accentGold: '#d4af37',
+    border: '#e0e0e0',
+  };
+
+  // Program accents - subtle navy/grey
+  const programAccents = [
+    colors.textNavy,
+    colors.textNavy,
+    colors.textNavy,
+    colors.textNavy,
+    colors.textNavy,
+    colors.textNavy,
   ];
 
-  // Color palette for stat cards - Royal Design System
-  const statColors = [
-    { bg: '#001a4d', icon: '👨‍👩‍👧‍👦' }, // Dark Navy
-    { bg: '#4a148c', icon: '🌍' }, // Deep Purple
-    { bg: '#001a4d', icon: '❤️' }, // Dark Navy
-    { bg: '#4a148c', icon: '⭐' }, // Deep Purple
-  ];
-
+  // Impact stat configuration
   const statData = [
-    { value: '75K+', label: 'Families Served', icon: '👨‍👩‍👧‍👦' },
-    { value: '30+', label: 'Countries', icon: '🌍' },
-    { value: '2.5K+', label: 'Volunteers', icon: '❤️' },
-    { value: '100%', label: 'Verified Impact', icon: '⭐' },
+    { value: '75K+', label: 'Families Served', icon: null },
+    { value: '30+', label: 'Countries', icon: null },
+    { value: '2.5K+', label: 'Volunteers', icon: null },
+    { value: '100%', label: 'Verified Impact', icon: null },
   ];
 
   const whyReasons = [
     {
-      icon: '🔍',
+      icon: null,
       title: 'Transparent Operations',
       description: 'Every donation tracked, every impact verified. Full accountability to our donors.',
     },
     {
-      icon: '👑',
+      icon: null,
       title: 'Royal Heritage, Human Heart',
       description: 'Guided by principles of dignity and respect for every person we serve.',
     },
     {
-      icon: '🤝',
+      icon: null,
       title: 'Community-Led Change',
       description: 'Working alongside local partners who know their communities best.',
     },
     {
-      icon: '✓',
+      icon: null,
       title: 'Proven Track Record',
       description: 'Decades of sustainable impact across healthcare, education, and livelihood.',
     },
@@ -87,50 +91,52 @@ export default function Home() {
 
   return (
     <>
-      {/* 1. HERO SECTION - Royal Elegance */}
-      <section style={{ background: 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)', padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
-        {/* Royal seal accent in corner */}
-        <div style={{ position: 'absolute', top: '40px', right: '40px', fontSize: '48px', opacity: 0.15 }}>
-          👑
-        </div>
-
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
-            {/* Left: Emotional Headline & CTAs */}
+      {/* 1. HERO SECTION - Royal Formal */}
+      <section style={{ background: colors.primaryNavy, padding: '160px 32px 120px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '100px', alignItems: 'center' }}>
+            {/* Left: Headline & CTAs */}
             <div>
-              <h1 style={{ fontSize: '56px', fontWeight: '700', lineHeight: '1.1', color: 'white', marginBottom: '24px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
-                Serving Humanity with Dignity
-              </h1>
-              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.95)', marginBottom: '32px', lineHeight: '1.8', maxWidth: '500px' }}>
-                Across 30+ countries | 75K+ families | One mission
+              <div style={{ marginBottom: '32px' }}>
+                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '3px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+                  SERVING HUMANITY
+                </p>
+                <h1 style={{ fontSize: '72px', fontWeight: '400', lineHeight: '1.2', color: 'white', marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", textTransform: 'none', letterSpacing: '0' }}>
+                  With Dignity
+                </h1>
+              </div>
+              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '56px', lineHeight: '1.8', maxWidth: '540px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+                Across 30+ countries, serving 75,000+ families. One mission, countless lives transformed.
               </p>
 
-              <div style={{ display: 'flex', gap: '16px', marginBottom: '48px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                 <Link
                   href={`${base}/get-involved/donate`}
                   style={{
-                    padding: '16px 40px',
-                    backgroundColor: '#c41e3a',
-                    color: 'white',
+                    padding: '16px 48px',
+                    backgroundColor: colors.white,
+                    color: colors.primaryNavy,
                     textDecoration: 'none',
-                    fontSize: '14px',
+                    fontSize: '13px',
                     fontWeight: '700',
                     borderRadius: '0px',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 12px rgba(196, 30, 58, 0.3)',
+                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                    border: `2px solid ${colors.white}`,
                     textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    letterSpacing: '1px',
+                    display: 'inline-block',
+                    fontFamily: "'Inter', '-apple-system', sans-serif",
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = '#a01830';
+                    e.currentTarget.style.backgroundColor = colors.primaryNavy;
+                    e.currentTarget.style.color = colors.white;
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(196, 30, 58, 0.4)';
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = '#c41e3a';
+                    e.currentTarget.style.backgroundColor = colors.white;
+                    e.currentTarget.style.color = colors.primaryNavy;
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(196, 30, 58, 0.3)';
                   }}
                 >
                   Donate Now
@@ -138,25 +144,27 @@ export default function Home() {
                 <Link
                   href={`${base}/get-involved/volunteer`}
                   style={{
-                    padding: '16px 40px',
-                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    padding: '16px 48px',
+                    backgroundColor: 'transparent',
                     color: 'white',
                     textDecoration: 'none',
-                    fontSize: '14px',
+                    fontSize: '13px',
                     fontWeight: '700',
                     borderRadius: '0px',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    border: '2px solid #d4af37',
+                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                    border: `2px solid white`,
                     textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
+                    letterSpacing: '1px',
+                    display: 'inline-block',
+                    fontFamily: "'Inter', '-apple-system', sans-serif",
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -170,22 +178,19 @@ export default function Home() {
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '1',
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  borderRadius: '16px',
+                  aspectRatio: '4/5',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  borderRadius: '0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '64px',
-                  backdropFilter: 'blur(10px)',
-                  border: '2px solid rgba(255,255,255,0.2)',
+                  border: `1px solid rgba(255,255,255,0.2)`,
                   overflow: 'hidden',
                 }}
               >
-                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)' }}>
-                  <div style={{ fontSize: '80px', marginBottom: '16px' }}>🌟</div>
-                  <p style={{ margin: 0, fontSize: '16px', fontWeight: '500' }}>Real people, Real impact</p>
-                  <p style={{ margin: '8px 0 0 0', fontSize: '13px', opacity: 0.8 }}>Hero image placeholder</p>
+                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.4)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: '500', color: 'rgba(255,255,255,0.4)', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Professional</div>
+                  <p style={{ margin: '8px 0 0 0', fontSize: '13px', opacity: 0.3, fontFamily: "'Inter', '-apple-system', sans-serif" }}>Photography Placeholder</p>
                 </div>
               </div>
             </div>
@@ -193,47 +198,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. IMPACT STATS SECTION - Royal Excellence */}
-      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
+      {/* 2. IMPACT STATS SECTION - Royal Impact Display */}
+      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+            <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
               Our Global Impact
             </h2>
-            <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
-              Making measurable difference in communities around the world
+            <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+              Measurable change across communities and lives worldwide
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
             {statData.map((stat, idx) => (
               <div
                 key={idx}
                 style={{
-                  backgroundColor: statColors[idx].bg,
-                  padding: '48px 32px',
+                  backgroundColor: colors.white,
+                  padding: '56px 40px',
                   borderRadius: '0px',
                   textAlign: 'center',
-                  color: 'white',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   cursor: 'pointer',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                  border: '2px solid #d4af37',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                  border: `1px solid ${colors.border}`,
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.18)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                 }}
               >
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{stat.icon}</div>
-                <p style={{ fontSize: '48px', fontWeight: '700', margin: '0 0 12px 0', fontFamily: 'Garamond, serif' }}>
+                <p style={{ fontSize: '48px', fontWeight: '300', margin: '0 0 16px 0', fontFamily: "'Georgia', 'Garamond', serif", color: colors.primaryNavy }}>
                   {stat.value}
                 </p>
-                <p style={{ fontSize: '16px', fontWeight: '600', margin: 0, opacity: 0.95 }}>
+                <p style={{ fontSize: '13px', fontWeight: '600', margin: 0, color: colors.textGrey, textTransform: 'uppercase', letterSpacing: '1px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                   {stat.label}
                 </p>
               </div>
@@ -242,165 +247,167 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. FEATURED STORY SECTION - Royal Impact */}
-      <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
+      {/* 3. FEATURED STORY SECTION - Royal Formal Story */}
+      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '100px', alignItems: 'center' }}>
             {/* Left: Story Image */}
-            <div>
+            <div style={{ position: 'relative' }}>
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '1',
-                  backgroundColor: '#f5f1e8',
+                  aspectRatio: '0.9',
+                  backgroundColor: 'rgba(42, 58, 82, 0.05)',
                   borderRadius: '0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '120px',
-                  border: '2px solid #d4af37',
+                  border: `1px solid ${colors.border}`,
                   overflow: 'hidden',
                 }}
               >
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ opacity: 0.6 }}>👩‍👧‍👦</div>
-                  <p style={{ margin: '16px 0 0 0', fontSize: '14px', color: '#999' }}>Beneficiary story image</p>
+                <div style={{ textAlign: 'center', color: 'rgba(44, 69, 99, 0.3)' }}>
+                  <p style={{ margin: '0', fontSize: '13px', color: 'rgba(44, 69, 99, 0.3)', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '500' }}>Story Photography</p>
                 </div>
               </div>
             </div>
 
             {/* Right: Story Quote & Details */}
             <div>
-              <div style={{ marginBottom: '32px' }}>
-                <p style={{ fontSize: '14px', color: '#4a148c', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px' }}>
-                  Their Story
+              <div style={{ marginBottom: '40px' }}>
+                <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+                  REAL IMPACT
                 </p>
-                <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#001a4d', marginBottom: '24px', fontFamily: 'Garamond, serif', lineHeight: '1.1', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                <h2 style={{ fontSize: '44px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", lineHeight: '1.2' }}>
                   "JHCO gave me hope when I had lost it all."
                 </h2>
               </div>
 
-              <p style={{ fontSize: '16px', color: '#555', lineHeight: '1.8', marginBottom: '32px' }}>
+              <p style={{ fontSize: '16px', color: colors.textGrey, lineHeight: '1.8', marginBottom: '44px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 Amira's family faced severe hardship when her father became ill. Through JHCO's healthcare program, not only did her father receive treatment, but Amira was enrolled in our education initiative. Today, she's in secondary school and dreams of becoming a teacher to help others in her community.
               </p>
 
-              <div style={{ backgroundColor: '#f5f1e8', padding: '32px', borderRadius: '0px', borderLeft: '2px solid #d4af37', marginBottom: '32px' }}>
-                <p style={{ fontSize: '15px', fontStyle: 'italic', color: '#333', margin: 0, lineHeight: '1.8' }}>
+              <div style={{ backgroundColor: colors.lightGrey, padding: '36px 36px', borderRadius: '0px', borderLeft: `3px solid ${colors.primaryNavy}`, marginBottom: '44px' }}>
+                <p style={{ fontSize: '15px', fontStyle: 'italic', color: colors.textNavy, margin: 0, lineHeight: '1.8', fontFamily: "'Georgia', 'Garamond', serif" }}>
                   "I remember the day the JHCO team came to our village. They didn't just bring medicine—they brought belief in us. My family felt valued for the first time in years."
                 </p>
               </div>
 
-              <div style={{ marginBottom: '32px' }}>
-                <p style={{ fontSize: '14px', fontWeight: '700', color: '#0a1428', margin: '0 0 4px 0' }}>Amira Hassan</p>
-                <p style={{ fontSize: '13px', color: '#999', margin: 0 }}>Cairo, Egypt • Healthcare & Education Program</p>
+              <div style={{ marginBottom: '44px' }}>
+                <p style={{ fontSize: '15px', fontWeight: '700', color: colors.primaryNavy, margin: '0 0 6px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>Amira Hassan</p>
+                <p style={{ fontSize: '13px', color: colors.textGrey, margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>Cairo, Egypt • Healthcare & Education Program</p>
               </div>
 
               <Link
                 href={`${base}/stories`}
                 style={{
-                  padding: '14px 32px',
-                  backgroundColor: 'white',
-                  color: '#4a148c',
+                  padding: '14px 40px',
+                  backgroundColor: colors.white,
+                  color: colors.primaryNavy,
                   textDecoration: 'none',
-                  fontSize: '14px',
+                  fontSize: '13px',
                   fontWeight: '700',
-                  border: '2px solid #4a148c',
+                  border: `2px solid ${colors.primaryNavy}`,
                   borderRadius: '0px',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                   display: 'inline-block',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
+                  letterSpacing: '1px',
+                  fontFamily: "'Inter', '-apple-system', sans-serif",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#4a148c';
+                  e.currentTarget.style.backgroundColor = colors.primaryNavy;
                   e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = 'white';
-                  e.currentTarget.style.color = '#4a148c';
+                  e.currentTarget.style.backgroundColor = colors.white;
+                  e.currentTarget.style.color = colors.primaryNavy;
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                Read More Stories →
+                Read More Stories
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. PROGRAMS GRID - Royal Programs */}
-      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
-        <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
+      {/* 4. PROGRAMS GRID - Royal Program Cards */}
+      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+            <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
               Our Programs
             </h2>
-            <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
+            <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
               Six transformative initiatives changing lives across healthcare, education, and livelihood
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', marginBottom: '48px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px', marginBottom: '60px' }}>
             {programs.slice(0, 6).map((program, idx) => (
               <Link key={program.id} href={`${base}/programs/${program.slug}`} style={{ textDecoration: 'none' }}>
                 <div
                   style={{
-                    backgroundColor: 'white',
+                    backgroundColor: colors.white,
                     borderRadius: '0px',
                     overflow: 'hidden',
                     cursor: 'pointer',
-                    transition: 'all 0.4s ease',
+                    transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                    border: `2px solid ${programColors[idx]}`,
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                    border: `1px solid ${colors.border}`,
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-12px)';
-                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.15)';
+                    e.currentTarget.style.transform = 'translateY(-6px)';
+                    e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
                   }}
                   onMouseOut={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                   }}
                 >
-                  {/* Program Image Placeholder with Color */}
+                  {/* Program Image Placeholder */}
                   <div
                     style={{
                       position: 'relative',
-                      height: '200px',
-                      background: `linear-gradient(135deg, ${programColors[idx]}, ${programColors[idx]}dd)`,
+                      height: '240px',
+                      backgroundColor: 'rgba(42, 58, 82, 0.05)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'white',
-                      fontSize: '64px',
+                      color: colors.textGrey,
+                      fontSize: '13px',
+                      transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+                      borderBottom: `1px solid ${colors.border}`,
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px',
+                      fontWeight: '500',
+                      fontFamily: "'Inter', '-apple-system', sans-serif",
                     }}
                   >
-                    <div style={{ textAlign: 'center', opacity: 0.8 }}>
-                      {idx === 0 && '❤️'}
-                      {idx === 1 && '📚'}
-                      {idx === 2 && '💼'}
-                      {idx === 3 && '🏥'}
-                      {idx === 4 && '🤝'}
-                      {idx === 5 && '🌱'}
+                    <div style={{ textAlign: 'center', color: 'rgba(42, 58, 82, 0.3)' }}>
+                      Program Photography
                     </div>
                   </div>
 
                   {/* Program Content */}
-                  <div style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                    <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0a1428', marginBottom: '12px', lineHeight: '1.4' }}>
+                  <div style={{ flex: 1, padding: '40px 36px', display: 'flex', flexDirection: 'column' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.primaryNavy, marginBottom: '14px', lineHeight: '1.4', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {ar ? program.nameAr : program.name}
                     </h3>
-                    <p style={{ fontSize: '14px', color: '#666', lineHeight: '1.6', flex: 1, marginBottom: '16px' }}>
+                    <p style={{ fontSize: '14px', color: colors.textGrey, lineHeight: '1.7', flex: 1, marginBottom: '24px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {ar ? program.descriptionAr : program.description}
                     </p>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '16px', borderTop: `2px solid ${programColors[idx]}20` }}>
-                      <p style={{ fontSize: '12px', color: programColors[idx], fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', margin: 0 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '24px', borderTop: `1px solid ${colors.border}` }}>
+                      <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                         {ar ? program.impactAr : program.impact}
                       </p>
-                      <span style={{ fontSize: '16px', color: programColors[idx] }}>→</span>
+                      <span style={{ fontSize: '16px', color: colors.textGrey, fontWeight: '400' }}>→</span>
                     </div>
                   </div>
                 </div>
@@ -412,25 +419,26 @@ export default function Home() {
             <Link
               href={`${base}/programs`}
               style={{
-                padding: '14px 40px',
-                backgroundColor: '#4a148c',
-                color: 'white',
+                padding: '16px 48px',
+                backgroundColor: colors.primaryNavy,
+                color: colors.white,
                 textDecoration: 'none',
                 borderRadius: '0px',
                 fontWeight: '700',
-                fontSize: '14px',
+                fontSize: '13px',
                 display: 'inline-block',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(74, 20, 140, 0.3)',
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                border: `2px solid ${colors.primaryNavy}`,
                 textTransform: 'uppercase',
-                letterSpacing: '0.5px',
+                letterSpacing: '1px',
+                fontFamily: "'Inter', '-apple-system', sans-serif",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#2a0d52';
+                e.currentTarget.style.backgroundColor = 'rgba(26, 58, 82, 0.9)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#4a148c';
+                e.currentTarget.style.backgroundColor = colors.primaryNavy;
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -440,14 +448,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. WHY JHCO SECTION - Royal Authority */}
-      <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
+      {/* 5. WHY JHCO SECTION - Royal Why Trust Us */}
+      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+            <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
               Why Choose JHCO?
             </h2>
-            <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
+            <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
               Trusted by donors and communities for our integrity, expertise, and genuine commitment
             </p>
           </div>
@@ -457,27 +465,32 @@ export default function Home() {
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f5f1e8',
-                  padding: '40px 32px',
+                  backgroundColor: colors.lightGrey,
+                  padding: '48px 40px',
                   borderRadius: '0px',
                   textAlign: 'center',
-                  transition: 'all 0.3s ease',
-                  border: '1px solid #d4af37',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: `1px solid ${colors.border}`,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f0ebe0';
+                  e.currentTarget.style.backgroundColor = colors.white;
                   e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f5f1e8';
+                  e.currentTarget.style.backgroundColor = colors.lightGrey;
                   e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                 }}
               >
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{reason.icon}</div>
-                <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#001a4d', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '0px', backgroundColor: colors.primaryNavy, margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '600', fontSize: '24px' }}>
+                  {idx + 1}
+                </div>
+                <h3 style={{ fontSize: '16px', fontWeight: '600', color: colors.primaryNavy, marginBottom: '16px', textTransform: 'none', letterSpacing: '0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                   {reason.title}
                 </h3>
-                <p style={{ fontSize: '13px', color: '#666', lineHeight: '1.6', margin: 0 }}>
+                <p style={{ fontSize: '13px', color: colors.textGrey, lineHeight: '1.7', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                   {reason.description}
                 </p>
               </div>
@@ -486,32 +499,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CALL-TO-ACTION SECTION - Royal Service */}
-      <section style={{ background: 'linear-gradient(135deg, #4a148c 0%, #001a4d 100%)', padding: '96px 32px', position: 'relative', overflow: 'hidden', borderTop: '4px solid #d4af37' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '48px', fontWeight: '700', color: 'white', marginBottom: '24px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+      {/* 6. CALL-TO-ACTION SECTION - Royal Make Difference */}
+      <section style={{ background: colors.primaryNavy, padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <h2 style={{ fontSize: '52px', fontWeight: '400', color: 'white', marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
             Make a Difference Today
           </h2>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.95)', maxWidth: '600px', margin: '0 auto 48px', lineHeight: '1.8' }}>
+          <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.85)', maxWidth: '650px', margin: '0 auto 60px', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
             Choose how you want to contribute to our mission of serving humanity with dignity
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px' }}>
             {[
               {
-                icon: '💝',
+                icon: null,
                 title: 'Donate',
                 description: 'One gift. Many lives transformed.',
                 link: `${base}/get-involved/donate`,
               },
               {
-                icon: '🤲',
+                icon: null,
                 title: 'Volunteer',
                 description: 'Give your time. Make lasting impact.',
                 link: `${base}/get-involved/volunteer`,
               },
               {
-                icon: '🏢',
+                icon: null,
                 title: 'Partner',
                 description: 'Collaborate for greater good.',
                 link: `${base}/get-involved/partner`,
@@ -520,28 +533,26 @@ export default function Home() {
               <Link key={idx} href={cta.link} style={{ textDecoration: 'none' }}>
                 <div
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.15)',
-                    padding: '48px 32px',
-                    borderRadius: '12px',
+                    backgroundColor: 'rgba(255,255,255,0.08)',
+                    padding: '52px 40px',
+                    borderRadius: '0px',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    backdropFilter: 'blur(10px)',
-                    border: '2px solid rgba(255,255,255,0.2)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    border: '1px solid rgba(255,255,255,0.15)',
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.25)';
-                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.12)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)';
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <div style={{ fontSize: '48px', marginBottom: '16px' }}>{cta.icon}</div>
-                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'white', marginBottom: '8px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'white', marginBottom: '12px', fontFamily: "'Georgia', 'Garamond', serif" }}>
                     {cta.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                     {cta.description}
                   </p>
                 </div>
@@ -551,70 +562,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS CAROUSEL - Royal Voices */}
-      <section style={{ backgroundColor: '#f5f1e8', padding: '96px 32px' }}>
+      {/* 7. TESTIMONIALS CAROUSEL - Royal Voices of Impact */}
+      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+            <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
               Voices of Impact
             </h2>
-            <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
+            <p style={{ fontSize: '16px', color: colors.textGrey, maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
               Hear from donors, volunteers, and beneficiaries whose lives have been touched
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px' }}>
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'white',
-                  padding: '48px 40px',
+                  backgroundColor: colors.white,
+                  padding: '52px 44px',
                   borderRadius: '0px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                  border: '2px solid #d4af37',
-                  transition: 'all 0.3s ease',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                  border: `1px solid ${colors.border}`,
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                 }}
               >
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ fontSize: '24px', color: '#4a148c', marginBottom: '16px' }}>
+                <div style={{ marginBottom: '32px' }}>
+                  <div style={{ fontSize: '32px', color: colors.textGrey, marginBottom: '16px', opacity: 0.4, fontFamily: "'Georgia', 'Garamond', serif" }}>
                     "
                   </div>
-                  <p style={{ fontSize: '15px', color: '#333', lineHeight: '1.8', fontStyle: 'italic', margin: 0 }}>
+                  <p style={{ fontSize: '15px', color: colors.textNavy, lineHeight: '1.8', fontStyle: 'italic', margin: 0, fontFamily: "'Georgia', 'Garamond', serif" }}>
                     {testimonial.quote}
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '24px', borderTop: '2px solid #d4af37' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '32px', borderTop: `1px solid ${colors.border}` }}>
                   <div
                     style={{
-                      width: '48px',
-                      height: '48px',
+                      width: '52px',
+                      height: '52px',
                       borderRadius: '0px',
-                      backgroundColor: '#4a148c',
+                      backgroundColor: colors.primaryNavy,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: 'white',
                       fontWeight: '700',
                       fontSize: '14px',
+                      flexShrink: 0,
                     }}
                   >
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <p style={{ fontSize: '14px', fontWeight: '700', color: '#0a1428', margin: 0 }}>
+                    <p style={{ fontSize: '14px', fontWeight: '700', color: colors.primaryNavy, margin: '0 0 4px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {testimonial.name}
                     </p>
-                    <p style={{ fontSize: '12px', color: '#999', margin: 0 }}>
+                    <p style={{ fontSize: '12px', color: colors.textGrey, margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {testimonial.role} • {testimonial.location}
                     </p>
                   </div>
@@ -625,17 +637,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. NEWSLETTER SECTION - Royal Engagement */}
-      <section style={{ backgroundColor: 'white', padding: '96px 32px' }}>
+      {/* 8. NEWSLETTER SECTION - Royal Stay Updated */}
+      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: '700', color: '#4a148c', marginBottom: '16px', fontFamily: 'Garamond, serif', textTransform: 'uppercase', letterSpacing: '2px' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
             Stay Updated
           </h2>
-          <p style={{ fontSize: '16px', color: '#555', marginBottom: '48px', lineHeight: '1.8' }}>
+          <p style={{ fontSize: '16px', color: colors.textGrey, marginBottom: '56px', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
             Get stories of impact, program updates, and ways to help delivered to your inbox
           </p>
 
-          <div style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
             <input
               type="email"
               placeholder="Your email address"
@@ -643,66 +655,68 @@ export default function Home() {
                 flex: 1,
                 padding: '14px 20px',
                 fontSize: '14px',
-                border: '2px solid #d4af37',
+                border: `1px solid ${colors.border}`,
                 borderRadius: '0px',
-                fontFamily: 'inherit',
-                transition: 'all 0.3s ease',
-              }}
+                fontFamily: "'Inter', '-apple-system', sans-serif",
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                backgroundColor: colors.white,
+              } as React.CSSProperties}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = '#4a148c';
-                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(74,20,140,0.1)';
+                e.currentTarget.style.borderColor = colors.primaryNavy;
+                e.currentTarget.style.backgroundColor = colors.white;
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = '#d4af37';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = colors.border;
+                e.currentTarget.style.backgroundColor = colors.white;
               }}
             />
             <button
               style={{
-                padding: '14px 40px',
-                backgroundColor: '#4a148c',
+                padding: '14px 44px',
+                backgroundColor: colors.primaryNavy,
                 color: 'white',
-                border: 'none',
+                border: `2px solid ${colors.primaryNavy}`,
                 borderRadius: '0px',
                 fontWeight: '700',
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(74, 20, 140, 0.3)',
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.5px',
+                letterSpacing: '1px',
+                flexShrink: 0,
+                fontFamily: "'Inter', '-apple-system', sans-serif",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#2a0d52';
+                e.currentTarget.style.backgroundColor = 'rgba(26, 58, 82, 0.9)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#4a148c';
+                e.currentTarget.style.backgroundColor = colors.primaryNavy;
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               Subscribe
             </button>
           </div>
-          <p style={{ fontSize: '12px', color: '#999', margin: 0 }}>
+          <p style={{ fontSize: '12px', color: colors.textGrey, margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>
       </section>
 
-      {/* 9. FOOTER - Royal & Formal */}
-      <footer style={{ backgroundColor: '#001a4d', color: 'white', padding: '80px 32px 40px', borderTop: '4px solid #d4af37' }}>
-        <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '48px', marginBottom: '60px' }}>
+      {/* 9. FOOTER - Royal Professional Footer */}
+      <footer style={{ backgroundColor: colors.primaryNavy, color: 'white', padding: '100px 32px 50px', borderTop: `1px solid rgba(255,255,255,0.1)` }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '60px', marginBottom: '80px' }}>
             {/* Brand Column */}
             <div>
-              <h4 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '24px', color: '#d4af37' }}>
+              <h4 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '24px', color: 'white', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
                 JHCO
               </h4>
-              <p style={{ fontSize: '13px', color: '#aaa', lineHeight: '1.8', marginBottom: '24px' }}>
+              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', marginBottom: '32px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 Serving humanity with dignity across 30+ countries
               </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ display: 'flex', gap: '12px' }}>
                 {['f', 't', 'i', 'l'].map((social) => (
                   <a
                     key={social}
@@ -710,24 +724,25 @@ export default function Home() {
                     style={{
                       width: '40px',
                       height: '40px',
-                      borderRadius: '50%',
+                      borderRadius: '0px',
                       backgroundColor: 'rgba(255,255,255,0.1)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: 'white',
                       textDecoration: 'none',
-                      transition: 'all 0.3s ease',
+                      transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                       fontSize: '16px',
-                      fontWeight: '700',
+                      fontWeight: '600',
+                      border: '1px solid rgba(255,255,255,0.15)',
                     }}
                     onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#d4af37';
-                      e.currentTarget.style.color = '#001a4d';
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
                     }}
                     onMouseOut={(e) => {
                       e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >
                     {social}
@@ -736,27 +751,28 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Programs Column */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', color: '#d4af37' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 Programs
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {['Healthcare', 'Education', 'Livelihood', 'Water & Sanitation'].map((item) => (
-                  <li key={item} style={{ marginBottom: '12px' }}>
+                  <li key={item} style={{ marginBottom: '16px' }}>
                     <Link
                       href="#"
                       style={{
-                        color: '#aaa',
+                        color: 'rgba(255,255,255,0.7)',
                         textDecoration: 'none',
                         fontSize: '13px',
-                        transition: 'color 0.3s ease',
+                        transition: 'color 0.25s ease',
+                        fontFamily: "'Inter', '-apple-system', sans-serif",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = '#d4af37';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.95)';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.color = '#aaa';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
                       }}
                     >
                       {item}
@@ -766,27 +782,28 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Get Involved */}
+            {/* Get Involved Column */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', color: '#d4af37' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 Get Involved
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {['Donate', 'Volunteer', 'Partner', 'Career'].map((item) => (
-                  <li key={item} style={{ marginBottom: '12px' }}>
+                  <li key={item} style={{ marginBottom: '16px' }}>
                     <Link
                       href="#"
                       style={{
-                        color: '#aaa',
+                        color: 'rgba(255,255,255,0.7)',
                         textDecoration: 'none',
                         fontSize: '13px',
-                        transition: 'color 0.3s ease',
+                        transition: 'color 0.25s ease',
+                        fontFamily: "'Inter', '-apple-system', sans-serif",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = '#d4af37';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.95)';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.color = '#aaa';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
                       }}
                     >
                       {item}
@@ -796,27 +813,28 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* About */}
+            {/* About Column */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', color: '#d4af37' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 About
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {['Our Mission', 'Our Team', 'Contact Us', 'Privacy Policy'].map((item) => (
-                  <li key={item} style={{ marginBottom: '12px' }}>
+                  <li key={item} style={{ marginBottom: '16px' }}>
                     <Link
                       href="#"
                       style={{
-                        color: '#aaa',
+                        color: 'rgba(255,255,255,0.7)',
                         textDecoration: 'none',
                         fontSize: '13px',
-                        transition: 'color 0.3s ease',
+                        transition: 'color 0.25s ease',
+                        fontFamily: "'Inter', '-apple-system', sans-serif",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = '#d4af37';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.95)';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.color = '#aaa';
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
                       }}
                     >
                       {item}
@@ -828,8 +846,8 @@ export default function Home() {
           </div>
 
           {/* Footer Bottom */}
-          <div style={{ borderTop: '1px solid #d4af37', paddingTop: '40px', textAlign: 'center' }}>
-            <p style={{ fontSize: '12px', color: '#aaa', margin: 0 }}>
+          <div style={{ borderTop: `1px solid rgba(255,255,255,0.1)`, paddingTop: '48px', textAlign: 'center' }}>
+            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
               Copyright 2026 JHCO. Serving Humanity with Dignity.
             </p>
           </div>
