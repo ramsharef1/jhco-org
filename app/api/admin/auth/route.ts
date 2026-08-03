@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
-import { sign } from 'jsonwebtoken';
+import { createJWT } from '@/lib/auth';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 
@@ -34,11 +34,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Create JWT token
-      const token = sign(
-        { userId: user.id, email: user.email, role: user.role },
-        JWT_SECRET,
-        { expiresIn: '24h' }
-      );
+      const token = await createJWT(user.id, user.email, user.role);
 
       return NextResponse.json({
         success: true,
@@ -79,11 +75,7 @@ export async function POST(request: NextRequest) {
       });
 
       // Create JWT token
-      const token = sign(
-        { userId: newUser.id, email: newUser.email, role: newUser.role },
-        JWT_SECRET,
-        { expiresIn: '24h' }
-      );
+      const token = await createJWT(newUser.id, newUser.email, newUser.role);
 
       return NextResponse.json({
         success: true,
