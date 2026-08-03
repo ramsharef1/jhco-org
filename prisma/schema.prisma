@@ -1,0 +1,178 @@
+// Prisma schema for JHCO Admin Panel
+// Database: Vercel Postgres
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin Users
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String     // hashed with bcrypt
+  name      String?
+  role      UserRole   @default(EDITOR)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  // Relations
+  images    Image[]
+  content   Content[]
+  stories   Story[]
+  audit     AuditLog[]
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+// Images Gallery
+model Image {
+  id          String   @id @default(cuid())
+  filename    String
+  url         String   // Vercel Blob URL
+  alt         String?
+  program     String?  // healthcare, education, food-aid, livelihoods, emergency, team, events
+  category    String?  // hero, featured, gallery, testimonial, team, media
+  source      String?  // jhco.org.jo, facebook, instagram, official, other
+  hasWatermark Boolean @default(true)
+  metadata    Json?    // Additional image info
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  createdBy   User     @relation(fields: [createdById], references: [id])
+  createdById String
+
+  // Relations
+  contentImages ContentImage[]
+  storyImages   StoryImage[]
+}
+
+// Dynamic Content (Homepage, sections, etc.)
+model Content {
+  id        String   @id @default(cuid())
+  type      String   // 'homepage', 'hero', 'program', 'section'
+  key       String   // 'headline', 'subheading', 'description', etc
+  valueText String?
+  valueJson Json?    // For complex data structures
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdBy User     @relation(fields: [createdById], references: [id])
+  createdById String
+
+  // Relations
+  images    ContentImage[]
+
+  @@unique([type, key])
+}
+
+// Junction table for Content -> Images
+model ContentImage {
+  id        String   @id @default(cuid())
+  content   Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  contentId String
+  image     Image    @relation(fields: [imageId], references: [id], onDelete: Cascade)
+  imageId   String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@unique([contentId, imageId])
+}
+
+// Impact Statistics
+model Statistic {
+  id          String   @id @default(cuid())
+  metricName  String   // 'families_served', 'countries', 'volunteers', 'programs', etc
+  value       Float
+  unit        String?  // 'families', 'countries', 'people', '+', etc
+  lastUpdated DateTime @default(now())
+  source      String?  // Where this data came from
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([metricName])
+}
+
+// Beneficiary/Impact Stories
+model Story {
+  id          String   @id @default(cuid())
+  title       String
+  titleAr     String?  // Arabic title
+  content     String   // Rich text content
+  contentAr   String?  // Arabic content
+  program     String?  // Which program this story is about
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  createdBy   User     @relation(fields: [createdById], references: [id])
+  createdById String
+
+  // Relations
+  images      StoryImage[]
+}
+
+// Junction table for Story -> Images
+model StoryImage {
+  id        String   @id @default(cuid())
+  story     Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  storyId   String
+  image     Image    @relation(fields: [imageId], references: [id], onDelete: Cascade)
+  imageId   String
+  order     Int      @default(0)
+  caption   String?
+  createdAt DateTime @default(now())
+
+  @@unique([storyId, imageId])
+}
+
+// Press Releases & Media
+model PressRelease {
+  id        String   @id @default(cuid())
+  title     String
+  content   String   // Rich text
+  published Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Testimonials
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?  // 'Donor', 'Volunteer', 'Beneficiary'
+  content   String
+  featured  Boolean  @default(false)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Audit Log
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String   // 'create', 'update', 'delete', 'publish'
+  model     String   // 'Image', 'Content', 'Story', etc
+  modelId   String
+  changes   Json?    // What changed
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+// Settings
+model Settings {
+  id            String   @id @default(cuid())
+  key           String   @unique
+  value         String
+  description   String?
+  updatedAt     DateTime @updatedAt
+}

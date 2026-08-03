@@ -1,18 +1,57 @@
-// Authentication utilities for JHCO website protection
+// Authentication utilities for JHCO Admin Panel
 
+import { jwtVerify, SignJWT } from 'jose';
+
+const JWT_SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+);
+
+// Legacy password auth (for backwards compatibility with password-protected site)
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'secure@123';
 const SESSION_COOKIE_NAME = 'jhco_session';
 const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
+// JWT Authentication for Admin Panel
+export async function verifyAuth(authHeader: string | null) {
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return null;
+  }
+
+  try {
+    const token = authHeader.substring(7);
+    const verified = await jwtVerify(token, JWT_SECRET);
+    return verified.payload as any;
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function createJWT(userId: string, email: string, role: string) {
+  return await new SignJWT({
+    userId,
+    email,
+    role,
+  })
+    .setProtocol('HS256')
+    .setExpirationTime('24h')
+    .sign(JWT_SECRET);
+}
+
+export function generatePassword(length: number = 16): string {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+}
+
+// Legacy password validation (site-wide protection)
 export async function validatePassword(password: string): Promise<boolean> {
-  // Simple password validation
-  // In production, use proper password hashing (bcrypt)
   return password === ADMIN_PASSWORD;
 }
 
 export function createSession(): string {
-  // Generate a simple session token
-  // In production, use cryptographically secure random generation
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 

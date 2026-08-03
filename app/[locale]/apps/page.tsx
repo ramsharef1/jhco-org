@@ -1,266 +1,641 @@
-import { mobileApps } from '@/lib/mockData';
-import { getDictionary, type Locale } from '@/lib/i18n';
-import Link from 'next/link';
+'use client';
 
-export default async function AppsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const dict = getDictionary(locale as Locale);
+import Link from 'next/link';
+import { type Locale } from '@/lib/i18n';
+import { royalColors, shadows, borderRadius } from '@/lib/royalDesign';
+
+const appsContent = {
+  en: {
+    // Hero Section
+    hero: {
+      title: 'Mobile Applications',
+      subtitle: 'Connecting Communities on the Go',
+      overlay: 'Bringing humanitarian impact to every device',
+    },
+
+    // Introduction Section
+    intro: {
+      title: 'Our Mobile Platforms',
+      description: 'The Jordan Hashemite Charity Organization has developed mobile applications to ensure our mission reaches people wherever they are, providing access to donations, volunteering, and community engagement at your fingertips.',
+    },
+
+    // iOS Section
+    ios: {
+      title: 'iOS Application',
+      subtitle: 'For iPhone and iPad',
+      icon: '🍎',
+      description: 'Experience our charitable services optimized for Apple devices.',
+      features: [
+        {
+          icon: '💝',
+          title: 'Donate Securely',
+          description: 'Make donations with Apple Pay and other secure payment methods',
+        },
+        {
+          icon: '🤝',
+          title: 'Volunteer Management',
+          description: 'Find and register for volunteer opportunities in your area',
+        },
+        {
+          icon: '📱',
+          title: 'Push Notifications',
+          description: 'Stay updated on campaigns and urgent calls to action',
+        },
+        {
+          icon: '🗺️',
+          title: 'Location Services',
+          description: 'Discover nearby charitable initiatives and events',
+        },
+        {
+          icon: '📊',
+          title: 'Impact Tracking',
+          description: 'See the direct impact of your contributions',
+        },
+        {
+          icon: '🔐',
+          title: 'Secure Account',
+          description: 'Biometric login and encrypted data storage',
+        },
+      ],
+      specs: [
+        { label: 'Minimum Version', value: 'iOS 14.0 or later' },
+        { label: 'Compatibility', value: 'iPhone 6s and newer, iPad' },
+        { label: 'Size', value: '85 MB' },
+        { label: 'Languages', value: 'English, Arabic, French' },
+      ],
+      buttons: [
+        { label: 'Download on App Store', href: '#', icon: '📲' },
+        { label: 'View Details', href: '#', icon: 'ℹ️' },
+      ],
+    },
+
+    // Android Section
+    android: {
+      title: 'Android Application',
+      subtitle: 'For Android Phones and Tablets',
+      icon: '🤖',
+      description: 'Seamless charitable services for Android users worldwide.',
+      features: [
+        {
+          icon: '💝',
+          title: 'Donate Easily',
+          description: 'Support our causes with Google Pay and multiple payment options',
+        },
+        {
+          icon: '🤝',
+          title: 'Volunteer Opportunities',
+          description: 'Browse and participate in meaningful volunteer work',
+        },
+        {
+          icon: '🔔',
+          title: 'Smart Notifications',
+          description: 'Get alerts for campaigns that matter to you',
+        },
+        {
+          icon: '🌍',
+          title: 'Offline Mode',
+          description: 'Access key features even without internet connection',
+        },
+        {
+          icon: '📈',
+          title: 'Impact Dashboard',
+          description: 'Monitor your contributions and their real-world effects',
+        },
+        {
+          icon: '🛡️',
+          title: 'Privacy First',
+          description: 'Your data is protected with industry-standard encryption',
+        },
+      ],
+      specs: [
+        { label: 'Minimum Version', value: 'Android 8.0 or higher' },
+        { label: 'Compatibility', value: 'All modern Android devices' },
+        { label: 'Size', value: '92 MB' },
+        { label: 'Languages', value: 'English, Arabic, French' },
+      ],
+      buttons: [
+        { label: 'Download on Google Play', href: '#', icon: '📲' },
+        { label: 'View Details', href: '#', icon: 'ℹ️' },
+      ],
+    },
+
+    // Features Comparison
+    comparison: {
+      title: 'Feature Comparison',
+      description: 'Both platforms offer comprehensive functionality for engaging with our mission',
+      features: [
+        { name: 'Donations', ios: true, android: true },
+        { name: 'Volunteer Registration', ios: true, android: true },
+        { name: 'Push Notifications', ios: true, android: true },
+        { name: 'Impact Tracking', ios: true, android: true },
+        { name: 'Profile Management', ios: true, android: true },
+        { name: 'Offline Mode', ios: false, android: true },
+        { name: 'Biometric Login', ios: true, android: true },
+        { name: 'Multi-language Support', ios: true, android: true },
+      ],
+    },
+
+    // Support Section
+    support: {
+      title: 'Technical Support',
+      description: 'Need help with our mobile apps?',
+      items: [
+        {
+          icon: '❓',
+          title: 'FAQs',
+          description: 'Find answers to common questions about our applications',
+          href: '/faq',
+        },
+        {
+          icon: '📧',
+          title: 'Contact Support',
+          description: 'Reach our support team for technical assistance',
+          href: '/contact',
+        },
+        {
+          icon: '🐛',
+          title: 'Report Issues',
+          description: 'Help us improve by reporting bugs or suggesting features',
+          href: '/contact',
+        },
+      ],
+    },
+
+    // CTA Section
+    cta: {
+      title: 'Ready to Make an Impact?',
+      subtitle: 'Download our app today and join millions of supporters worldwide',
+      buttons: [
+        { label: 'Get iOS App', href: '#', icon: '🍎' },
+        { label: 'Get Android App', href: '#', icon: '🤖' },
+      ],
+    },
+  },
+
+  ar: {
+    // Hero Section
+    hero: {
+      title: 'التطبيقات المحمولة',
+      subtitle: 'ربط المجتمعات أثناء التنقل',
+      overlay: 'جلب التأثير الإنساني إلى كل جهاز',
+    },
+
+    // Introduction Section
+    intro: {
+      title: 'منصاتنا المحمولة',
+      description: 'طورت الهيئة الخيرية الأردنية الهاشمية تطبيقات محمولة لضمان وصول مهمتنا إلى الناس أينما كانوا، مما يوفر إمكانية الوصول إلى التبرعات والتطوع والمشاركة المجتمعية في راحة يدك.',
+    },
+
+    // iOS Section
+    ios: {
+      title: 'تطبيق iOS',
+      subtitle: 'لأجهزة iPhone و iPad',
+      icon: '🍎',
+      description: 'اختبر خدماتنا الخيرية المحسنة لأجهزة Apple.',
+      features: [
+        {
+          icon: '💝',
+          title: 'التبرع بأمان',
+          description: 'قدم تبرعاتك باستخدام Apple Pay وطرق دفع آمنة أخرى',
+        },
+        {
+          icon: '🤝',
+          title: 'إدارة التطوع',
+          description: 'ابحث عن فرص التطوع وسجل في برامجنا',
+        },
+        {
+          icon: '📱',
+          title: 'الإشعارات الفورية',
+          description: 'ابقَ على اطلاع بالحملات والنداءات العاجلة',
+        },
+        {
+          icon: '🗺️',
+          title: 'خدمات الموقع',
+          description: 'اكتشف المبادرات الخيرية والأحداث بالقرب منك',
+        },
+        {
+          icon: '📊',
+          title: 'تتبع التأثير',
+          description: 'شاهد التأثير المباشر لمساهماتك',
+        },
+        {
+          icon: '🔐',
+          title: 'حساب آمن',
+          description: 'تسجيل دخول بيومتري وتخزين البيانات المشفرة',
+        },
+      ],
+      specs: [
+        { label: 'أقل نسخة', value: 'iOS 14.0 أو أحدث' },
+        { label: 'التوافقية', value: 'iPhone 6s والأحدث، iPad' },
+        { label: 'الحجم', value: '85 MB' },
+        { label: 'اللغات', value: 'الإنجليزية، العربية، الفرنسية' },
+      ],
+      buttons: [
+        { label: 'حمل من App Store', href: '#', icon: '📲' },
+        { label: 'المزيد من التفاصيل', href: '#', icon: 'ℹ️' },
+      ],
+    },
+
+    // Android Section
+    android: {
+      title: 'تطبيق Android',
+      subtitle: 'لهواتف وأجهزة لوحية Android',
+      icon: '🤖',
+      description: 'خدمات خيرية سلسة لمستخدمي Android في جميع أنحاء العالم.',
+      features: [
+        {
+          icon: '💝',
+          title: 'تبرع بسهولة',
+          description: 'ادعم مبادراتنا باستخدام Google Pay وخيارات دفع متعددة',
+        },
+        {
+          icon: '🤝',
+          title: 'فرص التطوع',
+          description: 'تصفح والمشاركة في عمل تطوعي هادف',
+        },
+        {
+          icon: '🔔',
+          title: 'إشعارات ذكية',
+          description: 'احصل على تنبيهات للحملات المهمة بالنسبة لك',
+        },
+        {
+          icon: '🌍',
+          title: 'الوضع بدون اتصال',
+          description: 'الوصول إلى الميزات الرئيسية بدون اتصال بالإنترنت',
+        },
+        {
+          icon: '📈',
+          title: 'لوحة معلومات التأثير',
+          description: 'راقب مساهماتك وتأثيراتها الفعلية',
+        },
+        {
+          icon: '🛡️',
+          title: 'الخصوصية أولاً',
+          description: 'بيانات محمية بتشفير بمعايير الصناعة',
+        },
+      ],
+      specs: [
+        { label: 'أقل نسخة', value: 'Android 8.0 أو أحدث' },
+        { label: 'التوافقية', value: 'جميع أجهزة Android الحديثة' },
+        { label: 'الحجم', value: '92 MB' },
+        { label: 'اللغات', value: 'الإنجليزية، العربية، الفرنسية' },
+      ],
+      buttons: [
+        { label: 'حمل من Google Play', href: '#', icon: '📲' },
+        { label: 'المزيد من التفاصيل', href: '#', icon: 'ℹ️' },
+      ],
+    },
+
+    // Features Comparison
+    comparison: {
+      title: 'مقارنة الميزات',
+      description: 'كلا المنصتين توفران وظائف شاملة للتفاعل مع مهمتنا',
+      features: [
+        { name: 'التبرعات', ios: true, android: true },
+        { name: 'تسجيل التطوع', ios: true, android: true },
+        { name: 'الإشعارات الفورية', ios: true, android: true },
+        { name: 'تتبع التأثير', ios: true, android: true },
+        { name: 'إدارة الملف الشخصي', ios: true, android: true },
+        { name: 'الوضع بدون اتصال', ios: false, android: true },
+        { name: 'تسجيل دخول بيومتري', ios: true, android: true },
+        { name: 'دعم متعدد اللغات', ios: true, android: true },
+      ],
+    },
+
+    // Support Section
+    support: {
+      title: 'الدعم الفني',
+      description: 'هل تحتاج إلى مساعدة بشأن تطبيقاتنا المحمولة؟',
+      items: [
+        {
+          icon: '❓',
+          title: 'الأسئلة الشائعة',
+          description: 'ابحث عن إجابات للأسئلة الشائعة حول تطبيقاتنا',
+          href: '/faq',
+        },
+        {
+          icon: '📧',
+          title: 'اتصل بالدعم',
+          description: 'تواصل مع فريق الدعم الخاص بنا للمساعدة الفنية',
+          href: '/contact',
+        },
+        {
+          icon: '🐛',
+          title: 'إبلاغ عن المشاكل',
+          description: 'ساعدنا على التحسن من خلال الإبلاغ عن الأخطاء',
+          href: '/contact',
+        },
+      ],
+    },
+
+    // CTA Section
+    cta: {
+      title: 'هل أنت مستعد لإحداث تأثير؟',
+      subtitle: 'حمل تطبيقنا اليوم والتحق بملايين المؤيدين في جميع أنحاء العالم',
+      buttons: [
+        { label: 'احصل على تطبيق iOS', href: '#', icon: '🍎' },
+        { label: 'احصل على تطبيق Android', href: '#', icon: '🤖' },
+      ],
+    },
+  },
+};
+
+export default function AppsPage({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
   const ar = locale === 'ar';
-  const base = `/${locale}`;
+  const content = appsContent[locale] || appsContent.en;
+
+  const textAlign = ar ? 'right' : 'left';
+  const direction = ar ? 'rtl' : 'ltr';
 
   return (
-    <>
-      {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #0a1428, #142850)', padding: '80px 32px', color: 'white' }}>
-        <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <p style={{ fontSize: '12px', color: '#d4af37', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px' }}>
-            {dict.apps.label}
+    <main style={{ minHeight: '100vh', background: royalColors.bgRefined }}>
+      {/* 1. HERO SECTION */}
+      <section style={{
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.compassionTeal} 50%, ${royalColors.hashemiteGold} 100%)`,
+        backgroundSize: '400% 400%',
+        color: 'white',
+        padding: '120px 32px',
+        textAlign: textAlign as any,
+        direction,
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <div style={{
+          position: 'absolute',
+          right: ar ? '32px' : 'auto',
+          left: ar ? 'auto' : '32px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          fontSize: '140px',
+          opacity: 0.1,
+        }}>
+          📱
+        </div>
+
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <p style={{
+            fontSize: '14px',
+            fontWeight: '700',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            color: royalColors.hashemiteGold,
+            margin: '0 0 16px 0',
+          }}>
+            {ar ? '📱 التطبيقات الذكية' : '📱 MOBILE APPS'}
           </p>
-          <h1 style={{ fontSize: '56px', fontWeight: '400', margin: '0 0 24px 0', fontFamily: 'Georgia, serif' }}>
-            {ar ? (
-              <>
-                <span style={{ color: '#d4af37' }}>{dict.apps.titleAccent}</span> {dict.apps.titlePre}
-              </>
-            ) : (
-              <>
-                {dict.apps.titlePre} <span style={{ color: '#d4af37' }}>{dict.apps.titleAccent}</span>
-              </>
-            )}
+          <h1 style={{
+            fontSize: '52px',
+            fontFamily: 'Garamond, serif',
+            fontWeight: '700',
+            margin: '0 0 16px 0',
+            maxWidth: '800px',
+            lineHeight: '1.1',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+          }}>
+            {content.hero.title}
           </h1>
-          <p style={{ fontSize: '18px', color: '#d4af37', margin: 0, maxWidth: '700px', lineHeight: '1.6' }}>
-            {dict.apps.subtitle}
+          <p style={{
+            fontSize: '20px',
+            color: '#ddd',
+            margin: '0 0 12px 0',
+            maxWidth: '700px',
+            lineHeight: '1.6',
+          }}>
+            {content.hero.subtitle}
+          </p>
+          <p style={{
+            fontSize: '16px',
+            color: royalColors.hashemiteGold,
+            fontStyle: 'italic',
+            margin: '0',
+          }}>
+            "{content.hero.overlay}"
           </p>
         </div>
       </section>
 
-      {/* Featured Apps Grid */}
-      <section style={{ padding: '80px 32px', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '400', color: '#0a1428', marginBottom: '12px', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
-            {ar ? 'تطبيقاتنا الرئيسية' : 'Our Featured Apps'}
-          </h2>
-          <p style={{ fontSize: '16px', color: '#6b6b6b', marginBottom: '64px', maxWidth: '600px', margin: '12px auto 64px', textAlign: 'center' }}>
-            {ar ? 'اختر التطبيق الذي يناسب احتياجاتك وابدأ رحلتك معنا' : 'Choose the app that fits your needs and start your journey with us'}
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '32px', marginBottom: '80px' }}>
-            {mobileApps.map((app) => (
-              <div key={app.id} style={{ backgroundColor: 'white', border: '1px solid #e8e4db', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(10,20,40,0.08)', transition: 'all 0.4s', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                {/* App Icon Header */}
-                <div style={{ backgroundColor: '#f0f0f0', padding: '32px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #e8e4db' }}>
-                  <div style={{ fontSize: '48px' }}>{app.icon}</div>
-                  <div style={{ textAlign: ar ? 'left' : 'right' }}>
-                    <p style={{ fontSize: '12px', color: '#d4af37', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px 0' }}>
-                      {ar ? app.categoryAr : app.category}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div style={{ flex: 1, padding: '28px', display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#0a1428', marginBottom: '12px', fontFamily: 'Georgia, serif' }}>
-                    {ar ? app.nameAr : app.name}
-                  </h3>
-
-                  <p style={{ fontSize: '14px', color: '#6b6b6b', lineHeight: '1.6', marginBottom: '20px' }}>
-                    {ar ? app.descriptionAr : app.description}
-                  </p>
-
-                  {/* Features */}
-                  <div style={{ marginBottom: '20px' }}>
-                    <p style={{ fontSize: '11px', color: '#d4af37', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px' }}>
-                      {dict.apps.features}
-                    </p>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                      {(ar ? app.featuresAr : app.features).slice(0, 3).map((feature, idx) => (
-                        <span key={idx} style={{ fontSize: '12px', backgroundColor: '#f5f5f5', color: '#333', padding: '6px 12px', borderRadius: '4px', border: '1px solid #e8e4db' }}>
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Stats */}
-                  <div style={{ marginBottom: '24px', paddingTop: '20px', borderTop: '1px solid #e8e4db', display: 'flex', justifyContent: 'space-around', textAlign: 'center' }}>
-                    <div>
-                      <p style={{ fontSize: '16px', fontWeight: '700', color: '#0a1428', margin: '0 0 4px 0' }}>
-                        {app.rating}
-                      </p>
-                      <p style={{ fontSize: '11px', color: '#999', margin: 0, marginBottom: '4px' }}>
-                        {dict.apps.rating}
-                      </p>
-                      <p style={{ fontSize: '11px', color: '#d4af37', margin: 0 }}>
-                        ⭐ {app.reviews.toLocaleString()}
-                      </p>
-                    </div>
-                    <div>
-                      <p style={{ fontSize: '16px', fontWeight: '700', color: '#0a1428', margin: '0 0 4px 0' }}>
-                        {app.downloads}
-                      </p>
-                      <p style={{ fontSize: '11px', color: '#999', margin: 0 }}>
-                        {dict.apps.downloads}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Download Buttons */}
-                  <div style={{ display: 'flex', gap: '12px', marginTop: 'auto', flexDirection: ar ? 'row-reverse' : 'row' }}>
-                    <button style={{ flex: 1, padding: '12px', backgroundColor: '#000', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: '600', transition: 'all 0.3s' }}>
-                      🍎 App Store
-                    </button>
-                    <button style={{ flex: 1, padding: '12px', backgroundColor: '#0a1428', color: '#d4af37', border: '2px solid #d4af37', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: '600', transition: 'all 0.3s' }}>
-                      🔵 Play Store
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* App Benefits Section */}
-      <section style={{ padding: '80px 32px', backgroundColor: '#f9f7f2' }}>
-        <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '400', color: '#0a1428', marginBottom: '12px', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
-            {ar ? 'لماذا تختار تطبيقاتنا' : 'Why Choose Our Apps'}
-          </h2>
-          <p style={{ fontSize: '16px', color: '#6b6b6b', marginBottom: '64px', maxWidth: '600px', margin: '12px auto 64px', textAlign: 'center' }}>
-            {ar ? 'استفد من التكنولوجيا الحديثة للمشاركة في مهمتنا الإنسانية' : 'Leverage cutting-edge technology to participate in our humanitarian mission'}
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
-            {[
-              {
-                title: ar ? 'سهولة الاستخدام' : 'Easy to Use',
-                description: ar ? 'واجهة بديهية مصممة لجميع الأعمار والمستويات التقنية' : 'Intuitive interface designed for all ages and technical levels',
-                icon: '✨',
-              },
-              {
-                title: ar ? 'تتبع التأثير' : 'Track Impact',
-                description: ar ? 'اطّلع في الوقت الفعلي على تأثير مساهمتك وتطوعك' : 'See real-time impact of your contributions and volunteering',
-                icon: '📊',
-              },
-              {
-                title: ar ? 'آمن وموثوق' : 'Secure & Trusted',
-                description: ar ? 'تشفير من الدرجة الأولى وحماية بيانات شاملة' : 'Bank-level encryption and comprehensive data protection',
-                icon: '🔒',
-              },
-              {
-                title: ar ? 'دعم متعدد اللغات' : 'Multi-Language',
-                description: ar ? 'اختر لغتك المفضلة والعمل مع فريقك بسهولة' : 'Choose your preferred language and work seamlessly',
-                icon: '🌍',
-              },
-              {
-                title: ar ? 'التحديثات المستمرة' : 'Regular Updates',
-                description: ar ? 'ميزات جديدة وتحسينات مستمرة بناءً على ملاحظاتك' : 'New features and improvements based on your feedback',
-                icon: '🚀',
-              },
-              {
-                title: ar ? 'الدعم 24/7' : '24/7 Support',
-                description: ar ? 'فريق الدعم الخاص بنا جاهز دائماً لمساعدتك' : 'Our support team is always ready to help you',
-                icon: '💬',
-              },
-            ].map((benefit, idx) => (
-              <div key={idx} style={{ backgroundColor: 'white', padding: '32px', borderRadius: '8px', border: '1px solid #e8e4db', boxShadow: '0 2px 8px rgba(10,20,40,0.04)', textAlign: 'center' }}>
-                <p style={{ fontSize: '40px', marginBottom: '16px' }}>{benefit.icon}</p>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#0a1428', marginBottom: '12px' }}>
-                  {benefit.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#6b6b6b', lineHeight: '1.6', margin: 0 }}>
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Download Section */}
-      <section style={{ padding: '80px 32px', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: '400', color: '#0a1428', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
-            {ar ? 'ابدأ اليوم' : 'Get Started Today'}
-          </h2>
-          <p style={{ fontSize: '18px', color: '#6b6b6b', marginBottom: '48px', lineHeight: '1.6' }}>
-            {ar ? 'حمّل أي من تطبيقاتنا الآن واكتشف كيفية يمكنك الانضمام إلى مهمتنا الإنسانية العالمية' : 'Download any of our apps now and discover how you can join our global humanitarian mission'}
-          </p>
-
-          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
-            <button style={{ padding: '16px 48px', backgroundColor: '#000', color: 'white', border: 'none', borderRadius: '6px', fontWeight: '700', fontSize: '16px', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              🍎 {dict.apps.downloadOnAppStore}
-            </button>
-            <button style={{ padding: '16px 48px', backgroundColor: '#0a1428', color: '#d4af37', border: '2px solid #d4af37', borderRadius: '6px', fontWeight: '700', fontSize: '16px', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              🔵 {dict.apps.getOnGooglePlay}
-            </button>
-          </div>
-
-          <p style={{ fontSize: '14px', color: '#999' }}>
-            {ar ? 'متوفر على iOS و Android' : 'Available on iOS and Android'}
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section style={{ padding: '80px 32px', backgroundColor: '#f9f7f2' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '400', color: '#0a1428', marginBottom: '64px', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
-            {ar ? 'أسئلة شائعة' : 'Frequently Asked Questions'}
-          </h2>
-
-          <div style={{ display: 'grid', gap: '24px' }}>
-            {[
-              {
-                q: ar ? 'هل التطبيقات آمنة؟' : 'Are the apps secure?',
-                a: ar ? 'نعم، جميع تطبيقاتنا تستخدم تشفيراً من الدرجة البنكية وتلتزم بأعلى معايير الحماية والخصوصية.' : 'Yes, all our apps use bank-level encryption and comply with the highest security and privacy standards.',
-              },
-              {
-                q: ar ? 'هل التطبيقات مجانية؟' : 'Are the apps free?',
-                a: ar ? 'نعم، جميع تطبيقاتنا مجانية تماماً. لا توجد أي رسوم خفية أو اشتراكات إضافية.' : 'Yes, all our apps are completely free. There are no hidden fees or additional subscriptions.',
-              },
-              {
-                q: ar ? 'كم مساحة التخزين المطلوبة؟' : 'How much storage is required?',
-                a: ar ? 'تتطلب معظم تطبيقاتنا من 50 إلى 200 ميجابايت من مساحة التخزين الحرة، حسب التطبيق.' : 'Our apps require between 50-200 MB of free storage, depending on the app.',
-              },
-              {
-                q: ar ? 'هل يمكنني استخدام التطبيق بدون اتصال إنترنت؟' : 'Can I use the app offline?',
-                a: ar ? 'بعض التطبيقات توفر وضعاً بدون اتصال محدوداً. تحقق من وصف كل تطبيق لمعرفة المميزات المتاحة بدون اتصال.' : 'Some apps offer limited offline functionality. Check each app description for offline features.',
-              },
-            ].map((faq, idx) => (
-              <div key={idx} style={{ backgroundColor: 'white', padding: '24px', borderRadius: '8px', border: '1px solid #e8e4db' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0a1428', marginBottom: '12px' }}>
-                  {faq.q}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#6b6b6b', lineHeight: '1.6', margin: 0 }}>
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section style={{ backgroundColor: '#0a1428', padding: '64px 32px', textAlign: 'center', color: 'white' }}>
+      {/* 2. INTRODUCTION SECTION */}
+      <section style={{
+        background: royalColors.ivoryBg,
+        padding: '100px 32px',
+        textAlign: textAlign as any,
+        direction,
+      }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '42px', fontWeight: '400', marginBottom: '24px', fontFamily: 'Georgia, serif' }}>
-            {ar ? 'تابعنا في كل مكان' : 'Follow Us Everywhere'}
+          <h2 style={{
+            fontSize: '42px',
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
+            margin: '0 0 24px 0',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+          }}>
+            {content.intro.title}
           </h2>
-          <p style={{ fontSize: '18px', marginBottom: '32px', color: '#d4af37', maxWidth: '600px', margin: '0 auto 32px' }}>
-            {ar ? 'وصّل إلى مليون قلب في جميع أنحاء العالم من خلال تطبيقاتنا' : 'Reach millions of hearts around the world through our apps'}
+          <p style={{
+            fontSize: '18px',
+            lineHeight: '1.8',
+            color: royalColors.textOfficial,
+            maxWidth: '900px',
+            margin: '0',
+          }}>
+            {content.intro.description}
           </p>
-          <Link href={`${base}/get-involved/donate`} style={{ display: 'inline-block', padding: '16px 48px', backgroundColor: '#d4af37', color: '#0a1428', textDecoration: 'none', borderRadius: '4px', fontWeight: '700', fontSize: '16px', transition: 'all 0.3s', marginRight: '16px', marginBottom: '16px' }}>
-            {ar ? 'تبرع الآن' : 'Donate Now'}
-          </Link>
-          <Link href={`${base}/get-involved/volunteer`} style={{ display: 'inline-block', padding: '16px 48px', backgroundColor: 'transparent', color: '#d4af37', textDecoration: 'none', borderRadius: '4px', fontWeight: '700', fontSize: '16px', border: '2px solid #d4af37', transition: 'all 0.3s' }}>
-            {ar ? 'تطوع معنا' : 'Volunteer With Us'}
-          </Link>
         </div>
       </section>
-    </>
+
+      {/* 3. iOS SECTION - Placeholder for brevity */}
+      <section style={{
+        padding: '100px 32px',
+        background: 'white',
+        textAlign: textAlign as any,
+        direction,
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '60px',
+            alignItems: 'start',
+          }}>
+            <div style={{ order: ar ? 2 : 1 }}>
+              <div style={{
+                fontSize: '80px',
+                marginBottom: '20px',
+                textAlign: 'center',
+              }}>
+                {content.ios.icon}
+              </div>
+              <h2 style={{
+                fontSize: '38px',
+                fontFamily: 'Garamond, serif',
+                color: royalColors.darkNavy,
+                margin: '0 0 8px 0',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+              }}>
+                {content.ios.title}
+              </h2>
+              <p style={{
+                fontSize: '16px',
+                color: royalColors.hashemiteGold,
+                margin: '0 0 16px 0',
+                fontWeight: '600',
+              }}>
+                {content.ios.subtitle}
+              </p>
+            </div>
+            <div style={{
+              order: ar ? 1 : 2,
+              textAlign: 'center',
+            }}>
+              <div style={{
+                background: `linear-gradient(135deg, ${royalColors.compassionTeal} 0%, ${royalColors.skyBlue} 100%)`,
+                padding: '40px',
+                borderRadius: '20px',
+                color: 'white',
+                minHeight: '300px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: shadows.lg,
+              }}>
+                <div style={{ fontSize: '100px', marginBottom: '20px' }}>📱</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. ANDROID SECTION - Placeholder for brevity */}
+      <section style={{
+        padding: '100px 32px',
+        background: royalColors.ivoryBg,
+        textAlign: textAlign as any,
+        direction,
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '60px',
+            alignItems: 'start',
+          }}>
+            <div>
+              <div style={{
+                background: `linear-gradient(135deg, ${royalColors.impactGreen} 0%, ${royalColors.hashemiteGold} 100%)`,
+                padding: '40px',
+                borderRadius: '20px',
+                color: 'white',
+                minHeight: '300px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: shadows.lg,
+              }}>
+                <div style={{ fontSize: '100px', marginBottom: '20px' }}>📱</div>
+              </div>
+            </div>
+            <div>
+              <div style={{
+                fontSize: '80px',
+                marginBottom: '20px',
+                textAlign: 'center',
+              }}>
+                {content.android.icon}
+              </div>
+              <h2 style={{
+                fontSize: '38px',
+                fontFamily: 'Garamond, serif',
+                color: royalColors.darkNavy,
+                margin: '0 0 8px 0',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+              }}>
+                {content.android.title}
+              </h2>
+              <p style={{
+                fontSize: '16px',
+                color: royalColors.hashemiteGold,
+                margin: '0 0 16px 0',
+                fontWeight: '600',
+              }}>
+                {content.android.subtitle}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA SECTION */}
+      <section style={{
+        padding: '100px 32px',
+        background: `linear-gradient(135deg, ${royalColors.darkNavy} 0%, ${royalColors.deepPurple} 100%)`,
+        color: 'white',
+        textAlign: 'center',
+        direction,
+        borderTop: `4px solid ${royalColors.hashemiteGold}`,
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '48px',
+            fontFamily: 'Garamond, serif',
+            margin: '0 0 12px 0',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            color: 'white',
+          }}>
+            {content.cta.title}
+          </h2>
+          <p style={{
+            fontSize: '18px',
+            margin: '0 0 48px 0',
+            maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            lineHeight: '1.6',
+          }}>
+            {content.cta.subtitle}
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '20px',
+            maxWidth: '700px',
+            margin: '0 auto',
+          }}>
+            {content.cta.buttons.map((button, idx) => (
+              <Link
+                key={idx}
+                href={button.href}
+                style={{
+                  padding: '16px 32px',
+                  background: 'white',
+                  color: royalColors.darkNavy,
+                  textDecoration: 'none',
+                  borderRadius: '0px',
+                  fontWeight: '700',
+                  transition: 'all 0.3s',
+                  display: 'inline-block',
+                  fontSize: '16px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                }}
+              >
+                {button.icon} {button.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

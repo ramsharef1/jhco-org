@@ -16,6 +16,12 @@ const pageContent = {
         icon: '👑',
       },
       {
+        title: 'Board Meeting Minutes',
+        description: 'Access official records of Board of Trustees meetings including decisions, attendees, action items, and meeting archives from 2023 to present.',
+        link: '/governance/board-minutes',
+        icon: '📋',
+      },
+      {
         title: 'Organizational Structure',
         description: 'Understand how JHCO is organized across departments and regional offices with clear reporting lines.',
         link: '/governance/structure',
@@ -26,6 +32,18 @@ const pageContent = {
         description: 'Explore the evolution of JHCO\'s leadership over three decades of humanitarian service.',
         link: '/governance/leadership',
         icon: '📜',
+      },
+      {
+        title: 'Financial Disclosure',
+        description: 'Access comprehensive financial data including executive compensation, grant allocations, expenses, and funding sources.',
+        link: '/governance/financial-disclosure',
+        icon: '💰',
+      },
+      {
+        title: 'Complaints & Feedback Portal',
+        description: 'Submit complaints or feedback anonymously, report misconduct, and access our transparent complaint handling process and protection policies.',
+        link: '/governance/complaints',
+        icon: '📝',
       },
     ],
     governance: {
@@ -53,6 +71,12 @@ const pageContent = {
         icon: '👑',
       },
       {
+        title: 'محاضر اجتماعات المجلس',
+        description: 'الوصول إلى السجلات الرسمية لاجتماعات مجلس الأمناء بما في ذلك القرارات والحاضرون وبنود العمل والأرشيفات من 2023 إلى الحاضر.',
+        link: '/governance/board-minutes',
+        icon: '📋',
+      },
+      {
         title: 'الهيكل التنظيمي',
         description: 'فهم كيفية تنظيم الهيئة عبر الأقسام والمكاتب الإقليمية مع خطوط تقارير واضحة.',
         link: '/governance/structure',
@@ -63,6 +87,18 @@ const pageContent = {
         description: 'استكشاف تطور قيادة الهيئة على مدار ثلاثة عقود من الخدمة الإنسانية.',
         link: '/governance/leadership',
         icon: '📜',
+      },
+      {
+        title: 'الإفصاح المالي',
+        description: 'الوصول إلى بيانات مالية شاملة تشمل تعويضات التنفيذيين وتخصيص المنح والمصروفات ومصادر التمويل.',
+        link: '/governance/financial-disclosure',
+        icon: '💰',
+      },
+      {
+        title: 'بوابة الشكاوى والتغذية الراجعة',
+        description: 'قدم شكاواك أو ملاحظاتك بشكل مجهول، أبلغ عن سوء السلوك، واطلع على عملية معالجة الشكاوى الشفافة وسياسات الحماية الخاصة بنا.',
+        link: '/governance/complaints',
+        icon: '📝',
       },
     ],
     governance: {

@@ -46,6 +46,17 @@ export const regionColors = {
     ctaBg: 'hopeful' as const,
     icon: '🌎',
   },
+  'middle-east': {
+    // Saffron to Crimson: Heritage + Passion, tradition + urgency
+    gradient: 'linear-gradient(135deg, rgba(229,126,38,0.95) 0%, rgba(192,57,43,0.95) 100%)',
+    primary: '#e57e25',
+    secondary: '#c0392b',
+    statColor: 'coral' as const,
+    cardColor: 'coral' as const,
+    storyColor: 'coral' as const,
+    ctaBg: 'compassionate' as const,
+    icon: '🕌',
+  },
 };
 
 export type RegionSlug = keyof typeof regionColors;

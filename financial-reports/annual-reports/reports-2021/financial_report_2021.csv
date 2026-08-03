@@ -1,0 +1,33 @@
+Category,Amount (USD)
+INCOME STATEMENT,
+Revenue,"$4,389,945"
+Cost of Goods Sold,"$1,536,480"
+Gross Profit,"$2,853,465"
+Gross Margin %,65.0%
+,
+OPERATING EXPENSES,
+Research & Development,"$351,195"
+Marketing,"$307,296"
+Sales,"$263,396"
+General & Administrative,"$175,597"
+Total Operating Expenses,"$1,097,486"
+,
+Operating Income,"$1,755,979"
+Operating Margin %,40.0%
+Interest Expense,"$87,798"
+Taxes,"$417,045"
+Net Income,"$1,251,136"
+Net Margin %,28.5%
+,
+BALANCE SHEET,
+Total Assets,"$10,974,862"
+Cash,"$658,491"
+Accounts Receivable,"$877,989"
+Inventory,"$438,994"
+Current Liabilities,"$1,316,983"
+Long-term Debt,"$1,755,978"
+Equity,"$7,901,901"
+,
+KEY METRICS,
+Employees,98
+Revenue per Employee,"$44,795"
