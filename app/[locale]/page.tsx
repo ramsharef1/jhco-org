@@ -240,12 +240,12 @@ export default function Home() {
             {/* Right: Hero Image */}
             <div style={{ position: 'relative' }}>
               <img
-                src={createPlaceholder(600, 400, 'Hero Image: Community Unity', 'Should show: Diverse group of people coming together, humanitarian action, hope')}
-                alt="Hero Image placeholder: Community Unity"
+                src={createPlaceholder(600, 400, 'Hero Section', 'Diverse group of people coming together for humanitarian work')}
+                alt="Diverse group of people coming together for humanitarian work"
                 style={{
                   width: '100%',
                   height: 'auto',
-                  aspectRatio: '4/5',
+                  aspectRatio: '600/400',
                   objectFit: 'cover',
                   borderRadius: '0px',
                   border: `1px solid rgba(255,255,255,0.2)`,
@@ -313,12 +313,12 @@ export default function Home() {
             {/* Left: Story Image */}
             <div style={{ position: 'relative' }}>
               <img
-                src={createPlaceholder(400, 450, 'Featured Story Image: Beneficiary Portrait', 'Should show: Dignified portrait of a person/family member, conveying hope and resilience')}
-                alt="Featured Story Image placeholder: Beneficiary Portrait"
+                src={createPlaceholder(400, 450, 'Featured Story', 'Dignified portrait of a person conveying hope and resilience')}
+                alt="Dignified portrait of a person conveying hope and resilience"
                 style={{
                   width: '100%',
                   height: 'auto',
-                  aspectRatio: '0.9',
+                  aspectRatio: '400/450',
                   objectFit: 'cover',
                   borderRadius: '0px',
                   border: `1px solid ${colors.border}`,
@@ -428,19 +428,7 @@ export default function Home() {
                 >
                   {/* Program Image */}
                   <img
-                    src={
-                      program.id === 1
-                        ? createPlaceholder(600, 300, 'Gaza Aid Program Image', 'Should show: Humanitarian assistance, medical aid, or community care')
-                        : program.id === 2
-                        ? createPlaceholder(600, 300, 'Healthcare Program: Amputees', 'Should show: Prosthetic limbs, rehabilitation, medical care')
-                        : program.id === 3
-                        ? createPlaceholder(600, 300, 'Clothing Bank Program', 'Should show: Clothing distribution, community care, dignity')
-                        : program.id === 4
-                        ? createPlaceholder(600, 300, 'Education Program', 'Should show: Students, learning, classroom, education services')
-                        : program.id === 5
-                        ? createPlaceholder(600, 300, 'Medical Clinics Network', 'Should show: Doctor, patient consultation, medical services')
-                        : createPlaceholder(600, 300, 'Livelihood & Skills Training', 'Should show: Vocational training, skills development, economic empowerment')
-                    }
+                    src={createPlaceholder(600, 300, ar ? program.nameAr : program.name, 'Program Image')}
                     alt={ar ? program.nameAr : program.name}
                     style={{
                       position: 'relative',
