@@ -157,24 +157,24 @@ export default function Home() {
   return (
     <>
       {/* 1. HERO SECTION - Royal Formal */}
-      <section style={{ background: colors.primaryNavy, padding: '160px 32px 120px', position: 'relative', overflow: 'hidden' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ background: colors.primaryNavy, padding: '160px 32px 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '100px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: ar ? '1fr 1fr' : '1fr 1fr', gap: '100px', alignItems: 'center', direction: ar ? 'rtl' : 'ltr' }}>
             {/* Left: Headline & CTAs */}
-            <div>
-              <div style={{ marginBottom: '32px' }}>
-                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '3px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <div style={{ order: ar ? 2 : 1 }}>
+              <div style={{ marginBottom: '32px', textAlign: ar ? 'right' : 'left' }}>
+                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '3px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                   SERVING HUMANITY
                 </p>
                 <h1 style={{ fontSize: '72px', fontWeight: '400', lineHeight: '1.2', color: 'white', marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", textTransform: 'none', letterSpacing: '0' }}>
                   With Dignity
                 </h1>
               </div>
-              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '56px', lineHeight: '1.8', maxWidth: '540px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '56px', lineHeight: '1.8', maxWidth: '540px', fontFamily: "'Inter', '-apple-system', sans-serif", textAlign: ar ? 'right' : 'left' }}>
                 Operating humanitarian programs across 30+ countries, delivering sustained impact to 75,000+ families through healthcare, education, and livelihood development.
               </p>
 
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: ar ? 'flex-end' : 'flex-start' }}>
                 <Link
                   href={`${base}/get-involved/donate`}
                   style={{
@@ -239,7 +239,7 @@ export default function Home() {
             </div>
 
             {/* Right: Hero Image */}
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', order: ar ? 1 : 2 }}>
               <img
                 src={createPlaceholder(600, 400, 'Hero Section', 'Diverse group of people coming together for humanitarian work')}
                 alt="Diverse group of people coming together for humanitarian work"
@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* 2. IMPACT STATS SECTION - Royal Impact Display */}
-      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.lightGrey, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
@@ -295,7 +295,7 @@ export default function Home() {
                   e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                 }}
               >
-                <p style={{ fontSize: '48px', fontWeight: '300', margin: '0 0 16px 0', fontFamily: "'Georgia', 'Garamond', serif", color: colors.primaryNavy }}>
+                <p style={{ fontSize: '48px', fontWeight: '300', margin: '0 0 16px 0', fontFamily: "'Georgia', 'Garamond', serif", color: colors.primaryNavy, direction: 'ltr' }}>
                   {stat.value}
                 </p>
                 <p style={{ fontSize: '13px', fontWeight: '600', margin: 0, color: colors.textGrey, textTransform: 'uppercase', letterSpacing: '1px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
@@ -308,11 +308,11 @@ export default function Home() {
       </section>
 
       {/* 3. FEATURED STORY SECTION - Royal Formal Story */}
-      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.white, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '100px', alignItems: 'center' }}>
             {/* Left: Story Image */}
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', order: ar ? 2 : 1 }}>
               <img
                 src={createPlaceholder(400, 450, 'Featured Story', 'Dignified portrait of a person conveying hope and resilience')}
                 alt="Dignified portrait of a person conveying hope and resilience"
@@ -329,9 +329,9 @@ export default function Home() {
             </div>
 
             {/* Right: Story Quote & Details */}
-            <div>
-              <div style={{ marginBottom: '40px' }}>
-                <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <div style={{ order: ar ? 1 : 2 }}>
+              <div style={{ marginBottom: '40px', textAlign: ar ? 'right' : 'left' }}>
+                <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                   REAL IMPACT
                 </p>
                 <h2 style={{ fontSize: '44px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", lineHeight: '1.2' }}>
@@ -339,17 +339,17 @@ export default function Home() {
                 </h2>
               </div>
 
-              <p style={{ fontSize: '16px', color: colors.textGrey, lineHeight: '1.8', marginBottom: '44px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+              <p style={{ fontSize: '16px', color: colors.textGrey, lineHeight: '1.8', marginBottom: '44px', fontFamily: "'Inter', '-apple-system', sans-serif", textAlign: ar ? 'right' : 'left' }}>
                 Through JHCO's integrated healthcare and education programs, Amira received academic support and her family accessed essential medical services. She now progresses through secondary school with ambitions to become an educator, demonstrating the sustained impact of comprehensive program delivery in her community.
               </p>
 
-              <div style={{ backgroundColor: colors.lightGrey, padding: '36px 36px', borderRadius: '0px', borderLeft: `3px solid ${colors.primaryNavy}`, marginBottom: '44px' }}>
-                <p style={{ fontSize: '15px', fontStyle: 'italic', color: colors.textNavy, margin: 0, lineHeight: '1.8', fontFamily: "'Georgia', 'Garamond', serif" }}>
+              <div style={{ backgroundColor: colors.lightGrey, padding: '36px 36px', borderRadius: '0px', borderLeft: ar ? 'none' : `3px solid ${colors.primaryNavy}`, borderRight: ar ? `3px solid ${colors.primaryNavy}` : 'none', marginBottom: '44px' }}>
+                <p style={{ fontSize: '15px', fontStyle: 'italic', color: colors.textNavy, margin: 0, lineHeight: '1.8', fontFamily: "'Georgia', 'Garamond', serif", textAlign: ar ? 'right' : 'left' }}>
                   "The JHCO programs provided real opportunities. Quality education and healthcare access made a meaningful difference in what my family could achieve. I'm grateful for the professional support."
                 </p>
               </div>
 
-              <div style={{ marginBottom: '44px' }}>
+              <div style={{ marginBottom: '44px', textAlign: ar ? 'right' : 'left' }}>
                 <p style={{ fontSize: '15px', fontWeight: '700', color: colors.primaryNavy, margin: '0 0 6px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>Amira Hassan</p>
                 <p style={{ fontSize: '13px', color: colors.textGrey, margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>Cairo, Egypt • Healthcare & Education Program</p>
               </div>
@@ -391,7 +391,7 @@ export default function Home() {
       </section>
 
       {/* 4. PROGRAMS GRID - Royal Program Cards */}
-      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.lightGrey, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
@@ -442,18 +442,20 @@ export default function Home() {
                   />
 
                   {/* Program Content */}
-                  <div style={{ flex: 1, padding: '40px 36px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ flex: 1, padding: '40px 36px', display: 'flex', flexDirection: 'column', textAlign: ar ? 'right' : 'left' }}>
                     <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.primaryNavy, marginBottom: '14px', lineHeight: '1.4', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {ar ? program.nameAr : program.name}
                     </h3>
                     <p style={{ fontSize: '14px', color: colors.textGrey, lineHeight: '1.7', flex: 1, marginBottom: '24px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {ar ? program.descriptionAr : program.description}
                     </p>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '24px', borderTop: `1px solid ${colors.border}` }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: ar ? 'space-between' : 'space-between', paddingTop: '24px', borderTop: `1px solid ${colors.border}`, flexDirection: ar ? 'row-reverse' : 'row' }}>
                       <p style={{ fontSize: '12px', color: colors.textGrey, fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                         {ar ? program.impactAr : program.impact}
                       </p>
-                      <span style={{ fontSize: '16px', color: colors.textGrey, fontWeight: '400' }}>→</span>
+                      <span style={{ fontSize: '16px', color: colors.textGrey, fontWeight: '400' }}>
+                        {ar ? '←' : '→'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -495,7 +497,7 @@ export default function Home() {
       </section>
 
       {/* 5. WHY JHCO SECTION - Royal Why Trust Us */}
-      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.white, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
@@ -530,7 +532,7 @@ export default function Home() {
                   e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
                 }}
               >
-                <div style={{ width: '48px', height: '48px', borderRadius: '0px', backgroundColor: colors.primaryNavy, margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '600', fontSize: '24px' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '0px', backgroundColor: colors.primaryNavy, margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '600', fontSize: '24px', direction: 'ltr' }}>
                   {idx + 1}
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: '600', color: colors.primaryNavy, marginBottom: '16px', textTransform: 'none', letterSpacing: '0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
@@ -546,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* 6. CALL-TO-ACTION SECTION - Royal Get Involved */}
-      <section style={{ background: colors.primaryNavy, padding: '120px 32px', position: 'relative', overflow: 'hidden' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ background: colors.primaryNavy, padding: '120px 32px', position: 'relative', overflow: 'hidden', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '52px', fontWeight: '400', color: 'white', marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
             Get Involved
@@ -609,7 +611,7 @@ export default function Home() {
       </section>
 
       {/* 7. TESTIMONIALS CAROUSEL - Professional Engagement Stories */}
-      <section style={{ backgroundColor: colors.lightGrey, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.lightGrey, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
@@ -631,6 +633,7 @@ export default function Home() {
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   border: `1px solid ${colors.border}`,
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textAlign: ar ? 'right' : 'left',
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
@@ -642,7 +645,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ marginBottom: '32px' }}>
-                  <div style={{ fontSize: '32px', color: colors.textGrey, marginBottom: '16px', opacity: 0.4, fontFamily: "'Georgia', 'Garamond', serif" }}>
+                  <div style={{ fontSize: '32px', color: colors.textGrey, marginBottom: '16px', opacity: 0.4, fontFamily: "'Georgia', 'Garamond', serif", textAlign: ar ? 'right' : 'left' }}>
                     "
                   </div>
                   <p style={{ fontSize: '15px', color: colors.textNavy, lineHeight: '1.8', fontStyle: 'italic', margin: 0, fontFamily: "'Georgia', 'Garamond', serif" }}>
@@ -650,7 +653,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '32px', borderTop: `1px solid ${colors.border}` }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '32px', borderTop: `1px solid ${colors.border}`, flexDirection: ar ? 'row-reverse' : 'row' }}>
                   <div
                     style={{
                       width: '52px',
@@ -668,7 +671,7 @@ export default function Home() {
                   >
                     {testimonial.avatar}
                   </div>
-                  <div>
+                  <div style={{ textAlign: ar ? 'right' : 'left' }}>
                     <p style={{ fontSize: '14px', fontWeight: '700', color: colors.primaryNavy, margin: '0 0 4px 0', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                       {testimonial.name}
                     </p>
@@ -684,7 +687,7 @@ export default function Home() {
       </section>
 
       {/* 8. NEWSLETTER SECTION - Professional Updates */}
-      <section style={{ backgroundColor: colors.white, padding: '120px 32px' }}>
+      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.white, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
             Stay Informed
@@ -693,7 +696,7 @@ export default function Home() {
             Receive program updates, impact reports, and organizational news delivered to your inbox
           </p>
 
-          <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', flexDirection: ar ? 'row-reverse' : 'row' }}>
             <input
               type="email"
               placeholder="Your email address"
@@ -751,18 +754,18 @@ export default function Home() {
       </section>
 
       {/* 9. FOOTER - Royal Professional Footer */}
-      <footer style={{ backgroundColor: colors.primaryNavy, color: 'white', padding: '100px 32px 50px', borderTop: `1px solid rgba(255,255,255,0.1)` }}>
+      <footer dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.primaryNavy, color: 'white', padding: '100px 32px 50px', borderTop: `1px solid rgba(255,255,255,0.1)`, direction: ar ? 'rtl' : 'ltr' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '60px', marginBottom: '80px' }}>
             {/* Brand Column */}
-            <div>
+            <div style={{ textAlign: ar ? 'right' : 'left' }}>
               <h4 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '24px', color: 'white', fontFamily: "'Inter', '-apple-system', sans-serif", letterSpacing: '0.5px' }}>
                 JHCO
               </h4>
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', marginBottom: '32px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
                 Operating humanitarian programs across 30+ countries under royal patronage
               </p>
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: ar ? 'flex-end' : 'flex-start' }}>
                 {['f', 't', 'i', 'l'].map((social) => (
                   <a
                     key={social}
@@ -798,8 +801,8 @@ export default function Home() {
             </div>
 
             {/* Programs Column */}
-            <div>
-              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 Programs
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -829,8 +832,8 @@ export default function Home() {
             </div>
 
             {/* Get Involved Column */}
-            <div>
-              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 Get Involved
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -860,8 +863,8 @@ export default function Home() {
             </div>
 
             {/* About Column */}
-            <div>
-              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
+            <div style={{ textAlign: ar ? 'right' : 'left' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '28px', color: 'rgba(255,255,255,0.9)', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
                 About
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
