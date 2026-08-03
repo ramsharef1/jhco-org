@@ -2,57 +2,24 @@
 
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
-import { royalColors, footerStructure, transitions, spacing } from '@/lib/royalDesign';
+import { royalColors, transitions, spacing } from '@/lib/royalDesign';
+import { sitemap } from '@/lib/sitemap';
 
 export default function Footer({ locale = 'en' as Locale }: { locale?: Locale }) {
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  // Map footer structure to links with base URL
-  const sections = [
-    {
-      key: 'aboutUs',
-      title: footerStructure.aboutUs.title,
-      titleEn: footerStructure.aboutUs.titleEn,
-      links: footerStructure.aboutUs.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'programs',
-      title: footerStructure.programs.title,
-      titleEn: footerStructure.programs.titleEn,
-      links: footerStructure.programs.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'impact',
-      title: footerStructure.impact.title,
-      titleEn: footerStructure.impact.titleEn,
-      links: footerStructure.impact.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'government',
-      title: footerStructure.government.title,
-      titleEn: footerStructure.government.titleEn,
-      links: footerStructure.government.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'getInvolved',
-      title: footerStructure.getInvolved.title,
-      titleEn: footerStructure.getInvolved.titleEn,
-      links: footerStructure.getInvolved.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'resources',
-      title: footerStructure.resources.title,
-      titleEn: footerStructure.resources.titleEn,
-      links: footerStructure.resources.links.map(l => ({ ...l, href: base + l.href })),
-    },
-    {
-      key: 'legal',
-      title: footerStructure.legal.title,
-      titleEn: footerStructure.legal.titleEn,
-      links: footerStructure.legal.links.map(l => ({ ...l, href: base + l.href })),
-    },
-  ];
+  // Map footer structure from sitemap
+  const sections = sitemap.footer.map((section, idx) => ({
+    key: section.title.toLowerCase().replace(/\s+/g, '-'),
+    title: section.titleAr,
+    titleEn: section.title,
+    links: section.items.map(item => ({
+      label: item.label,
+      labelEn: item.labelEn,
+      href: base + item.href,
+    })),
+  }));
 
   return (
     <footer style={{ backgroundColor: royalColors.darkNavy, color: 'white' }}>

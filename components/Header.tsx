@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
-import { royalColors, menuStructure, transitions, spacing } from '@/lib/royalDesign';
+import { royalColors, transitions, spacing } from '@/lib/royalDesign';
+import { sitemap } from '@/lib/sitemap';
 
 export default function Header({ locale = 'en' as Locale }: { locale?: Locale }) {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
 
         {/* Navigation Links (Desktop) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-          {menuStructure.main.map((item, idx) => (
+          {sitemap.main.map((item, idx) => (
             <Link
               key={idx}
               href={`${base}${item.href}`}
