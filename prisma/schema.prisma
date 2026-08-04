@@ -21,10 +21,19 @@ model User {
   updatedAt DateTime   @updatedAt
 
   // Relations
-  images    Image[]
-  content   Content[]
-  stories   Story[]
-  audit     AuditLog[]
+  images              Image[]
+  content             Content[]
+  stories             Story[]
+  audit               AuditLog[]
+  impactMetrics       ImpactMetric[]
+  financialRecords    FinancialRecord[]
+  certifications      Certification[]
+  dashboardExports    DashboardExport[]
+  dashboardEvents     DashboardEvent[]
+  richMediaContent    RichMediaContent[]
+  costImpactMetrics   CostImpactMetric[]
+  aiGenerations       AIGeneration[]
+  challenges          ChallengeGoal[]
 }
 
 enum UserRole {
@@ -50,8 +59,10 @@ model Image {
   createdById String
 
   // Relations
-  contentImages ContentImage[]
-  storyImages   StoryImage[]
+  contentImages       ContentImage[]
+  storyImages         StoryImage[]
+  certifications      Certification[]
+  dashboardTestimonials DashboardTestimonial[]
 }
 
 // Dynamic Content (Homepage, sections, etc.)
@@ -154,6 +165,9 @@ model Testimonial {
   published Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Relations
+  dashboard DashboardTestimonial?
 }
 
 // Audit Log
@@ -168,6 +182,133 @@ model AuditLog {
   userId    String
 }
 
+// Phase 1 Impact Dashboard Models
+
+// Impact Metrics
+model ImpactMetric {
+  id                  String   @id @default(cuid())
+  label_en            String
+  label_ar            String?  // Arabic label
+  value               Float
+  unit_en             String?
+  unit_ar             String?  // Arabic unit
+  category            String   // e.g., 'families_served', 'countries', 'volunteers'
+  verification_status String   @default("UNVERIFIED") // UNVERIFIED, PENDING, VERIFIED
+  verified_by         String?
+  verified_at         DateTime?
+  icon                String?
+  trend               Float?   // Percentage change
+  color               String?  // Hex color for visualization
+  data_source         String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  createdBy           User     @relation(fields: [createdById], references: [id])
+  createdById         String
+
+  @@index([createdAt(sort: Desc)])
+  @@index([category])
+  @@index([verification_status])
+}
+
+// Financial Records
+model FinancialRecord {
+  id                  String   @id @default(cuid())
+  category            String   // e.g., 'healthcare', 'education', 'food-aid'
+  category_ar         String?
+  amount              Float
+  currency            String   @default("JOD")
+  fiscal_year         Int
+  description         String?
+  description_ar      String?
+  verification_status String   @default("UNVERIFIED")
+  verified_by         String?
+  verified_at         DateTime?
+  data_source         String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  createdBy           User     @relation(fields: [createdById], references: [id])
+  createdById         String
+
+  @@index([createdAt(sort: Desc)])
+  @@index([category])
+  @@index([fiscal_year])
+  @@index([verification_status])
+}
+
+// Certifications & Audit Badges
+model Certification {
+  id                      String   @id @default(cuid())
+  name_en                 String
+  name_ar                 String?
+  issuer                  String
+  issue_date              DateTime
+  expiry_date             DateTime?
+  badge_type              String   // AUDIT, ISO, ACCREDITATION, AWARD
+  icon_url                String?
+  description_en          String?
+  description_ar          String?
+  verification_document   Image?   @relation(fields: [verification_document_id], references: [id])
+  verification_document_id String?
+  display_order           Int      @default(0)
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+  createdBy               User     @relation(fields: [createdById], references: [id])
+  createdById             String
+
+  @@index([createdAt(sort: Desc)])
+  @@index([badge_type])
+}
+
+// Dashboard Exports (PDF, Excel)
+model DashboardExport {
+  id              String   @id @default(cuid())
+  export_format   String   // PDF, EXCEL, CSV
+  title           String?
+  file_url        String
+  file_size       BigInt?
+  export_params   Json?    // Filters, date range, etc.
+  createdAt       DateTime @default(now())
+  createdBy       User     @relation(fields: [createdById], references: [id])
+  createdById     String
+  expires_at      DateTime?
+
+  @@index([createdById])
+  @@index([createdAt(sort: Desc)])
+}
+
+// Dashboard Analytics Events
+model DashboardEvent {
+  id        String   @id @default(cuid())
+  event_type String  // VIEW, EXPORT, FILTER, SHARE
+  event_name String  // Descriptive event name
+  user      User?    @relation(fields: [user_id], references: [id])
+  user_id   String?
+  metadata  Json?    // Additional event data
+  session_id String?
+  createdAt DateTime @default(now())
+
+  @@index([event_type])
+  @@index([user_id])
+  @@index([createdAt(sort: Desc)])
+}
+
+// Extended Testimonial for Dashboard
+model DashboardTestimonial {
+  id                String   @id @default(cuid())
+  testimonial       Testimonial @relation(fields: [testimonial_id], references: [id], onDelete: Cascade)
+  testimonial_id    String @unique
+  program           String?
+  image             Image?   @relation(fields: [image_id], references: [id])
+  image_id          String?
+  featured          Boolean  @default(false)
+  verified          Boolean  @default(false)
+  verification_date DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([featured])
+}
+
 // Settings
 model Settings {
   id            String   @id @default(cuid())
@@ -175,4 +316,264 @@ model Settings {
   value         String
   description   String?
   updatedAt     DateTime @updatedAt
+}
+
+// ============================================================================
+// PHASE 2 (WAVE 2) - Advanced Dashboard Features
+// ============================================================================
+
+// Cost Impact Metric - Cost per outcome
+model CostImpactMetric {
+  id                  String   @id @default(cuid())
+  program_id          String?
+  program_name        String   // e.g., 'healthcare', 'education'
+  metric_name_en      String   // e.g., 'Cost per family served'
+  metric_name_ar      String?  // Arabic name
+  cost_amount         Float    // JOD or other currency
+  outcome_count       Float    // Number of outcomes (families, students, etc.)
+  cost_per_outcome    Float    // Calculated: cost_amount / outcome_count
+  currency            String   @default("JOD")
+  fiscal_year         Int
+  data_source         String?
+  verification_status String   @default("UNVERIFIED")
+  verified_at         DateTime?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  createdBy           User     @relation(fields: [createdById], references: [id])
+  createdById         String
+
+  @@index([program_name])
+  @@index([fiscal_year])
+  @@index([createdAt(sort: Desc)])
+}
+
+// Rich Media Content - Videos, galleries, behind-the-scenes
+model RichMediaContent {
+  id                  String   @id @default(cuid())
+  title_en            String
+  title_ar            String?
+  description_en      String?
+  description_ar      String?
+  media_type          String   // 'video', 'image', 'gallery', 'carousel'
+  url                 String   // Vercel Blob URL or YouTube embed URL
+  thumbnail_url       String?
+  program             String?  // Associated program
+  category            String?  // 'behind-scenes', 'impact-story', 'volunteer-spotlight', 'event'
+  duration_seconds    Int?     // For video content
+  featured            Boolean  @default(false)
+  published           Boolean  @default(false)
+  view_count          Int      @default(0)
+  caption_en          String?
+  caption_ar          String?
+  metadata            Json?    // Additional metadata
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  createdBy           User     @relation(fields: [createdById], references: [id])
+  createdById         String
+
+  @@index([program])
+  @@index([media_type])
+  @@index([featured])
+  @@index([createdAt(sort: Desc)])
+}
+
+// Comparison View - Side-by-side program or metric comparison
+model ComparisonView {
+  id                  String   @id @default(cuid())
+  title_en            String
+  title_ar            String?
+  description_en      String?
+  description_ar      String?
+  comparison_type     String   // 'programs', 'metrics', 'years', 'regions'
+  left_item_id        String   // ID of left comparison item
+  right_item_id       String   // ID of right comparison item
+  left_item_data      Json     // Snapshot of left item data
+  right_item_data     Json     // Snapshot of right item data
+  metrics             String[] // Which metrics to compare
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+  created_by          String
+
+  @@index([comparison_type])
+  @@index([created_at(sort: Desc)])
+}
+
+// Anomaly Alert - Detect unusual patterns
+model AnomalyAlert {
+  id                  String   @id @default(cuid())
+  title_en            String
+  title_ar            String?
+  description_en      String
+  description_ar      String?
+  anomaly_type        String   // 'spike', 'drop', 'outlier', 'trend_break'
+  metric_id           String   // Reference to ImpactMetric
+  metric_name         String
+  baseline_value      Float    // Expected value
+  actual_value        Float    // What was actually observed
+  deviation_percent   Float    // How much it deviated
+  severity            String   @default("MEDIUM") // LOW, MEDIUM, HIGH, CRITICAL
+  status              String   @default("OPEN") // OPEN, ACKNOWLEDGED, RESOLVED
+  detected_at         DateTime @default(now())
+  acknowledged_at     DateTime?
+  acknowledged_by     String?
+  resolved_at         DateTime?
+  resolved_by         String?
+  notes               String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([severity])
+  @@index([status])
+  @@index([metric_id])
+  @@index([detected_at(sort: Desc)])
+}
+
+// Newsletter Subscriber
+model NewsletterSubscriber {
+  id                  String   @id @default(cuid())
+  email               String   @unique
+  first_name          String?
+  last_name           String?
+  status              String   @default("ACTIVE") // ACTIVE, UNSUBSCRIBED, BOUNCED
+  subscribed_at       DateTime @default(now())
+  unsubscribed_at     DateTime?
+  last_email_sent_at  DateTime?
+  segments            String[] // Newsletter segments: 'donors', 'volunteers', 'general'
+  metadata            Json?    // Additional metadata
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([subscribed_at(sort: Desc)])
+}
+
+// Leaderboard Entry - Top donors, volunteers
+model LeaderboardEntry {
+  id                  String   @id @default(cuid())
+  leaderboard_type    String   // 'donors', 'volunteers', 'fundraisers'
+  user_id             String?  // Optional user reference
+  user_name           String
+  user_email          String?
+  user_avatar_url     String?
+  rank                Int      // Current rank
+  primary_metric      Float    // Donation amount or volunteer hours
+  secondary_metric    Float?   // Additional metric
+  points              Int      @default(0) // Gamification points
+  badges              String[] // Earned badges
+  streaks             Int      @default(0) // Consecutive activity
+  verified            Boolean  @default(false)
+  period              String   @default("CURRENT") // CURRENT, MONTHLY, YEARLY, ALL_TIME
+  program             String?  // Optional: specific program leaderboard
+  metadata            Json?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([leaderboard_type])
+  @@index([rank])
+  @@index([period])
+  @@index([program])
+  @@unique([leaderboard_type, user_email, period, program])
+}
+
+// Challenge Goal - Fundraising/volunteering campaigns
+model ChallengeGoal {
+  id                  String   @id @default(cuid())
+  title_en            String
+  title_ar            String?
+  description_en      String?
+  description_ar      String?
+  challenge_type      String   // 'fundraise', 'volunteer_hours', 'awareness'
+  target_value        Float
+  current_value       Float    @default(0)
+  currency            String   @default("JOD")
+  unit_en             String   // e.g., 'JOD', 'hours', 'participants'
+  unit_ar             String?
+  start_date          DateTime
+  end_date            DateTime
+  status              String   @default("ACTIVE") // ACTIVE, COMPLETED, EXPIRED
+  program_id          String?
+  program_name        String?
+  featured            Boolean  @default(false)
+  metadata            Json?    // Progress tracker, participants data
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  createdBy           User     @relation(fields: [createdById], references: [id])
+  createdById         String
+
+  @@index([status])
+  @@index([challenge_type])
+  @@index([start_date])
+  @@index([end_date])
+  @@index([featured])
+}
+
+// Embed Widget - Embeddable dashboard widgets for external sites
+model EmbedWidget {
+  id                  String   @id @default(cuid())
+  title_en            String
+  title_ar            String?
+  widget_type         String   // 'metrics', 'stories', 'leaderboard', 'challenge', 'live_counter'
+  config              Json     // Widget configuration (size, style, data)
+  embed_code          String   // HTML/JS snippet for embedding
+  access_token        String   @unique // Unique token for authentication
+  allowed_origins     String[] // CORS whitelist
+  view_count          Int      @default(0)
+  enabled             Boolean  @default(true)
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+  created_by          String
+
+  @@index([widget_type])
+  @@index([enabled])
+  @@index([access_token])
+  @@index([created_at(sort: Desc)])
+}
+
+// AI-generated content and insights
+model AIGeneration {
+  id                  String   @id @default(cuid())
+  content_type        String   // 'summary', 'recommendation', 'insight', 'anomaly_description'
+  prompt_en           String   // Original prompt in English
+  prompt_ar           String?  // Original prompt in Arabic
+  output_en           String   // Generated content in English
+  output_ar           String?  // Generated content in Arabic
+  context_data        Json?    // Data used for generation
+  model_name          String   // Which AI model was used
+  temperature         Float?
+  usage_tokens        Int?     // Tokens used
+  status              String   @default("ACTIVE") // ACTIVE, ARCHIVED, REJECTED
+  feedback_score      Int?     // User rating: -1, 0, 1
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+  createdBy           User?    @relation(fields: [createdById], references: [id])
+  createdById         String?
+
+  @@index([content_type])
+  @@index([status])
+  @@index([created_at(sort: Desc)])
+}
+
+// Email Notification History
+model EmailNotification {
+  id                  String   @id @default(cuid())
+  recipient_email     String
+  notification_type   String   // 'volunteer_confirmation', 'donor_alert', 'newsletter', 'anomaly', 'challenge_update'
+  subject_en          String
+  subject_ar          String?
+  body_en             String   // Can be HTML
+  body_ar             String?
+  status              String   @default("PENDING") // PENDING, SENT, DELIVERED, FAILED, BOUNCED
+  sent_at             DateTime?
+  delivered_at        DateTime?
+  read_at             DateTime?
+  failed_reason       String?
+  metadata            Json?    // Reference to related records (metric_id, challenge_id, etc.)
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+
+  @@index([recipient_email])
+  @@index([notification_type])
+  @@index([status])
+  @@index([created_at(sort: Desc)])
 }

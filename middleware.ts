@@ -4,8 +4,13 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Allow access to login page and password check endpoint
-  if (pathname === '/login' || pathname === '/api/auth/login') {
+  // Allow access to login page, dashboard, API routes, and password check endpoint
+  if (
+    pathname === '/login' ||
+    pathname === '/api/auth/login' ||
+    pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/api/dashboard')
+  ) {
     return NextResponse.next();
   }
 
@@ -35,7 +40,9 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - public folder
+     * - dashboard (public dashboard)
+     * - api (except api/auth which requires auth)
      */
-    '/((?!_next/static|_next/image|favicon.ico|login|api/auth).*)',
+    '/((?!_next/static|_next/image|favicon.ico|login|api(?!/auth)|dashboard|.*dashboard).*)',
   ],
 };

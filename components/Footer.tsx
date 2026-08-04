@@ -11,7 +11,7 @@ export default function Footer({ locale = 'en' as Locale }: { locale?: Locale })
 
   // Map footer structure from sitemap
   const sections = sitemap.footer.map((section, idx) => ({
-    key: section.title.toLowerCase().replace(/\s+/g, '-'),
+    key: `${idx}-${section.title.toLowerCase().replace(/\s+/g, '-')}`,
     title: section.titleAr,
     titleEn: section.title,
     links: section.items.map(item => ({
