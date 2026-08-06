@@ -1,313 +1,42 @@
-'use client';
-
-// Royal Jordanian JHCO Homepage with Placeholder Images
-import { useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
 import { getDictionary, type Locale } from '@/lib/i18n';
-import { programs, impactStats, news } from '@/lib/mockData';
+import { programs } from '@/lib/mockData';
 import Link from 'next/link';
+import HeroSlider from '@/components/HeroSlider';
+import ImpactCounter from '@/components/ImpactCounter';
 
-// Helper function to create placeholder images with text overlays
-const createPlaceholder = (width: number, height: number, title: string, description: string): string => {
-  const bgColor = '#f5f5f5';
-  const textColor = '#1a3a52';
-
-  // Escape special characters for SVG
-  const escapeSvg = (str: string) => str.replace(/[&<>"]/g, char => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;'
-  }[char] || char));
-
-  // Calculate text size based on image dimensions
-  const titleSize = Math.max(16, width / 20);
-  const descSize = Math.max(12, width / 28);
-  const lineHeight = descSize * 1.5;
-
-  // Split description into lines for better readability
-  const maxCharsPerLine = Math.floor(width / (descSize * 0.6));
-  const descLines = description.split('\n').flatMap(line => {
-    const words = line.split(' ');
-    const lines = [];
-    let currentLine = '';
-
-    words.forEach(word => {
-      if ((currentLine + word).length > maxCharsPerLine) {
-        if (currentLine) lines.push(currentLine.trim());
-        currentLine = word;
-      } else {
-        currentLine += (currentLine ? ' ' : '') + word;
-      }
-    });
-    if (currentLine) lines.push(currentLine.trim());
-
-    return lines;
-  });
-
-  // Calculate total content height
-  const titleY = height * 0.15;
-  const descStartY = titleY + titleSize + 30;
-  const totalTextHeight = titleSize + 30 + (descLines.length * lineHeight) + 20;
-  const startY = Math.max(height * 0.1, (height - totalTextHeight) / 2);
-
-  const svg = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="${width}" height="${height}" fill="${bgColor}"/>
-      <text x="${width / 2}" y="${startY + titleSize}" font-family="Arial, sans-serif" font-size="${titleSize}" font-weight="bold" fill="${textColor}" text-anchor="middle">
-        ${escapeSvg(title)}
-      </text>
-      ${descLines.map((line, idx) => `
-        <text x="${width / 2}" y="${startY + titleSize + 30 + (idx * lineHeight)}" font-family="Arial, sans-serif" font-size="${descSize}" fill="${textColor}" text-anchor="middle">
-          ${escapeSvg(line)}
-        </text>
-      `).join('')}
-      <text x="${width / 2}" y="${height - 20}" font-family="Arial, sans-serif" font-size="${Math.max(11, width / 40)}" fill="#999" text-anchor="middle">
-        ${width}x${height}
-      </text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
-};
-
-export default function Home() {
-  const params = useParams();
-  const locale = (params.locale as string) || 'en';
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const dict = getDictionary(locale as Locale);
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
-  // Royal Jordanian color palette - Navy, White, Dark Navy Background
   const colors = {
     primaryNavy: '#1a3a52',
     textNavy: '#2c4563',
     lightGrey: '#f5f5f5',
     white: '#ffffff',
-    darkBg: '#0a1428',           // Dark Navy Background (from password page)
+    darkBg: '#0a1428',
     textGrey: '#555555',
     accentGold: '#d4af37',
     border: '#e0e0e0',
-    darkBgText: '#ffffff',       // White text on dark backgrounds
+    darkBgText: '#ffffff',
   };
 
-  // Program accents - subtle navy/grey
-  const programAccents = [
-    colors.textNavy,
-    colors.textNavy,
-    colors.textNavy,
-    colors.textNavy,
-    colors.textNavy,
-    colors.textNavy,
-  ];
-
-  // Impact stat configuration
-  const statData = [
-    { value: '75K+', label: 'Families Served', icon: null },
-    { value: '30+', label: 'Countries', icon: null },
-    { value: '2.5K+', label: 'Volunteers', icon: null },
-    { value: '100%', label: 'Verified Impact', icon: null },
-  ];
-
-  const whyReasons = [
-    {
-      icon: null,
-      title: 'Royal Patronage',
-      description: 'Operating under Jordanian royal patronage, ensuring governance excellence and international credibility.',
-    },
-    {
-      icon: null,
-      title: 'Transparent Operations',
-      description: 'Full financial accountability with verified program delivery metrics and independent audits.',
-    },
-    {
-      icon: null,
-      title: 'Established Presence',
-      description: '30+ years of sustained humanitarian work across 30 countries with local institutional partnerships.',
-    },
-    {
-      icon: null,
-      title: 'Professional Impact',
-      description: 'Measurable outcomes in healthcare, education, and livelihood initiatives backed by data and evaluation.',
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Ahmed',
-      location: 'Cairo, Egypt',
-      role: 'Donor',
-      quote: 'JHCO demonstrates professional governance and transparent impact reporting. Supporting their programs is straightforward and credible.',
-      avatar: 'SA',
-    },
-    {
-      name: 'James Martin',
-      location: 'London, UK',
-      role: 'Volunteer',
-      quote: 'The volunteer experience with JHCO is well-structured with clear professional objectives. The organization is effectively managed.',
-      avatar: 'JM',
-    },
-    {
-      name: 'Fatima Hassan',
-      location: 'Amman, Jordan',
-      role: 'Program Participant',
-      quote: 'The education program provided quality instruction and real opportunity. The outcomes have been measurable and meaningful for our community.',
-      avatar: 'FH',
-    },
+  const impactStats = [
+    { value: 75000, label: ar ? 'أسرة مخدومة' : 'Families Served', icon: '👥' },
+    { value: 30, label: ar ? 'دول' : 'Countries', icon: '🌍' },
+    { value: 2500, label: ar ? 'متطوع' : 'Volunteers', icon: '🤝' },
+    { value: 100, label: ar ? 'تأثير معتمد' : 'Verified Impact', icon: '✓' },
   ];
 
   return (
     <>
-      {/* 1. HERO SECTION - Royal Formal */}
-      <section dir={ar ? 'rtl' : 'ltr'} style={{ background: colors.primaryNavy, padding: '160px 32px 120px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: ar ? '1fr 1fr' : '1fr 1fr', gap: '100px', alignItems: 'center', direction: ar ? 'rtl' : 'ltr' }}>
-            {/* Left: Headline & CTAs */}
-            <div style={{ order: ar ? 2 : 1 }}>
-              <div style={{ marginBottom: '32px', textAlign: ar ? 'right' : 'left' }}>
-                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '3px', margin: '0 0 20px 0', fontFamily: "'Inter', '-apple-system', sans-serif", direction: 'ltr' }}>
-                  SERVING HUMANITY
-                </p>
-                <h1 style={{ fontSize: '72px', fontWeight: '400', lineHeight: '1.2', color: 'white', marginBottom: '0', fontFamily: "'Georgia', 'Garamond', serif", textTransform: 'none', letterSpacing: '0' }}>
-                  With Dignity
-                </h1>
-              </div>
-              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '56px', lineHeight: '1.8', maxWidth: '540px', fontFamily: "'Inter', '-apple-system', sans-serif", textAlign: ar ? 'right' : 'left' }}>
-                Operating humanitarian programs across 30+ countries, delivering sustained impact to 75,000+ families through healthcare, education, and livelihood development.
-              </p>
-
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: ar ? 'flex-end' : 'flex-start' }}>
-                <Link
-                  href={`${base}/get-involved/donate`}
-                  style={{
-                    padding: '16px 48px',
-                    backgroundColor: colors.white,
-                    color: colors.primaryNavy,
-                    textDecoration: 'none',
-                    fontSize: '13px',
-                    fontWeight: '700',
-                    borderRadius: '0px',
-                    cursor: 'pointer',
-                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                    border: `2px solid ${colors.white}`,
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                    display: 'inline-block',
-                    fontFamily: "'Inter', '-apple-system', sans-serif",
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = colors.primaryNavy;
-                    e.currentTarget.style.color = colors.white;
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = colors.white;
-                    e.currentTarget.style.color = colors.primaryNavy;
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  Donate Now
-                </Link>
-                <Link
-                  href={`${base}/get-involved/volunteer`}
-                  style={{
-                    padding: '16px 48px',
-                    backgroundColor: 'transparent',
-                    color: 'white',
-                    textDecoration: 'none',
-                    fontSize: '13px',
-                    fontWeight: '700',
-                    borderRadius: '0px',
-                    cursor: 'pointer',
-                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                    border: `2px solid white`,
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                    display: 'inline-block',
-                    fontFamily: "'Inter', '-apple-system', sans-serif",
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  Volunteer
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Hero Image */}
-            <div style={{ position: 'relative', order: ar ? 1 : 2 }}>
-              <img
-                src={createPlaceholder(600, 400, 'Hero Section', 'Diverse group of people coming together for humanitarian work')}
-                alt="Diverse group of people coming together for humanitarian work"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '600/400',
-                  objectFit: 'cover',
-                  borderRadius: '0px',
-                  border: `1px solid rgba(255,255,255,0.2)`,
-                  display: 'block',
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. IMPACT STATS SECTION - Royal Impact Display */}
-      <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.lightGrey, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '48px', fontWeight: '400', color: colors.primaryNavy, marginBottom: '20px', fontFamily: "'Georgia', 'Garamond', serif", letterSpacing: '0' }}>
-              Our Global Impact
-            </h2>
-            <p style={{ fontSize: '16px', color: "rgba(255,255,255,0.8)", maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-              Measurable change across communities and lives worldwide
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
-            {statData.map((stat, idx) => (
-              <div
-                key={idx}
-                style={{
-                  backgroundColor: colors.white,
-                  padding: '56px 40px',
-                  borderRadius: '0px',
-                  textAlign: 'center',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  cursor: 'pointer',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                  border: `1px solid ${colors.border}`,
-                  position: 'relative',
-                  overflow: 'hidden',
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
-                }}
-              >
-                <p style={{ fontSize: '48px', fontWeight: '300', margin: '0 0 16px 0', fontFamily: "'Georgia', 'Garamond', serif", color: colors.primaryNavy, direction: 'ltr' }}>
-                  {stat.value}
-                </p>
-                <p style={{ fontSize: '13px', fontWeight: '600', margin: 0, color: colors.textGrey, textTransform: 'uppercase', letterSpacing: '1px', fontFamily: "'Inter', '-apple-system', sans-serif" }}>
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroSlider locale={locale as Locale} />
+      <ImpactCounter stats={impactStats} locale={locale as Locale} />
 
       {/* 3. FEATURED STORY SECTION - Royal Formal Story */}
       <section dir={ar ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.white, padding: '120px 32px', direction: ar ? 'rtl' : 'ltr' }}>

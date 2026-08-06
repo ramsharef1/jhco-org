@@ -1,6 +1,7 @@
 import { programs } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
+import ProgramCard from '@/components/ProgramCard';
 
 export default async function ProgramsPage({
   params,
@@ -43,43 +44,22 @@ export default async function ProgramsPage({
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '32px' }}>
                   {categoryPrograms.map((program) => (
-                    <Link key={program.id} href={`${base}/programs/${program.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-                      <div style={{ backgroundColor: 'white', border: '1px solid #e8e4db', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', transition: 'all 0.4s', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 2px 8px rgba(10,20,40,0.08)' }}>
-                        {/* Image Placeholder */}
-                        <div style={{ position: 'relative', height: '240px', backgroundColor: '#f0f0f0' }}>
-                          <div style={{ width: '100%', height: '100%', backgroundColor: '#e8e4db', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999', fontSize: '48px' }}>
-                            📋
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div style={{ flex: 1, padding: '28px', display: 'flex', flexDirection: 'column' }}>
-                          <div style={{ marginBottom: '12px' }}>
-                            <span style={{ fontSize: '11px', color: '#d4af37', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                              {ar ? program.categoryAr : program.category}
-                            </span>
-                          </div>
-
-                          <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#0a1428', marginBottom: '12px', lineHeight: '1.4' }}>
-                            {ar ? program.nameAr : program.name}
-                          </h3>
-
-                          <p style={{ fontSize: '14px', color: '#6b6b6b', lineHeight: '1.6', flex: 1, marginBottom: '16px' }}>
-                            {ar ? program.descriptionAr : program.description}
-                          </p>
-
-                          {/* Footer */}
-                          <div style={{ borderTop: '1px solid #e8e4db', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <div>
-                              <p style={{ fontSize: '12px', color: '#d4af37', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 0 }}>
-                                {ar ? program.impactAr : program.impact}
-                              </p>
-                            </div>
-                            <div style={{ fontSize: '20px' }}>→</div>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                    <ProgramCard
+                      key={program.id}
+                      id={String(program.id)}
+                      slug={program.slug}
+                      nameEn={program.name}
+                      nameAr={program.nameAr}
+                      descriptionEn={program.description}
+                      descriptionAr={program.descriptionAr}
+                      icon="🎯"
+                      impactEn={program.impact}
+                      impactAr={program.impactAr}
+                      categoryEn={program.category}
+                      categoryAr={program.categoryAr}
+                      href={`${base}/programs/${program.slug}`}
+                      locale={locale}
+                    />
                   ))}
                 </div>
               </div>
