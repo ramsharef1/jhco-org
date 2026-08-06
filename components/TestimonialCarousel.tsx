@@ -1,272 +1,131 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { royalColors, borderRadius, spacing, shadows } from '@/lib/royalDesign';
+import { useState, useEffect } from 'react';
+import { royalColors, transitions, spacing } from '@/lib/royalDesign';
 
 interface Testimonial {
   id: string;
-  image?: string;
-  name: string;
-  quote: string;
-  role?: string;
+  nameEn: string;
+  nameAr: string;
+  roleEn: string;
+  roleAr: string;
+  quoteEn: string;
+  quoteAr: string;
+  icon: string;
 }
 
 interface TestimonialCarouselProps {
   testimonials: Testimonial[];
-  autoRotate?: boolean;
-  rotationInterval?: number;
+  locale?: string;
+  autoPlay?: boolean;
+  interval?: number;
 }
 
 export default function TestimonialCarousel({
   testimonials,
-  autoRotate = true,
-  rotationInterval = 5000,
+  locale = 'en',
+  autoPlay = true,
+  interval = 5000,
 }: TestimonialCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const ar = locale === 'ar';
+  const [current, setCurrent] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(autoPlay);
 
-  // Auto-rotate testimonials
   useEffect(() => {
-    if (!autoRotate || testimonials.length === 0) return;
-
+    if (!isAutoPlay || testimonials.length === 0) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, rotationInterval);
-
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, interval);
     return () => clearInterval(timer);
-  }, [autoRotate, rotationInterval, testimonials.length]);
+  }, [isAutoPlay, testimonials.length, interval]);
 
-  if (testimonials.length === 0) {
-    return (
-      <div
-        style={{
-          padding: spacing.xl,
-          textAlign: 'center',
-          color: royalColors.textSecondary,
-        }}
-      >
-        No testimonials available
-      </div>
-    );
-  }
+  if (testimonials.length === 0) return null;
 
-  const current = testimonials[currentIndex];
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const slide = testimonials[current];
 
   return (
-    <div
-      style={{
-        backgroundColor: '#ffffff',
-        borderRadius: '0px',
-        padding: spacing.xl,
-        boxShadow: shadows.md,
-        border: `2px solid #d4af37`,
-      }}
-    >
-      {/* Testimonial Container */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: current.image ? '1fr 1fr' : '1fr',
-          gap: spacing.xl,
-          alignItems: 'center',
-          minHeight: '300px',
-        }}
-      >
-        {/* Image */}
-        {current.image && (
-          <div
-            style={{
-              width: '100%',
-              height: '300px',
-              backgroundColor: royalColors.borderFormal,
-              borderRadius: '0px',
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              animation: 'fadeIn 500ms ease-in-out',
-            }}
-          >
-            <img
-              src={current.image}
-              alt={current.name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+    <section style={{
+      backgroundColor: royalColors.bgRefined,
+      padding: `${spacing.xxxl} ${spacing.xl}`,
+    }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        {/* Testimonial */}
+        <div style={{
+          backgroundColor: 'white',
+          padding: spacing.xxxl,
+          borderRadius: '8px',
+          boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
+          textAlign: 'center',
+          direction: ar ? 'rtl' : 'ltr',
+        }}>
+          {/* Icon */}
+          <div style={{ fontSize: '48px', marginBottom: spacing.lg }}>
+            {slide.icon}
           </div>
-        )}
 
-        {/* Quote & Attribution */}
-        <div style={{ animation: 'fadeIn 500ms ease-in-out' }}>
           {/* Quote */}
-          <blockquote
-            style={{
-              fontSize: '20px',
-              fontStyle: 'italic',
-              lineHeight: 1.6,
-              color: '#4a148c',
-              margin: `0 0 ${spacing.lg} 0`,
-              borderLeft: `3px solid #d4af37`,
-              paddingLeft: spacing.lg,
-            }}
-          >
-            "{current.quote}"
+          <blockquote style={{
+            fontSize: '18px',
+            fontStyle: 'italic',
+            color: royalColors.darkNavy,
+            margin: `0 0 ${spacing.lg} 0`,
+            lineHeight: '1.8',
+            fontFamily: 'Georgia, serif',
+          }}>
+            &ldquo;{ar ? slide.quoteAr : slide.quoteEn}&rdquo;
           </blockquote>
 
-          {/* Author Info */}
-          <div>
-            <p
-              style={{
-                fontSize: '16px',
-                fontWeight: 700,
-                color: royalColors.darkNavy,
-                margin: `0 0 ${spacing.xs} 0`,
-              }}
-            >
-              {current.name}
+          {/* Attribution */}
+          <div style={{ marginBottom: spacing.lg }}>
+            <p style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              color: royalColors.darkNavy,
+              margin: '0 0 4px 0',
+            }}>
+              {ar ? slide.nameAr : slide.nameEn}
             </p>
-            {current.role && (
-              <p
-                style={{
-                  fontSize: '13px',
-                  color: royalColors.hashemiteGold,
-                  fontWeight: 600,
-                  margin: 0,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
+            <p style={{
+              fontSize: '12px',
+              color: royalColors.textSecondary,
+              margin: 0,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+            }}>
+              {ar ? slide.roleAr : slide.roleEn}
+            </p>
+          </div>
+
+          {/* Indicators */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: spacing.md,
+            marginTop: spacing.lg,
+          }}>
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrent(idx);
+                  setIsAutoPlay(false);
                 }}
-              >
-                {current.role}
-              </p>
-            )}
+                style={{
+                  width: idx === current ? '24px' : '8px',
+                  height: '8px',
+                  backgroundColor: idx === current ? royalColors.hashemiteGold : 'rgba(212, 175, 55, 0.3)',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  transition: transitions.base,
+                }}
+                onMouseEnter={() => setIsAutoPlay(false)}
+                onMouseLeave={() => setIsAutoPlay(autoPlay)}
+              />
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Navigation */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginTop: spacing.xl,
-          paddingTop: spacing.lg,
-          borderTop: `1px solid ${royalColors.borderFormal}`,
-        }}
-      >
-        {/* Previous Button */}
-        <button
-          onClick={goToPrevious}
-          style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '0px',
-            border: `2px solid ${royalColors.hashemiteGold}`,
-            backgroundColor: 'transparent',
-            color: royalColors.hashemiteGold,
-            fontWeight: 700,
-            fontSize: '18px',
-            cursor: 'pointer',
-            transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = royalColors.hashemiteGold;
-            e.currentTarget.style.color = royalColors.darkNavy;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = royalColors.hashemiteGold;
-          }}
-        >
-          ←
-        </button>
-
-        {/* Dot Navigation */}
-        <div
-          style={{
-            display: 'flex',
-            gap: spacing.sm,
-            justifyContent: 'center',
-          }}
-        >
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              style={{
-                width: idx === currentIndex ? '32px' : '10px',
-                height: '10px',
-                borderRadius: borderRadius.full,
-                backgroundColor: idx === currentIndex ? royalColors.hashemiteGold : royalColors.borderFormal,
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-              }}
-              onMouseEnter={(e) => {
-                if (idx !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = royalColors.paleGold;
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (idx !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = royalColors.borderFormal;
-                }
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Next Button */}
-        <button
-          onClick={goToNext}
-          style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '0px',
-            border: `2px solid ${royalColors.hashemiteGold}`,
-            backgroundColor: 'transparent',
-            color: royalColors.hashemiteGold,
-            fontWeight: 700,
-            fontSize: '18px',
-            cursor: 'pointer',
-            transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = royalColors.hashemiteGold;
-            e.currentTarget.style.color = royalColors.darkNavy;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = royalColors.hashemiteGold;
-          }}
-        >
-          →
-        </button>
-      </div>
-
-      {/* Animation keyframes */}
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 }
