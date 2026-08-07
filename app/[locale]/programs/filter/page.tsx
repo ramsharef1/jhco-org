@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { programs, countries, regions } from '@/lib/mockData';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 
 interface FilterState {
   search: string;
@@ -15,12 +15,13 @@ interface FilterState {
 
 export default function ProgramsFilterPage() {
   const params = useParams();
+  const searchParams = useSearchParams();
   const locale = (params.locale as string) || 'en';
   const ar = locale === 'ar';
   const base = `/${locale}`;
 
   const [filters, setFilters] = useState<FilterState>({
-    search: '',
+    search: searchParams.get('q') || '',
     categories: [],
     geography: [],
     beneficiary: [],

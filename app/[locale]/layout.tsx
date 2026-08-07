@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AutoBreadcrumbs from '@/components/AutoBreadcrumbs';
 import { type Locale } from '@/lib/i18n';
 
 export async function generateStaticParams() {
@@ -21,6 +22,7 @@ export default async function LocaleLayout({
   return (
     <>
       <Header locale={locale as Locale} />
+      <AutoBreadcrumbs locale={locale} />
       <main dir={dir} style={{ minHeight: '100vh' }}>
         {children}
       </main>

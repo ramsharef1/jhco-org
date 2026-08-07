@@ -2,15 +2,22 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, transitions, spacing } from '@/lib/royalDesign';
 import MegaMenu from './MegaMenu';
+import SearchBar from './SearchBar';
 
 export default function Header({ locale = 'en' as Locale }: { locale?: Locale }) {
   const pathname = usePathname();
+  const router = useRouter();
   const ar = locale === 'ar';
   const base = `/${locale}`;
+
+  const handleSearch = (query: string) => {
+    const q = query.trim();
+    if (q) router.push(`${base}/programs/filter?q=${encodeURIComponent(q)}`);
+  };
 
   const otherLocale: Locale = locale === 'ar' ? 'en' : 'ar';
   const switchHref = pathname
@@ -36,6 +43,9 @@ export default function Header({ locale = 'en' as Locale }: { locale?: Locale })
 
         {/* Right Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: spacing.md }}>
+          {/* Global Search */}
+          <SearchBar locale={locale} onSearch={handleSearch} />
+
           {/* Language Switcher */}
           <Link
             href={switchHref}
