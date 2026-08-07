@@ -1,6 +1,10 @@
 'use client';
+import { use } from 'react';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, royalTypography } from '@/lib/royalDesign';
+import StoryCard from '@/components/StoryCard';
+
+const storyIcons = ['📚', '🏥', '🍽️', '💼', '💧', '👩‍🏫'];
 
 const pageContent = {
   en: {
@@ -103,8 +107,8 @@ const pageContent = {
   },
 };
 
-export default function StoriesPage({ params }: { params: { locale: Locale } }) {
-  const { locale } = params;
+export default function StoriesPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = use(params);
   const ar = locale === 'ar';
   const content = pageContent[locale] || pageContent.en;
 
@@ -157,91 +161,28 @@ export default function StoriesPage({ params }: { params: { locale: Locale } }) 
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '32px',
           }}>
-            {content.stories.map((story, idx) => (
-              <div key={idx} style={{
-                backgroundColor: 'white',
-                borderRadius: '8px',
-                border: `1px solid ${royalColors.borderFormal}`,
-                boxShadow: story.featured ? `0 8px 24px rgba(212,175,55,0.2)` : '0 4px 12px rgba(10,20,40,0.1)',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease',
-                position: 'relative',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-              }}>
-                {story.featured && (
-                  <div style={{
-                    backgroundColor: royalColors.hashemiteGold,
-                    color: royalColors.darkNavy,
-                    padding: '8px 16px',
-                    fontSize: '12px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                    textAlign: 'center',
-                  }}>
-                    Featured Story
-                  </div>
-                )}
-
-                <div style={{
-                  flex: 1,
-                  padding: '32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  textAlign: ar ? 'right' : 'left',
-                }}>
-                  <p style={{
-                    fontSize: '12px',
-                    color: royalColors.hashemiteGold,
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                    marginBottom: '8px',
-                    margin: 0,
-                  }}>
-                    {story.location} • {story.impact}
-                  </p>
-
-                  <h3 style={{
-                    fontSize: '22px',
-                    fontFamily: royalTypography.serif,
-                    color: royalColors.darkNavy,
-                    marginBottom: '16px',
-                    marginTop: '8px',
-                  }}>
-                    {story.title}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '16px',
-                    color: royalColors.textOfficial,
-                    lineHeight: '1.7',
-                    margin: 0,
-                    flex: 1,
-                  }}>
-                    {story.story}
-                  </p>
-
-                  <div style={{
-                    height: '1px',
-                    backgroundColor: royalColors.borderFormal,
-                    marginTop: '20px',
-                    marginBottom: '20px',
-                  }} />
-
-                  <p style={{
-                    fontSize: '13px',
-                    color: royalColors.hashemiteGold,
-                    fontWeight: '700',
-                    margin: 0,
-                  }}>
-                    ★ {ar ? 'قصة تحويل حياة' : 'Life-Changing Story'}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {pageContent.en.stories.map((story, idx) => {
+              const arStory = pageContent.ar.stories[idx];
+              return (
+                <StoryCard
+                  key={idx}
+                  id={String(idx)}
+                  titleEn={story.title}
+                  titleAr={arStory.title}
+                  excerptEn={story.story}
+                  excerptAr={arStory.story}
+                  authorEn={`${story.location} • ${story.impact}`}
+                  authorAr={`${arStory.location} • ${arStory.impact}`}
+                  roleEn={story.impact}
+                  roleAr={arStory.impact}
+                  locationEn={story.location}
+                  locationAr={arStory.location}
+                  icon={storyIcons[idx % storyIcons.length]}
+                  locale={locale}
+                  variant="impact"
+                />
+              );
+            })}
           </div>
         </div>
       </section>

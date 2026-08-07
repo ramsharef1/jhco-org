@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, shadows, borderRadius, componentStyles } from '@/lib/royalDesign';
+import TeamCard from '@/components/TeamCard';
 
 interface StaffMember {
   id: string;
@@ -312,8 +313,6 @@ export default function StaffDirectory({ params }: { params: Promise<{ locale: s
     });
   }, [searchTerm, selectedDepartment, ar]);
 
-  const getStaffDepartment = (staff: StaffMember) => (ar ? staff.departmentAr : staff.departmentEn);
-
   return (
     <div dir={dir} style={{ minHeight: '100vh', background: royalColors.bgLight }}>
       {/* Hero Section */}
@@ -567,114 +566,22 @@ export default function StaffDirectory({ params }: { params: Promise<{ locale: s
               }}
             >
               {filteredStaff.map((staff) => (
-                <div
+                <TeamCard
                   key={staff.id}
-                  style={{
-                    background: '#ffffff',
-                    border: `1px solid ${royalColors.borderFormal}`,
-                    borderRadius: borderRadius.card,
-                    overflow: 'hidden',
-                    boxShadow: shadows.md,
-                    transition: `all 250ms cubic-bezier(0.4, 0, 0.2, 1)`,
-                    cursor: 'pointer',
-                    transform: 'translateY(0)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = shadows.lg;
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = shadows.md;
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  {/* Photo Placeholder */}
-                  <div
-                    style={{
-                      background: `linear-gradient(135deg, ${royalColors.deepRoyal} 0%, ${royalColors.darkNavy} 100%)`,
-                      padding: '48px 24px',
-                      textAlign: 'center',
-                      fontSize: '72px',
-                      borderBottom: `1px solid ${royalColors.borderFormal}`,
-                    }}
-                  >
-                    {staff.photoPlaceholder}
-                  </div>
-
-                  {/* Content */}
-                  <div style={{ padding: '28px' }}>
-                    <h3
-                      style={{
-                        fontSize: '20px',
-                        fontWeight: 700,
-                        fontFamily: '"Garamond", "Georgia", serif',
-                        color: royalColors.deepRoyal,
-                        marginBottom: '4px',
-                      }}
-                    >
-                      {ar ? staff.nameAr : staff.nameEn}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        color: royalColors.textSecondary,
-                        marginBottom: '8px',
-                      }}
-                    >
-                      {ar ? staff.titleAr : staff.titleEn}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: '13px',
-                        color: royalColors.compassionTeal,
-                        marginBottom: '16px',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {getStaffDepartment(staff)}
-                    </p>
-
-                    {/* Bio */}
-                    {staff.bio && (
-                      <p
-                        style={{
-                          fontSize: '14px',
-                          lineHeight: 1.5,
-                          color: royalColors.darkGrayText,
-                          marginBottom: '16px',
-                        }}
-                      >
-                        {ar ? staff.bioAr : staff.bio}
-                      </p>
-                    )}
-
-                    {/* Contact */}
-                    <div
-                      style={{
-                        paddingTop: '16px',
-                        borderTop: `1px solid ${royalColors.borderSubtle}`,
-                      }}
-                    >
-                      <a
-                        href={`mailto:${staff.email}`}
-                        style={{
-                          fontSize: '13px',
-                          color: royalColors.deepRoyal,
-                          textDecoration: 'none',
-                          fontWeight: 600,
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                        }}
-                      >
-                        ✉️ {staff.email}
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                  id={staff.id}
+                  nameEn={staff.nameEn}
+                  nameAr={staff.nameAr}
+                  roleEn={staff.titleEn}
+                  roleAr={staff.titleAr}
+                  bioEn={staff.bio}
+                  bioAr={staff.bioAr}
+                  emailEn={staff.email}
+                  emailAr={staff.email}
+                  departmentEn={staff.departmentEn}
+                  departmentAr={staff.departmentAr}
+                  icon={staff.photoPlaceholder}
+                  locale={locale}
+                />
               ))}
             </div>
           )}

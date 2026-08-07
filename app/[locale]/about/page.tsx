@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, shadows, borderRadius } from '@/lib/royalDesign';
-import { useState, useEffect } from 'react';
+import { use, useState, useEffect } from 'react';
+import TeamCard from '@/components/TeamCard';
+import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 const aboutContent = {
   en: {
@@ -381,8 +383,41 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
   );
 }
 
-export default function AboutPage({ params }: { params: { locale: Locale } }) {
-  const { locale } = params;
+const aboutTestimonials = [
+  {
+    id: 't1',
+    nameEn: 'Sarah Ahmed',
+    nameAr: 'سارة أحمد',
+    roleEn: 'Donor — Cairo, Egypt',
+    roleAr: 'متبرعة — القاهرة، مصر',
+    quoteEn: 'JHCO demonstrates professional governance and transparent impact reporting. Supporting their programs is straightforward and credible.',
+    quoteAr: 'تُظهر الهيئة حوكمة مهنية وتقارير أثر شفافة. دعم برامجها أمر مباشر وموثوق.',
+    icon: '💬',
+  },
+  {
+    id: 't2',
+    nameEn: 'James Martin',
+    nameAr: 'جيمس مارتن',
+    roleEn: 'Volunteer — London, UK',
+    roleAr: 'متطوع — لندن، المملكة المتحدة',
+    quoteEn: 'The volunteer experience with JHCO is well-structured with clear professional objectives. The organization is effectively managed.',
+    quoteAr: 'تجربة التطوع مع الهيئة منظمة جيداً بأهداف مهنية واضحة. المنظمة تُدار بفعالية.',
+    icon: '🤝',
+  },
+  {
+    id: 't3',
+    nameEn: 'Fatima Hassan',
+    nameAr: 'فاطمة حسن',
+    roleEn: 'Program Participant — Amman, Jordan',
+    roleAr: 'مشاركة في البرنامج — عمّان، الأردن',
+    quoteEn: 'The education program provided quality instruction and real opportunity. The outcomes have been measurable and meaningful for our community.',
+    quoteAr: 'قدّم برنامج التعليم تدريساً عالي الجودة وفرصاً حقيقية. كانت النتائج ملموسة وذات معنى لمجتمعنا.',
+    icon: '📚',
+  },
+];
+
+export default function AboutPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = use(params);
   const ar = locale === 'ar';
   const content = aboutContent[locale] || aboutContent.en;
 
@@ -724,48 +759,47 @@ export default function AboutPage({ params }: { params: { locale: Locale } }) {
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '28px',
           }}>
-            {content.team.leadership.map((member, idx) => (
-              <div key={idx} style={{
-                padding: '28px',
-                background: 'white',
-                borderRadius: '0px',
-                boxShadow: shadows.md,
-                textAlign: textAlign as any,
-              }}>
-                <div style={{
-                  fontSize: '60px',
-                  marginBottom: '16px',
-                  textAlign: 'center',
-                }}>
-                  {member.image}
-                </div>
-                <h4 style={{
-                  fontSize: '18px',
-                  color: royalColors.darkNavy,
-                  margin: '0 0 4px 0',
-                  fontWeight: '600',
-                }}>
-                  {member.name}
-                </h4>
-                <p style={{
-                  fontSize: '14px',
-                  color: royalColors.hashemiteGold,
-                  margin: '0 0 12px 0',
-                  fontWeight: '600',
-                }}>
-                  {member.role}
-                </p>
-                <p style={{
-                  fontSize: '14px',
-                  color: royalColors.textOfficial,
-                  margin: '0',
-                  lineHeight: '1.6',
-                }}>
-                  {member.bio}
-                </p>
-              </div>
-            ))}
+            {aboutContent.en.team.leadership.map((member, idx) => {
+              const arMember = aboutContent.ar.team.leadership[idx];
+              return (
+                <TeamCard
+                  key={idx}
+                  id={String(idx)}
+                  nameEn={member.name}
+                  nameAr={arMember.name}
+                  roleEn={member.role}
+                  roleAr={arMember.role}
+                  bioEn={member.bio}
+                  bioAr={arMember.bio}
+                  icon={member.image}
+                  locale={locale}
+                />
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{
+        padding: '100px 32px',
+        background: royalColors.bgRefined,
+        direction,
+      }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '42px',
+            fontFamily: 'Garamond, serif',
+            color: royalColors.darkNavy,
+            margin: '0 0 48px 0',
+            textAlign: 'center',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+          }}>
+            {ar ? 'قصص التفاعل' : 'Voices of Our Community'}
+          </h2>
+          <TestimonialCarousel testimonials={aboutTestimonials} locale={locale} />
         </div>
       </section>
 
