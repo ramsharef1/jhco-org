@@ -1,5 +1,6 @@
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
+import ImpactCounter from '@/components/ImpactCounter';
 
 export default async function VolunteerPage({
   params,
@@ -51,24 +52,15 @@ export default async function VolunteerPage({
             {ar ? 'ساهم آلاف المتطوعين في تحقيق نتائج استثنائية' : 'Thousands of volunteers have contributed to extraordinary outcomes'}
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
-            {[
-              { number: ar ? '12,500+' : '12,500+', label: ar ? 'متطوع نشط' : 'Active Volunteers', icon: '👥' },
-              { number: ar ? '150+' : '150+', label: ar ? 'دولة' : 'Countries', icon: '🌍' },
-              { number: ar ? '2M+' : '2M+', label: ar ? 'ساعة عمل' : 'Hours Volunteered', icon: '⏱️' },
-              { number: ar ? '5M+' : '5M+', label: ar ? 'شخص متأثر' : 'Lives Impacted', icon: '❤️' },
-            ].map((stat, idx) => (
-              <div key={idx} style={{ backgroundColor: 'white', padding: '48px 32px', borderRadius: '8px', textAlign: 'center', boxShadow: '0 2px 8px rgba(10,20,40,0.08)' }}>
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{stat.icon}</div>
-                <div style={{ fontSize: '36px', fontWeight: '700', color: '#0a1428', marginBottom: '8px' }}>
-                  {stat.number}
-                </div>
-                <div style={{ fontSize: '16px', color: '#6b6b6b', fontWeight: '600' }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          <ImpactCounter
+            stats={[
+              { value: '12500+', label: 'Active Volunteers', labelAr: 'متطوع نشط', icon: '👥' },
+              { value: '150+', label: 'Countries', labelAr: 'دولة', icon: '🌍' },
+              { value: '2M+', label: 'Hours Volunteered', labelAr: 'ساعة عمل', icon: '⏱️' },
+              { value: '5M+', label: 'Lives Impacted', labelAr: 'شخص متأثر', icon: '❤️' },
+            ]}
+            locale={locale}
+          />
         </div>
       </section>
 

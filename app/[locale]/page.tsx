@@ -27,10 +27,10 @@ export default async function Home({
   };
 
   const impactStats = [
-    { value: 75000, label: ar ? 'أسرة مخدومة' : 'Families Served', icon: '👥' },
-    { value: 30, label: ar ? 'دول' : 'Countries', icon: '🌍' },
-    { value: 2500, label: ar ? 'متطوع' : 'Volunteers', icon: '🤝' },
-    { value: 100, label: ar ? 'تأثير معتمد' : 'Verified Impact', icon: '✓' },
+    { value: '75K+', label: 'Families Served', labelAr: 'أسرة مخدومة', icon: '👥' },
+    { value: '30+', label: 'Countries', labelAr: 'دول', icon: '🌍' },
+    { value: '2500+', label: 'Volunteers', labelAr: 'متطوع', icon: '🤝' },
+    { value: '100%', label: 'Verified Impact', labelAr: 'تأثير معتمد', icon: '✓' },
   ];
 
   return (

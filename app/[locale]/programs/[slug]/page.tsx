@@ -2,6 +2,7 @@ import { programs } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ProgramCard from '@/components/ProgramCard';
 
 export async function generateStaticParams() {
   return programs.map((program) => ({
@@ -122,18 +123,28 @@ export default async function ProgramDetailPage({
             <h3 style={{ fontSize: '28px', fontWeight: '400', color: '#0a1428', marginBottom: '32px', fontFamily: 'Georgia, serif' }}>
               {ar ? 'برامج ذات صلة' : 'Related Programs'}
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
-              {programs.filter(p => p.category === program.category && p.id !== program.id).slice(0, 3).map((relatedProgram) => (
-                <Link key={relatedProgram.id} href={`${base}/programs/${relatedProgram.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ backgroundColor: '#f9f7f4', padding: '24px', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.3s' }}>
-                    <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#0a1428', marginBottom: '12px' }}>
-                      {ar ? relatedProgram.nameAr : relatedProgram.name}
-                    </h4>
-                    <p style={{ fontSize: '14px', color: '#6b6b6b', margin: 0 }}>
-                      {ar ? relatedProgram.descriptionAr : relatedProgram.description}
-                    </p>
-                  </div>
-                </Link>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
+              {(() => {
+                const sameCategory = programs.filter(p => p.category === program.category && p.id !== program.id);
+                const others = programs.filter(p => p.category !== program.category && p.id !== program.id);
+                return [...sameCategory, ...others].slice(0, 3);
+              })().map((relatedProgram) => (
+                <ProgramCard
+                  key={relatedProgram.id}
+                  id={String(relatedProgram.id)}
+                  slug={relatedProgram.slug}
+                  nameEn={relatedProgram.name}
+                  nameAr={relatedProgram.nameAr}
+                  descriptionEn={relatedProgram.description}
+                  descriptionAr={relatedProgram.descriptionAr}
+                  icon="🎯"
+                  impactEn={relatedProgram.impact}
+                  impactAr={relatedProgram.impactAr}
+                  categoryEn={relatedProgram.category}
+                  categoryAr={relatedProgram.categoryAr}
+                  href={`${base}/programs/${relatedProgram.slug}`}
+                  locale={locale}
+                />
               ))}
             </div>
           </div>

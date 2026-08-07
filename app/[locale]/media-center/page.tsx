@@ -1,6 +1,66 @@
 'use client';
+import { use } from 'react';
 import { type Locale } from '@/lib/i18n';
 import { royalColors, royalTypography } from '@/lib/royalDesign';
+import NewsCard from '@/components/NewsCard';
+import MediaGallery from '@/components/MediaGallery';
+
+const galleryItems = [
+  {
+    id: 'g1',
+    titleEn: 'Emergency Response Operations',
+    titleAr: 'عمليات الاستجابة الطارئة',
+    descriptionEn: 'Rapid humanitarian relief reaching families in crisis-affected regions.',
+    descriptionAr: 'إغاثة إنسانية سريعة تصل إلى الأسر في المناطق المتأثرة بالأزمات.',
+    imageUrl: '/media/emergency-response.svg',
+    type: 'image' as const,
+  },
+  {
+    id: 'g2',
+    titleEn: 'Mobile Health Clinics',
+    titleAr: 'العيادات الصحية المتنقلة',
+    descriptionEn: 'Bringing medical care to underserved communities across 5 countries.',
+    descriptionAr: 'تقديم الرعاية الطبية للمجتمعات المحرومة في 5 دول.',
+    imageUrl: '/media/healthcare-clinic.svg',
+    type: 'image' as const,
+  },
+  {
+    id: 'g3',
+    titleEn: 'Education Programs',
+    titleAr: 'برامج التعليم',
+    descriptionEn: 'Literacy and skills training reaching 25,000+ students.',
+    descriptionAr: 'محو الأمية والتدريب على المهارات يصل إلى أكثر من 25000 طالب.',
+    imageUrl: '/media/education-program.svg',
+    type: 'image' as const,
+  },
+  {
+    id: 'g4',
+    titleEn: 'Food Security Distribution',
+    titleAr: 'توزيع الأمن الغذائي',
+    descriptionEn: 'Emergency food assistance supporting vulnerable families.',
+    descriptionAr: 'مساعدات غذائية طارئة لدعم الأسر الضعيفة.',
+    imageUrl: '/media/food-distribution.svg',
+    type: 'image' as const,
+  },
+  {
+    id: 'g5',
+    titleEn: 'Clean Water Initiative',
+    titleAr: 'مبادرة المياه النظيفة',
+    descriptionEn: 'Water wells providing clean access for thousands of people.',
+    descriptionAr: 'آبار مياه توفر وصولاً نظيفاً لآلاف الأشخاص.',
+    imageUrl: '/media/water-wells.svg',
+    type: 'image' as const,
+  },
+  {
+    id: 'g6',
+    titleEn: 'Volunteers in the Field',
+    titleAr: 'المتطوعون في الميدان',
+    descriptionEn: '2,500+ volunteers delivering programs worldwide.',
+    descriptionAr: 'أكثر من 2500 متطوع ينفذون البرامج حول العالم.',
+    imageUrl: '/media/volunteers-field.svg',
+    type: 'image' as const,
+  },
+];
 
 const pageContent = {
   en: {
@@ -81,8 +141,8 @@ const pageContent = {
   },
 };
 
-export default function MediaCenterPage({ params }: { params: { locale: Locale } }) {
-  const { locale } = params;
+export default function MediaCenterPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = use(params);
   const ar = locale === 'ar';
   const content = pageContent[locale] || pageContent.en;
 
@@ -146,88 +206,40 @@ export default function MediaCenterPage({ params }: { params: { locale: Locale }
             gap: '32px',
             marginBottom: '64px',
           }}>
-            {content.latestNews.map((news, idx) => (
-              <div key={idx} style={{
-                backgroundColor: 'white',
-                borderRadius: '8px',
-                border: `1px solid ${royalColors.borderFormal}`,
-                boxShadow: '0 4px 12px rgba(10,20,40,0.1)',
-                overflow: 'hidden',
-                textAlign: ar ? 'right' : 'left',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-              }}>
-                <div style={{
-                  backgroundColor: royalColors.bgRefined,
-                  padding: '24px 32px',
-                  borderBottom: `1px solid ${royalColors.borderFormal}`,
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flexDirection: ar ? 'row-reverse' : 'row',
-                  }}>
-                    <p style={{
-                      fontSize: '12px',
-                      color: '#6b6b6b',
-                      fontWeight: '600',
-                      margin: 0,
-                    }}>
-                      {new Date(news.date).toLocaleDateString(ar ? 'ar-JO' : 'en-US')}
-                    </p>
-                    <span style={{
-                      backgroundColor: royalColors.hashemiteGold,
-                      color: royalColors.darkNavy,
-                      padding: '4px 12px',
-                      borderRadius: '4px',
-                      fontSize: '11px',
-                      fontWeight: '700',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                    }}>
-                      {news.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{
-                    fontSize: '20px',
-                    fontFamily: royalTypography.serif,
-                    color: royalColors.darkNavy,
-                    marginBottom: '16px',
-                    marginTop: 0,
-                  }}>
-                    {news.title}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '15px',
-                    color: royalColors.textOfficial,
-                    lineHeight: '1.6',
-                    flex: 1,
-                    margin: 0,
-                    marginBottom: '20px',
-                  }}>
-                    {news.excerpt}
-                  </p>
-
-                  <a href="#" style={{
-                    color: royalColors.hashemiteGold,
-                    fontWeight: '700',
-                    textDecoration: 'none',
-                    fontSize: '14px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                  }}>
-                    {ar ? 'اقرأ المزيد' : 'Read More'} →
-                  </a>
-                </div>
-              </div>
-            ))}
+            {pageContent.en.latestNews.map((news, idx) => {
+              const arNews = pageContent.ar.latestNews[idx];
+              return (
+                <NewsCard
+                  key={idx}
+                  id={String(idx)}
+                  titleEn={news.title}
+                  titleAr={arNews.title}
+                  excerptEn={news.excerpt}
+                  excerptAr={arNews.excerpt}
+                  dateEn={new Date(news.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  dateAr={new Date(news.date).toLocaleDateString('ar-JO', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  categoryEn={news.category}
+                  categoryAr={arNews.category}
+                  icon="📰"
+                  href={`/${locale}/news`}
+                  locale={locale}
+                  featured={idx === 0}
+                />
+              );
+            })}
           </div>
+
+          {/* Photo & Video Gallery */}
+          <h2 style={{
+            fontSize: '48px',
+            fontFamily: royalTypography.serif,
+            color: royalColors.darkNavy,
+            marginBottom: '64px',
+            textAlign: 'center',
+          }}>
+            {ar ? 'معرض ' : 'Media '}<span style={{ color: royalColors.hashemiteGold }}>{ar ? 'الوسائط' : 'Gallery'}</span>
+          </h2>
+          <MediaGallery items={galleryItems} locale={locale} />
 
           {/* Media Contact */}
           <div style={{
