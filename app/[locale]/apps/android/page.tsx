@@ -1,6 +1,13 @@
 import { mobileApps } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('apps/android', locale);
+}
 
 export default async function AndroidAppsPage({
   params,

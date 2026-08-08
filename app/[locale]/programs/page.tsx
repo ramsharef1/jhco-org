@@ -2,6 +2,13 @@ import { programs } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import ProgramCard from '@/components/ProgramCard';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('programs', locale);
+}
 
 export default async function ProgramsPage({
   params,

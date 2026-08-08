@@ -2,6 +2,7 @@ import { news } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return news.map((article) => ({
@@ -13,6 +14,12 @@ export async function generateStaticParams() {
       locale: 'ar',
     }))
   );
+}
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('news', locale);
 }
 
 export default async function NewsArticlePage({

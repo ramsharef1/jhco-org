@@ -1,4 +1,11 @@
 import { getDictionary, type Locale } from '@/lib/i18n';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('office-locations', locale);
+}
 
 export default async function OfficeLocationsPage({
   params,

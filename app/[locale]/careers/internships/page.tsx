@@ -1,4 +1,11 @@
 import Link from 'next/link';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('careers/internships', locale);
+}
 
 export default async function InternshipsPage({
   params,

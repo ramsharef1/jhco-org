@@ -2,6 +2,13 @@ import { news } from '@/lib/mockData';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import NewsCard from '@/components/NewsCard';
 import NewsletterForm from '@/components/NewsletterForm';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('news', locale);
+}
 
 export default async function NewsPage({
   params,

@@ -1,5 +1,12 @@
 import { volunteerOpportunities } from '@/lib/mockData';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('get-involved/volunteer/opportunities', locale);
+}
 
 export default async function VolunteerOpportunitiesPage({
   params,

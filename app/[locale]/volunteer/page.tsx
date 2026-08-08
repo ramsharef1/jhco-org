@@ -1,6 +1,13 @@
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import ImpactCounter from '@/components/ImpactCounter';
+import { generatePageMetadata } from '@/lib/seo';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('volunteer', locale);
+}
 
 export default async function VolunteerPage({
   params,

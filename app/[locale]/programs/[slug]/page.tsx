@@ -3,6 +3,7 @@ import { getDictionary, type Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProgramCard from '@/components/ProgramCard';
+import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return programs.map((program) => ({
@@ -14,6 +15,12 @@ export async function generateStaticParams() {
       locale: 'ar',
     }))
   );
+}
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale } = await params;
+  return generatePageMetadata('programs', locale);
 }
 
 export default async function ProgramDetailPage({
