@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CORRECT_PASSWORD = 'secure@123';
+const CORRECT_PASSWORD = process.env.SITE_PASSWORD || 'secure@123';
 
 export async function POST(request: NextRequest) {
   try {

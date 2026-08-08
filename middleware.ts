@@ -3,6 +3,7 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const locale = pathname.startsWith('/ar') ? 'ar' : 'en';
 
   // Allow access to login page, dashboard, API routes, and password check endpoint
   if (
@@ -11,7 +12,9 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/dashboard') ||
     pathname.startsWith('/api/dashboard')
   ) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set('x-locale', locale);
+    return response;
   }
 
   // Check if user has password cookie
@@ -23,12 +26,15 @@ export function middleware(request: NextRequest) {
   }
 
   // Verify the cookie is valid
-  const validPassword = Buffer.from('secure@123').toString('base64');
+  const sitePassword = process.env.SITE_PASSWORD || 'secure@123';
+  const validPassword = Buffer.from(sitePassword).toString('base64');
   if (passwordCookie.value !== validPassword) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  response.headers.set('x-locale', locale);
+  return response;
 }
 
 // Apply middleware to all routes except static files and API
